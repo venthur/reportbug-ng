@@ -10,4 +10,4 @@ all: $(GUI_CLASSES)
 
 clean:
 	rm -f $(GUI_CLASSES)
-
+	rm -f *.pyc
