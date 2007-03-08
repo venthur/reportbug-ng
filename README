@@ -1,0 +1,5 @@
+To run this tool you need 
+  python-qt3 
+
+to compile .ui files to .py you need
+  pyqt-tools
