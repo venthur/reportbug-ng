@@ -1,0 +1,148 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Form</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Form</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>717</width>
+            <height>487</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Reportbug NG</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Enter a package name and hit Enter to search for bugreports or just type in some words to filter existing bugreports.&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLineEdit">
+                    <property name="name">
+                        <cstring>lineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButtonAdditionalInfo</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Additional Info</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButtonNewBugreport</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>New Bugreport</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Select a bugreport to read the fulltext&lt;/b&gt;.</string>
+            </property>
+        </widget>
+        <widget class="QSplitter">
+            <property name="name">
+                <cstring>splitter2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <widget class="QListBox">
+                <property name="name">
+                    <cstring>listBox</cstring>
+                </property>
+            </widget>
+            <widget class="QTextBrowser">
+                <property name="name">
+                    <cstring>textBrowser</cstring>
+                </property>
+            </widget>
+        </widget>
+    </vbox>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButtonNewBugreport</sender>
+        <signal>clicked()</signal>
+        <receiver>Form</receiver>
+        <slot>pushButtonNewBugreport_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>listBox</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>Form</receiver>
+        <slot>listBox_highlighted(int)</slot>
+    </connection>
+    <connection>
+        <sender>lineEdit</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form</receiver>
+        <slot>lineEdit_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>lineEdit</sender>
+        <signal>returnPressed()</signal>
+        <receiver>Form</receiver>
+        <slot>lineEdit_returnPressed()</slot>
+    </connection>
+    <connection>
+        <sender>pushButtonAdditionalInfo</sender>
+        <signal>clicked()</signal>
+        <receiver>Form</receiver>
+        <slot>pushButtonAdditionalInfo_clicked()</slot>
+    </connection>
+</connections>
+<slots>
+    <slot>comboBox_activated( const QString &amp; )</slot>
+    <slot>listBox_selected( int )</slot>
+    <slot>pushButton2_clicked()</slot>
+    <slot>pushButtonNewBugreport_clicked()</slot>
+    <slot>comboBoxFilter_textChanged( const QString &amp; )</slot>
+    <slot>pushButtonBack_clicked()</slot>
+    <slot>comboBox_textChanged( const QString &amp; )</slot>
+    <slot>listBox_highlighted( int )</slot>
+    <slot>lineEdit_textChanged( const QString &amp; )</slot>
+    <slot>lineEdit_returnPressed()</slot>
+    <slot>pushAdditionalInfo_clicked()</slot>
+    <slot>pushButtonAdditionalInfo_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

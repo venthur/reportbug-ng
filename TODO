@@ -1,0 +1,19 @@
+Things I have on my list...
+
+urgent:
+ - Make input utf-proof.
+ - Add more mailclients.
+ 
+normal:
+ - Provide some useful system information.
+ - Provode some useful package information. 
+ - Improve built-in browser
+ - Recognize Tags
+ - Refactor the whole non GUI stuff out of MyMainWindow
+ - Provide icon
+ 
+optional:
+ - Should safe last chosen mailclient and make it default for next time.
+ - Severity by definition?
+
+done:
