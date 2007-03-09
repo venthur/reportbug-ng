@@ -2,10 +2,10 @@
 
 from ui.MyMainWindow import MyMainWindow
 
+from lib import ReportbugNG
+
 import qt
 import sys
-
-VERSION = "0.2007.03.08"
 
 if __name__ == "__main__":
     app = qt.QApplication(sys.argv)
@@ -13,7 +13,6 @@ if __name__ == "__main__":
     
     mw = MyMainWindow()
     app.setMainWidget(mw)
-    mw.setCaption(mw.caption() + "   " + VERSION)
+    mw.setCaption(mw.caption() + "   " + ReportbugNG.VERSION)
     mw.show()
     app.exec_loop()
-
