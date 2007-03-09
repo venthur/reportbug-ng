@@ -51,3 +51,13 @@ def getSystemInformation():
         s += "\n\n"
     
     return s
+
+def getInstalledPackageVersion(package):
+    """Returns the version of package, if installed or empty string not installed"""
+    
+    try:
+        version = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep Version:" % package).split(": ", 1)[1]
+    except:
+        version = ""
+        
+    return version

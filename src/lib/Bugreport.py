@@ -1,6 +1,6 @@
 
 class Bugreport:
-    """Represents a Bugreport from Debians BTS."""
+    """Represents a Bugreport from Debian's BTS."""
     
     def __init__(self, nr, summary="", submitter="", status="", severity="", fulltext=""):
         self.nr = nr

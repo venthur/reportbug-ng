@@ -71,13 +71,8 @@ class MyMainWindow(Form):
     def pushButtonAdditionalInfo_clicked(self):
         """The user wants to provide additional info for the current bug."""
     
-        summary = ""
-        mua = ""
         package = self.currentPackage
-        try:
-            version = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep Version:" % package).split(": ", 1)[1]
-        except:
-            version = ""
+        version = getInstalledPackageVersion(package)
         
         dialog = SubmitDialog()
         dialog.lineEditPackage.setText(package)
@@ -93,22 +88,13 @@ class MyMainWindow(Form):
             to = "%s@bugs.debian.org" % self.currentBug.nr
             
             prepareMail(mua, createMailtoString(to, subject, package, version))
-        else:
-            pass
 
     
     def pushButtonNewBugreport_clicked(self):
         """The User wants to file a new bugreport against the current package."""
         
-        summary = ""
-        severity = ""
-        tags = ""
-        mua = ""
         package = self.currentPackage
-        try:
-            version = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep Version:" % package).split(": ", 1)[1]
-        except:
-            version = ""
+        version = getInstalledPackageVersion(package)
         
         dialog = SubmitDialog()
         dialog.lineEditPackage.setText(package)
@@ -124,7 +110,5 @@ class MyMainWindow(Form):
             to = "submit@bugs.debian.org"
             
             prepareMail(mua, createMailtoString(to, subject, package, version, severity))
-        else:
-            pass
 
 
