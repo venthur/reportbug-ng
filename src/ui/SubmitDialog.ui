@@ -128,6 +128,26 @@
                     </item>
                     <item>
                         <property name="text">
+                            <string>Evolution</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>Iceape</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>sylpheed --compose</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>sylpheed-claws --compose</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
                             <string>Mutt</string>
                         </property>
                     </item>

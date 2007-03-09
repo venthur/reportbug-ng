@@ -1,7 +1,6 @@
 Things I have on my list...
 
 urgent:
- - Add more mailclients.
  
 normal:
  - Provide some useful system information.
@@ -20,3 +19,5 @@ optional:
 done:
  - Make input utf-proof.
  - Refactor the whole non GUI stuff out of MyMainWindow
+ - Add more mailclients.
+
