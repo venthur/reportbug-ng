@@ -16,7 +16,7 @@ class BTS(object):
         """Returns a list of bugs belonging to the package."""
  
         # Get all bugs
-        report = urllib.urlopen(str(BTS_URL) + str(package))
+        report = urllib.urlopen(str(BTS_URL) + package.encode("ascii", "replace"))
 
         # Parse :/
         pattern = re.compile(BUG_RE)

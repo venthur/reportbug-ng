@@ -21,7 +21,7 @@ class MyMainWindow(Form):
     def lineEdit_returnPressed(self):
         """The user changed the text in the combobox and pressed enter"""
         
-        self.currentPackage = self.lineEdit.text()
+        self.currentPackage = unicode(self.lineEdit.text())
         self.textBrowser.setText("Fetching bugreports for package %s, please wait." % self.currentPackage)
         self.lineEdit.setText("")
         self.pushButtonNewBugreport.setEnabled(1)
@@ -86,7 +86,7 @@ class MyMainWindow(Form):
         dialog.comboBoxTags.setEnabled(0)
         
         if dialog.exec_loop() == dialog.Accepted:
-            subject = dialog.lineEditSummary.text()
+            subject = unicode(dialog.lineEditSummary.text())
             mua = dialog.comboBoxMUA.currentText().lower()
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
@@ -115,7 +115,7 @@ class MyMainWindow(Form):
         dialog.lineEditVersion.setText(version)
         
         if dialog.exec_loop() == dialog.Accepted:
-            subject = dialog.lineEditSummary.text()
+            subject = unicode(dialog.lineEditSummary.text())
             severity = dialog.comboBoxSeverity.currentText().lower()
             tags = dialog.comboBoxTags.currentText()
             mua = dialog.comboBoxMUA.currentText().lower()
@@ -131,7 +131,7 @@ class MyMainWindow(Form):
     def prepareMail(self, mua, text):
         """Tries to call mua with the text (mailto-format)"""
         
-        command = str(mua + " " + text)
+        command = str(mua + " " + text.encode("ascii", "replace"))
         if not commands.getstatusoutput(command)[0] == 0:
             print "Reportbug was not able to start your mailclient."
             print "Please copy-paste the following text to your mailclient and send it to submit@bugs.debian.org"

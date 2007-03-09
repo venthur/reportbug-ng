@@ -1,7 +1,6 @@
 Things I have on my list...
 
 urgent:
- - Make input utf-proof.
  - Add more mailclients.
  
 normal:
@@ -17,3 +16,4 @@ optional:
  - Severity by definition?
 
 done:
+ - Make input utf-proof.
