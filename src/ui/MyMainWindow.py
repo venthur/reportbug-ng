@@ -13,7 +13,7 @@ class MyMainWindow(Form):
         self.visibleBugs = []
         self.currentPackage = ""
         self.currentBug = Bugreport(0)
-        
+      
         # For debugging purpose only:
         #self.pushButtonNewBugreport.setEnabled(1)
     
@@ -111,4 +111,10 @@ class MyMainWindow(Form):
             
             prepareMail(mua, createMailtoString(to, subject, package, version, severity))
 
-
+    
+    def textBrowser_linkClicked(self,a0):
+        """The user clicked a link in the Bugreport."""
+        
+        callBrowser(a0)
+        # Hack to open link in external Browser: just reload the current bugreport
+        self.textBrowser.setText(self.currentBug.fulltext)

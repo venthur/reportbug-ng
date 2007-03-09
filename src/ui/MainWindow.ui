@@ -129,7 +129,16 @@
         <receiver>Form</receiver>
         <slot>pushButtonAdditionalInfo_clicked()</slot>
     </connection>
+    <connection>
+        <sender>textBrowser</sender>
+        <signal>linkClicked(const QString&amp;)</signal>
+        <receiver>Form</receiver>
+        <slot>textBrowser_linkClicked(const QString&amp;)</slot>
+    </connection>
 </connections>
+<includes>
+    <include location="local" impldecl="in implementation">MainWindow.ui.h</include>
+</includes>
 <slots>
     <slot>comboBox_activated( const QString &amp; )</slot>
     <slot>listBox_selected( int )</slot>
@@ -143,6 +152,7 @@
     <slot>lineEdit_returnPressed()</slot>
     <slot>pushAdditionalInfo_clicked()</slot>
     <slot>pushButtonAdditionalInfo_clicked()</slot>
+    <slot>textBrowser_linkClicked( const QString &amp; )</slot>
 </slots>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>

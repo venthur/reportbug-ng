@@ -61,3 +61,10 @@ def getInstalledPackageVersion(package):
         version = ""
         
     return version
+
+
+def callBrowser(url):
+    """Calls an external Browser to upen the URL."""
+    
+    import webbrowser
+    webbrowser.open(url)
