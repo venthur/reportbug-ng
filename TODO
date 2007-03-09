@@ -10,6 +10,7 @@ normal:
  - Recognize Tags
  - Refactor the whole non GUI stuff out of MyMainWindow
  - Provide icon
+ - Colorize the buglist (grave: red, ..., whishlist: ...)
  
 optional:
  - Should safe last chosen mailclient and make it default for next time.
@@ -17,3 +18,4 @@ optional:
 
 done:
  - Make input utf-proof.
+ - Refactor the whole non GUI stuff out of MyMainWindow
