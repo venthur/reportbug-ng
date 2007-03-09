@@ -11,6 +11,7 @@ normal:
  - Refactor the whole non GUI stuff out of MyMainWindow
  - Provide icon
  - Colorize the buglist (grave: red, ..., whishlist: ...)
+ - Write unittests
  
 optional:
  - Should safe last chosen mailclient and make it default for next time.

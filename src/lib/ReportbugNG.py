@@ -1,4 +1,5 @@
 import commands
+import webbrowser
 
 VERSION = "0.2007.03.08"
 
@@ -66,5 +67,4 @@ def getInstalledPackageVersion(package):
 def callBrowser(url):
     """Calls an external Browser to upen the URL."""
     
-    import webbrowser
     webbrowser.open(url)
