@@ -3,12 +3,10 @@ Things I have on my list...
 urgent:
  
 normal:
- - Provide some useful system information.
  - Provode some useful package information. 
  - Improve built-in browser
  - Recognize Tags
  - Refactor the whole non GUI stuff out of MyMainWindow
- - Provide icon
  - Colorize the buglist (grave: red, ..., whishlist: ...)
  - Write unittests
  
@@ -20,4 +18,6 @@ done:
  - Make input utf-proof.
  - Refactor the whole non GUI stuff out of MyMainWindow
  - Add more mailclients.
+ - Provide icon
+ - Provide some useful system information.
 

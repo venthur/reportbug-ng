@@ -33,15 +33,15 @@ class MyMainWindow(Form):
         self.currentBug = Bugreport(0)
       
         # For debugging purpose only:
-        #self.pushButtonNewBugreport.setEnabled(1)
+        self.pushButtonNewBugreport.setEnabled(1)
     
     
     def lineEdit_returnPressed(self):
         """The user changed the text in the combobox and pressed enter."""
         
         self.currentPackage = unicode(self.lineEdit.text())
-        self.textBrowser.setText("Fetching bugreports for package %s, please wait." % self.currentPackage)
         self.lineEdit.setText("")
+        self.textBrowser.setText("<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
         self.pushButtonNewBugreport.setEnabled(1)
     
         self.bugs = []
@@ -54,9 +54,9 @@ class MyMainWindow(Form):
             self.listBox.insertItem(str(bug))
 	    
         if len(self.visibleBugs) == 0:
-            self.textBrowser.setText("No bugreports for package %s found!" % self.currentPackage)
+            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage)
         else:
-            self.textBrowser.setText("Click on bugreport for package to see the full text.")
+            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>")
         
 
     def lineEdit_textChanged(self, a0):

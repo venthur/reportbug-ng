@@ -17,7 +17,10 @@
 
 
 import commands
+import re
+import os
 import webbrowser
+
 
 VERSION = "0.2007.03.10"
 
@@ -47,7 +50,8 @@ def createMailtoString(to, subject, package, version, severity=None):
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
-    #s self.getSystemInformation()
+    s += getSystemInformation()
+    s += getDebianReleaseInfo()
             
     s = s.replace("\n", "%0D%0A")
     s = "\"" + s + "\""
@@ -59,15 +63,18 @@ def getSystemInformation():
     
     s = "--- System infomation. ---\n"
     
-    list = ("dpkg --print-installation-architecture", 
-            "uname -srv",
-            "uname -mpio",
-            "apt-cache policy | grep Packages$")
+    #list = ("dpkg --print-installation-architecture", 
+    #        "uname -srv",
+    #        "uname -mpio",
+    #        "apt-cache policy | grep Packages$")
+    #
+    #for cmd in list:
+    #    s += "%s:\n" % cmd
+    #    s += commands.getoutput("%s 2>/dev/null" % cmd)
+    #    s += "\n\n"
     
-    for cmd in list:
-        s += "%s:\n" % cmd
-        s += commands.getoutput("%s 2>/dev/null" % cmd)
-        s += "\n\n"
+    s += "Architecture: %s\n" % commands.getoutput("dpkg --print-installation-architecture 2>/dev/null")
+    s += "Kernel:       %s\n" % commands.getoutput("uname -sr 2>/dev/null")
     
     return s
 
@@ -82,7 +89,56 @@ def getInstalledPackageVersion(package):
     return version
 
 
+# Stolen from reportbug, might need improvements.
+def getDebianReleaseInfo():
+    """Returns a string with Debian relevant info."""
+    
+    DISTORDER = ['stable', 'testing', 'unstable', 'experimental']
+    debvers = debinfo = verfile = warn = ''
+    dists = []
+    output = commands.getoutput('apt-cache policy 2>/dev/null')
+    if output:
+        mre = re.compile('\s+(\d+)\s+.*$\s+release\s.*o=(Ubuntu|Debian),a=([^,]+),', re.MULTILINE)
+        found = {}
+        for match in mre.finditer(output):
+            pword, distname = match.group(1, 3)
+            if distname in DISTORDER:
+                pri, dist = int(pword), DISTORDER.index(distname)
+            else:
+                pri, dist = int(pword), len(DISTORDER)
+
+            found[(pri, dist, distname)] = True
+
+        if found:
+            dists = found.keys()
+            dists.sort()
+            dists.reverse()
+            dists = [(x[0], x[2]) for x in dists]
+            debvers = dists[0][1]
+
+    if os.path.exists('/etc/debian_version'):
+        verfile = file('/etc/debian_version').readline().strip()
+
+    if verfile:
+        debinfo += 'Debian Release: '+verfile+'\n'
+    if debvers:
+        debinfo += '  APT prefers '+debvers+'\n'
+    if dists:
+        policystr = ', '.join([str(x) for x in dists])
+        debinfo += '  APT policy: %s\n' % policystr
+    if warn:
+        debinfo += warn
+
+    return debinfo
+
+
 def callBrowser(url):
     """Calls an external Browser to upen the URL."""
     
     webbrowser.open(url)
+    
+    
+if __name__ == "__main__":
+    print getSystemInformation()
+    print getDebianReleaseInfo()
+

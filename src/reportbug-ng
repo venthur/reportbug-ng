@@ -20,8 +20,6 @@
 
 from ui.MyMainWindow import MyMainWindow
 
-from lib import ReportbugNG
-
 import qt
 import sys
 
@@ -31,6 +29,5 @@ if __name__ == "__main__":
     
     mw = MyMainWindow()
     app.setMainWidget(mw)
-    mw.setCaption(mw.caption() + "   " + ReportbugNG.VERSION)
     mw.show()
     app.exec_loop()
