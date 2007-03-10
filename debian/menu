@@ -1,0 +1,2 @@
+?package(reportbug-ng):needs="X11" section="Apps/System"\
+  title="reportbug-ng" command="/usr/bin/reportbug-ng"

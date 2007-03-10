@@ -1,0 +1,14 @@
+Source: reportbug-ng
+Section: utils
+Priority: extra
+Maintainer: Bastian Venthur <venthur@debian.org>
+Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools
+Standards-Version: 3.7.2
+XS-Python-Version: current
+
+Package: reportbug-ng
+Architecture: any
+Depends: ${python:Depends}, python-qt3
+XB-Python-Version: ${python:Versions}
+Description: Graphical version of the classic reportbug
+ This is a graphical version of reportbug written in QT. 

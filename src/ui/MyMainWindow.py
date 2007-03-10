@@ -33,7 +33,7 @@ class MyMainWindow(Form):
         self.currentBug = Bugreport(0)
       
         # For debugging purpose only:
-        self.pushButtonNewBugreport.setEnabled(1)
+        # self.pushButtonNewBugreport.setEnabled(1)
     
     
     def lineEdit_returnPressed(self):
