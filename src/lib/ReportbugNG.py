@@ -56,15 +56,16 @@ def createMailtoString(to, subject, package, version, severity=None, tags=[]):
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
-    s += getSystemInformation()
-    s += getDebianReleaseInfo()
+    s += getSystemInfo() + "\n "
+    s += getDebianReleaseInfo() + "\n "
+    s += getPackageInfo(package) + "\n "
             
     s = s.replace("\n", "%0D%0A")
     s = "\"" + s + "\""
     
     return s
 
-def getSystemInformation():
+def getSystemInfo():
     """Returns some hopefully usefull sysinfo"""
     
     s = "--- System information. ---\n"
@@ -84,16 +85,57 @@ def getSystemInformation():
     
     return s
 
+
+def getPackageInfo(package):
+    """Returns some Info about the package."""
+    
+    width=20
+    
+    s = "--- Package information. ---\n"
+    s += "Depends".ljust(width) + "(Version)".rjust(width) +" | " + "Installed\n"
+    s += "".zfill(2*width).replace("0", "=")+"-+-"+"".zfill(width).replace("0", "=") +"\n"
+    
+    depends = getDepends(package)
+    if not depends:
+        return s
+    
+    for packagestring in depends:
+        split = packagestring.split(" ", 1)
+        if len(split) > 1:
+            depname, depversion = split
+        else:
+            depname = split[0]
+            depversion = ""
+        
+        instversion = getInstalledPackageVersion(depname)
+        s += depname.ljust(width) +depversion.rjust(width)+" | "+ instversion + "\n"
+    
+    return s
+    
+
 def getInstalledPackageVersion(package):
     """Returns the version of package, if installed or empty string not installed"""
     
     try:
-        version = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep Version:" % package).split(": ", 1)[1]
+        version = commands.getoutput("dpkg --status %s 2>/dev/null | grep ^Version:" % package).split(": ", 1)[1]
     except:
         version = ""
         
     return version
 
+
+def getDepends(package):
+    """Returns strings of all the packages the given package depends on. The format is like:
+       ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
+
+    try:
+        depends = commands.getoutput("dpkg --status %s 2>/dev/null | grep ^Depends:" % package).split(": ", 1)[1]
+    except:
+        return None
+    
+    list = depends.split(", ")
+    return list
+    
 
 # Stolen from reportbug, might need improvements.
 def getDebianReleaseInfo():
@@ -145,6 +187,6 @@ def callBrowser(url):
     
     
 if __name__ == "__main__":
-    print getSystemInformation()
+    print getSystemInfo()
     print getDebianReleaseInfo()
-
+    print getPackageInfo("gtk-qt-engine")

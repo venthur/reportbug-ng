@@ -1,5 +1,6 @@
 changes since 0.2007.03.10:
  * Make patch-, l10n- and security-tags available
+ * Provide some useful package information. 
  
 changes before 0.2007.03.10:
  * Make input utf-proof.
