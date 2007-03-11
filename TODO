@@ -3,21 +3,18 @@ Things I have on my list...
 urgent:
  
 normal:
- - Provode some useful package information. 
+ - Provide some useful package information. 
  - Improve built-in browser
- - Recognize Tags
- - Refactor the whole non GUI stuff out of MyMainWindow
  - Colorize the buglist (grave: red, ..., whishlist: ...)
  - Write unittests
+ - .desktop file for better Menu integration
+ - Integrate Throbber
+ - Use some threading to make UI snappier while downloading with urllib
+ - Improve packaging (Makefiles and sys.path-HACK in top level reportbug-ng)
  
 optional:
  - Should safe last chosen mailclient and make it default for next time.
  - Severity by definition?
 
 done:
- - Make input utf-proof.
- - Refactor the whole non GUI stuff out of MyMainWindow
- - Add more mailclients.
- - Provide icon
- - Provide some useful system information.
-
+ - see CHANGELOG

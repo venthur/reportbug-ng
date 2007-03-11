@@ -35,7 +35,7 @@ def prepareMail(mua, text):
         print text
     
     
-def createMailtoString(to, subject, package, version, severity=None):
+def createMailtoString(to, subject, package, version, severity=None, tags=[]):
     """Creates a Mailto-Line containing the whole email plus some sysinfo."""
     
     s = "mailto:%s?subject=%s" % (to, subject)
@@ -46,6 +46,12 @@ def createMailtoString(to, subject, package, version, severity=None):
 
     if severity:
         s += "Severity: %s\n" % severity
+    
+    if tags:
+        s += "Tags: "
+        for tag in tags:
+            s += " %s" % tag
+        s += "\n"
     
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
@@ -61,7 +67,7 @@ def createMailtoString(to, subject, package, version, severity=None):
 def getSystemInformation():
     """Returns some hopefully usefull sysinfo"""
     
-    s = "--- System infomation. ---\n"
+    s = "--- System information. ---\n"
     
     #list = ("dpkg --print-installation-architecture", 
     #        "uname -srv",

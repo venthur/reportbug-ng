@@ -1,0 +1,9 @@
+changes since 0.2007.03.10:
+ * Make patch-, l10n- and security-tags available
+ 
+changes before 0.2007.03.10:
+ * Make input utf-proof.
+ * Refactor the whole non GUI stuff out of MyMainWindow
+ * Add more mailclients.
+ * Provide icon
+ * Provide some useful system information.

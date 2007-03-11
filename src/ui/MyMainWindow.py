@@ -96,7 +96,9 @@ class MyMainWindow(Form):
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
         dialog.comboBoxSeverity.setEnabled(0)
-        dialog.comboBoxTags.setEnabled(0)
+        dialog.checkBoxSecurity.setEnabled(0)
+        dialog.checkBoxPatch.setEnabled(0)
+        dialog.checkBoxL10n.setEnabled(0)
         
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
@@ -121,13 +123,20 @@ class MyMainWindow(Form):
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
             severity = dialog.comboBoxSeverity.currentText().lower()
-            tags = dialog.comboBoxTags.currentText()
+            tags = []
+            if dialog.checkBoxL10n.isChecked():
+                tags.append("l10n")
+            if dialog.checkBoxPatch.isChecked():
+                tags.append("patch")
+            if dialog.checkBoxSecurity.isChecked():
+                tags.append("security")
+            
             mua = dialog.comboBoxMUA.currentText().lower()
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
             to = "submit@bugs.debian.org"
             
-            prepareMail(mua, createMailtoString(to, subject, package, version, severity))
+            prepareMail(mua, createMailtoString(to, subject, package, version, severity, tags))
 
     
     def textBrowser_linkClicked(self,a0):
