@@ -80,10 +80,10 @@ class MyMainWindow(Form):
         self.currentBug = self.visibleBugs[a0]
         
         # Fetch the fulltext if not yet available.
-        if len(self.visibleBugs[a0].fulltext) == 0:
-            self.visibleBugs[a0].fulltext = DebianBTS.getFullText(self.visibleBugs[a0].nr)
-        
-        self.textBrowser.setText(self.visibleBugs[a0].fulltext)
+        if len(self.currentBug.fulltext) == 0:
+            self.currentBug.fulltext = DebianBTS.getFullText(self.currentBug.nr)
+
+        self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
         
     
     def pushButtonAdditionalInfo_clicked(self):

@@ -22,6 +22,8 @@ import urllib
 import re
 
 BTS_URL = "http://bugs.debian.org/"
+BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
+
 #BUG_RE = "<a href=\"bugreport.cgi\?bug=([0-9]*)\">"
 BUG_RE = "<a href=\"bugreport.cgi\?bug=[0-9]*\">(.*)</a>"
 
