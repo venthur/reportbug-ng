@@ -56,9 +56,9 @@ def createMailtoString(to, subject, package, version, severity=None, tags=[]):
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
-    s += getSystemInfo() + "\n "
-    s += getDebianReleaseInfo() + "\n "
-    s += getPackageInfo(package) + "\n "
+    s += getSystemInfo() + "\n"
+    s += getDebianReleaseInfo() + "\n"
+    s += getPackageInfo(package) + "\n"
             
     s = s.replace("\n", "%0D%0A")
     s = "\"" + s + "\""
@@ -69,17 +69,6 @@ def getSystemInfo():
     """Returns some hopefully usefull sysinfo"""
     
     s = "--- System information. ---\n"
-    
-    #list = ("dpkg --print-installation-architecture", 
-    #        "uname -srv",
-    #        "uname -mpio",
-    #        "apt-cache policy | grep Packages$")
-    #
-    #for cmd in list:
-    #    s += "%s:\n" % cmd
-    #    s += commands.getoutput("%s 2>/dev/null" % cmd)
-    #    s += "\n\n"
-    
     s += "Architecture: %s\n" % commands.getoutput("dpkg --print-installation-architecture 2>/dev/null")
     s += "Kernel:       %s\n" % commands.getoutput("uname -sr 2>/dev/null")
     
@@ -89,7 +78,7 @@ def getSystemInfo():
 def getPackageInfo(package):
     """Returns some Info about the package."""
     
-    width=20
+    width=25
     
     s = "--- Package information. ---\n"
     s += "Depends".ljust(width) + "(Version)".rjust(width) +" | " + "Installed\n"
@@ -99,6 +88,7 @@ def getPackageInfo(package):
     if not depends:
         return s
     
+    alternative = False
     for packagestring in depends:
         split = packagestring.split(" ", 1)
         if len(split) > 1:
@@ -107,7 +97,16 @@ def getPackageInfo(package):
             depname = split[0]
             depversion = ""
         
+        if depname.startswith("|"):
+            alternative = True
+            depname = depname.lstrip("|")
+            
         instversion = getInstalledPackageVersion(depname)
+        
+        if alternative:
+            depname = " OR "+depname
+            alternative = False
+        
         s += depname.ljust(width) +depversion.rjust(width)+" | "+ instversion + "\n"
     
     return s
@@ -129,9 +128,11 @@ def getDepends(package):
        ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
     try:
-        depends = commands.getoutput("dpkg --status %s 2>/dev/null | grep ^Depends:" % package).split(": ", 1)[1]
+        depends = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep ^Depends:" % package).split(": ", 1)[1]
     except:
         return None
+    
+    depends = depends.replace("| ", ", |")
     
     list = depends.split(", ")
     return list
@@ -189,4 +190,6 @@ def callBrowser(url):
 if __name__ == "__main__":
     print getSystemInfo()
     print getDebianReleaseInfo()
-    print getPackageInfo("gtk-qt-engine")
+    print getPackageInfo("icedove")
+    print getPackageInfo("wordpress")
+    

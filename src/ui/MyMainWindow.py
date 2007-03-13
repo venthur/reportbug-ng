@@ -22,6 +22,7 @@ from lib.Bugreport import Bugreport
 from lib import DebianBTS
 from lib.ReportbugNG import *
 
+import thread
 
 class MyMainWindow(Form):
     
@@ -36,6 +37,29 @@ class MyMainWindow(Form):
         # self.pushButtonNewBugreport.setEnabled(1)
     
     
+    def loadAllBugSummaries(self, package):
+        """Loads all bug summaries of a package. (Intended to run as thread)"""
+        
+        bugs = []
+        bugs = DebianBTS.getBugsByPackage(self.currentPackage)
+        
+        # Check if our package is still current.
+        if package != self.currentPackage:
+            return
+        
+        self.bugs = bugs
+        self.visibleBugs = self.bugs
+
+        self.listBox.clear()
+        for bug in self.visibleBugs:
+            self.listBox.insertItem(str(bug))
+        
+        if len(self.visibleBugs) == 0:
+            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage)
+        else:
+            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>")
+    
+    
     def lineEdit_returnPressed(self):
         """The user changed the text in the combobox and pressed enter."""
         
@@ -44,19 +68,8 @@ class MyMainWindow(Form):
         self.textBrowser.setText("<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
         self.pushButtonNewBugreport.setEnabled(1)
     
-        self.bugs = []
-        
-        self.bugs = DebianBTS.getBugsByPackage(self.currentPackage)
-        self.visibleBugs = self.bugs
-
-        self.listBox.clear()
-        for bug in self.visibleBugs:
-            self.listBox.insertItem(str(bug))
-	    
-        if len(self.visibleBugs) == 0:
-            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage)
-        else:
-            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>")
+        # Fetch the bugs in a thread
+        thread.start_new_thread(self.loadAllBugSummaries, (self.currentPackage,))
         
 
     def lineEdit_textChanged(self, a0):
@@ -70,21 +83,31 @@ class MyMainWindow(Form):
                 self.visibleBugs.append(bug)
                 self.listBox.insertItem(str(bug))        
 
+
+    def loadBugreport(self, bugnr):
+        """Loads the bugreport and writes the result to build in browser. (Intended to run in a thread)"""
+        
+        if len(self.currentBug.fulltext) == 0:
+            self.currentBug.fulltext = DebianBTS.getFullText(self.currentBug.nr)
+        
+        # While loading the bugreport the user switched to another bug, abort showing
+        # the report.
+        if bugnr != self.currentBug.nr:
+            return
+        
+        self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
+
         
     def listBox_highlighted(self,a0):
         """The user selected a Bug from the list."""
-        
-        self.listBox.update()
+
+        self.currentBug = self.visibleBugs[a0]
+        self.textBrowser.setText("<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
         self.pushButtonAdditionalInfo.setEnabled(1)
         
-        self.currentBug = self.visibleBugs[a0]
-        
-        # Fetch the fulltext if not yet available.
-        if len(self.currentBug.fulltext) == 0:
-            self.currentBug.fulltext = DebianBTS.getFullText(self.currentBug.nr)
+        # Fetch the fulltext in a thread
+        thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))
 
-        self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
-        
     
     def pushButtonAdditionalInfo_clicked(self):
         """The user wants to provide additional info for the current bug."""

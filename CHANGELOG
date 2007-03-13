@@ -1,3 +1,9 @@
+changes since 0.2007.03.11:
+ * Improved Package Information
+ * Use some threading to make UI snappier while downloading with urllib
+ * Made image-links clickable
+ * improved handling of sys.path
+
 changes since 0.2007.03.10:
  * Make patch-, l10n- and security-tags available
  * Provide some useful package information. 

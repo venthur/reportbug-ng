@@ -4,8 +4,7 @@ urgent:
  
 normal:
  - More package information? (Suggest, Recommends, Configs)
- - Improve built-in browser
- - Colorize the buglist (grave: red, ..., whishlist: ...)
+ - Improve built-in browser (eg images) - Colorize the buglist (grave: red, ..., whishlist: ...)
  - Write unittests
  - .desktop file for better Menu integration
  - Integrate Throbber
