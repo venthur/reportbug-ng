@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Reportbug-NG
+Comment=Report bugs to Debian's BTS
+Exec=reportbug-ng
+Icon=/usr/share/pixmaps/debian-logo.png
+Categories=Application;System
