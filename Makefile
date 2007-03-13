@@ -11,5 +11,8 @@ install:
 	mkdir -p $(DESTDIR)/usr/share/reportbug-ng/lib
 	cp -r src/lib/*.py $(DESTDIR)/usr/share/reportbug-ng/lib/
 
+	mkdir -p $(DESTDIR)/usr/share/applications
+	cp *.desktop $(DESTDIR)/usr/share/applications/
+
 clean:
 	$(MAKE) clean -C src

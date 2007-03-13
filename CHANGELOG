@@ -1,4 +1,5 @@
 changes since 0.2007.03.11:
+ * .desktop file for better Menu integration
  * Improved Package Information
  * Use some threading to make UI snappier while downloading with urllib
  * Made image-links clickable
