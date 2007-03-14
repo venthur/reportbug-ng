@@ -98,10 +98,12 @@ class HTMLStripper(HTMLParser):
     
     def handle_starttag(self, tag, attrs):
         if not tag in self.invalid_tags:       
-            self.result = self.result + '<' + tag
+            self.result += '<' + tag
             for k, v in attrs:
-                self.result = '%s %s="%s"' % (self.result, k, v)
-            self.result = self.result + '>'
+                self.result += ' %s="%s"' % (k, v)
+            self.result += '>'
+        else:
+            self.result += "<p>[ %s-tag removed by reportbug-ng ]</p>" % tag
             
     def handle_endtag(self, tag):
         if not tag in self.invalid_tags:

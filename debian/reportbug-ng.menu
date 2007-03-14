@@ -1,2 +1,2 @@
 ?package(reportbug-ng):needs="X11" section="Apps/System"\
-  title="reportbug-ng" command="/usr/bin/reportbug-ng"
+  title="Reportbug-NG" command="/usr/bin/reportbug-ng" icon="/usr/share/pixmaps/debian-logo.png"

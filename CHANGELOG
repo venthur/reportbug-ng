@@ -1,8 +1,6 @@
 changes since 0.2007.03.13:
  * Provide reportbug-ng.menu
  * Added HTMLStripper, stripping unwanted tags (img) to silence qtextbrowser warnings
- 
-
 
 changes since 0.2007.03.11:
  * .desktop file for better Menu integration
