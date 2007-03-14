@@ -20,6 +20,8 @@ from Bugreport import Bugreport
 
 import urllib
 import re
+from HTMLParser import HTMLParser
+
 
 BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
@@ -75,5 +77,32 @@ def getSummary(bugnr):
 def getFullText(bugnr):
     """Returns the full bugreport"""
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
-    return report.read()
-        
+
+    parser = HTMLStripper()
+    parser.feed(report.read())
+    parser.close()
+    return parser.result
+
+
+class HTMLStripper(HTMLParser):
+    """Strips all unwanted tags from given HTML/XML String"""
+    
+    invalid_tags = ('img')
+   
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.result = ""
+  
+    def handle_data(self, data):
+        self.result = self.result + data
+    
+    def handle_starttag(self, tag, attrs):
+        if not tag in self.invalid_tags:       
+            self.result = self.result + '<' + tag
+            for k, v in attrs:
+                self.result = '%s %s="%s"' % (self.result, k, v)
+            self.result = self.result + '>'
+            
+    def handle_endtag(self, tag):
+        if not tag in self.invalid_tags:
+            self.result = "%s</%s>" % (self.result, tag)
