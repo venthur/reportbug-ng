@@ -1,3 +1,11 @@
+reportbug-ng (0.2007.03.15) unstable; urgency=low
+
+  * Replaced TextList with a Table
+  * Now we also show severity and status of a bug in the overview
+  * Fixed a race condition in loadBugreport
+ 
+ -- Bastian Venthur <venthur@debian.org>  Thu, 15 Mar 2007 14:55:00 +0100
+
 reportbug-ng (0.2007.03.14) unstable; urgency=low
 
   * Provide Debian menu entry

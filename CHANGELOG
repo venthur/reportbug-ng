@@ -1,3 +1,8 @@
+changes since 0.2007.03.14:
+ * Replaced TextList with Table
+ * Now we also show severity and status of a bug in the overview
+ * Fixed a race condition in loadBugreport
+
 changes since 0.2007.03.13:
  * Provide reportbug-ng.menu
  * Added HTMLStripper, stripping unwanted tags (img) to silence qtextbrowser warnings

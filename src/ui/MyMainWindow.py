@@ -24,6 +24,7 @@ from lib.ReportbugNG import *
 
 import thread
 
+
 class MyMainWindow(Form):
     
     def __init__(self):
@@ -32,7 +33,10 @@ class MyMainWindow(Form):
         self.visibleBugs = []
         self.currentPackage = ""
         self.currentBug = Bugreport(0)
-      
+
+        self.table.setColumnStretchable(0, True)
+        self.splitter.setSizes([150,300])
+
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
     
@@ -50,9 +54,14 @@ class MyMainWindow(Form):
         self.bugs = bugs
         self.visibleBugs = self.bugs
 
-        self.listBox.clear()
+        self.table.setNumRows(len(self.visibleBugs))
+        row = 0
         for bug in self.visibleBugs:
-            self.listBox.insertItem(str(bug))
+            self.table.verticalHeader().setLabel(row,bug.nr)
+            self.table.setText(row,0, bug.summary)
+            self.table.setText(row,1, bug.status)
+            self.table.setText(row,2, bug.severity)
+            row += 1
         
         if len(self.visibleBugs) == 0:
             self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage)
@@ -65,8 +74,10 @@ class MyMainWindow(Form):
         
         self.currentPackage = unicode(self.lineEdit.text())
         self.lineEdit.setText("")
+        self.table.setNumRows(0)
         self.textBrowser.setText("<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
         self.pushButtonNewBugreport.setEnabled(1)
+        self.pushButtonAdditionalInfo.setEnabled(0)
     
         # Fetch the bugs in a thread
         thread.start_new_thread(self.loadAllBugSummaries, (self.currentPackage,))
@@ -76,19 +87,30 @@ class MyMainWindow(Form):
         """The filter text has changed."""
         
         self.visibleBugs = []
-        self.listBox.clear()
         
         for bug in self.bugs:
             if str(bug).lower().find(a0.lower()) != -1:
                 self.visibleBugs.append(bug)
-                self.listBox.insertItem(str(bug))        
+
+        self.table.setNumRows(len(self.visibleBugs))
+        row = 0
+        for bug in self.visibleBugs:
+            self.table.verticalHeader().setLabel(row,bug.nr)
+            self.table.setText(row,0, bug.summary)
+            self.table.setText(row,1, bug.status)
+            self.table.setText(row,2, bug.severity)
+            row += 1       
+
 
 
     def loadBugreport(self, bugnr):
         """Loads the bugreport and writes the result to build in browser. (Intended to run in a thread)"""
-        
-        if len(self.currentBug.fulltext) == 0:
-            self.currentBug.fulltext = DebianBTS.getFullText(self.currentBug.nr)
+
+        for bug in self.bugs:
+            if bug.nr == bugnr:
+                if len(bug.fulltext) == 0:
+                    bug.fulltext = DebianBTS.getFullText(bugnr)
+                break
         
         # While loading the bugreport the user switched to another bug, abort showing
         # the report.
@@ -97,17 +119,19 @@ class MyMainWindow(Form):
         
         self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
 
-        
-    def listBox_highlighted(self,a0):
-        """The user selected a Bug from the list."""
 
-        self.currentBug = self.visibleBugs[a0]
+    def table_selectionChanged(self):
+        """The user selected a Bug from the list."""
+        if self.table.currentRow() < 0 or self.table.currentRow() > len(self.visibleBugs)-1:
+            return
+        
+        self.currentBug = self.visibleBugs[self.table.currentRow()]
         self.textBrowser.setText("<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
         self.pushButtonAdditionalInfo.setEnabled(1)
         
         # Fetch the fulltext in a thread
         thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))
-
+        
     
     def pushButtonAdditionalInfo_clicked(self):
         """The user wants to provide additional info for the current bug."""

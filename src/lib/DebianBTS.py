@@ -38,25 +38,33 @@ def getBugsByPackage(package):
     report = urllib.urlopen(str(BTS_URL) + package.encode("ascii", "replace"))
 
     # Parse :/
+    bugs = []
+    currentStatus = ""
+    currentSeverity = ""
     pattern = re.compile(BUG_RE)
-    tmp = []
+    status_severity_re = re.compile("<h2.*?><a.*?></a>(.*) bugs -- (.*?) .*</h2>", re.IGNORECASE)
     for line in report:
+        match = status_severity_re.match(line)
+        if match:
+            currentStatus = match.groups()[0]
+            currentSeverity = match.groups()[1]
+        
+        
         match = pattern.findall(line)
         if match:
-            tmp.extend(match)
-    
-    bugs = []
-    for line in tmp:
-        nr = re.findall("#([0-9]*):\ .*", line)
-        summary = re.findall("#[0-9]*:\ (.*)", line)
+              for line in match:
+                  nr = re.findall("#([0-9]*):\ .*", line)
+                  summary = re.findall("#[0-9]*:\ (.*)", line)
 
-        bug = Bugreport(nr[0])
-        bug.summary = summary[0]
+                  bug = Bugreport(nr[0])
+                  bug.summary = summary[0]
         
-        # don't fetch the fulltext yet in order to improve execution speed
-        #bug.fulltext = self.getFullText(bugnr)
+                  bug.status = currentStatus
+                  bug.severity = currentSeverity
+                  # don't fetch the fulltext yet in order to improve execution speed
+                  #bug.fulltext = self.getFullText(bugnr)
         
-        bugs.append(bug)
+                  bugs.append(bug)
         
     return bugs
 

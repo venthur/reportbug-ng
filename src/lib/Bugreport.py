@@ -28,6 +28,6 @@ class Bugreport:
         self.fulltext = fulltext
 
     def __str__(self):
-        tmp = "#"+str(self.nr) +": "+ str(self.summary)
+        tmp = "#"+str(self.nr) +": "+ str(self.summary)+" --- "+self.status+", "+self.severity+""
         return tmp
     
