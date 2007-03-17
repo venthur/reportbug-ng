@@ -48,7 +48,7 @@ def createMailtoString(to, subject, package, version, severity=None, tags=[]):
         s += "Severity: %s\n" % severity
     
     if tags:
-        s += "Tags: "
+        s += "Tags:"
         for tag in tags:
             s += " %s" % tag
         s += "\n"
@@ -115,70 +115,57 @@ def getPackageInfo(package):
 def getInstalledPackageVersion(package):
     """Returns the version of package, if installed or empty string not installed"""
     
-    try:
-        version = commands.getoutput("dpkg --status %s 2>/dev/null | grep ^Version:" % package).split(": ", 1)[1]
-    except:
-        version = ""
-        
-    return version
+    out = commands.getoutput("dpkg --status %s 2>/dev/null" % package)
+    version = re.findall("^Version:\s(.*)$", out, re.MULTILINE)
+    
+    if version:
+        return version[0]
+    else:
+        return ""
 
 
 def getDepends(package):
     """Returns strings of all the packages the given package depends on. The format is like:
        ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
-    try:
-        depends = commands.getoutput("dpkg --print-avail %s 2>/dev/null | grep ^Depends:" % package).split(": ", 1)[1]
-    except:
-        return None
+    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+    depends = re.findall("^Depends:\s(.*)$", out, re.MULTILINE)
+    
+    if depends:
+        depends = depends[0]
+    else:
+        depends = ""
     
     depends = depends.replace("| ", ", |")
     
     list = depends.split(", ")
     return list
-    
 
-# Stolen from reportbug, might need improvements.
+
 def getDebianReleaseInfo():
     """Returns a string with Debian relevant info."""
     
-    DISTORDER = ['stable', 'testing', 'unstable', 'experimental']
-    debvers = debinfo = verfile = warn = ''
-    dists = []
+    debinfo = ''
+    mylist = []
     output = commands.getoutput('apt-cache policy 2>/dev/null')
     if output:
-        mre = re.compile('\s+(\d+)\s+.*$\s+release\s.*o=(Ubuntu|Debian),a=([^,]+),', re.MULTILINE)
-        found = {}
+        mre = re.compile('\s+(\d+)\s+.*$\s+release\s.*a=(.*?),.*$\s+origin\s(.*)$', re.MULTILINE)
         for match in mre.finditer(output):
-            pword, distname = match.group(1, 3)
-            if distname in DISTORDER:
-                pri, dist = int(pword), DISTORDER.index(distname)
-            else:
-                pri, dist = int(pword), len(DISTORDER)
-
-            found[(pri, dist, distname)] = True
-
-        if found:
-            dists = found.keys()
-            dists.sort()
-            dists.reverse()
-            dists = [(x[0], x[2]) for x in dists]
-            debvers = dists[0][1]
+            try:
+                mylist.index(match.groups())
+            except:
+                mylist.append(match.groups())
+    
+    mylist.sort(reverse=True)
 
     if os.path.exists('/etc/debian_version'):
-        verfile = file('/etc/debian_version').readline().strip()
+        debinfo += 'Debian Release: %s\n' % file('/etc/debian_version').readline().strip()
 
-    if verfile:
-        debinfo += 'Debian Release: '+verfile+'\n'
-    if debvers:
-        debinfo += '  APT prefers '+debvers+'\n'
-    if dists:
-        policystr = ', '.join([str(x) for x in dists])
-        debinfo += '  APT policy: %s\n' % policystr
-    if warn:
-        debinfo += warn
+    for i in mylist:
+        debinfo += "%+5s %-15s %s \n" % i
 
     return debinfo
+
 
 
 def callBrowser(url):

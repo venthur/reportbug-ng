@@ -1,3 +1,10 @@
+reportbug-ng (0.2007.03.17) unstable; urgency=low
+
+  * improved system information, apt-policy now shows all sources not just
+    the official ones
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 17 Mar 2007 13:03:22 +0100
+
 reportbug-ng (0.2007.03.15) unstable; urgency=low
 
   * Replaced TextList with a Table
