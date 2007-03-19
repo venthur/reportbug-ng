@@ -1,10 +1,10 @@
 reportbug-ng (0.2007.03.19) unstable; urgency=low
 
- * Added getSourceName, but don't use it for now since bugreports for source 
-   package reveal too many false positives (try "kate" and you'll get all bugs 
-   from kdebase)
- * Greatly improved speed while fetching version of installed packages a package 
-   depends on by just calling dpkg once with all packages as param
+  * Added getSourceName, but don't use it for now since bugreports for source 
+    package reveal too many false positives (try "kate" and you'll get all bugs 
+    from kdebase)
+  * Greatly improved speed while fetching version of installed packages a 
+    package depends on by just calling dpkg once with all packages as param
 
  -- Bastian Venthur <venthur@debian.org>  Mon, 19 Mar 2007 12:05:39 +0100
 
