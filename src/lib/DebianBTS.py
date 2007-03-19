@@ -17,6 +17,7 @@
 
 
 from Bugreport import Bugreport
+import ReportbugNG
 
 import urllib
 import re
@@ -33,8 +34,10 @@ BUG_SUMMARY_RE = "<br>(.*)</h1>"
 
 def getBugsByPackage(package):
     """Returns a list of bugs belonging to the package."""
- 
-        # Get all bugs
+
+    # This will get way too much unrelated bugs (a query for "kate" will return all bugs belonging to kdebase)
+    # srcpackage = ReportbugNG.getSourceName( package.encode("ascii", "replace") )
+    # report = urllib.urlopen(str(BTS_URL) +"src:"+ srcpackage)
     report = urllib.urlopen(str(BTS_URL) + package.encode("ascii", "replace"))
 
     # Parse :/

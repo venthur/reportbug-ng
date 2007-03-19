@@ -142,6 +142,18 @@ def getDepends(package):
     return list
 
 
+def getSourceName(package):
+    """Returns source package name for given package."""
+    
+    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+    source = re.findall("^Source:\s(.*)$", out, re.MULTILINE)
+    
+    if source:
+        return source[0]
+    else:
+        return package
+
+
 def getDebianReleaseInfo():
     """Returns a string with Debian relevant info."""
     
