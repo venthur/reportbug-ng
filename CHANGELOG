@@ -1,3 +1,9 @@
+changes since 0.2007.03.17:
+ * Added getSourceName, but don't use it for now since bugreports for source package
+   reveal too many false positives (try "kate" and you'll get all bugs from kdebase)
+ * Greatly improved speed while fetching version of installed packages a package depends on
+   Just call dpkg once with all packages as param
+ 
 changes since 0.2007.03.15:
  * Improved system information, apt-policy shows now all sources not just
    the official ones

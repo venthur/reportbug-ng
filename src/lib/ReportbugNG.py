@@ -78,15 +78,42 @@ def getSystemInfo():
 def getPackageInfo(package):
     """Returns some Info about the package."""
     
-    width=25
-    
+    pwidth = len("Depends ")
+    vwidth = len("(Version) ")
+
     s = "--- Package information. ---\n"
-    s += "Depends".ljust(width) + "(Version)".rjust(width) +" | " + "Installed\n"
-    s += "".zfill(2*width).replace("0", "=")+"-+-"+"".zfill(width).replace("0", "=") +"\n"
     
     depends = getDepends(package)
     if not depends:
-        return s
+        return "Package depends on nothing."
+    
+    plist = []
+    for packagestring in depends:
+        split = packagestring.split(" ", 1)
+        if len(split) > 1:
+            depname, depversion = split
+        else:
+            depname = split[0]
+            depversion = ""
+        
+        if depname.startswith("|"):
+            alternative = True
+            depname = depname.lstrip("|")
+        
+        if pwidth < len(depname):
+            pwidth = len(depname)
+        if vwidth < len(depversion):
+            vwidth = len(depversion)
+            
+        plist.append(depname)
+    
+    instversions = getInstalledPackageVersions(plist)
+    
+    pwidth += len(" OR ")
+    vwidth += 1
+
+    s += "Depends".ljust(pwidth) + "(Version)".rjust(vwidth) +" | " + "Installed\n"
+    s += "".zfill(pwidth).replace("0", "=")+"".zfill(vwidth).replace("0", "=")+"-+-"+"".zfill(vwidth).replace("0", "=") +"\n"
     
     alternative = False
     for packagestring in depends:
@@ -101,16 +128,14 @@ def getPackageInfo(package):
             alternative = True
             depname = depname.lstrip("|")
             
-        instversion = getInstalledPackageVersion(depname)
-        
         if alternative:
-            depname = " OR "+depname
             alternative = False
-        
-        s += depname.ljust(width) +depversion.rjust(width)+" | "+ instversion + "\n"
+            s += (" OR "+depname).ljust(pwidth) +depversion.rjust(vwidth)+" | "+ instversions[depname] + "\n"
+        else:
+            s += depname.ljust(pwidth) +depversion.rjust(vwidth)+" | "+ instversions[depname] + "\n"
     
     return s
-    
+
 
 def getInstalledPackageVersion(package):
     """Returns the version of package, if installed or empty string not installed"""
@@ -122,6 +147,34 @@ def getInstalledPackageVersion(package):
         return version[0]
     else:
         return ""
+
+
+def getInstalledPackageVersions(packages):
+    """Returns a dictionary package:version."""
+    
+    result = {}
+    
+    packagestring = ""
+    for i in packages:
+        packagestring += " "+i
+        result[i] = ""
+    
+    out = commands.getoutput("dpkg --status %s 2>/dev/null" % packagestring)
+    
+    packagere = re.compile("^Package:\s(.*)$", re.MULTILINE)
+    versionre = re.compile("^Version:\s(.*)$", re.MULTILINE)
+    
+    for line in out.splitlines():
+        pmatch = re.match(packagere, line)
+        vmatch = re.match(versionre, line)
+        
+        if pmatch:
+            package = pmatch.group(1)
+        if vmatch:
+            version = vmatch.group(1)
+            result[package] = version
+    
+    return result
 
 
 def getDepends(package):
@@ -187,8 +240,8 @@ def callBrowser(url):
     
     
 if __name__ == "__main__":
-    print getSystemInfo()
-    print getDebianReleaseInfo()
-    print getPackageInfo("icedove")
-    print getPackageInfo("wordpress")
-    
+    #print getSystemInfo()
+    #print getDebianReleaseInfo()
+    for package in "icedove", "wordpress", "foo":
+        print getPackageInfo(package)
+        

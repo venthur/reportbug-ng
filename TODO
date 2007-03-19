@@ -4,7 +4,6 @@ urgent:
  
 normal:
  - More package information? (Suggest, Recommends, Configs)
- * Gettig package info via dpkg is way too slow right now
  - Colorize the buglist (grave: red, ..., whishlist: ...)
  - Write unittests
  - Integrate Throbber
