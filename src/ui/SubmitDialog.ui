@@ -147,12 +147,12 @@
             </item>
             <item>
                 <property name="text">
-                    <string>sylpheed --compose</string>
+                    <string>Sylpheed</string>
                 </property>
             </item>
             <item>
                 <property name="text">
-                    <string>sylpheed-claws --compose</string>
+                    <string>Sylpheed-Claws</string>
                 </property>
             </item>
             <item>

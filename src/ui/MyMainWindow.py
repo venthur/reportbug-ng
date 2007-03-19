@@ -149,7 +149,11 @@ class MyMainWindow(Form):
         
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
-            mua = dialog.comboBoxMUA.currentText().lower()
+            mua = str(dialog.comboBoxMUA.currentText().lower())
+            if mua == 'mutt':
+                mua = 'x-terminal-emulator -e mutt'
+            if mua.startswith('sylpheed'):
+                mua += ' --compose'
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
             to = "%s@bugs.debian.org" % self.currentBug.nr
@@ -178,7 +182,11 @@ class MyMainWindow(Form):
             if dialog.checkBoxSecurity.isChecked():
                 tags.append("security")
             
-            mua = dialog.comboBoxMUA.currentText().lower()
+            mua = str(dialog.comboBoxMUA.currentText().lower())
+            if mua == 'mutt':
+                mua = 'x-terminal-emulator -e mutt'
+            if mua.startswith('sylpheed'):
+                mua += ' --compose'
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
             to = "submit@bugs.debian.org"

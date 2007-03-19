@@ -1,3 +1,11 @@
+reportbug-ng (0.2007.03.19.2) unstable; urgency=low
+
+  * Finally got mutt running (Closes: #415442)
+    Thanks Gregor Herrmann for sending the patch!
+  * Improved handling of sylpheed and sylpheed-claws
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 19 Mar 2007 17:55:50 +0100
+
 reportbug-ng (0.2007.03.19) unstable; urgency=low
 
   * Added getSourceName, but don't use it for now since bugreports for source 
