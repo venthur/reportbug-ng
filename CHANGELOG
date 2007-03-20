@@ -1,3 +1,9 @@
+changes since 0.2007.03.19.2:
+ * Added support for Opera, KMail, Pine and GoogleMail (Closes: #414449)
+ * We save the last used MUA now and preselect it on next start
+ * More generic mechanism to add new MUAs
+ * Better quoting of URLs (Closes: #415568)
+
 changes since 0.2007.03.19:
  * Finally got mutt running
  * Improved handling of sylpheed and sylpheed-claws

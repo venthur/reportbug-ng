@@ -24,12 +24,30 @@ from ui.MyMainWindow import MyMainWindow
 
 import qt
 import sys
+import ConfigParser, os
+
+CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
 
 if __name__ == "__main__":
+	# Read some config values
+    config = ConfigParser.ConfigParser()
+    config.read(CONFIGFILE)
+    
+    lastmua = ""
+    if config.has_option("gui", "lastMUA"):
+	    lastmua = config.get("gui", "lastMUA")
+
     app = qt.QApplication(sys.argv)
     app.connect(app, qt.SIGNAL("lastWindowClosed()"), app, qt.SLOT("quit()"))
     
-    mw = MyMainWindow()
+    mw = MyMainWindow(lastmua)
     app.setMainWidget(mw)
     mw.show()
     app.exec_loop()
+    
+    # Write back some config values
+    if not config.has_section("gui"):
+    	config.add_section("gui")
+    
+    config.set("gui", "lastMUA", mw.lastMUA)
+    config.write(open(CONFIGFILE, "w"))

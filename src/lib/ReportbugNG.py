@@ -20,27 +20,63 @@ import commands
 import re
 import os
 import webbrowser
+import urllib
 
 
 VERSION = "0.2007.03.10"
 
+RFC_MAILTO = '"mailto:%(to)s?subject=%(subject)s&body=%(body)s"'
+MUA_SYNTAX = {
+    "icedove" : 'icedove -compose ' + RFC_MAILTO,
+    "iceape" : 'iceape -compose ' + RFC_MAILTO,
+    "evolution" : 'evolution ' + RFC_MAILTO,
+    "kmail" : 'kmail --composer --subject "%(subject)s" --body "%(body)s" "%(to)s"',
+    "opera" : 'opera -newpage ' + RFC_MAILTO,
+    "sylpheed" : 'sylpheed --compose ' + RFC_MAILTO,
+    "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
+    "mutt" : 'mutt ' + RFC_MAILTO,
+    "pine" : 'pine -url ' + RFC_MAILTO,
+    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
+              }
 
-def prepareMail(mua, text):
-    """Tries to call MUA with the text (mailto-format)"""
+MUA_NO_URLQUOTE = ["kmail"]            # Don't do urllib.quote their strings
+MUA_NEEDS_TERMINAL = ["mutt", "pine"]  # 
+WEBMAIL = ["googlemail"]               # Call Browser
+
+SUPPORTED_MUA = MUA_SYNTAX.keys()
+SUPPORTED_MUA.sort()
+
+def prepareMail(mua, to, subject, body):
+    """Tries to call MUA with given parameters"""
     
-    command = str(mua + " " + text.encode("ascii", "replace"))
-    if not commands.getstatusoutput(command)[0] == 0:
+    mua = mua.lower()
+    
+    if mua not in MUA_NO_URLQUOTE:
+        subject = urllib.quote(subject.encode("ascii", "replace"))
+        body = urllib.quote(body.encode("ascii", "replace"))
+    else:
+        to = to.encode("ascii", "replace")
+        subject = subject.encode("ascii", "replace")
+        body = body.encode("ascii", "replace")
+    
+    
+    command = MUA_SYNTAX[mua] % {"to":to, "subject":subject, "body":body}
+    
+    if mua in MUA_NEEDS_TERMINAL:
+        command = "x-terminal-emulator -e "+command
+
+    if mua in WEBMAIL:
+        callBrowser(command)
+    elif not commands.getstatusoutput(command)[0] == 0:
         print "Reportbug was not able to start your mailclient."
         print "Please copy-paste the following text to your mailclient and send it to submit@bugs.debian.org"
-        print text
+        print body
     
     
-def createMailtoString(to, subject, package, version, severity=None, tags=[]):
-    """Creates a Mailto-Line containing the whole email plus some sysinfo."""
+def prepareBody(package, version, severity=None, tags=[]):
+    """Prepares the empty bugreport."""
     
-    s = "mailto:%s?subject=%s" % (to, subject)
-    
-    s += "&body=" 
+    s = ""
     s += "Package: %s\n" % package
     s += "Version: %s\n" % version 
 
@@ -59,10 +95,7 @@ def createMailtoString(to, subject, package, version, severity=None, tags=[]):
     s += getSystemInfo() + "\n"
     s += getDebianReleaseInfo() + "\n"
     s += getPackageInfo(package) + "\n"
-            
-    s = s.replace("\n", "%0D%0A")
-    s = "\"" + s + "\""
-    
+
     return s
 
 def getSystemInfo():
@@ -242,6 +275,12 @@ def callBrowser(url):
 if __name__ == "__main__":
     #print getSystemInfo()
     #print getDebianReleaseInfo()
-    for package in "icedove", "wordpress", "foo":
-        print getPackageInfo(package)
-        
+    #for package in "icedove", "wordpress", "foo":
+    #    print getPackageInfo(package)
+    
+    print "*** Supportet MUAs: ***"
+    print SUPPORTED_MUA
+    for mua in MUA_SYNTAX:
+        print mua.title().ljust(15), MUA_SYNTAX[mua] % {"to":"foo@example.com", "subject":"my subject", "body":"some body"}
+    
+    

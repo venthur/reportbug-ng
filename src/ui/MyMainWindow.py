@@ -27,7 +27,7 @@ import thread
 
 class MyMainWindow(Form):
     
-    def __init__(self):
+    def __init__(self, lastMUA=""):
         Form.__init__(self)
         self.bugs = []
         self.visibleBugs = []
@@ -37,6 +37,7 @@ class MyMainWindow(Form):
         self.table.setColumnStretchable(0, True)
         self.splitter.setSizes([150,300])
 
+        self.lastMUA = lastMUA
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
     
@@ -142,6 +143,10 @@ class MyMainWindow(Form):
         dialog = SubmitDialog()
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
+        for mua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.insertItem(mua.title())
+        if self.lastMUA in SUPPORTED_MUA:
+            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
         dialog.comboBoxSeverity.setEnabled(0)
         dialog.checkBoxSecurity.setEnabled(0)
         dialog.checkBoxPatch.setEnabled(0)
@@ -150,15 +155,13 @@ class MyMainWindow(Form):
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
             mua = str(dialog.comboBoxMUA.currentText().lower())
-            if mua == 'mutt':
-                mua = 'x-terminal-emulator -e mutt'
-            if mua.startswith('sylpheed'):
-                mua += ' --compose'
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
             to = "%s@bugs.debian.org" % self.currentBug.nr
+            body = prepareBody(package, version)
             
-            prepareMail(mua, createMailtoString(to, subject, package, version))
+            self.lastMUA = mua
+            prepareMail(mua, to, subject, body)
 
     
     def pushButtonNewBugreport_clicked(self):
@@ -170,6 +173,10 @@ class MyMainWindow(Form):
         dialog = SubmitDialog()
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
+        for mua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.insertItem(mua.title())
+        if self.lastMUA in SUPPORTED_MUA:
+            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
         
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
@@ -183,15 +190,13 @@ class MyMainWindow(Form):
                 tags.append("security")
             
             mua = str(dialog.comboBoxMUA.currentText().lower())
-            if mua == 'mutt':
-                mua = 'x-terminal-emulator -e mutt'
-            if mua.startswith('sylpheed'):
-                mua += ' --compose'
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
             to = "submit@bugs.debian.org"
+            body = prepareBody(package, version, severity, tags)
             
-            prepareMail(mua, createMailtoString(to, subject, package, version, severity, tags))
+            self.lastMUA = mua
+            prepareMail(mua, to, subject, body)
 
     
     def textBrowser_linkClicked(self,a0):

@@ -1,3 +1,15 @@
+reportbug-ng (0.2007.03.20) unstable; urgency=low
+
+  * The "WTF did he just say GoogleMail?"-release
+
+  * Added support for Opera, KMail, Pine and GoogleMail (Closes: #414449)
+  * We save the last used MUA now and preselect it on next start
+  * Internal stuff:
+	  - More generic mechanism to add new MUAs
+	  - Better quoting of URLs (Closes: #415568)
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 20 Mar 2007 14:28:34 +0100
+
 reportbug-ng (0.2007.03.19.2) unstable; urgency=low
 
   * Finally got mutt running (Closes: #415442)
