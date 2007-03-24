@@ -1,3 +1,6 @@
+changes since 0.2007.03.20:
+ * Added support for sylpheed-claws-gtk2 (Closes: #416002)
+
 changes since 0.2007.03.19.2:
  * Added support for Opera, KMail, Pine and GoogleMail (Closes: #414449)
  * We save the last used MUA now and preselect it on next start

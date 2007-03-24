@@ -34,6 +34,7 @@ MUA_SYNTAX = {
     "opera" : 'opera -newpage ' + RFC_MAILTO,
     "sylpheed" : 'sylpheed --compose ' + RFC_MAILTO,
     "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
+    "sylpheed-claws-gtk2" : 'sylpheed-claws-gtk2 --compose ' + RFC_MAILTO,
     "mutt" : 'mutt ' + RFC_MAILTO,
     "pine" : 'pine -url ' + RFC_MAILTO,
     "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'

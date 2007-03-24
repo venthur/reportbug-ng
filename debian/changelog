@@ -1,3 +1,9 @@
+reportbug-ng (0.2007.03.21) unstable; urgency=low
+
+  * Added support for sylpheed-claws-gtk2 (Closes: #416002)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 24 Mar 2007 17:21:48 +0100
+
 reportbug-ng (0.2007.03.20) unstable; urgency=low
 
   * The "WTF did he just say GoogleMail?"-release
