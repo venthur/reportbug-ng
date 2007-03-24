@@ -1,4 +1,4 @@
-reportbug-ng (0.2007.03.21) unstable; urgency=low
+reportbug-ng (0.2007.03.24) unstable; urgency=low
 
   * Added support for sylpheed-claws-gtk2 (Closes: #416002)
 
