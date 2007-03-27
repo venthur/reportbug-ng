@@ -1,3 +1,20 @@
+reportbug-ng (0.2007.03.27) unstable; urgency=low
+
+  * Usability improvements:
+    - added accelerators for every button and input field
+    - added Tooltips and WhatIsThis to several widgets
+    - Made usage hints permanent (Closes: #415479, #414488)
+ 
+  * Start browser in a new thread, since webbrowser.open blocks if it has
+    to spawn a new browser (Closes: #416299)
+ 
+  * Some legacy bugs:
+    - We're using .reportbug-ng since 0.2007.03.19.2 (Closes: #415443)
+    - We're providing reasonable package information and the "Package:"-line
+      since 0.2007.03.15 (Closes: #414496)
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 27 Mar 2007 14:23:16 +0200
+
 reportbug-ng (0.2007.03.24) unstable; urgency=low
 
   * Added support for sylpheed-claws-gtk2 (Closes: #416002)

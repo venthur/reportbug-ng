@@ -66,7 +66,10 @@
                         <cstring>pushButtonStart</cstring>
                     </property>
                     <property name="text">
-                        <string>OK</string>
+                        <string>&amp;OK</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+O</string>
                     </property>
                 </widget>
                 <widget class="QPushButton">
@@ -74,7 +77,10 @@
                         <cstring>pushButtonCancel</cstring>
                     </property>
                     <property name="text">
-                        <string>Cancel</string>
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
                     </property>
                 </widget>
             </hbox>
@@ -139,7 +145,10 @@
                 <cstring>textLabel6</cstring>
             </property>
             <property name="text">
-                <string>Mailclient:</string>
+                <string>&amp;Mailclient:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>comboBoxMUA</cstring>
             </property>
         </widget>
         <widget class="QComboBox" row="5" column="1">
@@ -184,6 +193,21 @@
             <property name="currentItem">
                 <number>4</number>
             </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;b&gt;critical&lt;/b&gt; makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. 
+&lt;br&gt;
+&lt;b&gt;grave&lt;/b&gt; makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. 
+&lt;br&gt;
+&lt;b&gt;serious&lt;/b&gt; is a severe violation of Debian policy (roughly, it violates a "must" or "required" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. 
+&lt;br&gt;
+&lt;b&gt;important&lt;/b&gt; a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. 
+&lt;br&gt;
+&lt;b&gt;normal&lt;/b&gt; the default value, applicable to most bugs. 
+&lt;br&gt;
+&lt;b&gt;minor&lt;/b&gt; a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. 
+&lt;br&gt;
+&lt;b&gt;wishlist&lt;/b&gt; for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</string>
+            </property>
         </widget>
         <widget class="QLineEdit" row="4" column="1">
             <property name="name">
@@ -205,6 +229,9 @@
                     <property name="text">
                         <string>patch</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used.</string>
+                    </property>
                 </widget>
                 <widget class="QCheckBox">
                     <property name="name">
@@ -212,6 +239,9 @@
                     </property>
                     <property name="text">
                         <string>l10n</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This bug is relevant to the localisation of the package.</string>
                     </property>
                 </widget>
                 <widget class="QCheckBox">
@@ -221,6 +251,9 @@
                     <property name="text">
                         <string>security</string>
                     </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</string>
+                    </property>
                 </widget>
             </hbox>
         </widget>
@@ -229,7 +262,10 @@
                 <cstring>textLabel2</cstring>
             </property>
             <property name="text">
-                <string>Tags:</string>
+                <string>&amp;Tags:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>checkBoxPatch</cstring>
             </property>
         </widget>
         <widget class="QLabel" row="5" column="0">
@@ -237,7 +273,10 @@
                 <cstring>textLabel1</cstring>
             </property>
             <property name="text">
-                <string>Severity:</string>
+                <string>S&amp;everity:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>comboBoxSeverity</cstring>
             </property>
         </widget>
         <widget class="QLabel" row="4" column="0">
@@ -245,7 +284,10 @@
                 <cstring>textLabel4</cstring>
             </property>
             <property name="text">
-                <string>Summary:</string>
+                <string>&amp;Summary:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEditSummary</cstring>
             </property>
         </widget>
         <widget class="QLineEdit" row="1" column="1">
@@ -272,7 +314,10 @@
                 <cstring>textLabel1_2</cstring>
             </property>
             <property name="text">
-                <string>Package:</string>
+                <string>&amp;Package:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEditPackage</cstring>
             </property>
         </widget>
         <widget class="QLabel" row="1" column="0">
@@ -280,7 +325,10 @@
                 <cstring>textLabel2_2</cstring>
             </property>
             <property name="text">
-                <string>Version:</string>
+                <string>&amp;Version:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEditVersion</cstring>
             </property>
         </widget>
     </grid>

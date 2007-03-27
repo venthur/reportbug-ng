@@ -24,6 +24,18 @@ from lib.ReportbugNG import *
 
 import thread
 
+REPORTBUG_NG_INSTRUCTIONS = """\
+<h2>Using Reportbug-NG</h2>
+<h3>Step 1: Finding Bugs</h3>
+<p>To find a bug just enter the name of the package and press Enter. Loading the list might take a few seconds.</p>
+<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>
+
+<h3>Step 2: Filtering Bugs</h3>
+<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive.</p>
+
+<h3>Step 3: Reporting Bugs</h3>
+<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
+"""
 
 class MyMainWindow(Form):
     
@@ -38,6 +50,8 @@ class MyMainWindow(Form):
         self.splitter.setSizes([150,300])
 
         self.lastMUA = lastMUA
+        
+        self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
     
@@ -65,9 +79,9 @@ class MyMainWindow(Form):
             row += 1
         
         if len(self.visibleBugs) == 0:
-            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage)
+            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
         else:
-            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>")
+            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
     
     
     def lineEdit_returnPressed(self):
@@ -201,7 +215,8 @@ class MyMainWindow(Form):
     
     def textBrowser_linkClicked(self,a0):
         """The user clicked a link in the Bugreport."""
-        
-        callBrowser(a0)
+  
+        url = unicode(a0)
+        callBrowser(url)
         # Hack to open link in external Browser: just reload the current bugreport
         self.textBrowser.setText(self.currentBug.fulltext)

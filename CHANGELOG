@@ -1,5 +1,17 @@
 changes since 0.2007.03.24:
-
+ * Usability improvements:
+   - added accelerators for every button and input field
+   - added Tooltips and WhatIsThis to several widgets
+   - Made usage hints permanent (Closes: #415479, #414488)
+ 
+ * Start browser in a new thread, since webbrowser.open blocks if it has
+   to spawn a new browser (Closes: #416299)
+ 
+ * Some legacy bugs:
+   - We're using .reportbug-ng since 0.2007.03.19.2 (Closes: #415443)
+   - We're providing reasonable package information and the "Package:"-line
+     since 0.2007.03.15 (Closes: #414496)
+ 
 changes since 0.2007.03.20:
  * Added support for sylpheed-claws-gtk2 (Closes: #416002)
 

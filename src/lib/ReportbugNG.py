@@ -21,6 +21,7 @@ import re
 import os
 import webbrowser
 import urllib
+import thread
 
 
 VERSION = "0.2007.03.24"
@@ -269,10 +270,10 @@ def getDebianReleaseInfo():
 
 def callBrowser(url):
     """Calls an external Browser to upen the URL."""
-    
-    webbrowser.open(url)
-    
-    
+
+    thread.start_new_thread(webbrowser.open, (url,))
+
+
 if __name__ == "__main__":
     #print getSystemInfo()
     #print getDebianReleaseInfo()
