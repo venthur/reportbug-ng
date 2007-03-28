@@ -1,3 +1,9 @@
+changes since 0.2007.03.27:
+ * Adjusted allignment of labels in SubmitWindow
+ * Colorized Bugs by severity (Closes: #416132)
+ * Improved performance of filtering by hiding/showing instead of deleting/inserting
+ * Improved Debian description
+ 
 changes since 0.2007.03.24:
  * Usability improvements:
    - added accelerators for every button and input field

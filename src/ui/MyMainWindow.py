@@ -22,7 +22,11 @@ from lib.Bugreport import Bugreport
 from lib import DebianBTS
 from lib.ReportbugNG import *
 
+from qttable import QTableItem
+from qt import Qt
+
 import thread
+
 
 REPORTBUG_NG_INSTRUCTIONS = """\
 <h2>Using Reportbug-NG</h2>
@@ -37,12 +41,36 @@ REPORTBUG_NG_INSTRUCTIONS = """\
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
 """
 
+
+class MyTableItem(QTableItem):
+    """Derived from QTableItem to pretty-paint different bugtypes"""
+
+    def __init__(self, table, editType, text, status, severity):
+        QTableItem.__init__(self, table, editType, text)
+        self.status = status.lower()
+        self.severity = severity.lower()
+
+    def paint(self, painter, colorGroup, rect, selected):
+        if self.severity in ("grave", "serious", "critical"):
+            colorGroup.setColor(colorGroup.Text, Qt.darkMagenta)
+        elif self.severity == "important":
+            colorGroup.setColor(colorGroup.Text, Qt.red)
+        elif self.severity == "minor":
+            colorGroup.setColor(colorGroup.Text, Qt.darkGreen)
+        elif self.severity == "wishlist":
+            colorGroup.setColor(colorGroup.Text, Qt.darkYellow)
+
+        if self.status == "resolved":
+            colorGroup.setColor(colorGroup.Text, Qt.gray)
+        
+        QTableItem.paint(self, painter, colorGroup, rect, selected)
+
+
 class MyMainWindow(Form):
     
     def __init__(self, lastMUA=""):
         Form.__init__(self)
         self.bugs = []
-        self.visibleBugs = []
         self.currentPackage = ""
         self.currentBug = Bugreport(0)
 
@@ -67,18 +95,20 @@ class MyMainWindow(Form):
             return
         
         self.bugs = bugs
-        self.visibleBugs = self.bugs
 
-        self.table.setNumRows(len(self.visibleBugs))
+        self.table.setNumRows(len(self.bugs))
         row = 0
-        for bug in self.visibleBugs:
+        for bug in self.bugs:
             self.table.verticalHeader().setLabel(row,bug.nr)
-            self.table.setText(row,0, bug.summary)
-            self.table.setText(row,1, bug.status)
-            self.table.setText(row,2, bug.severity)
+            #self.table.setText(row,0, bug.summary)
+            #self.table.setText(row,1, bug.status)
+            #self.table.setText(row,2, bug.severity)
+            self.table.setItem(row,0, MyTableItem(self.table, QTableItem.Never, bug.summary, bug.status, bug.severity))
+            self.table.setItem(row,1, MyTableItem(self.table, QTableItem.Never, bug.status, bug.status, bug.severity))
+            self.table.setItem(row,2, MyTableItem(self.table, QTableItem.Never, bug.severity, bug.status, bug.severity))
             row += 1
         
-        if len(self.visibleBugs) == 0:
+        if len(self.bugs) == 0:
             self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
         else:
             self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
@@ -101,21 +131,12 @@ class MyMainWindow(Form):
     def lineEdit_textChanged(self, a0):
         """The filter text has changed."""
         
-        self.visibleBugs = []
-        
-        for bug in self.bugs:
-            if str(bug).lower().find(a0.lower()) != -1:
-                self.visibleBugs.append(bug)
-
-        self.table.setNumRows(len(self.visibleBugs))
-        row = 0
-        for bug in self.visibleBugs:
-            self.table.verticalHeader().setLabel(row,bug.nr)
-            self.table.setText(row,0, bug.summary)
-            self.table.setText(row,1, bug.status)
-            self.table.setText(row,2, bug.severity)
-            row += 1       
-
+        filter = unicode(a0).lower()
+        for row in range(len(self.bugs)):
+            if str(self.bugs[row]).lower().find(filter) != -1:
+                self.table.showRow(row)
+            else:
+                self.table.hideRow(row)
 
 
     def loadBugreport(self, bugnr):
@@ -137,10 +158,10 @@ class MyMainWindow(Form):
 
     def table_selectionChanged(self):
         """The user selected a Bug from the list."""
-        if self.table.currentRow() < 0 or self.table.currentRow() > len(self.visibleBugs)-1:
+        if self.table.currentRow() < 0 or self.table.currentRow() > len(self.bugs)-1:
             return
         
-        self.currentBug = self.visibleBugs[self.table.currentRow()]
+        self.currentBug = self.bugs[self.table.currentRow()]
         self.textBrowser.setText("<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
         self.pushButtonAdditionalInfo.setEnabled(1)
         

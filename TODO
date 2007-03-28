@@ -4,14 +4,12 @@ urgent:
  
 normal:
  - More package information? (Suggest, Recommends, Configs)
- - Colorize the buglist (grave: red, ..., whishlist: ...)
  - Write unittests
  - Integrate Throbber
  - Improve packaging (Makefiles and sys.path-HACK in top level reportbug-ng)
  * provide own debian logo instead of using debonf's
  
 optional:
- - Should safe last chosen mailclient and make it default for next time.
  - Severity by definition?
 
 QT4:
