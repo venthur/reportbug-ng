@@ -1,3 +1,12 @@
+reportbug-ng (0.2007.03.28) unstable; urgency=low
+
+  * Adjusted alignment of labels in SubmitWindow
+  * Colorized Bugs by severity (Closes: #416132)
+  * Improved performance of filtering by hiding/showing instead of deleting/inserting
+  * Improved Debian description
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 28 Mar 2007 12:00:44 +0200
+
 reportbug-ng (0.2007.03.27) unstable; urgency=low
 
   * Usability improvements:
