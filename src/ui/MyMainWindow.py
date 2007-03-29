@@ -139,7 +139,6 @@ class MyMainWindow(Form):
                 self.table.showRow(row)
             else:
                 self.table.hideRow(row)           
-        print "just after hiding/showing everyting"
         
         self.table.viewport().setUpdatesEnabled(True)
         self.table.updateContents()
