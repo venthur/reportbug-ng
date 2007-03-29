@@ -131,12 +131,18 @@ class MyMainWindow(Form):
     def lineEdit_textChanged(self, a0):
         """The filter text has changed."""
         
+        self.table.viewport().setUpdatesEnabled(False)
+ 
         filter = unicode(a0).lower()
         for row in range(len(self.bugs)):
-            if str(self.bugs[row]).lower().find(filter) != -1:
+            if unicode(self.bugs[row]).lower().find(filter) != -1:
                 self.table.showRow(row)
             else:
-                self.table.hideRow(row)
+                self.table.hideRow(row)           
+        print "just after hiding/showing everyting"
+        
+        self.table.viewport().setUpdatesEnabled(True)
+        self.table.updateContents()
 
 
     def loadBugreport(self, bugnr):

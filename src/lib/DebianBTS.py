@@ -59,11 +59,11 @@ def getBugsByPackage(package):
                   nr = re.findall("#([0-9]*):\ .*", line)
                   summary = re.findall("#[0-9]*:\ (.*)", line)
 
-                  bug = Bugreport(nr[0])
-                  bug.summary = summary[0]
+                  bug = Bugreport(unicode(nr[0], "utf-8"))
+                  bug.summary = unicode(summary[0], "utf-8")
         
-                  bug.status = currentStatus
-                  bug.severity = currentSeverity
+                  bug.status = unicode(currentStatus, "utf-8")
+                  bug.severity = unicode(currentSeverity, "utf-8")
                   # don't fetch the fulltext yet in order to improve execution speed
                   #bug.fulltext = self.getFullText(bugnr)
         
@@ -90,7 +90,7 @@ def getFullText(bugnr):
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
 
     parser = HTMLStripper()
-    parser.feed(report.read())
+    parser.feed(unicode(report.read(), "utf-8"))
     parser.close()
     return parser.result
 
