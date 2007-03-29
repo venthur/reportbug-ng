@@ -117,6 +117,7 @@ class MyMainWindow(Form):
     def lineEdit_returnPressed(self):
         """The user changed the text in the combobox and pressed enter."""
         
+        self.bugs = []
         self.currentPackage = unicode(self.lineEdit.text())
         self.lineEdit.setText("")
         self.table.setNumRows(0)
