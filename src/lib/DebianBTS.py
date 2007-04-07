@@ -22,6 +22,7 @@ import ReportbugNG
 import urllib
 import re
 from HTMLParser import HTMLParser
+import htmlentitydefs
 
 
 BTS_URL = "http://bugs.debian.org/"
@@ -39,7 +40,7 @@ def getBugsByPackage(package):
     # srcpackage = ReportbugNG.getSourceName( package.encode("ascii", "replace") )
     # report = urllib.urlopen(str(BTS_URL) +"src:"+ srcpackage)
     report = urllib.urlopen(str(BTS_URL) + package.encode("ascii", "replace"))
-
+    
     # Parse :/
     bugs = []
     currentStatus = ""
@@ -59,11 +60,11 @@ def getBugsByPackage(package):
                   nr = re.findall("#([0-9]*):\ .*", line)
                   summary = re.findall("#[0-9]*:\ (.*)", line)
 
-                  bug = Bugreport(unicode(nr[0], "utf-8"))
-                  bug.summary = unicode(summary[0], "utf-8")
+                  bug = Bugreport(htmlUnescape(nr[0]))
+                  bug.summary = htmlUnescape(summary[0])
         
-                  bug.status = unicode(currentStatus, "utf-8")
-                  bug.severity = unicode(currentSeverity, "utf-8")
+                  bug.status = htmlUnescape(currentStatus)
+                  bug.severity = htmlUnescape(currentSeverity)
                   # don't fetch the fulltext yet in order to improve execution speed
                   #bug.fulltext = self.getFullText(bugnr)
         
@@ -105,7 +106,10 @@ class HTMLStripper(HTMLParser):
         self.result = ""
   
     def handle_data(self, data):
-        self.result = self.result + data
+        self.result += data
+
+    def handle_entityref(self, name):
+        self.result += "&"+name+";"
     
     def handle_starttag(self, tag, attrs):
         if not tag in self.invalid_tags:       
@@ -119,3 +123,9 @@ class HTMLStripper(HTMLParser):
     def handle_endtag(self, tag):
         if not tag in self.invalid_tags:
             self.result = "%s</%s>" % (self.result, tag)
+
+
+htmlquotesre = re.compile('&(' + '|'.join(htmlentitydefs.name2codepoint.keys()) + ');')
+def htmlUnescape(s):
+    """Unescapes HTML-quotes and returns unicode"""
+    return re.sub(htmlquotesre, lambda m: unichr(htmlentitydefs.name2codepoint[m.group(1)]), s).decode("utf-8")

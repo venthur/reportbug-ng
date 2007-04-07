@@ -1,3 +1,11 @@
+reportbug-ng (0.2007.04.07) unstable; urgency=low
+
+  * Dropped support for opera since it does not support newlines in 
+    MAILTO URLs (Closes: #418035)
+  * Correctly handle HTML quotes (Closes: #415575)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 07 Apr 2007 11:17:57 +0200
+
 reportbug-ng (0.2007.03.29) unstable; urgency=low
 
   * Fixed some issues where I did not convert strings to unicode, before using

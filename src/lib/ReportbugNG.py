@@ -32,7 +32,7 @@ MUA_SYNTAX = {
     "iceape" : 'iceape -compose ' + RFC_MAILTO,
     "evolution" : 'evolution ' + RFC_MAILTO,
     "kmail" : 'kmail --composer --subject "%(subject)s" --body "%(body)s" "%(to)s"',
-    "opera" : 'opera -newpage ' + RFC_MAILTO,
+#    "opera" : 'opera -newpage ' + RFC_MAILTO,
     "sylpheed" : 'sylpheed --compose ' + RFC_MAILTO,
     "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
     "sylpheed-claws-gtk2" : 'sylpheed-claws-gtk2 --compose ' + RFC_MAILTO,

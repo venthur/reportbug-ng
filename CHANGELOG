@@ -1,4 +1,9 @@
 changes since 0.2007.03.28:
+ * Dropped support for opera since it does not support newlines in 
+   MAILTO URLs (Closes: #418035)
+ * Correctly handle HTML quotes (Closes: #415575)
+
+changes since 0.2007.03.28:
  * Fixed some issues where I did not convert strings to unicode, before using
    them internally (Closes: #416598 #416505)
  * Fixed possible race
