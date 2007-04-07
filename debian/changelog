@@ -1,3 +1,10 @@
+reportbug-ng (0.2007.04.07.2) unstable; urgency=low
+
+  * Don't send Version-Header when no version is given, since it 
+    confuses our BTS (Closes: #417861)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 07 Apr 2007 15:29:30 +0200
+
 reportbug-ng (0.2007.04.07) unstable; urgency=low
 
   * Dropped support for opera since it does not support newlines in 
