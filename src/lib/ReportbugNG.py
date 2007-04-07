@@ -75,12 +75,14 @@ def prepareMail(mua, to, subject, body):
         print body
     
     
-def prepareBody(package, version, severity=None, tags=[]):
+def prepareBody(package, version=None, severity=None, tags=[]):
     """Prepares the empty bugreport."""
     
     s = ""
     s += "Package: %s\n" % package
-    s += "Version: %s\n" % version 
+
+    if version:
+        s += "Version: %s\n" % version 
 
     if severity:
         s += "Severity: %s\n" % severity
