@@ -22,6 +22,7 @@ sys.path = sys.path + [os.curdir, '/usr/share/reportbug-ng']
 
 from ui.MyMainWindow import MyMainWindow
 
+import signal
 import qt
 import sys
 import ConfigParser, os
@@ -43,6 +44,8 @@ if __name__ == "__main__":
     mw = MyMainWindow(lastmua)
     app.setMainWidget(mw)
     mw.show()
+
+    signal.signal(signal.SIGINT, signal.SIG_DFL) 
     app.exec_loop()
     
     # Write back some config values

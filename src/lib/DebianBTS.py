@@ -128,4 +128,5 @@ class HTMLStripper(HTMLParser):
 htmlquotesre = re.compile('&(' + '|'.join(htmlentitydefs.name2codepoint.keys()) + ');')
 def htmlUnescape(s):
     """Unescapes HTML-quotes and returns unicode"""
-    return re.sub(htmlquotesre, lambda m: unichr(htmlentitydefs.name2codepoint[m.group(1)]), s).decode("utf-8")
+    return unicode(re.sub(htmlquotesre, lambda m: chr(htmlentitydefs.name2codepoint[m.group(1)]), s), "utf-8")
+    

@@ -26,9 +26,10 @@ from qttable import QTableItem
 from qt import Qt
 
 import thread
+import sys
 
 
-REPORTBUG_NG_INSTRUCTIONS = """\
+REPORTBUG_NG_INSTRUCTIONS = u"""\
 <h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
 <p>To find a bug just enter the name of the package and press Enter. Loading the list might take a few seconds.</p>
@@ -82,6 +83,11 @@ class MyMainWindow(Form):
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
+        
+        if len(sys.argv) > 1:
+            self.lineEdit.setText(unicode(sys.argv[1], "utf-8"))
+            self.lineEdit_returnPressed()
+        
     
     
     def loadAllBugSummaries(self, package):
@@ -109,9 +115,9 @@ class MyMainWindow(Form):
             row += 1
         
         if len(self.bugs) == 0:
-            self.textBrowser.setText("<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
+            self.textBrowser.setText(u"<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
         else:
-            self.textBrowser.setText("<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
+            self.textBrowser.setText(u"<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
     
     
     def lineEdit_returnPressed(self):
@@ -121,7 +127,7 @@ class MyMainWindow(Form):
         self.currentPackage = unicode(self.lineEdit.text())
         self.lineEdit.setText("")
         self.table.setNumRows(0)
-        self.textBrowser.setText("<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
+        self.textBrowser.setText(u"<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
         self.pushButtonNewBugreport.setEnabled(1)
         self.pushButtonAdditionalInfo.setEnabled(0)
     
@@ -168,7 +174,7 @@ class MyMainWindow(Form):
             return
         
         self.currentBug = self.bugs[self.table.currentRow()]
-        self.textBrowser.setText("<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
+        self.textBrowser.setText(u"<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
         self.pushButtonAdditionalInfo.setEnabled(1)
         
         # Fetch the fulltext in a thread

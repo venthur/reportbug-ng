@@ -3,6 +3,11 @@ reportbug-ng (0.2007.04.07) unstable; urgency=low
   * Dropped support for opera since it does not support newlines in 
     MAILTO URLs (Closes: #418035)
   * Correctly handle HTML quotes (Closes: #415575)
+  * RNG is now killable by SIGINT (Closes: #414582)
+  * Added support for command line option:
+      reportbug-ng foobar
+    will start reportbug-ng and search for bugs of package foobar
+  * Some more unicode improvements
 
  -- Bastian Venthur <venthur@debian.org>  Sat, 07 Apr 2007 11:17:57 +0200
 
