@@ -1,3 +1,6 @@
+changes since 0.2007.04.07:
+ * Added support for Mutt-NG
+
 changes since 0.2007.03.28:
  * Don't send Version-Header when no version is given, since it 
    confuses our BTS (Closes: #417861)

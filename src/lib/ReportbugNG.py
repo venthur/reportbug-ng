@@ -37,13 +37,16 @@ MUA_SYNTAX = {
     "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
     "sylpheed-claws-gtk2" : 'sylpheed-claws-gtk2 --compose ' + RFC_MAILTO,
     "mutt" : 'mutt ' + RFC_MAILTO,
+    "mutt-ng" : 'muttng ' + RFC_MAILTO,
     "pine" : 'pine -url ' + RFC_MAILTO,
     "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
               }
-
-MUA_NO_URLQUOTE = ["kmail"]            # Don't do urllib.quote their strings
-MUA_NEEDS_TERMINAL = ["mutt", "pine"]  # 
-WEBMAIL = ["googlemail"]               # Call Browser
+# Don't urllib.quote() their strings
+MUA_NO_URLQUOTE = ["kmail"]            
+# Who needs a terminal?
+MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
+# Who needs a browser?
+WEBMAIL = ["googlemail"]
 
 SUPPORTED_MUA = MUA_SYNTAX.keys()
 SUPPORTED_MUA.sort()

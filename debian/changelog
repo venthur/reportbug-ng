@@ -1,3 +1,9 @@
+reportbug-ng (0.2007.04.13) unstable; urgency=low
+
+  * Added support for Mutt-NG
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 13 Apr 2007 13:42:23 +0200
+
 reportbug-ng (0.2007.04.07.2) unstable; urgency=low
 
   * Don't send Version-Header when no version is given, since it 
