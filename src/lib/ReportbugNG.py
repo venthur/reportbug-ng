@@ -24,7 +24,7 @@ import urllib
 import thread
 
 
-VERSION = "0.2007.03.24"
+VERSION = "0.2007.04.16"
 
 RFC_MAILTO = '"mailto:%(to)s?subject=%(subject)s&body=%(body)s"'
 MUA_SYNTAX = {

@@ -26,11 +26,32 @@ import signal
 import qt
 import sys
 import ConfigParser, os
+from optparse import OptionParser
+
+import lib.ReportbugNG
+
 
 CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
 
 if __name__ == "__main__":
-	# Read some config values
+    # Get Options
+    description = "Report a bug in Debian's BTS."
+    usage = "%prog [Package] [Option]"
+    version = "%prog " + lib.ReportbugNG.VERSION + """
+
+Copyright (C) 2007 Bastian Venthur <venthur at debian org>
+
+Homepage: http://reportbug-ng.alioth.debian.org
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+"""
+    parser = OptionParser(usage=usage, version=version, description=description)
+    (options, args) = parser.parse_args()
+
+    # Read some config values
     config = ConfigParser.ConfigParser()
     config.read(CONFIGFILE)
     

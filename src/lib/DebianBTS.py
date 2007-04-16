@@ -110,6 +110,9 @@ class HTMLStripper(HTMLParser):
 
     def handle_entityref(self, name):
         self.result += "&"+name+";"
+
+    def handle_charref(self, name):
+        self.result += "&#"+name+";"
     
     def handle_starttag(self, tag, attrs):
         if not tag in self.invalid_tags:       

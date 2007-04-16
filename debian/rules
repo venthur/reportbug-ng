@@ -57,6 +57,9 @@ install: build
 
 	# Add here commands to install the package into debian/reportbug-ng.
 	$(MAKE) DESTDIR=$(CURDIR)/debian/reportbug-ng install
+	ln -s $(CURDIR)/debian/reportbug-ng/usr/bin/reportbug-ng $(CURDIR)/debian/reportbug-ng/usr/bin/rng
+	ln -s $(CURDIR)/debian/reportbug-ng/usr/share/doc/reportbug-ng.1 $(CURDIR)/debian/reportbug-ng/usr/share/doc/rng.1
+	
 
 
 # Build architecture-independent files here.

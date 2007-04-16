@@ -1,3 +1,15 @@
+reportbug-ng (0.2007.04.16) unstable; urgency=low
+
+  * Added HTMLStripper.handle_charref() to fix a small HTML rendering 
+    issue
+  * Added shortcut "rng" linking to "reportbug-ng"
+  * Added support for python's ConfigParser and provide --help and 
+    --version options
+  * Improved Manpage
+  * Removed redundant CHANGELOG
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 16 Apr 2007 11:31:34 +0200
+
 reportbug-ng (0.2007.04.13) unstable; urgency=low
 
   * Added support for Mutt-NG

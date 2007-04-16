@@ -1,16 +1,23 @@
-.TH reportbug-ng 1
+.TH REPORTBUG-NG "1" "April 2007" "reportbug-ng" "User Commands"
 .SH NAME
-reportbug-ng \- Reports a bug to Debian's BTS.
+reportbug-ng \- An easy to use alternative to reportbug.
 .SH SYNOPSIS
-.B reportbug-ng [package]
+reportbug\-ng [Package] [Option]
 .SH DESCRIPTION
-.B reportbug-ng
-is primarily designed to report bugs in the Debian distribution; by
-default, it creates an email to the Debian bug tracking system at
-.I submit@bugs.debian.org
-with information about the bug you've found.
-.SH OPTIONS
-Providing the package-parameter is equivalent to starting reportbug-ng,
-entering something in the searchbar and pressing enter.
-.SH AUTHOR
-Bastian Venthur <venthur at debian org>.
+Report a bug in Debian's BTS.
+.SS "options:"
+.TP
+\fB\-\-version\fR
+show program's version number and exit
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+show this help message and exit
+.SH HOMEPAGE
+http://reportbug\-ng.alioth.debian.org
+.SH COPYRIGHT
+Copyright (C) 2007 Bastian Venthur <venthur at debian org>
+.PP
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
