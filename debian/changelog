@@ -1,3 +1,10 @@
+reportbug-ng (0.2007.04.20) unstable; urgency=low
+
+  * Switched from SVN to BZR, added XS-Vcs-bzr line to debian/crontrol to
+    reflect that.
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 20 Apr 2007 18:06:19 +0200
+
 reportbug-ng (0.2007.04.16) unstable; urgency=low
 
   * Added HTMLStripper.handle_charref() to fix a small HTML rendering 
