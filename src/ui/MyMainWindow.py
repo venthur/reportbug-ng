@@ -72,8 +72,11 @@ class MyMainWindow(Form):
     def __init__(self, lastMUA=""):
         Form.__init__(self)
         self.bugs = []
-        self.currentPackage = ""
-        self.currentBug = Bugreport(0)
+        self.stateChanged(None, None)
+
+        # The ID of the latest Thread which queried the BTS
+        self.currentQuery = 0
+        self.queryLock = thread.allocate_lock()
 
         self.table.setColumnStretchable(0, True)
         self.splitter.setSizes([150,300])
@@ -84,21 +87,45 @@ class MyMainWindow(Form):
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
         
+        
         if len(sys.argv) > 1:
             self.lineEdit.setText(unicode(sys.argv[1], "utf-8"))
             self.lineEdit_returnPressed()
+    
+    def stateChanged(self, package, bug):
+        self.packageStateChanged(package)
+        self.bugStateChanged(bug)
+    
+    
+    def bugStateChanged(self, bug):
+        if bug:
+            self.currentBug = bug
+            self.pushButtonAdditionalInfo.setEnabled(1)
+        else:
+            self.currentBug = Bugreport(0)
+            self.pushButtonAdditionalInfo.setEnabled(0)
+
+        
+    def packageStateChanged(self, package):
+        if package:
+            self.currentPackage = package
+            self.pushButtonNewBugreport.setEnabled(1)
+        else:
+            self.currentPackage = ""
+            self.pushButtonNewBugreport.setEnabled(0)
         
     
-    
-    def loadAllBugSummaries(self, package):
+    def loadAllBugSummaries(self, query):
         """Loads all bug summaries of a package. (Intended to run as thread)"""
         
         bugs = []
-        bugs = DebianBTS.getBugsByPackage(self.currentPackage)
+        bugs = DebianBTS.getBugsByQuery(query)
         
-        # Check if our package is still current.
-        if package != self.currentPackage:
+        # Check if we are still the latest query
+        if self.currentQuery != thread.get_ident():
             return
+        
+        self.queryLock.acquire()
         
         self.bugs = bugs
 
@@ -119,20 +146,58 @@ class MyMainWindow(Form):
         else:
             self.textBrowser.setText(u"<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
     
+        self.queryLock.release()
+
     
     def lineEdit_returnPressed(self):
         """The user changed the text in the combobox and pressed enter."""
+
+        # The following Queries are supported:
+        #     Bugnumber
+        #     Packagename
+        #     maintainer@foo.bar
+        #     src:Packagename
+        #     from:submitter@foo.bar
+        #     severity:foo
+        #     tag:bar
         
         self.bugs = []
-        self.currentPackage = unicode(self.lineEdit.text())
+        s = unicode(self.lineEdit.text())
+        if (s.startswith('src:')):
+            what = "of source package"
+            s2 = s.split(":")[1]
+            self.stateChanged(s, None)
+        elif (s.startswith('from:')):
+            what = "from submitter"
+            s2 = s.split(":")[1]
+            self.stateChanged(None, None)
+        elif (s.startswith('severity:')):
+            what = "of severity"
+            s2 = s.split(":")[1]
+            self.stateChanged(None, None)
+        elif (s.startswith('tag:')):
+            what = "with tag"
+            s2 = s.split(":")[1]
+            self.stateChanged(None, None)
+        elif (s.find("@") != -1):
+            what = "assigned to"
+            s2 = s
+            self.stateChanged(None, None)
+        elif (re.match("^[0-9]*$", s)):
+            what = "with bug number"
+            s2 = s
+            self.stateChanged(None, s)
+        else:
+            what = "for package"
+            s2 = s
+            self.stateChanged(s, None)
+
         self.lineEdit.setText("")
         self.table.setNumRows(0)
-        self.textBrowser.setText(u"<h2>Fetching bugreports for package %s, please wait.</h2>" % self.currentPackage)
-        self.pushButtonNewBugreport.setEnabled(1)
-        self.pushButtonAdditionalInfo.setEnabled(0)
+        self.textBrowser.setText(u"<h2>Fetching bugreports %s %s, please wait.</h2>" % (what, s2))
     
         # Fetch the bugs in a thread
-        thread.start_new_thread(self.loadAllBugSummaries, (self.currentPackage,))
+        self.currentQuery = thread.start_new_thread(self.loadAllBugSummaries, (s,))
         
 
     def lineEdit_textChanged(self, a0):
@@ -175,7 +240,7 @@ class MyMainWindow(Form):
         
         self.currentBug = self.bugs[self.table.currentRow()]
         self.textBrowser.setText(u"<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
-        self.pushButtonAdditionalInfo.setEnabled(1)
+        self.bugStateChanged(self.currentBug)
         
         # Fetch the fulltext in a thread
         thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))
@@ -184,7 +249,7 @@ class MyMainWindow(Form):
     def pushButtonAdditionalInfo_clicked(self):
         """The user wants to provide additional info for the current bug."""
     
-        package = self.currentPackage
+        package = self.currentBug.package
         version = getInstalledPackageVersion(package)
         
         dialog = SubmitDialog()

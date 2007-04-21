@@ -19,13 +19,14 @@
 class Bugreport:
     """Represents a Bugreport from Debian's BTS."""
     
-    def __init__(self, nr, summary="", submitter="", status="", severity="", fulltext=""):
+    def __init__(self, nr, summary="", submitter="", status="", severity="", fulltext="", package=""):
         self.nr = nr
         self.summary = summary
         self.submitter = submitter
         self.status = status
         self.severity = severity
         self.fulltext = fulltext
+        self.package = package
 
     def __str__(self):
         return "#"+self.nr +": "+ self.summary+" --- "+self.status+", "+self.severity+""

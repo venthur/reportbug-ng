@@ -28,55 +28,53 @@ import htmlentitydefs
 BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
 
-#BUG_RE = "<a href=\"bugreport.cgi\?bug=([0-9]*)\">"
-BUG_RE = "<a href=\"bugreport.cgi\?bug=[0-9]*\">(.*)</a>"
+cluster_re = re.compile("(<H2.*?><a.*?></a>.* bugs -- .*? .*</H2>)")
+status_severity_re = re.compile("<H2.*?><a.*?></a>(.*) bugs -- (.*?) .*</H2>")
+number_summary_package_re = re.compile("""^<li><a href=\"bugreport.cgi\?bug=[0-9]*\">#([0-9]*): (.*)</a>$
+^<br>Package: <a class=\"submitter\" href=\"pkgreport.cgi\?pkg=.*\">(.*)</a> \(.*\);$""", re.MULTILINE)
 
-BUG_SUMMARY_RE = "<br>(.*)</h1>"
 
-def getBugsByPackage(package):
-    """Returns a list of bugs belonging to the package."""
+def getBugsByQuery(query):
+    """Returns a list of bugs belonging to the query."""
 
-    # This will get way too much unrelated bugs (a query for "kate" will return all bugs belonging to kdebase)
-    # srcpackage = ReportbugNG.getSourceName( package.encode("ascii", "replace") )
-    # report = urllib.urlopen(str(BTS_URL) +"src:"+ srcpackage)
-    report = urllib.urlopen(str(BTS_URL) + package.encode("ascii", "replace"))
+    # First check if the query is just for a single bug, which needs special care:
+    if re.match("^[0-9]*$", query):
+        return [getSingleBug(query)]
+
+    report = urllib.urlopen(str(BTS_URL) + query.encode("ascii", "replace"))
+    s = report.read()
     
     # Parse :/
     bugs = []
-    currentStatus = ""
-    currentSeverity = ""
-    pattern = re.compile(BUG_RE)
-    status_severity_re = re.compile("<h2.*?><a.*?></a>(.*) bugs -- (.*?) .*</h2>", re.IGNORECASE)
-    for line in report:
-        match = status_severity_re.match(line)
-        if match:
-            currentStatus = match.groups()[0]
-            currentSeverity = match.groups()[1]
-        
-        
-        match = pattern.findall(line)
-        if match:
-              for line in match:
-                  nr = re.findall("#([0-9]*):\ .*", line)
-                  summary = re.findall("#[0-9]*:\ (.*)", line)
+     
+    cluster = cluster_re.split(s)
 
-                  bug = Bugreport(htmlUnescape(nr[0]))
-                  bug.summary = htmlUnescape(summary[0])
+    last = None
+    for i in cluster:
+        match = number_summary_package_re.findall(i)
+        if match:
+            (status, severity) = status_severity_re.findall(last)[0]
+            status = htmlUnescape(status)
+            severity = htmlUnescape(severity)
+                 
+            for j in match:
+                bug = Bugreport(htmlUnescape(j[0]))
+                bug.summary = htmlUnescape(j[1])
+                bug.package = htmlUnescape(j[2])
         
-                  bug.status = htmlUnescape(currentStatus)
-                  bug.severity = htmlUnescape(currentSeverity)
-                  # don't fetch the fulltext yet in order to improve execution speed
-                  #bug.fulltext = self.getFullText(bugnr)
+                (bug.status, bug.severity) = status, severity
         
-                  bugs.append(bug)
-        
+                bugs.append(bug)
+        last = i
     return bugs
 
 
-def getSummary(bugnr):
-    """Returns the summary of the bugreport"""
-    
+def getSingleBug(bugnr):
+    """Returns a single bug"""
+    # FIXME
+    return Bugreport(bugnr)
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
+    s = report.read()
     pattern = re.compile(BUG_SUMMARY_RE, re.IGNORECASE)
     tmp = []
     for line in report:
@@ -85,7 +83,8 @@ def getSummary(bugnr):
             return match[0]
 
     return None
-    
+
+
 def getFullText(bugnr):
     """Returns the full bugreport"""
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
