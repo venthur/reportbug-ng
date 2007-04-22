@@ -35,8 +35,10 @@ CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
 
 if __name__ == "__main__":
     # Get Options
-    description = "Report a bug in Debian's BTS."
-    usage = "%prog [Package] [Option]"
+    description = """\
+Report a bug in Debian's BTS. The optional paremter QUERY behaves exactly like the query inside the program. \
+Supported queries are: packagename, bugnumber, maintainer@foo.bar, src:package, from:submitter@foo.bar, severity:foo and tag:bar."""
+    usage = "%prog [Query] [Option]"
     version = "%prog " + lib.ReportbugNG.VERSION + """
 
 Copyright (C) 2007 Bastian Venthur <venthur at debian org>

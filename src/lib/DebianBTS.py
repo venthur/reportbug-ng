@@ -71,18 +71,41 @@ def getBugsByQuery(query):
 
 def getSingleBug(bugnr):
     """Returns a single bug"""
-    # FIXME
-    return Bugreport(bugnr)
+
+    bug = Bugreport(bugnr)
+    
+    # If no other info is given, the bug is Oustanding/Normal
+    bug.status = u"Outstanding"
+    bug.severity = u"Normal"
+    
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
     s = report.read()
-    pattern = re.compile(BUG_SUMMARY_RE, re.IGNORECASE)
-    tmp = []
-    for line in report:
-        match = pattern.findall(line)
-        if match:
-            return match[0]
+    
+    match = re.findall("<BODY>(.*)</h3>", s, re.DOTALL)
+    if match:
+        block = match[0]
+        
+        # Mandatory
+        summary = re.findall("^<H1>Debian Bug report logs - .*<BR>(.*)</H1>$", block, re.MULTILINE)
+        package = re.findall("^Package: <a class=\"submitter\" href=\"pkgreport.cgi\?pkg=.*\">(.*)</a>;$", block, re.MULTILINE)
+        bug.summary = htmlUnescape(summary[0])
+        bug.package = htmlUnescape(package[0])
+ 
+        # Optional
+        severity = re.findall("^<h3>Severity: (.*);$", block, re.MULTILINE)
+        done = re.findall("^<br><strong>Done:</strong>.*$", block, re.MULTILINE)
+        if severity:
+            bug.severity = htmlUnescape(severity[0])
+        if done:
+            bug.status = u"Resolved"
 
-    return None
+    # Get the fulltext 
+    parser = HTMLStripper()
+    parser.feed(unicode(s, "utf-8"))
+    parser.close()
+    bug.fulltext = parser.result
+    
+    return bug
 
 
 def getFullText(bugnr):

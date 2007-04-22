@@ -32,11 +32,25 @@ import sys
 REPORTBUG_NG_INSTRUCTIONS = u"""\
 <h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
-<p>To find a bug just enter the name of the package and press Enter. Loading the list might take a few seconds.</p>
+<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>
+
+<p>The following queries are supported:
+<dl>
+<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>
+<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>
+<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>
+<dt><code>src:package</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>
+<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>
+<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>
+<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>
+</dl>
+</p>
+
 <p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>
 
 <h3>Step 2: Filtering Bugs</h3>
-<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive.</p>
+<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and
+affects the packagename, bugnumber, summary, status and severity of a bug.</p>
 
 <h3>Step 3: Reporting Bugs</h3>
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
@@ -91,28 +105,24 @@ class MyMainWindow(Form):
         if len(sys.argv) > 1:
             self.lineEdit.setText(unicode(sys.argv[1], "utf-8"))
             self.lineEdit_returnPressed()
+
     
     def stateChanged(self, package, bug):
-        self.packageStateChanged(package)
-        self.bugStateChanged(bug)
-    
-    
-    def bugStateChanged(self, bug):
-        if bug:
-            self.currentBug = bug
-            self.pushButtonAdditionalInfo.setEnabled(1)
-        else:
-            self.currentBug = Bugreport(0)
-            self.pushButtonAdditionalInfo.setEnabled(0)
-
+        """Transition for our finite state machine logic"""
         
-    def packageStateChanged(self, package):
         if package:
             self.currentPackage = package
             self.pushButtonNewBugreport.setEnabled(1)
         else:
             self.currentPackage = ""
             self.pushButtonNewBugreport.setEnabled(0)
+        
+        if bug:
+            self.currentBug = bug
+            self.pushButtonAdditionalInfo.setEnabled(1)
+        else:
+            self.currentBug = Bugreport(0)
+            self.pushButtonAdditionalInfo.setEnabled(0)
         
     
     def loadAllBugSummaries(self, query):
@@ -143,6 +153,9 @@ class MyMainWindow(Form):
         
         if len(self.bugs) == 0:
             self.textBrowser.setText(u"<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
+        if len(self.bugs) == 1:
+            self.table.selectRow(0)
+            self.table_selectionChanged()
         else:
             self.textBrowser.setText(u"<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
     
@@ -240,7 +253,7 @@ class MyMainWindow(Form):
         
         self.currentBug = self.bugs[self.table.currentRow()]
         self.textBrowser.setText(u"<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
-        self.bugStateChanged(self.currentBug)
+        self.stateChanged(self.currentBug.package, self.currentBug)
         
         # Fetch the fulltext in a thread
         thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))

@@ -1,11 +1,36 @@
 .TH REPORTBUG-NG "1" "April 2007" "reportbug-ng" "User Commands"
 .SH NAME
-reportbug-ng \- An easy to use alternative to reportbug.
+reportbug-ng \- An easy to use alternative to reportbug
 .SH SYNOPSIS
-reportbug\-ng [Package] [Option]
+reportbug\-ng [Query] [Option]
 .SH DESCRIPTION
-Report a bug in Debian's BTS.
-.SS "options:"
+Browse, filter and report bugs in Debian's BTS. 
+.SS "Query:"
+The optional paremter Query behaves exactly like the query inside the program.
+Supported queries are: 
+.TP
+\fBpackagename\fR
+Returns all the bugs belonging to the PACKAGE
+.TP
+\fBbugnumber\fR
+Returns the bug with BUGNUMBER
+.TP
+\fBmaintainer@foo.bar\fR
+Returns all the bugs assigned to MAINTAINER
+.TP
+\fBsrc:package\fR
+Returns all the bugs belonging to the SOURCEPACKAGE
+.TP
+\fBfrom:submitter@foo.bar\fR
+Returns all the bugs filed by SUBMITTER
+.TP
+\fBseverity:foo\fR
+Returns all the bugs of SEVERITY. Warning this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist
+.TP
+\fBtag:bar\fR
+Returns all the bugs marked with TAG
+
+.SS "Options:"
 .TP
 \fB\-\-version\fR
 show program's version number and exit
@@ -15,8 +40,7 @@ show this help message and exit
 .SH HOMEPAGE
 http://reportbug\-ng.alioth.debian.org
 .SH COPYRIGHT
-Copyright (C) 2007 Bastian Venthur <venthur at debian org>
-.PP
+Copyright \(co 2007 Bastian Venthur <venthur at debian org>
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or

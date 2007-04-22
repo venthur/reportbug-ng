@@ -29,5 +29,5 @@ class Bugreport:
         self.package = package
 
     def __str__(self):
-        return "#"+self.nr +": "+ self.summary+" --- "+self.status+", "+self.severity+""
+        return self.package+" #"+self.nr +": "+ self.summary+" --- "+self.status+", "+self.severity+""
     
