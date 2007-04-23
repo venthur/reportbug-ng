@@ -1,3 +1,28 @@
+reportbug-ng (0.2007.04.23) unstable; urgency=low
+
+  * Added support for new queries:
+    - bugnumber (Closes: #419624)
+    - package
+    - maintainer@foo.bar
+    - src:package
+    - from:submitter@foo.bar (Closes: #416131)
+    - severity:foo
+    - tag:bar
+  * Modified --help output and manpage to reflect the new queries
+  * When a query returns only one valid	bug, select it and show the 
+    bugreport directly
+  
+  * Lots of internal changes:
+    - Major cleanup of html-parsing
+    - Introduced lock to avoid race condition when writing buglist
+    - Introduced some finite state machine like logic to control "submit new" 
+      and "additional info" buttons depending on the search query
+    - added DebianBTS.getSingleBug(nr)
+    - Bugreport now contains the package the bug belongs to
+    - Bugreport.__str__ now returns the packagename too
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 23 Apr 2007 17:48:12 +0200
+
 reportbug-ng (0.2007.04.20) unstable; urgency=low
 
   * Switched from SVN to BZR, added XS-Vcs-bzr line to debian/crontrol to
