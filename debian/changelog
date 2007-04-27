@@ -1,4 +1,4 @@
-reportbug-ng (0.2007.04.24) unstable; urgency=high
+reportbug-ng (0.2007.04.27) unstable; urgency=high
 
   * Fixed bug in RE where rng sometimes fails to find all bugs in buglist.
     (Perfect example how dangerous and error prone html-parsing is)
