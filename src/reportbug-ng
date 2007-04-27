@@ -58,8 +58,8 @@ the Free Software Foundation; either version 2 of the License, or
     config.read(CONFIGFILE)
     
     lastmua = ""
-    if config.has_option("gui", "lastMUA"):
-	    lastmua = config.get("gui", "lastMUA")
+    if config.has_option("general", "lastMUA"):
+	    lastmua = config.get("general", "lastMUA")
 
     app = qt.QApplication(sys.argv)
     app.connect(app, qt.SIGNAL("lastWindowClosed()"), app, qt.SLOT("quit()"))
@@ -72,8 +72,8 @@ the Free Software Foundation; either version 2 of the License, or
     app.exec_loop()
     
     # Write back some config values
-    if not config.has_section("gui"):
-    	config.add_section("gui")
+    if not config.has_section("general"):
+    	config.add_section("general")
     
-    config.set("gui", "lastMUA", mw.lastMUA)
+    config.set("general", "lastMUA", mw.lastMUA)
     config.write(open(CONFIGFILE, "w"))

@@ -1,3 +1,12 @@
+reportbug-ng (0.2007.04.24) unstable; urgency=high
+
+  * Fixed bug in RE where rng sometimes fails to find all bugs in buglist.
+    (Perfect example how dangerous and error prone html-parsing is)
+  * Moved settings from [gui] to [general]
+  * Added some unittests
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 27 Apr 2007 09:46:58 +0200
+
 reportbug-ng (0.2007.04.23) unstable; urgency=low
 
   * Added support for new queries:
