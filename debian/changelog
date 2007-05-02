@@ -1,4 +1,4 @@
-reportbug-ng (0.2007.04.28) unstable; urgency=low
+reportbug-ng (0.2007.05.02) unstable; urgency=low
 
   * Fixed malformed RE which caused a wrong packagename in the 
     bugreport  (Closes: #421866) -- Thank's again Adam!
