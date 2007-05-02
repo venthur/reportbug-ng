@@ -1,7 +1,5 @@
 import unittest
 
-import SOAPpy
-
 from lib import DebianBTS
 
 class DebianBTSTestCase(unittest.TestCase):
@@ -12,33 +10,32 @@ class DebianBTSTestCase(unittest.TestCase):
     def testGetBugsByQuery(self):
         """getBugsByQuery should find all bugs from query."""
 
-        url = 'http://bugs.donarmstrong.com/cgi-bin/soap.cgi'
-        ns = 'Debbugs/SOAP'
-        server = SOAPpy.SOAPProxy(url, ns)
-        server.soapaction = '%s#get_bugs' % ns
-
         # Check a few packages
         for package in "reportbug-ng", 'gtk-qt-engine', 'debbugs':
             htmllist = DebianBTS.getBugsByQuery(package)
-            soaplist = server.get_bugs("package", package) 
-        
+            soaplist = DebianBTS.getBugsBySoapQuery("package", package)
             self.failUnless(len(htmllist) == len(soaplist))
 
             htmllist = DebianBTS.getBugsByQuery("src:"+package)
-            soaplist = server.get_bugs("src", package) 
-        
+            soaplist = DebianBTS.getBugsBySoapQuery("src", package) 
             self.failUnless(len(htmllist) == len(soaplist))
 
         #
         query = "venthur@debian.org"
         htmllist = DebianBTS.getBugsByQuery(query)
-        soaplist = server.get_bugs("maint", query) 
+        soaplist = DebianBTS.getBugsBySoapQuery("maint", query) 
         self.failUnless(len(htmllist) == len(soaplist))
 
         htmllist = DebianBTS.getBugsByQuery("from:"+query)
-        soaplist = server.get_bugs("submitter", query) 
+        soaplist = DebianBTS.getBugsBySoapQuery("submitter", query) 
         self.failUnless(len(htmllist) == len(soaplist))
+    
+    def testRegression421866(self):
+        """When getting all bugs for package 'foo', then all returned bugs should belong to package 'foo'."""
         
+        bugs = DebianBTS.getBugsByQuery("k3b")
+        for bug in bugs:
+            self.failUnless(bug.package == 'k3b', bug.package+" doesn't match k3b. Bugnr: "+bug.nr)
         
 
 suite = unittest.makeSuite(DebianBTSTestCase)

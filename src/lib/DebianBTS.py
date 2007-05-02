@@ -1,3 +1,4 @@
+
 # DebianBTS.py - Some helper functions working with Debian's BTS.
 # Copyright (C) 2007  Bastian Venthur
 #
@@ -23,15 +24,22 @@ import urllib
 import re
 from HTMLParser import HTMLParser
 import htmlentitydefs
+import SOAPpy
 
 
 BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
 
+SOAP_URL = 'http://bugs.donarmstrong.com/cgi-bin/soap.cgi'
+SOAP_NAMESPACE = 'Debbugs/SOAP'
+soapServer = SOAPpy.SOAPProxy(SOAP_URL, SOAP_NAMESPACE)
+
+
+# Some regular expressions to get some info from the html
 cluster_re = re.compile("(<H2.*?><a.*?></a>.* bugs -- .*? .*</H2>)")
 status_severity_re = re.compile("<H2.*?><a.*?></a>(.*) bugs -- (.*?) .*</H2>")
 number_summary_package_re = re.compile("""^<li><a href=\"bugreport.cgi\?bug=[0-9]*\">#([0-9]*): (.*)</a>$
-^<br>Package: <a class=\"submitter\" href=\"pkgreport.cgi\?pkg=.*\">(.*)</a>.*;$""", re.MULTILINE)
+^<br>Package: <a class=\"submitter\" href=\"pkgreport.cgi\?pkg=.*?\">(.*?)</a>.*;$""", re.MULTILINE)
 
 
 def getBugsByQuery(query):
@@ -116,6 +124,17 @@ def getFullText(bugnr):
     parser.feed(unicode(report.read(), "utf-8"))
     parser.close()
     return parser.result
+
+
+def getBugsBySoapQuery(*arg):
+    
+    bugs = []
+    soapServer.soapaction = '%s#get_bugs' % SOAP_NAMESPACE
+    list = soapServer.get_bugs(*arg)
+    for elem in list:
+        bugs.append(Bugreport(elem))
+        
+    return bugs
 
 
 class HTMLStripper(HTMLParser):

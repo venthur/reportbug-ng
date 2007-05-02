@@ -38,7 +38,7 @@ if __name__ == "__main__":
     description = """\
 Report a bug in Debian's BTS. The optional paremter QUERY behaves exactly like the query inside the program. \
 Supported queries are: packagename, bugnumber, maintainer@foo.bar, src:package, from:submitter@foo.bar, severity:foo and tag:bar."""
-    usage = "%prog [Query] [Option]"
+    usage = "%prog [Options] [Query]"
     version = "%prog " + lib.ReportbugNG.VERSION + """
 
 Copyright (C) 2007 Bastian Venthur <venthur at debian org>
@@ -51,6 +51,12 @@ the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.
 """
     parser = OptionParser(usage=usage, version=version, description=description)
+    
+    #
+    #parser.set_defaults(interface="html")
+    #parser.add_option("-i", "--interface", type="choice", choices=["soap", "html"], dest="interface",
+    #	help="which interface to use to query the BTS [default: html]", metavar="(html|soap)")
+    
     (options, args) = parser.parse_args()
 
     # Read some config values
