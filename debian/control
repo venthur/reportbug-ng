@@ -9,7 +9,7 @@ XS-Python-Version: current
 
 Package: reportbug-ng
 Architecture: any
-Depends: ${python:Depends}, python-qt3
+Depends: ${python:Depends}, python-qt3, python-soappy
 XB-Python-Version: ${python:Versions}
 Description: An easy to use alternative to Debian's classic reportbug
  Reportbug-NG is an alternative to Debian's classic reportbug written with

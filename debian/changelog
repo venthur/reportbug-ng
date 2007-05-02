@@ -5,6 +5,8 @@ reportbug-ng (0.2007.04.28) unstable; urgency=low
     - Added unittest to check for errors like this
 
   * Started to write SOAP support
+    - New dependency: python-soappy
+
   * Small fix in helptext and manpage
 
  -- Bastian Venthur <venthur@debian.org>  Wed, 02 May 2007 10:40:30 +0200
