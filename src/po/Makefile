@@ -9,8 +9,8 @@ all:
 install:
 	for i in $(shell find *.mo); do \
 	    LANG=$$(basename $$i .mo); \
-	    mkdir -p $(DESTDIR)/usr/share/local/$$LANG/LC_MESSAGES/; \
-	    cp $$i $(DESTDIR)/usr/share/local/$$LANG/LC_MESSAGES/reportbug-ng.mo; \
+	    mkdir -p $(DESTDIR)/usr/share/locale/$$LANG/LC_MESSAGES/; \
+	    cp $$i $(DESTDIR)/usr/share/locale/$$LANG/LC_MESSAGES/reportbug-ng.mo; \
 	done
 
 clean:
