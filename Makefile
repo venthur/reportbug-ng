@@ -14,5 +14,7 @@ install:
 	mkdir -p $(DESTDIR)/usr/share/applications
 	cp *.desktop $(DESTDIR)/usr/share/applications/
 
+	$(MAKE) install -C src/po
+
 clean:
 	$(MAKE) clean -C src

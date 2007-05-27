@@ -29,7 +29,7 @@ import thread
 import sys
 
 
-REPORTBUG_NG_INSTRUCTIONS = u"""\
+REPORTBUG_NG_INSTRUCTIONS = _("""\
 <h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
 <p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>
@@ -54,7 +54,7 @@ affects the packagename, bugnumber, summary, status and severity of a bug.</p>
 
 <h3>Step 3: Reporting Bugs</h3>
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
-"""
+""")
 
 
 class MyTableItem(QTableItem):
@@ -152,12 +152,12 @@ class MyMainWindow(Form):
             row += 1
         
         if len(self.bugs) == 0:
-            self.textBrowser.setText(u"<h2>No bugreports for package %s found!</h2>" % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
+            self.textBrowser.setText(_("<h2>No bugreports for package %s found!</h2>") % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
         if len(self.bugs) == 1:
             self.table.selectRow(0)
             self.table_selectionChanged()
         else:
-            self.textBrowser.setText(u"<h2>Click on a bugreport to see the full text.</h2>" + REPORTBUG_NG_INSTRUCTIONS)
+            self.textBrowser.setText(_("<h2>Click on a bugreport to see the full text.</h2>") + REPORTBUG_NG_INSTRUCTIONS)
     
         self.queryLock.release()
 
@@ -177,37 +177,37 @@ class MyMainWindow(Form):
         self.bugs = []
         s = unicode(self.lineEdit.text())
         if (s.startswith('src:')):
-            what = "of source package"
+            what = _("of source package")
             s2 = s.split(":")[1]
             self.stateChanged(s, None)
         elif (s.startswith('from:')):
-            what = "from submitter"
+            what = _("from submitter")
             s2 = s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.startswith('severity:')):
-            what = "of severity"
+            what = _("of severity")
             s2 = s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.startswith('tag:')):
-            what = "with tag"
+            what = _("with tag")
             s2 = s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.find("@") != -1):
-            what = "assigned to"
+            what = _("assigned to")
             s2 = s
             self.stateChanged(None, None)
         elif (re.match("^[0-9]*$", s)):
-            what = "with bug number"
+            what = _("with bug number")
             s2 = s
             self.stateChanged(None, s)
         else:
-            what = "for package"
+            what = _("for package")
             s2 = s
             self.stateChanged(s, None)
 
         self.lineEdit.setText("")
         self.table.setNumRows(0)
-        self.textBrowser.setText(u"<h2>Fetching bugreports %s %s, please wait.</h2>" % (what, s2))
+        self.textBrowser.setText(_("<h2>Fetching bugreports %s %s, please wait.</h2>") % (what, s2))
     
         # Fetch the bugs in a thread
         self.currentQuery = thread.start_new_thread(self.loadAllBugSummaries, (s,))
@@ -252,7 +252,7 @@ class MyMainWindow(Form):
             return
         
         self.currentBug = self.bugs[self.table.currentRow()]
-        self.textBrowser.setText(u"<h2>Fetching bugreport %s, please wait.</h2>" % self.currentBug)
+        self.textBrowser.setText(_("<h2>Fetching bugreport %s, please wait.</h2>") % self.currentBug)
         self.stateChanged(self.currentBug.package, self.currentBug)
         
         # Fetch the fulltext in a thread

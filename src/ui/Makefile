@@ -6,7 +6,7 @@ GUI_CLASSES = MainWindow.py \
 all: $(GUI_CLASSES)
 
 %.py: %.ui
-	$(PYUIC) $< -o $@
+	$(PYUIC) -tr _ $< -o $@
 
 clean:
 	rm -f $(GUI_CLASSES)

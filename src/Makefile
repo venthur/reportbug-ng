@@ -1,4 +1,4 @@
-DIRS = ui lib
+DIRS = ui lib po
 
 all:
 	for i in $(DIRS); do \

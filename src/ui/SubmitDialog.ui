@@ -307,7 +307,7 @@
                 <cstring>lineEditVersion</cstring>
             </property>
             <property name="text">
-                <string>1.2.3-foo</string>
+                <string></string>
             </property>
         </widget>
         <widget class="QLineEdit" row="0" column="1">
@@ -318,7 +318,7 @@
                 <bool>true</bool>
             </property>
             <property name="text">
-                <string>foo-package</string>
+                <string></string>
             </property>
         </widget>
         <widget class="QLabel" row="0" column="0">

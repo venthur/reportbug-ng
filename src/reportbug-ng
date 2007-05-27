@@ -17,6 +17,9 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+import gettext
+gettext.install('reportbug-ng', '/usr/share/locale', unicode=1)
+
 import sys, os
 sys.path = sys.path + [os.curdir, '/usr/share/reportbug-ng']
 
