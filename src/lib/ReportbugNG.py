@@ -39,7 +39,7 @@ MUA_SYNTAX = {
     "mutt" : 'mutt ' + RFC_MAILTO,
     "mutt-ng" : 'muttng ' + RFC_MAILTO,
     "pine" : 'pine -url ' + RFC_MAILTO,
-    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
+#    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
               }
 # Don't urllib.quote() their strings
 MUA_NO_URLQUOTE = ["kmail"]            

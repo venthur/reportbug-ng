@@ -1,3 +1,12 @@
+reportbug-ng (0.2007.05.27) unstable; urgency=low
+
+  * Created L10N infrastructure and added German translation
+  * Strip leading and trailing whitespaces from userinput (Closes: #423717)
+  * Temporarily removed googlemail since it doesn't handle very long URLs
+    very well (Closes: #422496)
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 27 May 2007 16:43:21 +0200
+
 reportbug-ng (0.2007.05.02) unstable; urgency=low
 
   * Fixed malformed RE which caused a wrong packagename in the 

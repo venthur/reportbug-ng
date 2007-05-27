@@ -175,7 +175,7 @@ class MyMainWindow(Form):
         #     tag:bar
         
         self.bugs = []
-        s = unicode(self.lineEdit.text())
+        s = unicode(self.lineEdit.text()).strip()
         if (s.startswith('src:')):
             what = _("of source package")
             s2 = s.split(":")[1]
