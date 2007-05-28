@@ -57,8 +57,6 @@ install: build
 
 	# Add here commands to install the package into debian/reportbug-ng.
 	$(MAKE) DESTDIR=$(CURDIR)/debian/reportbug-ng install
-	ln -s reportbug-ng $(CURDIR)/debian/reportbug-ng/usr/bin/rng
-	
 
 
 # Build architecture-independent files here.
@@ -83,8 +81,7 @@ binary-arch: build install
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
-	dh_installman reportbug-ng.1
-	ln -s reportbug-ng.1.gz $(CURDIR)/debian/reportbug-ng/usr/share/man/man1/rng.1.gz
+	dh_installman
 	dh_link
 	dh_strip
 	dh_compress

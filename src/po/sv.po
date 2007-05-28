@@ -1,0 +1,297 @@
+# Swedish translation for reportbug-ng.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: reportbug-ng\n"
+"POT-Creation-Date: 2007-05-27 13:41+CEST\n"
+"PO-Revision-Date: 2007-05-27 21:05+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ./ui/MainWindow.py:195
+#: ./ui/MainWindow.py:233
+msgid "Summary"
+msgstr "Sammandrag"
+
+#: ./ui/MainWindow.py:197
+#: ./ui/MainWindow.py:234
+msgid "Status"
+msgstr "Status"
+
+#: ./ui/MainWindow.py:199
+#: ./ui/MainWindow.py:235
+msgid "Severity"
+msgstr "Allvarlighetsgrad"
+
+#: ./ui/MainWindow.py:225
+msgid "Reportbug NG"
+msgstr "Reportbug NG"
+
+#: ./ui/MainWindow.py:226
+msgid "Enter a package name or a filter expression"
+msgstr "Ange ett paketnamn eller ett filteruttryck"
+
+#: ./ui/MainWindow.py:227
+msgid "&Additional Info"
+msgstr "&Ytterligare information"
+
+#: ./ui/MainWindow.py:228
+msgid "Alt+A"
+msgstr "Alt+Y"
+
+#: ./ui/MainWindow.py:229
+msgid "Provide additional information for the current bugreport"
+msgstr "Tillhandahåll ytterligare information för den aktuella felrapporten"
+
+#: ./ui/MainWindow.py:230
+msgid "&New Bugreport"
+msgstr "&Ny felrapport"
+
+#: ./ui/MainWindow.py:231
+msgid "Alt+N"
+msgstr "Alt+N"
+
+#: ./ui/MainWindow.py:232
+msgid "Create new bugreport for current package"
+msgstr "Skapa ny felrapport för aktuellt paket"
+
+#: ./ui/MainWindow.py:236
+msgid "Click on bugreport to see the full conversation below"
+msgstr "Klicka på felrapporten för att se hela konversationen nedanför"
+
+#: ./ui/MyMainWindow.py:32
+msgid ""
+"<h2>Using Reportbug-NG</h2>\n"
+"<h3>Step 1: Finding Bugs</h3>\n"
+"<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>\n"
+"\n"
+"<p>The following queries are supported:\n"
+"<dl>\n"
+"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>\n"
+"<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>\n"
+"<dt><code>src:package</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>\n"
+"\n"
+"<h3>Step 2: Filtering Bugs</h3>\n"
+"<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and\n"
+"affects the packagename, bugnumber, summary, status and severity of a bug.</p>\n"
+"\n"
+"<h3>Step 3: Reporting Bugs</h3>\n"
+"<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
+msgstr ""
+"<h2>Användning av Reportbug-NG</h2>\n"
+"<h3>Steg 1: Hitta felrapporter</h3>\n"
+"<p>För att hitta en felrapport kan du enkelt ange söktext och trycka på Enter. Inläsning av listan kan ta några sekunder.</p>\n"
+"\n"
+"<p>Följande frågetyper stöds:\n"
+"<dl>\n"
+"<dt><code>package</code></dt><dd>Returnerar alla felrapporter som tillhör PAKETET</dd>\n"
+"<dt><code>bugnumber</code></dt><dd>Returnerar felrapporten med FELNUMMER</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returnerar alla felrapporter tilldelade till PAKETANSVARIG</dd>\n"
+"<dt><code>src:package</code></dt><dd>Returnerar alla felrapporter som tillhör till KÄLLKODSPAKETET</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returnerar alla felrapporter insända av INSÄNDARE</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returnerar alla felrapporter med ALLVARLIGHETSGRAD. Varning, den här listan är antagligen mycket lång. Värden som är giltiga: critical, grave, serious, important, normal, minor och wishlist</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Returnerar alla felrapporter markerade med TAGG</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>För att se hela felrapporten kan du klicka på felrapporten i listan. Länkar i felrapporten kommer att öppnas i en extern webbläsare när du klickar på dem.</p>\n"
+"\n"
+"<h3>Steg 2: Filtrering av felrapporter</h3>\n"
+"<p>För att filtrera listan över befintliga felrapporter kan du ange några bokstäver (utan att trycka på Enter). Filtret är inte skiftlägeskänsligt och\n"
+"påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden för en felrapport.</p>\n"
+"\n"
+"<h3>Steg 3: Rapportering av fel</h3>\n"
+"<p>Du kan antingen tillhandahålla ytterligare information för en befintlig felrapport genom att klicka på felrapporten i listan och trycka på \"Ytterligare information\"eller så kan du skapa en ny felrapport för det aktuella paketet genom att klicka på \"Ny felrapport\".</p>\n"
+
+#: ./ui/MyMainWindow.py:155
+msgid "<h2>No bugreports for package %s found!</h2>"
+msgstr "<h2>Inga felrapporter för paketet %s hittades!</h2>"
+
+#: ./ui/MyMainWindow.py:160
+msgid "<h2>Click on a bugreport to see the full text.</h2>"
+msgstr "<h2>Klicka på en felrapport för att se hela texten.</h2>"
+
+#: ./ui/MyMainWindow.py:180
+msgid "of source package"
+msgstr "för källkodspaketet"
+
+#: ./ui/MyMainWindow.py:184
+msgid "from submitter"
+msgstr "från insändaren"
+
+#: ./ui/MyMainWindow.py:188
+msgid "of severity"
+msgstr "med allvarlighetsgraden"
+
+#: ./ui/MyMainWindow.py:192
+msgid "with tag"
+msgstr "med taggen"
+
+#: ./ui/MyMainWindow.py:196
+msgid "assigned to"
+msgstr "tilldelad till"
+
+#: ./ui/MyMainWindow.py:200
+msgid "with bug number"
+msgstr "med felnumret"
+
+#: ./ui/MyMainWindow.py:204
+msgid "for package"
+msgstr "för paketet"
+
+#: ./ui/MyMainWindow.py:210
+msgid "<h2>Fetching bugreports %s %s, please wait.</h2>"
+msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
+
+#: ./ui/MyMainWindow.py:255
+msgid "<h2>Fetching bugreport %s, please wait.</h2>"
+msgstr "<h2>Hämtar felrapporten %s, vänta.</h2>"
+
+#: ./ui/SubmitDialog.py:141
+msgid "Please tell us some details..."
+msgstr "Berätta lite detaljer för oss..."
+
+#: ./ui/SubmitDialog.py:142
+msgid "&OK"
+msgstr "&OK"
+
+#: ./ui/SubmitDialog.py:143
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ./ui/SubmitDialog.py:144
+msgid "&Cancel"
+msgstr "&Avbryt"
+
+#: ./ui/SubmitDialog.py:145
+msgid "Alt+C"
+msgstr "Alt+A"
+
+#: ./ui/SubmitDialog.py:146
+msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
+msgstr "<b>Välj den e-postklient som du vill använda för att skriva den fullständiga felrapporten.</b>"
+
+#: ./ui/SubmitDialog.py:147
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr "<b>Ange ett kort sammandrag. Allvarlighetsgrad och taggar är valfria.</b>"
+
+#: ./ui/SubmitDialog.py:148
+msgid "&Mailclient:"
+msgstr "E-post&klient:"
+
+#: ./ui/SubmitDialog.py:150
+msgid "Critical"
+msgstr "Kritiskt"
+
+#: ./ui/SubmitDialog.py:151
+msgid "Grave"
+msgstr "Gravt"
+
+#: ./ui/SubmitDialog.py:152
+msgid "Serious"
+msgstr "Allvarligt"
+
+#: ./ui/SubmitDialog.py:153
+msgid "Important"
+msgstr "Viktigt"
+
+#: ./ui/SubmitDialog.py:154
+msgid "Normal"
+msgstr "Normalt"
+
+#: ./ui/SubmitDialog.py:155
+msgid "Minor"
+msgstr "Mindre"
+
+#: ./ui/SubmitDialog.py:156
+msgid "Wishlist"
+msgstr "Önskelista"
+
+#: ./ui/SubmitDialog.py:158
+msgid ""
+"<b>critical</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. \n"
+"<br>\n"
+"<b>grave</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. \n"
+"<br>\n"
+"<b>serious</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. \n"
+"<br>\n"
+"<b>important</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. \n"
+"<br>\n"
+"<b>normal</b> the default value, applicable to most bugs. \n"
+"<br>\n"
+"<b>minor</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. \n"
+"<br>\n"
+"<b>wishlist</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
+msgstr ""
+"<b>critical</b> gör orelaterad programvara på systemet trasig (eller hela systemet), orsakar allvarlig dataförlust eller introducerar tt säkerhetshål på system där du installerade paketet. \n"
+"<br>\n"
+"<b>grave</b> gör aktuellt paket oanvändbart eller till större delen så, orsakar dataförlust eller introducerar ett säkerhetshål genom att tillåta åtkomst till användarkonton som använder paketet. \n"
+"<br>\n"
+"<b>serious</b> är en allvarlig överträdelse av Debians policy (i korta drag, den betyder mot direktivet \"must\" eller \"required\"), eller i paketansvariges åsikt, gör paketet olämpligt för utgivning. \n"
+"<br>\n"
+"<b>important</b> ett fel som har en stor inverkan på användbarheten för ett paket, utan att göra det helt oanvändbart för alla. \n"
+"<br>\n"
+"<b>normal</b> standardvärdet, lämplig för de flesta felrapporter. \n"
+"<br>\n"
+"<b>minor</b> ett problem som inte påverkar paketets användbarhet och är antagligen mycket enkelt att rätta till. \n"
+"<br>\n"
+"<b>wishlist</b> för alla önskemål om funktioner och även för felrapporter som är mycket svåra att rätta till på grund av större designfaktorer."
+
+#: ./ui/SubmitDialog.py:171
+msgid "patch"
+msgstr "programfix"
+
+#: ./ui/SubmitDialog.py:172
+msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
+msgstr "En programfix eller någon enkelt procedur för att rätta till felet är inkluderad i loggarna. Om det finns en programfix men den inte löser felet på rätt sätt eller orsakar några andra problem, bör den här taggen inte användas."
+
+#: ./ui/SubmitDialog.py:173
+msgid "l10n"
+msgstr "l10n"
+
+#: ./ui/SubmitDialog.py:174
+msgid "This bug is relevant to the localisation of the package."
+msgstr "Det här felet är relevant för lokalanpassningen av paketet."
+
+#: ./ui/SubmitDialog.py:175
+msgid "security"
+msgstr "säkerhet"
+
+#: ./ui/SubmitDialog.py:176
+msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
+msgstr "Det här felet beskriver ett säkerhetsproblem i ett paket (t.ex., felaktiga rättigheter som tillåter åtkomst till data som inte borde vara åtkomlig; buffertöverflöden som tillåter personer att kontrollera ett system på sätt som de inte borde kunna göra; överbelastningsattacker som borde rättas till, etc). De flesta säkerhetsfel bör även ställas in till allvarlighetsgraderna kritiskt eller gravt."
+
+#: ./ui/SubmitDialog.py:177
+msgid "&Tags:"
+msgstr "&Taggar:"
+
+#: ./ui/SubmitDialog.py:178
+msgid "S&everity:"
+msgstr "Al&lvarlighetsgrad:"
+
+#: ./ui/SubmitDialog.py:179
+msgid "&Summary:"
+msgstr "&Sammandrag:"
+
+#: ./ui/SubmitDialog.py:182
+msgid "&Package:"
+msgstr "&Paket:"
+
+#: ./ui/SubmitDialog.py:183
+msgid "&Version:"
+msgstr "&Version:"
+

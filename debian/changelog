@@ -1,3 +1,9 @@
+reportbug-ng (0.2007.05.28) unstable; urgency=low
+
+  * Foobasr 
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 28 May 2007 10:59:44 +0200
+
 reportbug-ng (0.2007.05.27) unstable; urgency=low
 
   * Created L10N infrastructure and added German translation
