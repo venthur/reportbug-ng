@@ -1,6 +1,14 @@
 reportbug-ng (0.2007.05.28) unstable; urgency=low
 
-  * Foobasr 
+  * Added Japanese translation (Closes: #426288), thanks Junichi Uekawa!
+  * Added Swedish translation (Closes: #426297), thanks Daniel Nylander!
+  * Fixed German translation (Closes: #426368), thanks Bruno Kleinert!
+  * Improved some English strings (Closes: #426289)
+
+  * Refactored strings to make translation easier, updated German po
+  * Created update target in src/po to generate new .pot and update all .po
+    files in this directory
+  * Refactored Makefiles, install-rules are much cleaner now
 
  -- Bastian Venthur <venthur@debian.org>  Mon, 28 May 2007 10:59:44 +0200
 

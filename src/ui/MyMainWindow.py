@@ -24,6 +24,7 @@ from lib.ReportbugNG import *
 
 from qttable import QTableItem
 from qt import Qt
+from qt import QWhatsThis
 
 import thread
 import sys
@@ -39,9 +40,9 @@ REPORTBUG_NG_INSTRUCTIONS = _("""\
 <dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>
 <dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>
 <dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>
-<dt><code>src:package</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>
+<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>
 <dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>
-<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>
+<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>
 <dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>
 </dl>
 </p>
@@ -56,6 +57,23 @@ affects the packagename, bugnumber, summary, status and severity of a bug.</p>
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
 """)
 
+# Those strings must not be translated!
+SEVERITY = ("Critical", "Grave", "Serious", "Important", "Normal", "Minor", "Wishlist")
+
+SEVERITY_EXPLANATION = _("\
+<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. \
+<br> \
+<b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. \
+<br> \
+<b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. \
+<br> \
+<b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. \
+<br> \
+<b>%(nor)s</b> the default value, applicable to most bugs. \
+<br> \
+<b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. \
+<br> \
+<b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.") % {'cri':"Critical", 'gra':"Grave", 'ser':"Serious", 'imp':"Important", 'nor':"Normal", 'min':"Minor", 'wis':"Wishlist"}
 
 class MyTableItem(QTableItem):
     """Derived from QTableItem to pretty-paint different bugtypes"""
@@ -177,37 +195,30 @@ class MyMainWindow(Form):
         self.bugs = []
         s = unicode(self.lineEdit.text()).strip()
         if (s.startswith('src:')):
-            what = _("of source package")
-            s2 = s.split(":")[1]
+            what = _("<h2>Fetching bugreports of source package %s, please wait.</h2>") % s.split(":")[1]
             self.stateChanged(s, None)
         elif (s.startswith('from:')):
-            what = _("from submitter")
-            s2 = s.split(":")[1]
+            what = _("<h2>Fetching bugreports from submitter %s, please wait.</h2>") % s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.startswith('severity:')):
-            what = _("of severity")
-            s2 = s.split(":")[1]
+            what = _("<h2>Fetching bugreports of severity %s, please wait.</h2>") % s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.startswith('tag:')):
-            what = _("with tag")
-            s2 = s.split(":")[1]
+            what = _("<h2>Fetching bugreports with tag %s, please wait.</h2>") % s.split(":")[1]
             self.stateChanged(None, None)
         elif (s.find("@") != -1):
-            what = _("assigned to")
-            s2 = s
+            what = _("<h2>Fetching bugreports assigned to %s, please wait.</h2>") % s
             self.stateChanged(None, None)
         elif (re.match("^[0-9]*$", s)):
-            what = _("with bug number")
-            s2 = s
+            what = _("<h2>Fetching bugreport with bug number %s, please wait.</h2>") % s
             self.stateChanged(None, s)
         else:
-            what = _("for package")
-            s2 = s
+            what = _("<h2>Fetching bugreports for package %s, please wait.</h2>") % s
             self.stateChanged(s, None)
 
         self.lineEdit.setText("")
         self.table.setNumRows(0)
-        self.textBrowser.setText(_("<h2>Fetching bugreports %s %s, please wait.</h2>") % (what, s2))
+        self.textBrowser.setText(what)
     
         # Fetch the bugs in a thread
         self.currentQuery = thread.start_new_thread(self.loadAllBugSummaries, (s,))
@@ -272,6 +283,9 @@ class MyMainWindow(Form):
             dialog.comboBoxMUA.insertItem(mua.title())
         if self.lastMUA in SUPPORTED_MUA:
             dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
+        for sev in SEVERITY:
+            dialog.comboBoxSeverity.insertItem(sev)
+        QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
         dialog.comboBoxSeverity.setEnabled(0)
         dialog.checkBoxSecurity.setEnabled(0)
         dialog.checkBoxPatch.setEnabled(0)
@@ -302,7 +316,10 @@ class MyMainWindow(Form):
             dialog.comboBoxMUA.insertItem(mua.title())
         if self.lastMUA in SUPPORTED_MUA:
             dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
-        
+        for sev in SEVERITY:
+            dialog.comboBoxSeverity.insertItem(sev)
+        QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
+               
         if dialog.exec_loop() == dialog.Accepted:
             subject = unicode(dialog.lineEditSummary.text())
             severity = dialog.comboBoxSeverity.currentText().lower()

@@ -15,3 +15,9 @@ install:
 
 clean:
 	rm -f *.mo
+
+update:
+	pygettext --keyword=tr --default-domain=reportbug-ng ..
+	for i in $(shell find *.po); do \
+	    msgmerge -U $$i reportbug-ng.pot; \
+	done

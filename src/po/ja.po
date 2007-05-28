@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-NG\n"
-"POT-Creation-Date: 2007-05-27 13:41+CEST\n"
+"POT-Creation-Date: 2007-05-28 14:16+CEST\n"
 "PO-Revision-Date: 2007-05-28 02:28+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -15,288 +15,359 @@ msgstr ""
 "Content-Transfer-Encoding: UTF-8\n"
 "Generated-By: pygettext.py 1.5\n"
 
-
-#: ./ui/MainWindow.py:195 ./ui/MainWindow.py:233
+#: ../ui/MainWindow.py:195 ../ui/MainWindow.py:233
 msgid "Summary"
 msgstr "サマリー"
 
-#: ./ui/MainWindow.py:197 ./ui/MainWindow.py:234
+#: ../ui/MainWindow.py:197 ../ui/MainWindow.py:234
 msgid "Status"
 msgstr "ステータス"
 
-#: ./ui/MainWindow.py:199 ./ui/MainWindow.py:235
+#: ../ui/MainWindow.py:199 ../ui/MainWindow.py:235
 msgid "Severity"
 msgstr "重要度"
 
-#: ./ui/MainWindow.py:225
+#: ../ui/MainWindow.py:225
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ./ui/MainWindow.py:226
+#: ../ui/MainWindow.py:226
 msgid "Enter a package name or a filter expression"
 msgstr "パッケージ名かフィルター表現を入力してください"
 
-#: ./ui/MainWindow.py:227
+#: ../ui/MainWindow.py:227
 msgid "&Additional Info"
 msgstr "追加情報(&A)"
 
-#: ./ui/MainWindow.py:228
+#: ../ui/MainWindow.py:228
 msgid "Alt+A"
 msgstr "Alt+A"
 
-#: ./ui/MainWindow.py:229
+#: ../ui/MainWindow.py:229
 msgid "Provide additional information for the current bugreport"
 msgstr "現在のバグレポートに追加の情報を提供する"
 
-#: ./ui/MainWindow.py:230
+#: ../ui/MainWindow.py:230
 msgid "&New Bugreport"
 msgstr "新規バグレポート(&N)"
 
-#: ./ui/MainWindow.py:231
+#: ../ui/MainWindow.py:231
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#: ./ui/MainWindow.py:232
+#: ../ui/MainWindow.py:232
 msgid "Create new bugreport for current package"
 msgstr "現在のパッケージのために新規バグレポートを作成する"
 
-#: ./ui/MainWindow.py:236
+#: ../ui/MainWindow.py:236
 msgid "Click on bugreport to see the full conversation below"
-msgstr "バグレポートにクリックすると、該当バグレポートの対話の記録を下に表示する"
+msgstr ""
+"バグレポートにクリックすると、該当バグレポートの対話の記録を下に表示する"
 
-#: ./ui/MyMainWindow.py:32
+#: ../ui/MyMainWindow.py:33
+#, fuzzy
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
-"<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>\n"
+"<p>To find a bug just enter a query and press Enter. Loading the list might "
+"take a few seconds.</p>\n"
 "\n"
 "<p>The following queries are supported:\n"
 "<dl>\n"
-"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>\n"
+"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the "
+"PACKAGE</dd>\n"
 "<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>\n"
-"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>\n"
-"<dt><code>src:package</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>\n"
-"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>\n"
-"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to "
+"MAINTAINER</dd>\n"
+"<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to "
+"the SOURCEPACKAGE</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed "
+"by SUBMITTER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. "
+"Warning: this list is probably very long. Recognized are the values: "
+"critical, grave, serious, important, normal, minor and wishlist</dd>\n"
 "<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>\n"
+"<p>To see the full bugreport click on the bug in the list. Links in the "
+"bugreport will open in an external browser when clicked.</p>\n"
 "\n"
 "<h3>Step 2: Filtering Bugs</h3>\n"
-"<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and\n"
-"affects the packagename, bugnumber, summary, status and severity of a bug.</p>\n"
+"<p>To filter the list of existing bugs enter a few letters (without pressing "
+"Enter). The filter is case insensitive and\n"
+"affects the packagename, bugnumber, summary, status and severity of a bug.</"
+"p>\n"
 "\n"
 "<h3>Step 3: Reporting Bugs</h3>\n"
-"<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
+"<p>You can either provide additional information for an existing bug by "
+"clicking on the bug in the list and pressing the \"Additional Info\" button "
+"or you can create a new bugreport for the current package by clicking the "
+"\"New Bugreport\" button.</p>\n"
 msgstr ""
 "<h2>Reportbug-NG の使いかた</h2>\n"
 "<h3>Step 1: バグを探す</h3>\n"
-"<p>バグ報告をみつけるためには、検索語を入力しエンターキーを押してください。リストのロードに数秒かかる可能性はあります。</p>\n"
+"<p>バグ報告をみつけるためには、検索語を入力しエンターキーを押してください。リ"
+"ストのロードに数秒かかる可能性はあります。</p>\n"
 "\n"
 "<p>下記の検索がサポートされています：\n"
 "<dl>\n"
 "<dt><code>package</code></dt><dd>PACKAGE に所属するバグの表示</dd>\n"
 "<dt><code>bugnumber</code></dt><dd>BUGNUMBER のバグを表示</dd>\n"
-"<dt><code>maintainer@foo.bar</code></dt><dd>MAINTAINER に割り当てられているバグ全て</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>MAINTAINER に割り当てられているバ"
+"グ全て</dd>\n"
 "<dt><code>src:package</code></dt><dd>SOURCEPACKAGE に属するバグ全て</dd>\n"
-"<dt><code>from:submitter@foo.bar</code></dt><dd>SUBMITTER が登録したバグ全て</dd>\n"
-"<dt><code>severity:foo</code></dt><dd>SEVERITY のバグを全て取得します。このリストは非常に長い可能性があるので気をつけること。可能な値は: critical・grave・serious・important・normal・minor・wishlist</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>SUBMITTER が登録したバグ全て"
+"</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>SEVERITY のバグを全て取得します。このリ"
+"ストは非常に長い可能性があるので気をつけること。可能な値は: critical・grave・"
+"serious・important・normal・minor・wishlist</dd>\n"
 "<dt><code>tag:bar</code></dt><dd>TAG のついているバグを全て表示</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>バグレポートの全文を確認するためには、リストの中のバグを選択してください。バグレポート内のリンクはクリックすれば外部ブラウザで開きます。</p>\n"
+"<p>バグレポートの全文を確認するためには、リストの中のバグを選択してください。"
+"バグレポート内のリンクはクリックすれば外部ブラウザで開きます。</p>\n"
 "\n"
 "<h3>Step 2: バグをフィルタリングする</h3>\n"
-"<p>既存のバグの一覧からフィルタするには、（エンターをおさずに）いくつかの文字を入力してください。フィルタは大文字・小文字を無視し、 バグレポートのパッケージ名・バグ番号・サマリー・ステータス・重要度から検索します。</p>\n"
+"<p>既存のバグの一覧からフィルタするには、（エンターをおさずに）いくつかの文字"
+"を入力してください。フィルタは大文字・小文字を無視し、 バグレポートのパッケー"
+"ジ名・バグ番号・サマリー・ステータス・重要度から検索します。</p>\n"
 "\n"
 "<h3>Step 3: バグの報告</h3>\n"
-"<p>既存のバグレポートをクリックして「追加情報」ボタンをおすことでに追加情報を提供することもできますし、新しいバグレポートを「新規バグレポート」ボタンを押すことで登録することができます。\n"
+"<p>既存のバグレポートをクリックして「追加情報」ボタンをおすことでに追加情報を"
+"提供することもできますし、新しいバグレポートを「新規バグレポート」ボタンを押"
+"すことで登録することができます。\n"
 
-#: ./ui/MyMainWindow.py:155
-msgid "<h2>No bugreports for package %s found!</h2>"
-msgstr "<h2>パッケージ %s に該当するバグはひとつもみつかりませんでした！</h2>"
-
-#: ./ui/MyMainWindow.py:160
-msgid "<h2>Click on a bugreport to see the full text.</h2>"
-msgstr "<h2>本文を確認するにはバグレポートをクリックしてください。</h2>"
-
-#: ./ui/MyMainWindow.py:180
-msgid "of source package"
-msgstr "ソースパッケージ"
-
-#: ./ui/MyMainWindow.py:184
-msgid "from submitter"
-msgstr "送信者"
-
-#: ./ui/MyMainWindow.py:188
-msgid "of severity"
-msgstr "重要度"
-
-#: ./ui/MyMainWindow.py:192
-msgid "with tag"
-msgstr "タグ"
-
-#: ./ui/MyMainWindow.py:196
-msgid "assigned to"
-msgstr "担当者"
-
-#: ./ui/MyMainWindow.py:200
-msgid "with bug number"
-msgstr "バグ番号"
-
-#: ./ui/MyMainWindow.py:204
-msgid "for package"
-msgstr "パッケージ"
-
-#: ./ui/MyMainWindow.py:210
-msgid "<h2>Fetching bugreports %s %s, please wait.</h2>"
-msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
-
-#: ./ui/MyMainWindow.py:255
-msgid "<h2>Fetching bugreport %s, please wait.</h2>"
-msgstr "<h2>バグレポート %s を取得中、お待ちください。</h2>"
-
-#: ./ui/SubmitDialog.py:141
-msgid "Please tell us some details..."
-msgstr "詳細をおしえてください・・・"
-
-#: ./ui/SubmitDialog.py:142
-msgid "&OK"
-msgstr "OK(O)"
-
-#: ./ui/SubmitDialog.py:143
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: ./ui/SubmitDialog.py:144
-msgid "&Cancel"
-msgstr "Cancel(&C)"
-
-#: ./ui/SubmitDialog.py:145
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: ./ui/SubmitDialog.py:146
-msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
-msgstr "<b>バグレポートを報告するのに利用するメールクライアントを選択してください。</b>"
-
-#: ./ui/SubmitDialog.py:147
-msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
-msgstr "<b>短いサマリーを入力してください。重要度とタグは必須ではありません。</b>"
-
-#: ./ui/SubmitDialog.py:148
-msgid "&Mailclient:"
-msgstr "Mailclient(&M):"
-
-#: ./ui/SubmitDialog.py:150
-msgid "Critical"
-msgstr "Critical"
-
-#: ./ui/SubmitDialog.py:151
-msgid "Grave"
-msgstr "Grave"
-
-#: ./ui/SubmitDialog.py:152
-msgid "Serious"
-msgstr "Serious"
-
-#: ./ui/SubmitDialog.py:153
-msgid "Important"
-msgstr "Important"
-
-#: ./ui/SubmitDialog.py:154
-msgid "Normal"
-msgstr "Normal"
-
-#: ./ui/SubmitDialog.py:155
-msgid "Minor"
-msgstr "Minor"
-
-#: ./ui/SubmitDialog.py:156
-msgid "Wishlist"
-msgstr "Wishlist"
-
-#: ./ui/SubmitDialog.py:158
+#: ../ui/MyMainWindow.py:63
+#, fuzzy
 msgid ""
-"<b>critical</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. \n"
-"<br>\n"
-"<b>grave</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. \n"
-"<br>\n"
-"<b>serious</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. \n"
-"<br>\n"
-"<b>important</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. \n"
-"<br>\n"
-"<b>normal</b> the default value, applicable to most bugs. \n"
-"<br>\n"
-"<b>minor</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. \n"
-"<br>\n"
-"<b>wishlist</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
+"<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
+"break, or causes serious data loss, or introduces a security hole on systems "
+"where you install the package. <br> <b>%(gra)s</b> makes the package in "
+"question unusable or mostly so, or causes data loss, or introduces a "
+"security hole allowing access to the accounts of users who use the package. "
+"<br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it "
+"violates a \"must\" or \"required\" directive), or, in the package "
+"maintainer's opinion, makes the package unsuitable for release. <br> <b>%"
+"(imp)s</b> a bug which has a major effect on the usability of a package, "
+"without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> "
+"the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem "
+"which doesn't affect the package's usefulness, and is presumably trivial to "
+"fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that "
+"are very difficult to fix due to major design considerations."
 msgstr ""
 "<b>critical (致命的)</b>\n"
-"    システム上の関係のないソフトウェア (またはシステム全体) を破壊する、重大なデータの欠落を引き起こす、または、そのパッケージをインストールしたシステム上でセキュリティホールが生じる場合。\n"
+"    システム上の関係のないソフトウェア (またはシステム全体) を破壊する、重大"
+"なデータの欠落を引き起こす、または、そのパッケージをインストールしたシステム"
+"上でセキュリティホールが生じる場合。\n"
 "<br>\n"
 "<b>grave (重大)</b>\n"
-"    問題のあるパッケージが使用できない、またはほとんど使用できない。またはデータの欠落を引き起こす、そのパッケージを使用するユーザのアカウントにアクセスを許してしまうセキュリティホールが生じる場合。\n"
+"    問題のあるパッケージが使用できない、またはほとんど使用できない。または"
+"データの欠落を引き起こす、そのパッケージを使用するユーザのアカウントにアクセ"
+"スを許してしまうセキュリティホールが生じる場合。\n"
 "<br>\n"
 "<b>serious (深刻)</b>\n"
-"    Debian ポリシーに対して見すごせない違反がある (大まかに言うと、\"must\" や \"required\" の要件に違反している)、またはパッケージメンテナの意見としてそのパッケージがリリースに適していないと判断された場合。\n"
+"    Debian ポリシーに対して見すごせない違反がある (大まかに言うと、\"must\" "
+"や \"required\" の要件に違反している)、またはパッケージメンテナの意見としてそ"
+"のパッケージがリリースに適していないと判断された場合。\n"
 "<br>\n"
 "<b>important (重要)</b>\n"
-"    バグがパッケージの利用に大きく影響しており、対処しなければ誰にもまったく使用できない場合。\n"
+"    バグがパッケージの利用に大きく影響しており、対処しなければ誰にもまったく"
+"使用できない場合。\n"
 "<br>\n"
 "<b>normal (通常)</b> \n"
 "    デフォルト値。通常のバグ。\n"
 "<br>\n"
 "<b>minor (軽度)</b>\n"
-"    問題がパッケージの利用に影響しない、かつ修正はたいした事がないと思われる場合。\n"
+"    問題がパッケージの利用に影響しない、かつ修正はたいした事がないと思われる"
+"場合。\n"
 "<br>\n"
 "<b>wishlist (要望)</b> \n"
 "    将来的な要望、主に設計上の理由により修正が非常に困難なバグ。"
 
-#: ./ui/SubmitDialog.py:171
+#: ../ui/MyMainWindow.py:173
+msgid "<h2>No bugreports for package %s found!</h2>"
+msgstr "<h2>パッケージ %s に該当するバグはひとつもみつかりませんでした！</h2>"
+
+#: ../ui/MyMainWindow.py:178
+msgid "<h2>Click on a bugreport to see the full text.</h2>"
+msgstr "<h2>本文を確認するにはバグレポートをクリックしてください。</h2>"
+
+#: ../ui/MyMainWindow.py:198
+#, fuzzy
+msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:201
+#, fuzzy
+msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:204
+#, fuzzy
+msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:207
+#, fuzzy
+msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:210
+#, fuzzy
+msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:213
+#, fuzzy
+msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
+msgstr "<h2>バグレポート %s を取得中、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:216
+#, fuzzy
+msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
+msgstr "<h2>%s: %s のバグレポートを取得しています、お待ちください。</h2>"
+
+#: ../ui/MyMainWindow.py:266
+msgid "<h2>Fetching bugreport %s, please wait.</h2>"
+msgstr "<h2>バグレポート %s を取得中、お待ちください。</h2>"
+
+#: ../ui/SubmitDialog.py:141
+msgid "Please tell us some details..."
+msgstr "詳細をおしえてください・・・"
+
+#: ../ui/SubmitDialog.py:142
+msgid "&OK"
+msgstr "OK(O)"
+
+#: ../ui/SubmitDialog.py:143
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../ui/SubmitDialog.py:144
+msgid "&Cancel"
+msgstr "Cancel(&C)"
+
+#: ../ui/SubmitDialog.py:145
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../ui/SubmitDialog.py:146
+msgid ""
+"<b>Please choose the mailclient you want to use to write the full bugreport."
+"</b>"
+msgstr ""
+"<b>バグレポートを報告するのに利用するメールクライアントを選択してください。</"
+"b>"
+
+#: ../ui/SubmitDialog.py:147
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr ""
+"<b>短いサマリーを入力してください。重要度とタグは必須ではありません。</b>"
+
+#: ../ui/SubmitDialog.py:148
+msgid "&Mailclient:"
+msgstr "Mailclient(&M):"
+
+#: ../ui/SubmitDialog.py:149
 msgid "patch"
 msgstr "patch"
 
-#: ./ui/SubmitDialog.py:172
-msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
-msgstr "バグ報告に、バグを修正するためのパッチや簡単な手順が含まれています。 パッチがあってもバグを適切に解決できない場合や別の問題を生じる場合は、 このタグは使うべきではありません。"
+#: ../ui/SubmitDialog.py:150
+msgid ""
+"A patch or some other easy procedure for fixing the bug is included in the "
+"bug logs. If there's a patch, but it doesn't resolve the bug adequately or "
+"causes some other problems, this tag should not be used."
+msgstr ""
+"バグ報告に、バグを修正するためのパッチや簡単な手順が含まれています。 パッチが"
+"あってもバグを適切に解決できない場合や別の問題を生じる場合は、 このタグは使う"
+"べきではありません。"
 
-#: ./ui/SubmitDialog.py:173
+#: ../ui/SubmitDialog.py:151
 msgid "l10n"
 msgstr "l10n"
 
-#: ./ui/SubmitDialog.py:174
+#: ../ui/SubmitDialog.py:152
 msgid "This bug is relevant to the localisation of the package."
 msgstr "<このバグは、パッケージの地域化に関するものです。"
 
-#: ./ui/SubmitDialog.py:175
+#: ../ui/SubmitDialog.py:153
 msgid "security"
 msgstr "security"
 
-#: ./ui/SubmitDialog.py:176
-msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
-msgstr "このバグはパッケージのセキュリティ問題を説明します (例: アクセスされてはいけないデータへのアクセスを許可する不正な許可属性がある、 やれるべきではない方法でシステムを制御できるバッファオーバーフローがある、 修正すべき DoS 攻撃の穴がある、等)。ほとんどのセキュリティバグは、critical (致命的) や grave (重大) の severity (重要度) も設定すべきです。"
+#: ../ui/SubmitDialog.py:154
+msgid ""
+"This bug describes a security problem in a package (e.g., bad permissions "
+"allowing access to data that shouldn't be accessible; buffer overruns "
+"allowing people to control a system in ways they shouldn't be able to; "
+"denial of service attacks that should be fixed, etc). Most security bugs "
+"should also be set at critical or grave severity."
+msgstr ""
+"このバグはパッケージのセキュリティ問題を説明します (例: アクセスされてはいけ"
+"ないデータへのアクセスを許可する不正な許可属性がある、 やれるべきではない方法"
+"でシステムを制御できるバッファオーバーフローがある、 修正すべき DoS 攻撃の穴"
+"がある、等)。ほとんどのセキュリティバグは、critical (致命的) や grave (重大) "
+"の severity (重要度) も設定すべきです。"
 
-#: ./ui/SubmitDialog.py:177
+#: ../ui/SubmitDialog.py:155
 msgid "&Tags:"
 msgstr "タグ(&T):"
 
-#: ./ui/SubmitDialog.py:178
+#: ../ui/SubmitDialog.py:156
 msgid "S&everity:"
 msgstr "重要度(&e):"
 
-#: ./ui/SubmitDialog.py:179
+#: ../ui/SubmitDialog.py:157
 msgid "&Summary:"
 msgstr "サマリー(&S):"
 
-#: ./ui/SubmitDialog.py:182
+#: ../ui/SubmitDialog.py:160
 msgid "&Package:"
 msgstr "パッケージ(&P):"
 
-#: ./ui/SubmitDialog.py:183
+#: ../ui/SubmitDialog.py:161
 msgid "&Version:"
 msgstr "バージョン(&V):"
 
+#~ msgid "of source package"
+#~ msgstr "ソースパッケージ"
+
+#~ msgid "from submitter"
+#~ msgstr "送信者"
+
+#~ msgid "of severity"
+#~ msgstr "重要度"
+
+#~ msgid "with tag"
+#~ msgstr "タグ"
+
+#~ msgid "assigned to"
+#~ msgstr "担当者"
+
+#~ msgid "with bug number"
+#~ msgstr "バグ番号"
+
+#~ msgid "for package"
+#~ msgstr "パッケージ"
+
+#~ msgid "Critical"
+#~ msgstr "Critical"
+
+#~ msgid "Grave"
+#~ msgstr "Grave"
+
+#~ msgid "Serious"
+#~ msgstr "Serious"
+
+#~ msgid "Important"
+#~ msgstr "Important"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Minor"
+#~ msgstr "Minor"
+
+#~ msgid "Wishlist"
+#~ msgstr "Wishlist"

@@ -155,61 +155,8 @@
             </property>
         </widget>
         <widget class="QComboBox" row="5" column="1">
-            <item>
-                <property name="text">
-                    <string>Critical</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Grave</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Serious</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Important</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Normal</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Minor</string>
-                </property>
-            </item>
-            <item>
-                <property name="text">
-                    <string>Wishlist</string>
-                </property>
-            </item>
             <property name="name">
                 <cstring>comboBoxSeverity</cstring>
-            </property>
-            <property name="currentItem">
-                <number>4</number>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>&lt;b&gt;critical&lt;/b&gt; makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. 
-&lt;br&gt;
-&lt;b&gt;grave&lt;/b&gt; makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. 
-&lt;br&gt;
-&lt;b&gt;serious&lt;/b&gt; is a severe violation of Debian policy (roughly, it violates a "must" or "required" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. 
-&lt;br&gt;
-&lt;b&gt;important&lt;/b&gt; a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. 
-&lt;br&gt;
-&lt;b&gt;normal&lt;/b&gt; the default value, applicable to most bugs. 
-&lt;br&gt;
-&lt;b&gt;minor&lt;/b&gt; a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. 
-&lt;br&gt;
-&lt;b&gt;wishlist&lt;/b&gt; for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</string>
             </property>
         </widget>
         <widget class="QLineEdit" row="4" column="1">
