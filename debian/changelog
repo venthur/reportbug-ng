@@ -1,3 +1,10 @@
+reportbug-ng (0.2007.05.31) unstable; urgency=low
+
+  * Added Spanish translation (Closes: #426436), thanks Javier
+    Fernandez-Sanguino!
+
+ -- Bastian Venthur <venthur@debian.org>  Thu, 31 May 2007 11:51:19 +0200
+
 reportbug-ng (0.2007.05.28) unstable; urgency=low
 
   * Added Japanese translation (Closes: #426288), thanks Junichi Uekawa!
