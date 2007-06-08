@@ -285,6 +285,8 @@ class MyMainWindow(Form):
             dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
         for sev in SEVERITY:
             dialog.comboBoxSeverity.insertItem(sev)
+        # Set default severity to 'normal'
+        dialog.comboBoxSeverity.setCurrentItem(4)
         QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
         dialog.comboBoxSeverity.setEnabled(0)
         dialog.checkBoxSecurity.setEnabled(0)
@@ -318,6 +320,8 @@ class MyMainWindow(Form):
             dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
         for sev in SEVERITY:
             dialog.comboBoxSeverity.insertItem(sev)
+        # Set default severity to 'normal'
+        dialog.comboBoxSeverity.setCurrentItem(4)
         QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
                
         if dialog.exec_loop() == dialog.Accepted:

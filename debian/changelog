@@ -9,6 +9,7 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
   * Fixed small bug where searching for a single bug via bugnumber would show
     unstipped HTML code in the severity column if the severity is grave, 
     serious or important
+  * Set default severity to "normal"
 
  -- Bastian Venthur <venthur@debian.org>  Fri, 08 Jun 2007 10:48:46 +0200
 
