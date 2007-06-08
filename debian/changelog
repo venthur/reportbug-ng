@@ -1,3 +1,17 @@
+reportbug-ng (0.2007.06.xx) unstable; urgency=low
+
+  * Added Catalan translation (Closes: #427884), thanks David Planella!
+  * Updated Japanese translation (Closes: #427008)
+  * Fixed typo in German translation
+
+  * Fixed small bug where reporting a new bug for a sourcepacke foo would 
+    result in a bugreport for 'package: src:foo'
+  * Fixed small bug where searching for a single bug via bugnumber would show
+    unstipped HTML code in the severity column when the severity is grave, 
+    serious or important
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 08 Jun 2007 10:48:46 +0200
+
 reportbug-ng (0.2007.05.31) unstable; urgency=low
 
   * Added Spanish translation (Closes: #426436), thanks Javier

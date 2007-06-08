@@ -196,7 +196,7 @@ class MyMainWindow(Form):
         s = unicode(self.lineEdit.text()).strip()
         if (s.startswith('src:')):
             what = _("<h2>Fetching bugreports of source package %s, please wait.</h2>") % s.split(":")[1]
-            self.stateChanged(s, None)
+            self.stateChanged(s.split(":")[1], None)
         elif (s.startswith('from:')):
             what = _("<h2>Fetching bugreports from submitter %s, please wait.</h2>") % s.split(":")[1]
             self.stateChanged(None, None)

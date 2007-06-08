@@ -103,7 +103,13 @@ def getSingleBug(bugnr):
         severity = re.findall("^<h3>Severity: (.*);$", block, re.MULTILINE)
         done = re.findall("^<br><strong>Done:</strong>.*$", block, re.MULTILINE)
         if severity:
-            bug.severity = htmlUnescape(severity[0])
+            # sometimes severity is enclosed by <em></em>, strip it if present
+            tmp = severity[0]
+            severity = re.findall("^<em .*>(.*)</em>$", tmp, re.MULTILINE)
+            if severity:
+                bug.severity = htmlUnescape(severity[0])
+            else:
+                bug.severity = htmlUnescape(tmp)
         if done:
             bug.status = u"Resolved"
 

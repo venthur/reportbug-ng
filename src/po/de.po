@@ -214,7 +214,7 @@ msgstr "<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</
 
 #: ../ui/MyMainWindow.py:213
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerbericht mit Fehlernummer%s, bitte warten Sie.</h2>"
+msgstr "<h2>Lade Fehlerbericht mit Fehlernummer %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:216
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
