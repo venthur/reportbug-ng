@@ -1,6 +1,6 @@
 Source: reportbug-ng
 Section: utils
-Priority: extra
+Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
 Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools
 Standards-Version: 3.7.2
