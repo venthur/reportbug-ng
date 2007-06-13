@@ -1,0 +1,237 @@
+# Czech translation of Reportbug-NG.
+# Copyright (C) 2007 Miroslav Kure
+# Miroslav Kure <kurem@debian.cz>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: reportbug-ng\n"
+"POT-Creation-Date: 2007-05-28 14:16+CEST\n"
+"PO-Revision-Date: 2007-06-10 09:26+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ../ui/MainWindow.py:195 ../ui/MainWindow.py:233
+msgid "Summary"
+msgstr "Souhrn"
+
+#: ../ui/MainWindow.py:197 ../ui/MainWindow.py:234
+msgid "Status"
+msgstr "Stav"
+
+#: ../ui/MainWindow.py:199 ../ui/MainWindow.py:235
+msgid "Severity"
+msgstr "Závažnost"
+
+#: ../ui/MainWindow.py:225
+msgid "Reportbug NG"
+msgstr "Reportbug NG"
+
+#: ../ui/MainWindow.py:226
+msgid "Enter a package name or a filter expression"
+msgstr "Zadejte jméno balíku nebo filtrovací výraz"
+
+#: ../ui/MainWindow.py:227
+msgid "&Additional Info"
+msgstr "Dod&atečné informace"
+
+#: ../ui/MainWindow.py:228
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: ../ui/MainWindow.py:229
+msgid "Provide additional information for the current bugreport"
+msgstr "Přidá další informace ke stávajícímu hlášení o chybě"
+
+#: ../ui/MainWindow.py:230
+msgid "&New Bugreport"
+msgstr "&Nové hlášení o chybě"
+
+#: ../ui/MainWindow.py:231
+msgid "Alt+N"
+msgstr "Alt+N"
+
+#: ../ui/MainWindow.py:232
+msgid "Create new bugreport for current package"
+msgstr "Vytvoří nové hlášení o chybě v aktuálním balíku"
+
+#: ../ui/MainWindow.py:236
+msgid "Click on bugreport to see the full conversation below"
+msgstr "Pro zobrazení celé konverzace klikněte na chybové hlášení"
+
+#: ../ui/MyMainWindow.py:33
+msgid ""
+"<h2>Using Reportbug-NG</h2>\n"
+"<h3>Step 1: Finding Bugs</h3>\n"
+"<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>\n"
+"\n"
+"<p>The following queries are supported:\n"
+"<dl>\n"
+"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>\n"
+"<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>\n"
+"<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>\n"
+"\n"
+"<h3>Step 2: Filtering Bugs</h3>\n"
+"<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and\n"
+"affects the packagename, bugnumber, summary, status and severity of a bug.</p>\n"
+"\n"
+"<h3>Step 3: Reporting Bugs</h3>\n"
+"<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
+msgstr ""
+"<h2>Používání Reportbug-NG</h2>\n"
+"<h3>1. krok: Hledání chyb</h3>\n"
+"<p>Pro nalezení chyby jednoduše zadejte dotaz a stiskněte Enter. Načítání seznamu může trvat několik sekund.</p>\n"
+"\n"
+"<p>Podporovány jsou následující dotazy:\n"
+"<dl>\n"
+"<dt><code>balík</code></dt><dd>Vrátí všechny chyby patřící BALÍKU</dd>\n"
+"<dt><code>číslochyby</code></dt><dd>Vrátí chybu s číslem ČÍSLOCHYBY</dd>\n"
+"<dt><code>vývojář@kde.si</code></dt><dd>Vrátí všechny chyby přiřazené VÝVOJÁŘI</dd>\n"
+"<dt><code>src:zdrojovýbalík</code></dt><dd>Vrátí všechny chyby patřící ZDROJOVÉMUBALÍKU</dd>\n"
+"<dt><code>from:odesílatel@kde.si</code></dt><dd>Vrátí všechny chyby zaslané ODESÍLATELEM</dd>\n"
+"<dt><code>severity:důležitost</code></dt><dd>Vrátí všechny chyby dané DŮLEŽITOSTI. Varování: tento seznam bude velmi dlouhý. Rozpoznávané hodnoty jsou: critical, grave, serious, important, normal, minor a wishlist</dd>\n"
+"<dt><code>tag:značka</code></dt><dd>Vrátí všechny chyby označené ZNAČKOU</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>Pro zobrazení celého hlášení o chybě klikněte v seznamu na požadovanou chybu. Odkazy v chybovém hlášení se po kliknutí otevřou v externím prohlížeči.</p>\n"
+"\n"
+"<h3>2. krok: Filtrování chyb</h3>\n"
+"<p>Seznam nalezených chyb můžete filtrovat zadáním několika písmen (bez stisku Enter). Filtr nebere ohled na velikost písmen\n"
+"a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.</p>\n"
+"\n"
+"<h3>3. krok: Hlášení chyb</h3>\n"
+"<p>Buď můžete přidat další informaci ke stávající chybě kliknutím na její číslo v seznamu a stisknutím tlačítka „Dodatečné informace“, nebo můžete vytvořit úplně nové hlášení o chybě v aktuálním balíku kliknutím na tlačítko „Nové hlášení o chybě“.</p>\n"
+
+#: ../ui/MyMainWindow.py:63
+msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
+msgstr "<b>%(cri)</b> znamená, že se pokazí nesouvisející software (případně celý systém), způsobuje závažnou ztrátu dat, nebo v systému s tímto balíkem odhaluje závažnou bezpečnostní díru. <br> <b>%(gra)</b> znamená, že je daný balík nepoužitelný, způsobuje ztrátu dat, případně odhaluje bezpečnostní díru, která umožňuje přístup k účtům uživatelů, kteří balík využívají. <br> <b>%(ser)</b> je závažné porušení politiky Debianu (v zásadě porušuje nařízení „must“ nebo „required“), případně si správce balíku myslí, že balík není vhodný pro vydání. <br> <b>%(imp)</b> je chyba, která má velký vliv na použitelnost balíku, což ale neznamená, že nemůže fungovat pro někoho jiného. <br> <b>%(nor)</b> je výchozí hodnota vhodná pro většinu chyb. <br> <b>%(min)</b> problém, který nemá vliv na užitečnost balíku a je pravděpodobně jednoduše opravitelný. <br> <b>%(wis)</b> pro požadavky na novou funkcionalitu a také pro chyby, které se dají velmi těžko opravit, protože se liší od toho, jak byl balík navržen."
+
+#: ../ui/MyMainWindow.py:173
+msgid "<h2>No bugreports for package %s found!</h2>"
+msgstr "<h2>Žádná chybová hlášení pro balík %s nebyla nalezena!</h2>"
+
+#: ../ui/MyMainWindow.py:178
+msgid "<h2>Click on a bugreport to see the full text.</h2>"
+msgstr "<h2>Pro zobrazení celého textu klikněte na hlášení o chybě.</h2>"
+
+#: ../ui/MyMainWindow.py:198
+msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách ve zdrojovém balíku %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:201
+msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách od zasilatele %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:204
+msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách se závažností %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:207
+msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách se značkou %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:210
+msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách přiřazené %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:213
+msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybě číslo %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:216
+msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybách v balíku %s, čekejte prosím.</h2>"
+
+#: ../ui/MyMainWindow.py:266
+msgid "<h2>Fetching bugreport %s, please wait.</h2>"
+msgstr "<h2>Stahuji hlášení o chybě %s, čekejte prosím.</h2>"
+
+#: ../ui/SubmitDialog.py:141
+msgid "Please tell us some details..."
+msgstr "Povězte nám prosím podrobnosti..."
+
+#: ../ui/SubmitDialog.py:142
+msgid "&OK"
+msgstr "&OK"
+
+#: ../ui/SubmitDialog.py:143
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../ui/SubmitDialog.py:144
+msgid "&Cancel"
+msgstr "&Zrušit"
+
+#: ../ui/SubmitDialog.py:145
+msgid "Alt+C"
+msgstr "Alt+Z"
+
+#: ../ui/SubmitDialog.py:146
+msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
+msgstr "<b>Vyberte prosím poštovního klienta, kterého chcete použít pro napsání kompletního hlášení o chybě.</b>"
+
+#: ../ui/SubmitDialog.py:147
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr "<b>Zadejte prosím krátký souhrn. Závažnost a značky jsou volitelné.</b>"
+
+#: ../ui/SubmitDialog.py:148
+msgid "&Mailclient:"
+msgstr "Poštovní klient:"
+
+#: ../ui/SubmitDialog.py:149
+msgid "patch"
+msgstr "patch"
+
+#: ../ui/SubmitDialog.py:150
+msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
+msgstr "Záplata nebo jiný jednoduchý postup pro opravení chyby je součástí tohoto hlášení. Pokud je záplata přiložena, ovšem neřeší problém úplně, případně pokud způsobuje jiné problémy, neměla by se tato značka používat."
+
+#: ../ui/SubmitDialog.py:151
+msgid "l10n"
+msgstr "l10n"
+
+#: ../ui/SubmitDialog.py:152
+msgid "This bug is relevant to the localisation of the package."
+msgstr "Tato chyba se týká lokalizace balíku."
+
+#: ../ui/SubmitDialog.py:153
+msgid "security"
+msgstr "security"
+
+#: ../ui/SubmitDialog.py:154
+msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
+msgstr "Tato chyba popisuje bezpečnostní problém v balíku (např. chybná oprávnění umožňující přístup k citlivým datům, přetečení zásobníku vedoucí k získání kontroly nad systémem, možnost útoků typu odepření služby, atd.). Většina bezpečnostních chyb by měla mít také závažnost „critical“ nebo „grave“."
+
+#: ../ui/SubmitDialog.py:155
+msgid "&Tags:"
+msgstr "Znač&ky:"
+
+#: ../ui/SubmitDialog.py:156
+msgid "S&everity:"
+msgstr "Závažnos&t:"
+
+#: ../ui/SubmitDialog.py:157
+msgid "&Summary:"
+msgstr "&Souhrn:"
+
+#: ../ui/SubmitDialog.py:160
+msgid "&Package:"
+msgstr "&Balík:"
+
+#: ../ui/SubmitDialog.py:161
+msgid "&Version:"
+msgstr "&Verze:"
+
