@@ -3,6 +3,7 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
   * Changed priority from extra to optional
 
   * Added Catalan translation (Closes: #427884), thanks David Planella!
+  * Added Czech translataion (Closes: #428430), thanks  Miroslav Kure!
   * Updated Japanese translation (Closes: #427008)
   * Fixed typo in German translation
 
