@@ -1,3 +1,11 @@
+reportbug-ng (0.2007.06.xx) unstable; urgency=low
+
+  * Remember size and position of MainWindow and restore those settings
+    on next startup
+  * Removed annoying tooltip from main table
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 17 Jun 2007 13:29:39 +0200
+
 reportbug-ng (0.2007.06.13) unstable; urgency=low
 
   * Changed priority from extra to optional

@@ -101,7 +101,7 @@ class MyTableItem(QTableItem):
 
 class MyMainWindow(Form):
     
-    def __init__(self, lastMUA=""):
+    def __init__(self, settings):
         Form.__init__(self)
         self.bugs = []
         self.stateChanged(None, None)
@@ -113,8 +113,10 @@ class MyMainWindow(Form):
         self.table.setColumnStretchable(0, True)
         self.splitter.setSizes([150,300])
 
-        self.lastMUA = lastMUA
-        
+        self.settings = settings
+        self.resize(self.settings.width, self.settings.height)
+        self.move(self.settings.x, self.settings.y)
+
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
@@ -123,6 +125,22 @@ class MyMainWindow(Form):
         if len(sys.argv) > 1:
             self.lineEdit.setText(unicode(sys.argv[1], "utf-8"))
             self.lineEdit_returnPressed()
+            
+    def closeEvent(self, ce):
+        # Dirty Hack. Due X's limitations, we must get the position of the 
+        # window *before* it is get's undecorated.
+        # See: http://doc.trolltech.com/3.3/geometry.html
+        # So we overwrite the closeEvent to get the position before we
+        # distroy the window.
+        p = self.pos()
+        s = self.size()
+        self.settings.x = p.x()
+        self.settings.y = p.y()
+        self.settings.width = s.width()
+        self.settings.height = s.height()
+
+        # Accecpt the closeEvent 
+        ce.accept()
 
     
     def stateChanged(self, package, bug):
@@ -281,8 +299,8 @@ class MyMainWindow(Form):
         dialog.lineEditVersion.setText(version)
         for mua in SUPPORTED_MUA:
             dialog.comboBoxMUA.insertItem(mua.title())
-        if self.lastMUA in SUPPORTED_MUA:
-            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
+        if self.settings.lastmua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.settings.lastmua))
         for sev in SEVERITY:
             dialog.comboBoxSeverity.insertItem(sev)
         # Set default severity to 'normal'
@@ -301,7 +319,7 @@ class MyMainWindow(Form):
             to = "%s@bugs.debian.org" % self.currentBug.nr
             body = prepareBody(package, version)
             
-            self.lastMUA = mua
+            self.settings.lastmua = mua
             prepareMail(mua, to, subject, body)
 
     
@@ -316,8 +334,8 @@ class MyMainWindow(Form):
         dialog.lineEditVersion.setText(version)
         for mua in SUPPORTED_MUA:
             dialog.comboBoxMUA.insertItem(mua.title())
-        if self.lastMUA in SUPPORTED_MUA:
-            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.lastMUA))
+        if self.settings.lastmua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.settings.lastmua))
         for sev in SEVERITY:
             dialog.comboBoxSeverity.insertItem(sev)
         # Set default severity to 'normal'
@@ -341,7 +359,7 @@ class MyMainWindow(Form):
             to = "submit@bugs.debian.org"
             body = prepareBody(package, version, severity, tags)
             
-            self.lastMUA = mua
+            self.settings.lastmua = mua
             prepareMail(mua, to, subject, body)
 
     

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-06-08 10:55+CEST\n"
+"POT-Creation-Date: 2007-06-17 15:39+CEST\n"
 "PO-Revision-Date: 2007-05-29 19:37+0200\n"
 "Last-Translator: David Planella <david.planella@googlemail.com\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -57,10 +57,6 @@ msgstr "Alt+N"
 #: ../ui/MainWindow.py:232
 msgid "Create new bugreport for current package"
 msgstr "Crea un informe d'error nou per a aquest paquet"
-
-#: ../ui/MainWindow.py:236
-msgid "Click on bugreport to see the full conversation below"
-msgstr "Feu clic a l'informe d'error per a veure el diàleg complet a sota"
 
 #: ../ui/MyMainWindow.py:33
 #, fuzzy
@@ -189,56 +185,56 @@ msgstr ""
 "nova funcionalitat, i també per a errors molt difícils de resoldre degut a "
 "consideracions de disseny importants."
 
-#: ../ui/MyMainWindow.py:173
+#: ../ui/MyMainWindow.py:191
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>No s'ha trobat cap informe d'error per al paquet %s</h2>"
 
-#: ../ui/MyMainWindow.py:178
+#: ../ui/MyMainWindow.py:196
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Feu clic en l'informe d'error per a veure el text complet.</h2>"
 
-#: ../ui/MyMainWindow.py:198
+#: ../ui/MyMainWindow.py:216
 #, fuzzy
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:201
+#: ../ui/MyMainWindow.py:219
 #, fuzzy
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:222
 #, fuzzy
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:207
+#: ../ui/MyMainWindow.py:225
 #, fuzzy
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:210
+#: ../ui/MyMainWindow.py:228
 #, fuzzy
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:213
+#: ../ui/MyMainWindow.py:231
 #, fuzzy
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>S'està recollint l'informe d'error %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:216
+#: ../ui/MyMainWindow.py:234
 #, fuzzy
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:266
+#: ../ui/MyMainWindow.py:284
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>S'està recollint l'informe d'error %s, espereu un moment.</h2>"
 
@@ -342,6 +338,9 @@ msgstr "&Paquet:"
 #: ../ui/SubmitDialog.py:161
 msgid "&Version:"
 msgstr "&Versió:"
+
+#~ msgid "Click on bugreport to see the full conversation below"
+#~ msgstr "Feu clic a l'informe d'error per a veure el diàleg complet a sota"
 
 #~ msgid "of source package"
 #~ msgstr "del paquet font"

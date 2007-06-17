@@ -28,13 +28,14 @@ from ui.MyMainWindow import MyMainWindow
 import signal
 import qt
 import sys
-import ConfigParser, os
+import os
 from optparse import OptionParser
 
 import lib.ReportbugNG
-
+from lib.Settings import Settings
 
 CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
+
 
 if __name__ == "__main__":
     # Get Options
@@ -62,27 +63,19 @@ the Free Software Foundation; either version 2 of the License, or
     
     (options, args) = parser.parse_args()
 
-    # Read some config values
-    config = ConfigParser.ConfigParser()
-    config.read(CONFIGFILE)
-    
-    lastmua = ""
-    if config.has_option("general", "lastMUA"):
-	    lastmua = config.get("general", "lastMUA")
+    settings = Settings(CONFIGFILE)
+    settings.load()
 
     app = qt.QApplication(sys.argv)
     app.connect(app, qt.SIGNAL("lastWindowClosed()"), app, qt.SLOT("quit()"))
     
-    mw = MyMainWindow(lastmua)
+    mw = MyMainWindow(settings)
     app.setMainWidget(mw)
     mw.show()
 
     signal.signal(signal.SIGINT, signal.SIG_DFL) 
     app.exec_loop()
     
-    # Write back some config values
-    if not config.has_section("general"):
-    	config.add_section("general")
+    settings.save()    
+   
     
-    config.set("general", "lastMUA", mw.lastMUA)
-    config.write(open(CONFIGFILE, "w"))

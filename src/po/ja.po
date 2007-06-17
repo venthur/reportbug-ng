@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-NG\n"
-"POT-Creation-Date: 2007-05-28 14:16+CEST\n"
+"POT-Creation-Date: 2007-06-17 15:39+CEST\n"
 "PO-Revision-Date: 2007-06-01 17:41+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -59,11 +59,6 @@ msgstr "Alt+N"
 msgid "Create new bugreport for current package"
 msgstr "現在のパッケージのために新規バグレポートを作成する"
 
-#: ../ui/MainWindow.py:236
-msgid "Click on bugreport to see the full conversation below"
-msgstr ""
-"バグレポートにクリックすると、該当バグレポートの対話の記録を下に表示する"
-
 #: ../ui/MyMainWindow.py:33
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
@@ -106,27 +101,38 @@ msgid ""
 msgstr ""
 "<h2>Reportbug-NG の使いかた</h2>\n"
 "<h3>Step 1: バグを探す</h3>\n"
-"<p>バグ報告をみつけるためには、検索語を入力しエンターキーを押してください。リストのロードに数秒かかる可能性はあります。</p>\n"
+"<p>バグ報告をみつけるためには、検索語を入力しエンターキーを押してください。リ"
+"ストのロードに数秒かかる可能性はあります。</p>\n"
 "\n"
 "<p>下記の検索がサポートされています：\n"
 "<dl>\n"
 "<dt><code>package</code></dt><dd>PACKAGE に所属するバグの表示</dd>\n"
 "<dt><code>bugnumber</code></dt><dd>BUGNUMBER のバグを表示</dd>\n"
-"<dt><code>maintainer@foo.bar</code></dt><dd>MAINTAINER に割り当てられているバグ全て</dd>\n"
-"<dt><code>src:sourcepackage</code></dt><dd>SOURCEPACKAGE に属するバグ全て</dd>\n"
-"<dt><code>from:submitter@foo.bar</code></dt><dd>SUBMITTER が登録したバグ全て</dd>\n"
-"<dt><code>severity:foo</code></dt><dd>SEVERITY のバグを全て取得します。このリストは非常に長い可能性があるので気をつけること。可能な値は: critical・grave・serious・important・normal・minor・wishlist</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>MAINTAINER に割り当てられているバ"
+"グ全て</dd>\n"
+"<dt><code>src:sourcepackage</code></dt><dd>SOURCEPACKAGE に属するバグ全て</"
+"dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>SUBMITTER が登録したバグ全て"
+"</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>SEVERITY のバグを全て取得します。このリ"
+"ストは非常に長い可能性があるので気をつけること。可能な値は: critical・grave・"
+"serious・important・normal・minor・wishlist</dd>\n"
 "<dt><code>tag:bar</code></dt><dd>TAG のついているバグを全て表示</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>バグレポートの全文を確認するためには、リストの中のバグを選択してください。バグレポート内のリンクはクリックすれば外部ブラウザで開きます。</p>\n"
+"<p>バグレポートの全文を確認するためには、リストの中のバグを選択してください。"
+"バグレポート内のリンクはクリックすれば外部ブラウザで開きます。</p>\n"
 "\n"
 "<h3>Step 2: バグをフィルタリングする</h3>\n"
-"<p>既存のバグの一覧からフィルタするには、（エンターをおさずに）いくつかの文字を入力してください。フィルタは大文字・小文字を無視し、 バグレポートのパッケージ名・バグ番号・サマリー・ステータス・重要度から検索します。</p>\n"
+"<p>既存のバグの一覧からフィルタするには、（エンターをおさずに）いくつかの文字"
+"を入力してください。フィルタは大文字・小文字を無視し、 バグレポートのパッケー"
+"ジ名・バグ番号・サマリー・ステータス・重要度から検索します。</p>\n"
 "\n"
 "<h3>Step 3: バグの報告</h3>\n"
-"<p>既存のバグレポートをクリックして「追加情報」ボタンをおすことでに追加情報を提供することもできますし、新しいバグレポートを「新規バグレポート」ボタンを押すことで登録することができます。\n"
+"<p>既存のバグレポートをクリックして「追加情報」ボタンをおすことでに追加情報を"
+"提供することもできますし、新しいバグレポートを「新規バグレポート」ボタンを押"
+"すことで登録することができます。\n"
 
 #: ../ui/MyMainWindow.py:63
 msgid ""
@@ -146,63 +152,76 @@ msgid ""
 "are very difficult to fix due to major design considerations."
 msgstr ""
 "<b>%(cri)s</b>\n"
-"    システム上の関係のないソフトウェア (またはシステム全体) を破壊する、重大なデータの欠落を引き起こす、または、そのパッケージをインストールしたシステム上でセキュリティホールが生じる場合。\n"
+"    システム上の関係のないソフトウェア (またはシステム全体) を破壊する、重大"
+"なデータの欠落を引き起こす、または、そのパッケージをインストールしたシステム"
+"上でセキュリティホールが生じる場合。\n"
 "<br>\n"
 "<b>%(gra)s</b>\n"
-"    問題のあるパッケージが使用できない、またはほとんど使用できない。またはデータの欠落を引き起こす、そのパッケージを使用するユーザのアカウントにアクセスを許してしまうセキュリティホールが生じる場合。\n"
+"    問題のあるパッケージが使用できない、またはほとんど使用できない。または"
+"データの欠落を引き起こす、そのパッケージを使用するユーザのアカウントにアクセ"
+"スを許してしまうセキュリティホールが生じる場合。\n"
 "<br>\n"
 "<b>%(ser)s</b>\n"
-"    Debian ポリシーに対して見すごせない違反がある (大まかに言うと、\"must\" や \"required\" の要件に違反している)、またはパッケージメンテナの意見としてそのパッケージがリリースに適していないと判断された場合。\n"
+"    Debian ポリシーに対して見すごせない違反がある (大まかに言うと、\"must\" "
+"や \"required\" の要件に違反している)、またはパッケージメンテナの意見としてそ"
+"のパッケージがリリースに適していないと判断された場合。\n"
 "<br>\n"
 "<b>%(imp)s</b>\n"
-"    バグがパッケージの利用に大きく影響しており、対処しなければ誰にもまったく使用できない場合。\n"
+"    バグがパッケージの利用に大きく影響しており、対処しなければ誰にもまったく"
+"使用できない場合。\n"
 "<br>\n"
 "<b>%(nor)s</b> \n"
 "    デフォルト値。通常のバグ。\n"
 "<br>\n"
 "<b>%(min)s</b>\n"
-"    問題がパッケージの利用に影響しない、かつ修正はたいした事がないと思われる場合。\n"
+"    問題がパッケージの利用に影響しない、かつ修正はたいした事がないと思われる"
+"場合。\n"
 "<br>\n"
 "<b>%(wis)s</b> \n"
 "    将来的な要望、主に設計上の理由により修正が非常に困難なバグ。"
 
-#: ../ui/MyMainWindow.py:173
+#: ../ui/MyMainWindow.py:191
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>パッケージ %s に該当するバグはひとつもみつかりませんでした！</h2>"
 
-#: ../ui/MyMainWindow.py:178
+#: ../ui/MyMainWindow.py:196
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>本文を確認するにはバグレポートをクリックしてください。</h2>"
 
-#: ../ui/MyMainWindow.py:198
+#: ../ui/MyMainWindow.py:216
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
-msgstr "<h2>ソースパッケージ %sのバグレポートを取得しています、お待ちください。</h2>"
+msgstr ""
+"<h2>ソースパッケージ %sのバグレポートを取得しています、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:201
+#: ../ui/MyMainWindow.py:219
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>%s が投稿したバグレポートを取得しています、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:222
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>重要度 %s のバグレポートを取得しています、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:207
+#: ../ui/MyMainWindow.py:225
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
-msgstr "<h2>タグ %s のついたバグレポートを取得しています、お待ちください。</h2>"
+msgstr ""
+"<h2>タグ %s のついたバグレポートを取得しています、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:210
+#: ../ui/MyMainWindow.py:228
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>%s にアサインされているバグレポートを取得しています、お待ちください。</h2>"
+msgstr ""
+"<h2>%s にアサインされているバグレポートを取得しています、お待ちください。</"
+"h2>"
 
-#: ../ui/MyMainWindow.py:213
+#: ../ui/MyMainWindow.py:231
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>バグ番号 %s のバグレポートを取得中、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:216
+#: ../ui/MyMainWindow.py:234
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
-msgstr "<h2>パッケージ %s のバグレポートを取得しています、お待ちください。</h2>"
+msgstr ""
+"<h2>パッケージ %s のバグレポートを取得しています、お待ちください。</h2>"
 
-#: ../ui/MyMainWindow.py:266
+#: ../ui/MyMainWindow.py:284
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>バグレポート %s を取得中、お待ちください。</h2>"
 
@@ -302,6 +321,10 @@ msgstr "パッケージ(&P):"
 #: ../ui/SubmitDialog.py:161
 msgid "&Version:"
 msgstr "バージョン(&V):"
+
+#~ msgid "Click on bugreport to see the full conversation below"
+#~ msgstr ""
+#~ "バグレポートにクリックすると、該当バグレポートの対話の記録を下に表示する"
 
 #~ msgid "of source package"
 #~ msgstr "ソースパッケージ"

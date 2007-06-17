@@ -121,9 +121,6 @@
                 <property name="focusStyle">
                     <enum>FollowStyle</enum>
                 </property>
-                <property name="toolTip" stdset="0">
-                    <string>Click on bugreport to see the full conversation below</string>
-                </property>
             </widget>
             <widget class="QTextBrowser">
                 <property name="name">

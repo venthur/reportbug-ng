@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"POT-Creation-Date: 2007-05-28 14:16+CEST\n"
+"POT-Creation-Date: 2007-06-17 15:39+CEST\n"
 "PO-Revision-Date: 2007-05-28 14:41+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -59,10 +59,6 @@ msgstr "Alt+N"
 #: ../ui/MainWindow.py:232
 msgid "Create new bugreport for current package"
 msgstr "Neuen Fehlerbericht für aktuelles Paket erstellen"
-
-#: ../ui/MainWindow.py:236
-msgid "Click on bugreport to see the full conversation below"
-msgstr "Klicken Sie auf den Fehlerbericht um den kompletten Dialog zu lesen"
 
 #: ../ui/MyMainWindow.py:33
 msgid ""
@@ -170,57 +166,59 @@ msgstr ""
 "dem System, auf dem Sie das Paket installieren.<br> <b>%(gra)s</b> Macht das "
 "betreffende Paket (fast) unbrauchbar oder verursacht einen Datenverlust oder "
 "öffnet eine Sicherheitslücke, die es erlaubt, auf die Benutzeraccounts "
-"derjenigen Benutzer zuzugreifen, die das Paket verwenden.<br><b>%(ser)s</"
-"b> Ist eine ernsthafte Verletzung der Debian Policy (bedeutet ungefähr, dass "
-"es eine »muss«- oder »erfordert«-Klausel verletzt) oder macht das Paket nach "
+"derjenigen Benutzer zuzugreifen, die das Paket verwenden.<br><b>%(ser)s</b> "
+"Ist eine ernsthafte Verletzung der Debian Policy (bedeutet ungefähr, dass es "
+"eine »muss«- oder »erfordert«-Klausel verletzt) oder macht das Paket nach "
 "Meinung des Betreuers ungeeignet für eine Veröffentlichung.<br><b>%(imp)s</"
 "b> Ein Fehler, der wesentliche Auswirkungen auf die Benutzbarkeit des Pakets "
-"hat, ohne es völlig unbrauchbar für jedermann zu machen.<br> <b>%(nor)s</"
-"b> Standardwert, anwendbar auf die meisten Fehler.<br><b>%(min)s</b> Ein "
+"hat, ohne es völlig unbrauchbar für jedermann zu machen.<br> <b>%(nor)s</b> "
+"Standardwert, anwendbar auf die meisten Fehler.<br><b>%(min)s</b> Ein "
 "Problem, das die Nützlichkeit des Pakets nicht beeinflusst, und das "
 "vermutlich sehr leicht zu beheben ist.<br><b>%(wis)s</b> Für beliebige "
 "Feature-Requests, aber auch für beliebige Fehler, die aufgrund wesentlicher "
 "konzeptioneller Erwägungen sehr schwer zu beheben sind."
 
-#: ../ui/MyMainWindow.py:173
+#: ../ui/MyMainWindow.py:191
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Keine Fehlerberichte für Paket %s gefunden!</h2>"
 
-#: ../ui/MyMainWindow.py:178
+#: ../ui/MyMainWindow.py:196
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr ""
 "<h2>Klicken Sie auf den Fehlerbericht um den vollständigen Text zu sehen.</"
 "h2>"
 
-#: ../ui/MyMainWindow.py:198
+#: ../ui/MyMainWindow.py:216
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte für Quellpaket %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:201
+#: ../ui/MyMainWindow.py:219
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte von Einsender %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:222
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:207
+#: ../ui/MyMainWindow.py:225
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte mit tag %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:210
+#: ../ui/MyMainWindow.py:228
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:213
+#: ../ui/MyMainWindow.py:231
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerbericht mit Fehlernummer %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:216
+#: ../ui/MyMainWindow.py:234
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte für Paket %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:266
+#: ../ui/MyMainWindow.py:284
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerbericht %s, bitte warten Sie.</h2>"
 
@@ -325,3 +323,5 @@ msgstr "&Paket:"
 msgid "&Version:"
 msgstr "&Version:"
 
+#~ msgid "Click on bugreport to see the full conversation below"
+#~ msgstr "Klicken Sie auf den Fehlerbericht um den kompletten Dialog zu lesen"
