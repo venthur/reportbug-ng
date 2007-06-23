@@ -14,7 +14,7 @@ install:
 	done
 
 clean:
-	rm -f *.mo
+	rm -f *.mo *.po~
 
 update:
 	pygettext --keyword=tr --default-domain=reportbug-ng ..
