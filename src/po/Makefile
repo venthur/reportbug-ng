@@ -19,5 +19,7 @@ clean:
 update:
 	pygettext --keyword=tr --default-domain=reportbug-ng ..
 	for i in $(shell find *.po); do \
+	    echo $$i; \
 	    msgmerge -U $$i reportbug-ng.pot; \
+	    msgfmt --statistics $$i; \
 	done

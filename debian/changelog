@@ -4,6 +4,7 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
 
   * Added Dutch translation, thanks Tino Meinen!
   * Added French translation (Closes: #430172), thanks Robert-André Mauchin!
+  * Added Norwegian translation (Closes: #430340), thanks Runa Sandvik!
 
   * Remember size and position of MainWindow and restore those settings
     on next startup

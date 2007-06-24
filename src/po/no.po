@@ -1,63 +1,65 @@
-# SOME DESCRIPTIVE TITLE.
+# translation of no.po to
+# Norwegian translation of reportbug-ng
 # Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Runa Sandvik <runa@samfundet.no>, 2007.
+# Bastian Venthur <venthur@debian.org>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-06-24 17:20+CEST\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: no\n"
+"POT-Creation-Date: 2007-06-23 12:35+CEST\n"
+"PO-Revision-Date: 2007-06-24 17:04+0200\n"
+"Last-Translator: Bastian Venthur <venthur@debian.org>\n"
+"Language-Team:  <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
-
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../ui/MainWindow.py:195 ../ui/MainWindow.py:233
 msgid "Summary"
-msgstr ""
+msgstr "Sammendrag"
 
 #: ../ui/MainWindow.py:197 ../ui/MainWindow.py:234
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: ../ui/MainWindow.py:199 ../ui/MainWindow.py:235
 msgid "Severity"
-msgstr ""
+msgstr "Alvorlighetsgrad"
 
 #: ../ui/MainWindow.py:225
 msgid "Reportbug NG"
-msgstr ""
+msgstr "Reportbug NG"
 
 #: ../ui/MainWindow.py:226
 msgid "Enter a package name or a filter expression"
-msgstr ""
+msgstr "Angi et pakkenavn eller et filteruttrykk"
 
 #: ../ui/MainWindow.py:227
 msgid "&Additional Info"
-msgstr ""
+msgstr "&Ytterligere informasjon"
 
 #: ../ui/MainWindow.py:228
 msgid "Alt+A"
-msgstr ""
+msgstr "Alt+Y"
 
 #: ../ui/MainWindow.py:229
 msgid "Provide additional information for the current bugreport"
-msgstr ""
+msgstr "Gi mer informasjon for den aktuelle feilrapporten"
 
 #: ../ui/MainWindow.py:230
 msgid "&New Bugreport"
-msgstr ""
+msgstr "&Ny feilrapport"
 
 #: ../ui/MainWindow.py:231
 msgid "Alt+N"
-msgstr ""
+msgstr "Alt+N"
 
 #: ../ui/MainWindow.py:232
 msgid "Create new bugreport for current package"
-msgstr ""
+msgstr "Opprett ny feilrapport for den aktuelle pakken"
 
 #: ../ui/MyMainWindow.py:33
 msgid ""
@@ -86,124 +88,148 @@ msgid ""
 "<h3>Step 3: Reporting Bugs</h3>\n"
 "<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
 msgstr ""
+"<h2>Bruk av Reportbug-NG</h2>\n"
+"<h3>Steg 1: Finne feilrapporter</h3>\n"
+"<p>For å finne en feilrapport kan du enkelt angi søketekst og trykke på Enter. Å hente listen kan ta noen sekunder.</p>\n"
+"\n"
+"<p>Følgende spørsmålstyper er støttet:\n"
+"<dl>\n"
+"<dt><code>pakke</code></dt><dd>Returnerer alle feilrapporter som tilhører PAKKE</dd>\n"
+"<dt><code>feilnummer</code></dt><dd>Returnerer feilrapporten med FEILNUMMER</dd>\n"
+"<dt><code>ansvarlig@foo.bar</code></dt><dd>Returnerer alle feilrapporter som er tildelt PAKKEANSVARLIG</dd>\n"
+"<dt><code>src:pakke</code></dt><dd>Returnerer alle feilrapporter som tilhører til KILDEKODEPAKKEN</dd>\n"
+"<dt><code>from:innsender@foo.bar</code></dt><dd>Returnerer alle feilrapporter sendt inn av INNSENDER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returnerer alle feilrapporter med ALVORLIGHETSGRAD. Varsel: denne listen er antagelig veldig lang. Verdier som er gyldige: kritisk, graverende, viktig, normal, mindre og ønskeliste</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Returnerer alle feilrapporter merket med TAGG</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>For å se hele feilrapporten kan du klikke på feilrapporten i listen. Lenker i feilrapporten åpnes i en ekstern nettleser når du klikker på dem.</p>\n"
+"\n"
+"<h3>Steg 2: Filtrering av feilrapporter</h3>\n"
+"<p>For å filtrere listen over tilgjengelige feilrapporter kan du angi noen bokstaver (uten å trykke på Enter). Filteret skiller ikke på små og\n"
+"store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og alvorlighetsgraden for en feilrapport.</p>\n"
+"\n"
+"<h3>Steg 3: Rapportering av feil</h3>\n"
+"<p>Du kan enten angi ytterligere informasjon for en tilgjengelig feilrapport ved å klikke på feilrapporten i listen og velge \"Ytterligere informasjon\" eller så kan du opprette en ny feilrapport for den aktuelle pakken ved å klikke på \"Ny feilrapport\".</p>\n"
 
 #: ../ui/MyMainWindow.py:63
 msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
-msgstr ""
+msgstr "<b>%(cri)s</b> får urelatert programvare på systemet til å brekke (eller hele systemet), forårsaker store tap av data eller introduserer et sikkerhetshull på systemet der pakken er installert. <br> <b>%(gra)s</b> gjør den aktuelle pakken ubrukbar, forårsaker tap av data eller introduserer et sikkerhetshull gjennom å tillate adgang til brukerkontoene til de som bruker pakken. <br> <b>%(ser)s</b> er en alvorlig overtredelse av Debians policy (kort forklart, den bryter forskriftene om \"must\" eller \"required\"), eller, i pakkeansvarliges øyne, gjør at pakken ikke er klar for utgivning. <br> <b>%(imp)s</b> en feil som har en stor innvirkning på en pakke, uten å gjøre det helt ubrukbart for alle. <br> <b>%(nor)s</b> standardverdi, ok for de fleste feilrapporter. <br> <b>%(min)s</b> et problem som ikke påvirker pakken i større grad og antageligvis er enkelt å fikse. <br> <b>%(wis)s</b> for alle ønsker angående funksjoner og feilrapporter som er vanskelige å fikse grunnet større designfaktorer."
 
 #: ../ui/MyMainWindow.py:191
 msgid "<h2>No bugreports for package %s found!</h2>"
-msgstr ""
+msgstr "<h2>Ingen feilrapporter for pakken %s funnet!</h2>"
 
 #: ../ui/MyMainWindow.py:196
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
-msgstr ""
+msgstr "<h2>Klikk på feilrapporten for å se hele teksten.</h2>"
 
 #: ../ui/MyMainWindow.py:216
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene for %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:219
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene fra %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:222
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene med alvorlighetsgrad %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:225
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene med tagg %s, vent</h2>"
 
 #: ../ui/MyMainWindow.py:228
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene tildelt %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:231
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene med nummer %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:234
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapportene for pakken %s, vent.</h2>"
 
 #: ../ui/MyMainWindow.py:284
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
-msgstr ""
+msgstr "<h2>Henter feilrapport %s, vent.</h2>"
 
 #: ../ui/SubmitDialog.py:141
 msgid "Please tell us some details..."
-msgstr ""
+msgstr "Gi oss noen detaljer..."
 
 #: ../ui/SubmitDialog.py:142
 msgid "&OK"
-msgstr ""
+msgstr "&OK"
 
 #: ../ui/SubmitDialog.py:143
 msgid "Alt+O"
-msgstr ""
+msgstr "Alt+O"
 
 #: ../ui/SubmitDialog.py:144
 msgid "&Cancel"
-msgstr ""
+msgstr "&Avbryt"
 
 #: ../ui/SubmitDialog.py:145
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt+A"
 
 #: ../ui/SubmitDialog.py:146
 msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
-msgstr ""
+msgstr "<b>Velg den e-postklienten som du vil bruke for å skrive den fullstendige feilrapporten.</b>"
 
 #: ../ui/SubmitDialog.py:147
 msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
-msgstr ""
+msgstr "<b>Skriv et kort sammendrag. Alvorlighetsgrad og tagger er valgfritt.</b>"
 
 #: ../ui/SubmitDialog.py:148
 msgid "&Mailclient:"
-msgstr ""
+msgstr "E-post&klient:"
 
 #: ../ui/SubmitDialog.py:149
 msgid "patch"
-msgstr ""
+msgstr "programfiks"
 
 #: ../ui/SubmitDialog.py:150
 msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
-msgstr ""
+msgstr "En programfiks eller en enkel fremgangsmåte for å rette feilen er inkludert i loggene. Dersom det finnes en programfiks, men som ikke løser feilen på riktig måte eller forårsaker mange andre problemer, bør denne taggen ikke brukes."
 
 #: ../ui/SubmitDialog.py:151
 msgid "l10n"
-msgstr ""
+msgstr "l10n"
 
 #: ../ui/SubmitDialog.py:152
 msgid "This bug is relevant to the localisation of the package."
-msgstr ""
+msgstr "Denne feilen er relevant for lokaltilpassingen av pakken."
 
 #: ../ui/SubmitDialog.py:153
 msgid "security"
-msgstr ""
+msgstr "sikkerhet"
 
 #: ../ui/SubmitDialog.py:154
 msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
-msgstr ""
+msgstr "Denne feilen beskriver et sikkerhetsproblem i en pakke (for eksempel, gale rettigheter som tillater tilgang til data som ikke burde kunne nås; bufferoverfloden som tillater personer å kontrollere et system på måter de ikke burde kunne gjøre; overbelastningsangrep som burde rettes opp, etc). De fleste sikkerhetshull bør settes til alvorlighetsgradene kritisk eller graverende."
 
 #: ../ui/SubmitDialog.py:155
 msgid "&Tags:"
-msgstr ""
+msgstr "&Tagger:"
 
 #: ../ui/SubmitDialog.py:156
 msgid "S&everity:"
-msgstr ""
+msgstr "A&lvorlighetsgrad:"
 
 #: ../ui/SubmitDialog.py:157
 msgid "&Summary:"
-msgstr ""
+msgstr "&Sammendrag:"
 
 #: ../ui/SubmitDialog.py:160
 msgid "&Package:"
-msgstr ""
+msgstr "&Pakke:"
 
 #: ../ui/SubmitDialog.py:161
 msgid "&Version:"
-msgstr ""
+msgstr "&Versjon:"
 
