@@ -24,8 +24,6 @@ import urllib
 import thread
 
 
-VERSION = "0.2007.06.13"
-
 RFC_MAILTO = '"mailto:%(to)s?subject=%(subject)s&body=%(body)s"'
 MUA_SYNTAX = {
     "icedove" : 'icedove -compose ' + RFC_MAILTO,

@@ -39,7 +39,7 @@ soapServer = SOAPpy.SOAPProxy(SOAP_URL, SOAP_NAMESPACE)
 cluster_re = re.compile("(<H2.*?><a.*?></a>.* bugs -- .*? .*</H2>)")
 status_severity_re = re.compile("<H2.*?><a.*?></a>(.*) bugs -- (.*?) .*</H2>")
 number_summary_package_re = re.compile("""^<li><a href=\"bugreport.cgi\?bug=[0-9]*\">#([0-9]*): (.*)</a>$
-^<br>Package: <a class=\"submitter\" href=\"pkgreport.cgi\?pkg=.*?\">(.*?)</a>.*;$""", re.MULTILINE)
+^<br>Package: <a class=\"submitter\" href=\".*?\">(.*?)</a>.*;$""", re.MULTILINE)
 
 
 def getBugsByQuery(query):

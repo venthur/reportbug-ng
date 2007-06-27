@@ -1,10 +1,13 @@
-reportbug-ng (0.2007.06.xx) unstable; urgency=low
+reportbug-ng (0.2007.06.27) unstable; urgency=low
 
   The "Everybody gets a pony" release
 
   * Added Dutch translation, thanks Tino Meinen!
   * Added French translation (Closes: #430172), thanks Robert-André Mauchin!
   * Added Norwegian translation (Closes: #430340), thanks Runa Sandvik!
+  * Added Polish translation (Closes: #430487), thanks Mateusz Skowroński!
+
+  * Due a change in BTS' html code rng didn't show any bugs anymore, fixed that
 
   * Remember size and position of MainWindow and restore those settings
     on next startup
