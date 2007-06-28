@@ -28,6 +28,7 @@ from qt import QWhatsThis
 
 import thread
 import sys
+import logging
 
 
 REPORTBUG_NG_INSTRUCTIONS = _("""\
@@ -101,7 +102,10 @@ class MyTableItem(QTableItem):
 
 class MyMainWindow(Form):
     
-    def __init__(self, settings):
+    def __init__(self, settings, args):
+        self.logger = logging.getLogger("MainWindow")
+        self.logger.info("Logger initialized.")
+        
         Form.__init__(self)
         self.bugs = []
         self.stateChanged(None, None)
@@ -122,8 +126,8 @@ class MyMainWindow(Form):
         # self.pushButtonNewBugreport.setEnabled(1)
         
         
-        if len(sys.argv) > 1:
-            self.lineEdit.setText(unicode(sys.argv[1], "utf-8"))
+        if args:
+            self.lineEdit.setText(unicode(args[0], "utf-8"))
             self.lineEdit_returnPressed()
             
     def closeEvent(self, ce):

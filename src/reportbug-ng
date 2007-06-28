@@ -30,6 +30,7 @@ import qt
 import sys
 import os
 from optparse import OptionParser
+import logging
 
 import lib.ReportbugNG
 from lib.Settings import Settings
@@ -59,8 +60,25 @@ the Free Software Foundation; either version 2 of the License, or
     #parser.set_defaults(interface="html")
     #parser.add_option("-i", "--interface", type="choice", choices=["soap", "html"], dest="interface",
     #	help="which interface to use to query the BTS [default: html]", metavar="(html|soap)")
+    parser.add_option('-l', '--loglevel', type='choice', choices=['critical', 
+        'error', 'warning', 'info', 'debug', 'notset'], dest='loglevel',
+        help='Which loglevel to use [default: warning]. Valid loglevels are: critical, error, warning, info, debug, notset',
+        metavar='LEVEL')
     
     (options, args) = parser.parse_args()
+
+    # Initialize logging
+    loglevel=logging.WARNING
+    l = options.loglevel
+    if l:
+        if l == 'critical' : loglevel=logging.CRITICAL
+        if l == 'error'    : loglevel=logging.ERROR
+        if l == 'warning'  : loglevel=logging.WARNING
+        if l == 'info'     : loglevel=logging.INFO
+        if l == 'debug'    : loglevel=logging.DEBUG
+        if l == 'notset'   : loglevel=logging.NOTSET
+    logging.basicConfig(level=loglevel, format='%(name)-12s %(levelname)-8s %(message)s')
+    logging.info('Logger initialized with level %s.' % l)
 
     settings = Settings(CONFIGFILE)
     settings.load()
@@ -68,7 +86,7 @@ the Free Software Foundation; either version 2 of the License, or
     app = qt.QApplication(sys.argv)
     app.connect(app, qt.SIGNAL("lastWindowClosed()"), app, qt.SLOT("quit()"))
     
-    mw = MyMainWindow(settings)
+    mw = MyMainWindow(settings, args)
     app.setMainWidget(mw)
     mw.show()
 

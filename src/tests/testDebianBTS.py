@@ -47,6 +47,12 @@ class DebianBTSTestCase(unittest.TestCase):
         self.failUnlessEqual(hbug.nr, sbug.nr)
         self.failUnlessEqual(hbug.summary, sbug.summary)
         
+        
+    def test_none_soap_bug(self):
+        """Should return an empty list for query against nonexistent package."""
+        sbug = DebianBTS.getBugsByQuery('AABBCC')
+        self.failUnlessEqual(len(sbug), 0)
+        
     
     def test_get_one_soap_bug(self):
         """Should return a list with one Bugreport."""

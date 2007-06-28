@@ -194,7 +194,10 @@ def __soapGetStatus(*query):
     list = soapServer.get_status(*query)
 
     # If we called get_status with one single bug, we get a single bug,
-    # if we called it with a list of bugs, we get a list
+    # if we called it with a list of bugs, we get a list,
+    # No available bugreports returns an enmpy list
+    if not list:
+        return []
     if type(list[0]) == type([]):
         for elem in list[0]:
             bug = Bugreport(elem['key'])
