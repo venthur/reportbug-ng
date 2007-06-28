@@ -1,3 +1,15 @@
+reportbug-ng (0.2007.06.xx) unstable; urgency=low
+
+  * Corrected Architecture to all (Closes: #430846)
+
+  * Added SOAP support and enabled it by default for all queries
+  * Added many unittests to ensure SOAP provides the same infos as HTML
+  * Added value function for Bugreports which returns 'urgency value' for this
+    bug. 
+  * Some refactoring
+
+ -- Bastian Venthur <venthur@debian.org>  Thu, 28 Jun 2007 13:50:15 +0200
+
 reportbug-ng (0.2007.06.27) unstable; urgency=low
 
   The "Everybody gets a pony" release

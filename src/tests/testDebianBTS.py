@@ -54,15 +54,15 @@ class DebianBTSTestCase(unittest.TestCase):
         self.failUnlessEqual(len(l), 1)
 
 
-    def test_get_two_soap_bugs(self):
-        """Should return a list with two Bugreports."""
-        l = DebianBTS.getBugsByQuery("224422, 112211", "soap")
-        self.failUnlessEqual(len(l), 2)
-
+#    def test_get_two_soap_bugs(self):
+#        """Should return a list with two Bugreports."""
+#        l = DebianBTS.getBugsByQuery("224422, 112211", "soap")
+#        self.failUnlessEqual(len(l), 2)
+        
     
     def testRegression421866(self):
-        """When getting all bugs for package 'foo', then all returned bugs should belong to package 'foo'."""
-        
+        """When getting all bugs for package 'foo', then all returned bugs 
+        should belong to package 'foo'."""
         bugs = DebianBTS.getBugsByQuery("k3b")
         for bug in bugs:
             self.failUnless(bug.package == 'k3b', bug.package+" doesn't match k3b. Bugnr: "+bug.nr)
