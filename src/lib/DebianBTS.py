@@ -30,7 +30,7 @@ import SOAPpy
 BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
 
-SOAP_URL = 'http://bugs.donarmstrong.com/cgi-bin/soap.cgi'
+SOAP_URL = 'http://bugs.debian.org/cgi-bin/soap.cgi'
 SOAP_NAMESPACE = 'Debbugs/SOAP'
 soapServer = SOAPpy.SOAPProxy(SOAP_URL, SOAP_NAMESPACE)
 
@@ -42,12 +42,22 @@ number_summary_package_re = re.compile("""^<li><a href=\"bugreport.cgi\?bug=[0-9
 ^<br>Package: <a class=\"submitter\" href=\".*?\">(.*?)</a>.*;$""", re.MULTILINE)
 
 
-def getBugsByQuery(query):
+def getBugsByQuery(query, type='soap'):
+    if type == 'html':
+        return __htmlGetBugsByQuery(query)
+    else:
+        l = __soapGetBugsByQuery(query)
+        l.sort(key=lambda Bugreport : Bugreport.value(), reverse=True)
+        return l
+        #return __soapGetBugsByQuery(query)
+
+
+def __htmlGetBugsByQuery(query):
     """Returns a list of bugs belonging to the query."""
 
     # First check if the query is just for a single bug, which needs special care:
     if re.match("^[0-9]*$", query):
-        return [getSingleBug(query)]
+        return [__htmlGetSingleBug(query)]
 
     report = urllib.urlopen(str(BTS_URL) + query.encode("ascii", "replace"))
     s = report.read()
@@ -77,7 +87,7 @@ def getBugsByQuery(query):
     return bugs
 
 
-def getSingleBug(bugnr):
+def __htmlGetSingleBug(bugnr):
     """Returns a single bug"""
 
     bug = Bugreport(bugnr)
@@ -121,8 +131,17 @@ def getSingleBug(bugnr):
     
     return bug
 
+#
+#
+# FIXME:               vvvvvvvvvvv
+def getFullText(bugnr, type='html'):
+    if type == 'html':
+        return __htmlGetFullText(bugnr)
+    else:
+        return __soapGetBugLog(bugnr)[0]['html']
 
-def getFullText(bugnr):
+
+def __htmlGetFullText(bugnr):
     """Returns the full bugreport"""
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
 
@@ -132,15 +151,91 @@ def getFullText(bugnr):
     return parser.result
 
 
-def getBugsBySoapQuery(*arg):
+def __soapGetBugsByQuery(query):
+ 
+    # If the query is a single bugnumber, return the status of it, 
+    # otherwise, get a list of bugnumbers by the query and return their
+    # status
+    if re.match("^[0-9]*$", query):
+        return __soapGetStatus(query)
+    else:
+        return __soapGetStatus(__soapGetBugs(*__translate_query(query)))
+
+
+def __translate_query(query):
+    """Translate query to a query the SOAP interface accepts."""
+
+    split = query.split(':', 1)
+    if (query.startswith('src:')):
+        return split
+    elif (query.startswith('from:')):
+        return 'submitter', split[1]
+    elif (query.startswith('severity:')):
+        return split
+    elif (query.startswith('tag:')):
+        return split
+    elif (query.find("@") != -1):
+        return 'maint', query
+    elif (re.match("^[0-9]*$", query)):
+        print "Hey, should have catched me in soapGetBugsByQuery"
+    else:
+        return 'package', query
     
+
+def __soapGetBugs(*query):
+    """Get a list of bugnumbers, matching the query."""
+    return soapServer.get_bugs(*query)
+
+
+def __soapGetStatus(*query):
+    """Get a list of Bugreports matching the query."""
+    # SOAP returns a list of dicts with the keys:
     bugs = []
-    soapServer.soapaction = '%s#get_bugs' % SOAP_NAMESPACE
-    list = soapServer.get_bugs(*arg)
-    for elem in list:
-        bugs.append(Bugreport(elem))
+    list = soapServer.get_status(*query)
+
+    # If we called get_status with one single bug, we get a single bug,
+    # if we called it with a list of bugs, we get a list
+    if type(list[0]) == type([]):
+        for elem in list[0]:
+            bug = Bugreport(elem['key'])
+            tmp = elem['value']
+            bug.summary = unicode(tmp['subject'], 'utf-8')
+            bug.package =  unicode(tmp['package'], 'utf-8')
+            
+            # Default values
+            bug.severity = unicode(tmp['severity'], 'utf-8')
+            if tmp['done']:
+                bug.status = u"Resolved"
+            else:
+                bug.status = u"Outstanding"
+            bugs.append(bug)
+        return bugs
+    else:
+        elem = list[0]
+        bug = Bugreport(elem['key'])
+        tmp = elem['value']
+        bug.summary = unicode(tmp['subject'], 'utf-8')
+        bug.package =  unicode(tmp['package'], 'utf-8')
         
-    return bugs
+        # Default values
+        bug.severity = unicode(tmp['severity'], 'utf-8')
+        if tmp['done']:
+            bug.status = u"Resolved"
+        else:
+            bug.status = u"Outstanding"
+        bugs.append(bug)
+        return bugs
+
+
+def __soapGetBugLog(*query):
+    
+    # SOAP returns a list of dicts with the keys:
+    # html
+    # header
+    # body
+    # attachments (array)
+    # msg_num
+    return soapServer.get_bug_log(*query)
 
 
 class HTMLStripper(HTMLParser):

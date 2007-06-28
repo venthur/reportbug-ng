@@ -19,8 +19,21 @@
 class Bugreport:
     """Represents a Bugreport from Debian's BTS."""
     
+    STATUS_VALUE = {u'outstanding' : 100,
+                    u'resolved' : 50,
+                    u'archived' : 0}
+    
+    SEVERITY_VALUE = {u"critical" : 10,
+                      u"grave" : 9,
+                      u"serious" : 8,
+                      u"important" : 7,
+                      u"normal" : 6,
+                      u"minor" : 5,
+                      u"wishlist" : 4
+                      }
+    
     def __init__(self, nr, summary="", submitter="", status="", severity="", fulltext="", package=""):
-        self.nr = nr
+        self.nr = unicode(nr)
         self.summary = summary
         self.submitter = submitter
         self.status = status
@@ -30,4 +43,11 @@ class Bugreport:
 
     def __str__(self):
         return self.package+" #"+self.nr +": "+ self.summary+" --- "+self.status+", "+self.severity+""
+    
+    def value(self):
+        """Returns an 'urgency value', the higher the number, the more urgent
+        the bug is. Open bugs generally have higher urgencies than closed ones.
+        """
+        return self.STATUS_VALUE.get(self.status.lower(), 200) + self.SEVERITY_VALUE.get(self.severity.lower(), 20)
+        
     
