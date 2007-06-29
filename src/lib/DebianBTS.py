@@ -22,9 +22,13 @@ import ReportbugNG
 
 import urllib
 import re
+import logging
 from HTMLParser import HTMLParser
 import htmlentitydefs
 import SOAPpy
+
+
+logger = logging.getLogger("DebianBTS")
 
 
 BTS_URL = "http://bugs.debian.org/"
@@ -143,10 +147,11 @@ def getFullText(bugnr, type='html'):
 
 def __htmlGetFullText(bugnr):
     """Returns the full bugreport"""
+    logger.debug("Getting HTML fulltext for %s" % str(bugnr))
     report = urllib.urlopen(str(BTS_URL) + str(bugnr))
 
     parser = HTMLStripper()
-    parser.feed(unicode(report.read(), "utf-8"))
+    parser.feed(unicode(report.read(), "utf-8", 'replace'))
     parser.close()
     return parser.result
 

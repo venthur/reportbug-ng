@@ -23,6 +23,7 @@ from lib import DebianBTS
 from lib.ReportbugNG import *
 
 from qttable import QTableItem
+from qttable import QTable
 from qt import Qt
 from qt import QWhatsThis
 
@@ -248,20 +249,26 @@ class MyMainWindow(Form):
 
     def lineEdit_textChanged(self, a0):
         """The filter text has changed."""
-        
-        self.table.viewport().setUpdatesEnabled(False)
- 
+        # Supress thousands of new selections everytime a row gets hided:
+        # would be better if I just could turn of selections if the selected
+        # row gets hided.
+        selectionmode = self.table.SelectionMode()
+        self.table.setSelectionMode(QTable.NoSelection)
+
+#        self.table.viewport().setUpdatesEnabled(False)
         filter = unicode(a0).lower()
         for row in range(len(self.bugs)):
             if unicode(self.bugs[row]).lower().find(filter) != -1:
                 self.table.showRow(row)
             else:
                 self.table.hideRow(row)           
+#        self.table.viewport().setUpdatesEnabled(True)
+#        self.table.updateContents()
+
+        # Re-Enable selections again
+        self.table.setSelectionMode(selectionmode)
         
-        self.table.viewport().setUpdatesEnabled(True)
-        self.table.updateContents()
-
-
+        
     def loadBugreport(self, bugnr):
         """Loads the bugreport and writes the result to build in browser. (Intended to run in a thread)"""
 

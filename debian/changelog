@@ -2,6 +2,11 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
 
   * Corrected Architecture to all (Closes: #430846)
 
+  * Be more robust when receiving crappy unicode chars
+  * Don't load bugreports when selection changes due hiding of rows
+
+  * Added logging support and command line options to controll logging
+
   * Added SOAP support and enabled it by default for all queries
   * Added many unittests to ensure SOAP provides the same infos as HTML
   * Added value function for Bugreports which returns 'urgency value' for this
