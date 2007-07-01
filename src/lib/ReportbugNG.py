@@ -22,6 +22,10 @@ import os
 import webbrowser
 import urllib
 import thread
+import logging
+
+
+logger = logging.getLogger("ReportbugNG")
 
 
 RFC_MAILTO = '"mailto:%(to)s?subject=%(subject)s&body=%(body)s"'
@@ -274,7 +278,13 @@ def getDebianReleaseInfo():
 def callBrowser(url):
     """Calls an external Browser to upen the URL."""
 
-    thread.start_new_thread(webbrowser.open, (url,))
+    # Try to find user's preferred browser via xdg-open. If that fails
+    # (xdg-utils not installed or some other error), fall back to pythons
+    # semi optimal solution.
+    status, output = commands.getstatusoutput("xdg-open %s" % url)
+    if status != 0:
+        logger.warning("xdg-open %s returned (%i, %s), falling back to python's webbrowser.open" % (url, status, output))
+        thread.start_new_thread(webbrowser.open, (url,))
 
 
 if __name__ == "__main__":

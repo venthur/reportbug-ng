@@ -2,10 +2,13 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
 
   * Corrected Architecture to all (Closes: #430846)
 
+  * Use freedesktop.org's xdg-utils to find user's preferred browser in a 
+    desktop environment neutral way (Closes: #420108)
+
   * Be more robust when receiving crappy unicode chars
   * Don't load bugreports when selection changes due hiding of rows
 
-  * Added logging support and command line options to controll logging
+  * Added logging support and command line options to control logging
 
   * Added SOAP support and enabled it by default for all queries
   * Added many unittests to ensure SOAP provides the same infos as HTML
