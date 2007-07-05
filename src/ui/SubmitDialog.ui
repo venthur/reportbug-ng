@@ -331,7 +331,7 @@
                 <cstring>wnpp_groupBox</cstring>
             </property>
             <property name="title">
-                <string>WNPP Bugreport</string>
+                <string>&amp;WNPP Bugreport</string>
             </property>
             <property name="checkable">
                 <bool>true</bool>
@@ -353,10 +353,13 @@
                         <cstring>textLabel2_3</cstring>
                     </property>
                     <property name="text">
-                        <string>WNPP Action:</string>
+                        <string>WNPP &amp;Action:</string>
                     </property>
                     <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>wnpp_comboBox</cstring>
                     </property>
                 </widget>
                 <widget class="QLabel" row="1" column="0">
@@ -364,10 +367,13 @@
                         <cstring>textLabel1_3</cstring>
                     </property>
                     <property name="text">
-                        <string>Short Package Description:</string>
+                        <string>Short Package &amp;Description:</string>
                     </property>
                     <property name="alignment">
                         <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>wnpp_lineEdit</cstring>
                     </property>
                 </widget>
                 <widget class="QComboBox" row="0" column="1">

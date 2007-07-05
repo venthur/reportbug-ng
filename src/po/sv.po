@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-06-17 15:39+CEST\n"
+"POT-Creation-Date: 2007-07-05 13:18+CEST\n"
 "PO-Revision-Date: 2007-05-27 21:05+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -58,7 +58,7 @@ msgstr "Alt+N"
 msgid "Create new bugreport for current package"
 msgstr "Skapa ny felrapport för aktuellt paket"
 
-#: ../ui/MyMainWindow.py:33
+#: ../ui/MyMainWindow.py:37
 #, fuzzy
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
@@ -142,7 +142,7 @@ msgstr ""
 "\"Ytterligare information\"eller så kan du skapa en ny felrapport för det "
 "aktuella paketet genom att klicka på \"Ny felrapport\".</p>\n"
 
-#: ../ui/MyMainWindow.py:63
+#: ../ui/MyMainWindow.py:67
 #, fuzzy
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
@@ -183,74 +183,86 @@ msgstr ""
 "<b>wishlist</b> för alla önskemål om funktioner och även för felrapporter "
 "som är mycket svåra att rätta till på grund av större designfaktorer."
 
-#: ../ui/MyMainWindow.py:191
+#: ../ui/MyMainWindow.py:198
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Inga felrapporter för paketet %s hittades!</h2>"
 
-#: ../ui/MyMainWindow.py:196
+#: ../ui/MyMainWindow.py:203
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Klicka på en felrapport för att se hela texten.</h2>"
 
-#: ../ui/MyMainWindow.py:216
+#: ../ui/MyMainWindow.py:223
 #, fuzzy
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:219
+#: ../ui/MyMainWindow.py:226
 #, fuzzy
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:222
+#: ../ui/MyMainWindow.py:229
 #, fuzzy
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:225
+#: ../ui/MyMainWindow.py:232
 #, fuzzy
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:228
+#: ../ui/MyMainWindow.py:235
 #, fuzzy
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:231
+#: ../ui/MyMainWindow.py:238
 #, fuzzy
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporten %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:234
+#: ../ui/MyMainWindow.py:241
 #, fuzzy
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:284
+#: ../ui/MyMainWindow.py:297
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporten %s, vänta.</h2>"
 
-#: ../ui/SubmitDialog.py:141
+#: ../ui/SubmitDialog.py:184
 msgid "Please tell us some details..."
 msgstr "Berätta lite detaljer för oss..."
 
-#: ../ui/SubmitDialog.py:142
+#: ../ui/SubmitDialog.py:186
+msgid "&Package:"
+msgstr "&Paket:"
+
+#: ../ui/SubmitDialog.py:188
+msgid "&Version:"
+msgstr "&Version:"
+
+#: ../ui/SubmitDialog.py:189
+msgid "&Mailclient:"
+msgstr "E-post&klient:"
+
+#: ../ui/SubmitDialog.py:190
 msgid "&OK"
 msgstr "&OK"
 
-#: ../ui/SubmitDialog.py:143
+#: ../ui/SubmitDialog.py:191
 msgid "Alt+O"
 msgstr "Alt+O"
 
-#: ../ui/SubmitDialog.py:144
+#: ../ui/SubmitDialog.py:192
 msgid "&Cancel"
 msgstr "&Avbryt"
 
-#: ../ui/SubmitDialog.py:145
+#: ../ui/SubmitDialog.py:193
 msgid "Alt+C"
 msgstr "Alt+A"
 
-#: ../ui/SubmitDialog.py:146
+#: ../ui/SubmitDialog.py:194
 msgid ""
 "<b>Please choose the mailclient you want to use to write the full bugreport."
 "</b>"
@@ -258,20 +270,16 @@ msgstr ""
 "<b>Välj den e-postklient som du vill använda för att skriva den fullständiga "
 "felrapporten.</b>"
 
-#: ../ui/SubmitDialog.py:147
-msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
-msgstr ""
-"<b>Ange ett kort sammandrag. Allvarlighetsgrad och taggar är valfria.</b>"
+#: ../ui/SubmitDialog.py:195
+#, fuzzy
+msgid "Normal Bugreport"
+msgstr "&Ny felrapport"
 
-#: ../ui/SubmitDialog.py:148
-msgid "&Mailclient:"
-msgstr "E-post&klient:"
-
-#: ../ui/SubmitDialog.py:149
+#: ../ui/SubmitDialog.py:196
 msgid "patch"
 msgstr "programfix"
 
-#: ../ui/SubmitDialog.py:150
+#: ../ui/SubmitDialog.py:197
 msgid ""
 "A patch or some other easy procedure for fixing the bug is included in the "
 "bug logs. If there's a patch, but it doesn't resolve the bug adequately or "
@@ -282,19 +290,19 @@ msgstr ""
 "på rätt sätt eller orsakar några andra problem, bör den här taggen inte "
 "användas."
 
-#: ../ui/SubmitDialog.py:151
+#: ../ui/SubmitDialog.py:198
 msgid "l10n"
 msgstr "l10n"
 
-#: ../ui/SubmitDialog.py:152
+#: ../ui/SubmitDialog.py:199
 msgid "This bug is relevant to the localisation of the package."
 msgstr "Det här felet är relevant för lokalanpassningen av paketet."
 
-#: ../ui/SubmitDialog.py:153
+#: ../ui/SubmitDialog.py:200
 msgid "security"
 msgstr "säkerhet"
 
-#: ../ui/SubmitDialog.py:154
+#: ../ui/SubmitDialog.py:201
 msgid ""
 "This bug describes a security problem in a package (e.g., bad permissions "
 "allowing access to data that shouldn't be accessible; buffer overruns "
@@ -309,25 +317,35 @@ msgstr ""
 "etc). De flesta säkerhetsfel bör även ställas in till allvarlighetsgraderna "
 "kritiskt eller gravt."
 
-#: ../ui/SubmitDialog.py:155
+#: ../ui/SubmitDialog.py:202
 msgid "&Tags:"
 msgstr "&Taggar:"
 
-#: ../ui/SubmitDialog.py:156
-msgid "S&everity:"
-msgstr "Al&lvarlighetsgrad:"
+#: ../ui/SubmitDialog.py:203
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr ""
+"<b>Ange ett kort sammandrag. Allvarlighetsgrad och taggar är valfria.</b>"
 
-#: ../ui/SubmitDialog.py:157
+#: ../ui/SubmitDialog.py:204
 msgid "&Summary:"
 msgstr "&Sammandrag:"
 
-#: ../ui/SubmitDialog.py:160
-msgid "&Package:"
-msgstr "&Paket:"
+#: ../ui/SubmitDialog.py:205
+msgid "S&everity:"
+msgstr "Al&lvarlighetsgrad:"
 
-#: ../ui/SubmitDialog.py:161
-msgid "&Version:"
-msgstr "&Version:"
+#: ../ui/SubmitDialog.py:206
+#, fuzzy
+msgid "&WNPP Bugreport"
+msgstr "&Ny felrapport"
+
+#: ../ui/SubmitDialog.py:207
+msgid "WNPP &Action:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:208
+msgid "Short Package &Description:"
+msgstr ""
 
 #~ msgid "Click on bugreport to see the full conversation below"
 #~ msgstr "Klicka på felrapporten för att se hela konversationen nedanför"

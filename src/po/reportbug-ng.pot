@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-06-27 09:44+CEST\n"
+"POT-Creation-Date: 2007-07-05 13:21+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Create new bugreport for current package"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:33
+#: ../ui/MyMainWindow.py:37
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -87,123 +87,139 @@ msgid ""
 "<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:63
+#: ../ui/MyMainWindow.py:67
 msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
 msgstr ""
 
-#: ../ui/MyMainWindow.py:191
+#: ../ui/MyMainWindow.py:198
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:196
+#: ../ui/MyMainWindow.py:203
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:216
+#: ../ui/MyMainWindow.py:223
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:219
+#: ../ui/MyMainWindow.py:226
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:222
+#: ../ui/MyMainWindow.py:229
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:225
+#: ../ui/MyMainWindow.py:232
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:228
+#: ../ui/MyMainWindow.py:235
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:231
+#: ../ui/MyMainWindow.py:238
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:234
+#: ../ui/MyMainWindow.py:241
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:284
+#: ../ui/MyMainWindow.py:297
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/SubmitDialog.py:141
+#: ../ui/SubmitDialog.py:184
 msgid "Please tell us some details..."
 msgstr ""
 
-#: ../ui/SubmitDialog.py:142
-msgid "&OK"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:143
-msgid "Alt+O"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:144
-msgid "&Cancel"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:145
-msgid "Alt+C"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:146
-msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:147
-msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:148
-msgid "&Mailclient:"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:149
-msgid "patch"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:150
-msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
-msgstr ""
-
-#: ../ui/SubmitDialog.py:151
-msgid "l10n"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:152
-msgid "This bug is relevant to the localisation of the package."
-msgstr ""
-
-#: ../ui/SubmitDialog.py:153
-msgid "security"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:154
-msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
-msgstr ""
-
-#: ../ui/SubmitDialog.py:155
-msgid "&Tags:"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:156
-msgid "S&everity:"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:157
-msgid "&Summary:"
-msgstr ""
-
-#: ../ui/SubmitDialog.py:160
+#: ../ui/SubmitDialog.py:186
 msgid "&Package:"
 msgstr ""
 
-#: ../ui/SubmitDialog.py:161
+#: ../ui/SubmitDialog.py:188
 msgid "&Version:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:189
+msgid "&Mailclient:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:190
+msgid "&OK"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:191
+msgid "Alt+O"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:192
+msgid "&Cancel"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:193
+msgid "Alt+C"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:194
+msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:195
+msgid "Normal Bugreport"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:196
+msgid "patch"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:197
+msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
+msgstr ""
+
+#: ../ui/SubmitDialog.py:198
+msgid "l10n"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:199
+msgid "This bug is relevant to the localisation of the package."
+msgstr ""
+
+#: ../ui/SubmitDialog.py:200
+msgid "security"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:201
+msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
+msgstr ""
+
+#: ../ui/SubmitDialog.py:202
+msgid "&Tags:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:203
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:204
+msgid "&Summary:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:205
+msgid "S&everity:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:206
+msgid "&WNPP Bugreport"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:207
+msgid "WNPP &Action:"
+msgstr ""
+
+#: ../ui/SubmitDialog.py:208
+msgid "Short Package &Description:"
 msgstr ""
 
