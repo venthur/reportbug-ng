@@ -85,19 +85,15 @@ def prepareBody(package, version=None, severity=None, tags=[]):
     
     s = ""
     s += "Package: %s\n" % package
-
     if version:
         s += "Version: %s\n" % version 
-
     if severity:
         s += "Severity: %s\n" % severity
-    
     if tags:
         s += "Tags:"
         for tag in tags:
             s += " %s" % tag
         s += "\n"
-    
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
@@ -106,6 +102,41 @@ def prepareBody(package, version=None, severity=None, tags=[]):
     s += getPackageInfo(package) + "\n"
 
     return s
+
+
+def prepare_wnpp_body(action, package, version=""):
+    """Prepares a WNPP bugreport."""
+    
+    s = ""
+    s += "Package: wnpp\n"
+    if action in ("ITP", "RFP"):
+        s += "Severity: wishlist\n"
+    else:
+        s += "Severity: normal\n"
+    s += "X-Debbugs-CC: debian-devel@lists.debian.org\n"
+
+    if action in ("ITP", "RFP"):
+        s += """\
+
+--- Please fill out the fields below. ---
+
+   Package name: %(p)s
+        Version: %(v)s
+Upstream Author: [NAME <name@example.com>]
+            URL: [http://example.com]
+        License: [GPL, LGPL, BSD, MIT/X, etc.]
+    Description: [DESCRIPTION]
+""" % {'p': package, 'v': version}
+    return s
+
+
+def prepare_wnpp_subject(action, package, descr):
+    if not package: 
+        package = "[PACKAGE]"
+    if not descr:
+        descr = "[SHORT DESCRIPTION]"
+    return "%s: %s -- %s" % (action, package, descr)
+
 
 def getSystemInfo():
     """Returns some hopefully usefull sysinfo"""

@@ -32,6 +32,8 @@ import sys
 import logging
 
 
+WNPP_ACTIONS = ("RFP", "ITP", "RFH", "RFA", "O")
+
 REPORTBUG_NG_INSTRUCTIONS = _("""\
 <h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
@@ -306,6 +308,8 @@ class MyMainWindow(Form):
         version = getInstalledPackageVersion(package)
         
         dialog = SubmitDialog()
+        # disable WNPP box
+        dialog.wnpp_groupBox.setEnabled(0)
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
         for mua in SUPPORTED_MUA:
@@ -341,6 +345,10 @@ class MyMainWindow(Form):
         version = getInstalledPackageVersion(package)
         
         dialog = SubmitDialog()
+        # enable WNPP box
+        dialog.wnpp_groupBox.setEnabled(1)
+        for action in WNPP_ACTIONS:
+            dialog.wnpp_comboBox.insertItem(action)
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
         for mua in SUPPORTED_MUA:
@@ -354,21 +362,31 @@ class MyMainWindow(Form):
         QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
                
         if dialog.exec_loop() == dialog.Accepted:
-            subject = unicode(dialog.lineEditSummary.text())
-            severity = dialog.comboBoxSeverity.currentText().lower()
-            tags = []
-            if dialog.checkBoxL10n.isChecked():
-                tags.append("l10n")
-            if dialog.checkBoxPatch.isChecked():
-                tags.append("patch")
-            if dialog.checkBoxSecurity.isChecked():
-                tags.append("security")
+            if dialog.wnpp_comboBox.isEnabled():
+                package = dialog.lineEditPackage.text()
+                version = dialog.lineEditVersion.text()
+                action = dialog.wnpp_comboBox.currentText()
+                descr = dialog.wnpp_lineEdit.text()
+                body = prepare_wnpp_body(action, package, version)
+                subject = prepare_wnpp_subject(action, package, descr)
+            else:
+                subject = unicode(dialog.lineEditSummary.text())
+                severity = dialog.comboBoxSeverity.currentText().lower()
+                tags = []
+                if dialog.checkBoxL10n.isChecked():
+                    tags.append("l10n")
+                if dialog.checkBoxPatch.isChecked():
+                    tags.append("patch")
+                if dialog.checkBoxSecurity.isChecked():
+                    tags.append("security")
             
+                package = dialog.lineEditPackage.text()
+                version = dialog.lineEditVersion.text()
+                body = prepareBody(package, version, severity, tags)
+
+
             mua = str(dialog.comboBoxMUA.currentText().lower())
-            package = dialog.lineEditPackage.text()
-            version = dialog.lineEditVersion.text()
             to = "submit@bugs.debian.org"
-            body = prepareBody(package, version, severity, tags)
             
             self.settings.lastmua = mua
             prepareMail(mua, to, subject, body)

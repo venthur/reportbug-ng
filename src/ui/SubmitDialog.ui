@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>547</width>
-            <height>332</height>
+            <width>678</width>
+            <height>464</height>
         </rect>
     </property>
     <property name="caption">
@@ -19,9 +19,56 @@
         <property name="name">
             <cstring>unnamed</cstring>
         </property>
-        <spacer row="10" column="1">
+        <widget class="QLineEdit" row="0" column="1">
             <property name="name">
-                <cstring>spacer7</cstring>
+                <cstring>lineEditPackage</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1_2</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Package:</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignRight</set>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEditPackage</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="1" column="1">
+            <property name="name">
+                <cstring>lineEditVersion</cstring>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel2_2</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Version:</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignRight</set>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>lineEditVersion</cstring>
+            </property>
+        </widget>
+        <spacer row="4" column="1">
+            <property name="name">
+                <cstring>spacer8</cstring>
             </property>
             <property name="orientation">
                 <enum>Vertical</enum>
@@ -36,7 +83,38 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QLayoutWidget" row="11" column="0" rowspan="1" colspan="2">
+        <spacer row="2" column="1">
+            <property name="name">
+                <cstring>spacer4_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="8" column="0">
+            <property name="name">
+                <cstring>textLabel6</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Mailclient:</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter|AlignRight</set>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>comboBoxMUA</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="10" column="0" rowspan="1" colspan="2">
             <property name="name">
                 <cstring>layout8</cstring>
             </property>
@@ -85,7 +163,37 @@
                 </widget>
             </hbox>
         </widget>
-        <spacer row="7" column="1">
+        <widget class="QComboBox" row="8" column="1">
+            <property name="name">
+                <cstring>comboBoxMUA</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="7" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>textLabel5</cstring>
+            </property>
+            <property name="text">
+                <string>&lt;b&gt;Please choose the mailclient you want to use to write the full bugreport.&lt;/b&gt;</string>
+            </property>
+        </widget>
+        <spacer row="9" column="1">
+            <property name="name">
+                <cstring>spacer7</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>16</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="6" column="1">
             <property name="name">
                 <cstring>spacer4</cstring>
             </property>
@@ -102,199 +210,172 @@
                 </size>
             </property>
         </spacer>
-        <widget class="QLabel" row="8" column="0" rowspan="1" colspan="2">
+        <widget class="QGroupBox" row="5" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>textLabel5</cstring>
+                <cstring>bug_groupBox</cstring>
             </property>
-            <property name="text">
-                <string>&lt;b&gt;Please choose the mailclient you want to use to write the full bugreport.&lt;/b&gt;</string>
+            <property name="title">
+                <string>Normal Bugreport</string>
             </property>
-        </widget>
-        <spacer row="2" column="1">
-            <property name="name">
-                <cstring>spacer8</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>16</height>
-                </size>
-            </property>
-        </spacer>
-        <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
-            <property name="name">
-                <cstring>textLabel4_2</cstring>
-            </property>
-            <property name="text">
-                <string>&lt;b&gt;Please enter a short summary. Severity and Tags are optional.&lt;/b&gt;</string>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="9" column="1">
-            <property name="name">
-                <cstring>comboBoxMUA</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="9" column="0">
-            <property name="name">
-                <cstring>textLabel6</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Mailclient:</string>
-            </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>comboBoxMUA</cstring>
-            </property>
-        </widget>
-        <widget class="QComboBox" row="5" column="1">
-            <property name="name">
-                <cstring>comboBoxSeverity</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="4" column="1">
-            <property name="name">
-                <cstring>lineEditSummary</cstring>
-            </property>
-        </widget>
-        <widget class="QLayoutWidget" row="6" column="1">
-            <property name="name">
-                <cstring>layout4</cstring>
-            </property>
-            <hbox>
+            <grid>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QCheckBox">
+                <widget class="QComboBox" row="2" column="1">
                     <property name="name">
+                        <cstring>comboBoxSeverity</cstring>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="1">
+                    <property name="name">
+                        <cstring>lineEditSummary</cstring>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="3" column="1">
+                    <property name="name">
+                        <cstring>layout4</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>checkBoxPatch</cstring>
+                            </property>
+                            <property name="text">
+                                <string>patch</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used.</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>checkBoxL10n</cstring>
+                            </property>
+                            <property name="text">
+                                <string>l10n</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>This bug is relevant to the localisation of the package.</string>
+                            </property>
+                        </widget>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>checkBoxSecurity</cstring>
+                            </property>
+                            <property name="text">
+                                <string>security</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Tags:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
                         <cstring>checkBoxPatch</cstring>
                     </property>
-                    <property name="text">
-                        <string>patch</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used.</string>
-                    </property>
                 </widget>
-                <widget class="QCheckBox">
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
                     <property name="name">
-                        <cstring>checkBoxL10n</cstring>
+                        <cstring>textLabel4_2</cstring>
                     </property>
                     <property name="text">
-                        <string>l10n</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This bug is relevant to the localisation of the package.</string>
+                        <string>&lt;b&gt;Please enter a short summary. Severity and Tags are optional.&lt;/b&gt;</string>
                     </property>
                 </widget>
-                <widget class="QCheckBox">
+                <widget class="QLabel" row="1" column="0">
                     <property name="name">
-                        <cstring>checkBoxSecurity</cstring>
+                        <cstring>textLabel4</cstring>
                     </property>
                     <property name="text">
-                        <string>security</string>
+                        <string>&amp;Summary:</string>
                     </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</string>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>lineEditSummary</cstring>
                     </property>
                 </widget>
-            </hbox>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>S&amp;everity:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>comboBoxSeverity</cstring>
+                    </property>
+                </widget>
+            </grid>
         </widget>
-        <widget class="QLabel" row="6" column="0">
+        <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="2">
             <property name="name">
-                <cstring>textLabel2</cstring>
+                <cstring>wnpp_groupBox</cstring>
             </property>
-            <property name="text">
-                <string>&amp;Tags:</string>
+            <property name="title">
+                <string>WNPP Bugreport</string>
             </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>checkBoxPatch</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="5" column="0">
-            <property name="name">
-                <cstring>textLabel1</cstring>
-            </property>
-            <property name="text">
-                <string>S&amp;everity:</string>
-            </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>comboBoxSeverity</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="4" column="0">
-            <property name="name">
-                <cstring>textLabel4</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Summary:</string>
-            </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEditSummary</cstring>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="1" column="1">
-            <property name="name">
-                <cstring>lineEditVersion</cstring>
-            </property>
-            <property name="text">
-                <string></string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" row="0" column="1">
-            <property name="name">
-                <cstring>lineEditPackage</cstring>
-            </property>
-            <property name="enabled">
+            <property name="checkable">
                 <bool>true</bool>
             </property>
-            <property name="text">
-                <string></string>
+            <property name="checked">
+                <bool>false</bool>
             </property>
-        </widget>
-        <widget class="QLabel" row="0" column="0">
-            <property name="name">
-                <cstring>textLabel1_2</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Package:</string>
-            </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEditPackage</cstring>
-            </property>
-        </widget>
-        <widget class="QLabel" row="1" column="0">
-            <property name="name">
-                <cstring>textLabel2_2</cstring>
-            </property>
-            <property name="text">
-                <string>&amp;Version:</string>
-            </property>
-            <property name="alignment">
-                <set>AlignVCenter|AlignRight</set>
-            </property>
-            <property name="buddy" stdset="0">
-                <cstring>lineEditVersion</cstring>
-            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLineEdit" row="1" column="1">
+                    <property name="name">
+                        <cstring>wnpp_lineEdit</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel2_3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>WNPP Action:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>textLabel1_3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Short Package Description:</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignVCenter|AlignRight</set>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="0" column="1">
+                    <property name="name">
+                        <cstring>wnpp_comboBox</cstring>
+                    </property>
+                </widget>
+            </grid>
         </widget>
     </grid>
 </widget>
@@ -310,6 +391,12 @@
         <signal>clicked()</signal>
         <receiver>SubmitDialog</receiver>
         <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>wnpp_groupBox</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>bug_groupBox</receiver>
+        <slot>setDisabled(bool)</slot>
     </connection>
 </connections>
 <tabstops>
