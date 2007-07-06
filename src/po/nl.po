@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2007-07-05 13:18+CEST\n"
+"POT-Creation-Date: 2007-07-06 14:21+CEST\n"
 "PO-Revision-Date: 2007-06-23 04:27+0200\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -14,49 +14,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: ../ui/MainWindow.py:195 ../ui/MainWindow.py:233
+#: ../ui/MainWindow.py:413 ../ui/MainWindow.py:461
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../ui/MainWindow.py:197 ../ui/MainWindow.py:234
+#: ../ui/MainWindow.py:415 ../ui/MainWindow.py:462
 msgid "Status"
 msgstr "Status"
 
-#: ../ui/MainWindow.py:199 ../ui/MainWindow.py:235
+#: ../ui/MainWindow.py:417 ../ui/MainWindow.py:463
 msgid "Severity"
 msgstr "Relevantie"
 
-#: ../ui/MainWindow.py:225
+#: ../ui/MainWindow.py:459
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:226
+#: ../ui/MainWindow.py:460
 msgid "Enter a package name or a filter expression"
 msgstr "Geef een pakketnaam of een filter-uitdrukking"
 
-#: ../ui/MainWindow.py:227
-msgid "&Additional Info"
-msgstr "&Aanvullende informatie"
-
-#: ../ui/MainWindow.py:228
-msgid "Alt+A"
-msgstr "Alt+A"
-
-#: ../ui/MainWindow.py:229
-msgid "Provide additional information for the current bugreport"
-msgstr "Geef aanvullende informatie voor het huidige bugrapport"
-
-#: ../ui/MainWindow.py:230
-msgid "&New Bugreport"
+#: ../ui/MainWindow.py:464 ../ui/MainWindow.py:465
+#, fuzzy
+msgid "New Bugreport"
 msgstr "&Nieuw bugrapport"
 
-#: ../ui/MainWindow.py:231
+#: ../ui/MainWindow.py:466
+msgid "Create new bugreport for current package"
+msgstr "Maak een nieuw bugrapport aan voor het huidige pakket"
+
+#: ../ui/MainWindow.py:467
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#: ../ui/MainWindow.py:232
-msgid "Create new bugreport for current package"
-msgstr "Maak een nieuw bugrapport aan voor het huidige pakket"
+#: ../ui/MainWindow.py:468
+#, fuzzy
+msgid "Additional Info"
+msgstr "&Aanvullende informatie"
+
+#: ../ui/MainWindow.py:469
+msgid "Provide additional information for the current bugreport"
+msgstr "Geef aanvullende informatie voor het huidige bugrapport"
+
+#: ../ui/MainWindow.py:470
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: ../ui/MainWindow.py:471
+msgid "Toolbar"
+msgstr ""
 
 #: ../ui/MyMainWindow.py:37
 msgid ""
@@ -173,47 +179,47 @@ msgstr ""
 "moeilijk te verhelpen zijn omdat er grote wijzigingen in de (architectuur "
 "van de) broncode moeten worden aangebracht."
 
-#: ../ui/MyMainWindow.py:198
+#: ../ui/MyMainWindow.py:199
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Geen bugrapporten voor pakket %s gevonden!</h2>"
 
-#: ../ui/MyMainWindow.py:203
+#: ../ui/MyMainWindow.py:204
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Klik op een bugrapport om de volledige tekst te zien.</h2>"
 
-#: ../ui/MyMainWindow.py:223
+#: ../ui/MyMainWindow.py:224
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 "<h2>Ophalen van bugrapporten voor bronpakket %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:226
+#: ../ui/MyMainWindow.py:227
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr ""
 "<h2>Ophalen van bugrapporten van rapporteur %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:229
+#: ../ui/MyMainWindow.py:230
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr ""
 "<h2>Ophalen van bugrapporten met relevantie %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:232
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapporten met label %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:235
+#: ../ui/MyMainWindow.py:236
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr ""
 "<h2>Ophalen van bugrapporten toegewezen aan %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:238
+#: ../ui/MyMainWindow.py:239
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapport met nummer %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:241
+#: ../ui/MyMainWindow.py:242
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapporten voor pakket %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:297
+#: ../ui/MyMainWindow.py:298
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapport %s, een ogenblik geduld.</h2>"
 

@@ -125,6 +125,7 @@ class MyMainWindow(Form):
         self.move(self.settings.x, self.settings.y)
 
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
+
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
         
@@ -155,17 +156,17 @@ class MyMainWindow(Form):
         
         if package:
             self.currentPackage = package
-            self.pushButtonNewBugreport.setEnabled(1)
+            self.NewBugreportAction.setEnabled(1)
         else:
             self.currentPackage = ""
-            self.pushButtonNewBugreport.setEnabled(0)
+            self.NewBugreportAction.setEnabled(0)
         
         if bug:
             self.currentBug = bug
-            self.pushButtonAdditionalInfo.setEnabled(1)
+            self.AdditionalInfoAction.setEnabled(1)
         else:
             self.currentBug = Bugreport(0)
-            self.pushButtonAdditionalInfo.setEnabled(0)
+            self.AdditionalInfoAction.setEnabled(0)
         
     
     def loadAllBugSummaries(self, query):
@@ -254,7 +255,6 @@ class MyMainWindow(Form):
         # Supress thousands of new selections everytime a row gets hided:
         # would be better if I just could turn of selections if the selected
         # row gets hided.
-        selectionmode = self.table.SelectionMode()
         self.table.setSelectionMode(QTable.NoSelection)
 
 #        self.table.viewport().setUpdatesEnabled(False)
@@ -268,7 +268,7 @@ class MyMainWindow(Form):
 #        self.table.updateContents()
 
         # Re-Enable selections again
-        self.table.setSelectionMode(selectionmode)
+        self.table.setSelectionMode(QTable.SingleRow)
         
         
     def loadBugreport(self, bugnr):
@@ -299,9 +299,9 @@ class MyMainWindow(Form):
         
         # Fetch the fulltext in a thread
         thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))
-        
     
-    def pushButtonAdditionalInfo_clicked(self):
+    
+    def AdditionalInfoAction_activated(self):
         """The user wants to provide additional info for the current bug."""
     
         package = self.currentBug.package
@@ -338,7 +338,7 @@ class MyMainWindow(Form):
             prepareMail(mua, to, subject, body)
 
     
-    def pushButtonNewBugreport_clicked(self):
+    def NewBugreportAction_activated(self):
         """The User wants to file a new bugreport against the current package."""
         
         package = self.currentPackage
@@ -391,6 +391,10 @@ class MyMainWindow(Form):
             self.settings.lastmua = mua
             prepareMail(mua, to, subject, body)
 
+
+    def textBrowser_highlighted(self,a0):
+        self.statusBar().message(a0)
+    
     
     def textBrowser_linkClicked(self,a0):
         """The user clicked a link in the Bugreport."""

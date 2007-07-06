@@ -2,6 +2,10 @@ reportbug-ng (0.2007.06.xx) unstable; urgency=low
 
   * Corrected Architecture to all (Closes: #430846)
 
+  * Switched from generic Widget to MainWindow, this brings a Menu, Toolbar and
+    a Statusbar -- now we finally can show the links in the statusbar
+    (Closes: #418763)
+
   * Added support for filing WNPP bugs (Closes: #416136)
 
   * Use freedesktop.org's xdg-utils to find user's preferred browser in a 
