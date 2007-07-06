@@ -152,6 +152,9 @@
         <property name="menuText">
             <string>WNPP</string>
         </property>
+        <property name="toolTip">
+            <string>Create a new WNPP bugreport</string>
+        </property>
         <property name="accel">
             <string>Alt+W</string>
         </property>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-07-06 14:21+CEST\n"
+"POT-Creation-Date: 2007-07-06 15:44+CEST\n"
 "PO-Revision-Date: 2007-06-25 03:31+0100\n"
 "Last-Translator: Mateusz Skowroński <skowri@gmail.com>\n"
 "Language-Team: \n"
@@ -11,53 +11,67 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 
-#: ../ui/MainWindow.py:413 ../ui/MainWindow.py:461
+#: ../ui/MainWindow.py:757 ../ui/MainWindow.py:809
 msgid "Summary"
 msgstr "Podsumowanie"
 
-#: ../ui/MainWindow.py:415 ../ui/MainWindow.py:462
+#: ../ui/MainWindow.py:759 ../ui/MainWindow.py:810
 msgid "Status"
 msgstr "Stan"
 
-#: ../ui/MainWindow.py:417 ../ui/MainWindow.py:463
+#: ../ui/MainWindow.py:761 ../ui/MainWindow.py:811
 msgid "Severity"
 msgstr "Ważność"
 
-#: ../ui/MainWindow.py:459
+#: ../ui/MainWindow.py:807
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:460
+#: ../ui/MainWindow.py:808
 msgid "Enter a package name or a filter expression"
 msgstr "Wprowadź nazwę pakietu lub wyrażenie filtra"
 
-#: ../ui/MainWindow.py:464 ../ui/MainWindow.py:465
+#: ../ui/MainWindow.py:812 ../ui/MainWindow.py:813
 #, fuzzy
 msgid "New Bugreport"
 msgstr "&Nowy Błąd"
 
-#: ../ui/MainWindow.py:466
+#: ../ui/MainWindow.py:814
 msgid "Create new bugreport for current package"
 msgstr "Utwórz nowy raport o błędzie dla bieżącego pakietu"
 
-#: ../ui/MainWindow.py:467
+#: ../ui/MainWindow.py:815
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#: ../ui/MainWindow.py:468
+#: ../ui/MainWindow.py:816
 #, fuzzy
 msgid "Additional Info"
 msgstr "&Informacje Dodatkowe"
 
-#: ../ui/MainWindow.py:469
+#: ../ui/MainWindow.py:817
 msgid "Provide additional information for the current bugreport"
 msgstr "Dostarcz informacje dodatkowe dla bieżącego raportu o błędzie"
 
-#: ../ui/MainWindow.py:470
+#: ../ui/MainWindow.py:818
 msgid "Alt+A"
 msgstr "Alt+I"
 
-#: ../ui/MainWindow.py:471
+#: ../ui/MainWindow.py:819 ../ui/MainWindow.py:820
+msgid "WNPP"
+msgstr ""
+
+#: ../ui/MainWindow.py:821
+#, fuzzy
+msgid "Create a new WNPP bugreport"
+msgstr "&Nowy Błąd"
+
+#: ../ui/MainWindow.py:822
+#, fuzzy
+msgid "Alt+W"
+msgstr "Alt+N"
+
+#: ../ui/MainWindow.py:823
 msgid "Toolbar"
 msgstr ""
 
@@ -212,7 +226,7 @@ msgstr "<h2>Pobieranie raportu o błędzie z numerem %s. Proszę czekać.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Pobieranie raportów o błędach dla pakietu %s. Proszę czekać.</h2>"
 
-#: ../ui/MyMainWindow.py:298
+#: ../ui/MyMainWindow.py:297
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Pobieranie raportu o błędzie %s. Proszę czekać.</h2>"
 
