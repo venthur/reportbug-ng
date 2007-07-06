@@ -347,6 +347,7 @@ class MyMainWindow(Form):
         dialog = SubmitDialog()
         # enable WNPP box
         dialog.wnpp_groupBox.setEnabled(1)
+        dialog.wnpp_groupBox.setChecked(0)
         for action in WNPP_ACTIONS:
             dialog.wnpp_comboBox.insertItem(action)
         dialog.lineEditPackage.setText(package)
@@ -390,7 +391,61 @@ class MyMainWindow(Form):
             
             self.settings.lastmua = mua
             prepareMail(mua, to, subject, body)
+    
+    
+    def WNPPAction_activated(self):
+        logger.debug("WNPP action triggered.")
+        
+        package = self.currentPackage
+        version = getInstalledPackageVersion(package)
+        
+        dialog = SubmitDialog()
+        # enable WNPP box
+        dialog.wnpp_groupBox.setEnabled(1)
+        dialog.wnpp_groupBox.setChecked(1)
+        for action in WNPP_ACTIONS:
+            dialog.wnpp_comboBox.insertItem(action)
+        dialog.lineEditPackage.setText(package)
+        dialog.lineEditVersion.setText(version)
+        for mua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.insertItem(mua.title())
+        if self.settings.lastmua in SUPPORTED_MUA:
+            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.settings.lastmua))
+        for sev in SEVERITY:
+            dialog.comboBoxSeverity.insertItem(sev)
+        # Set default severity to 'normal'
+        dialog.comboBoxSeverity.setCurrentItem(4)
+        QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
+               
+        if dialog.exec_loop() == dialog.Accepted:
+            if dialog.wnpp_comboBox.isEnabled():
+                package = dialog.lineEditPackage.text()
+                version = dialog.lineEditVersion.text()
+                action = dialog.wnpp_comboBox.currentText()
+                descr = dialog.wnpp_lineEdit.text()
+                body = prepare_wnpp_body(action, package, version)
+                subject = prepare_wnpp_subject(action, package, descr)
+            else:
+                subject = unicode(dialog.lineEditSummary.text())
+                severity = dialog.comboBoxSeverity.currentText().lower()
+                tags = []
+                if dialog.checkBoxL10n.isChecked():
+                    tags.append("l10n")
+                if dialog.checkBoxPatch.isChecked():
+                    tags.append("patch")
+                if dialog.checkBoxSecurity.isChecked():
+                    tags.append("security")
+            
+                package = dialog.lineEditPackage.text()
+                version = dialog.lineEditVersion.text()
+                body = prepareBody(package, version, severity, tags)
 
+
+            mua = str(dialog.comboBoxMUA.currentText().lower())
+            to = "submit@bugs.debian.org"
+            
+            self.settings.lastmua = mua
+            prepareMail(mua, to, subject, body)
 
     def textBrowser_highlighted(self,a0):
         self.statusBar().message(a0)
