@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"POT-Creation-Date: 2007-07-06 15:44+CEST\n"
+"POT-Creation-Date: 2007-07-06 17:11+CEST\n"
 "PO-Revision-Date: 2007-07-06 15:45+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -16,65 +16,65 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../ui/MainWindow.py:757 ../ui/MainWindow.py:809
+#: ../ui/MainWindow.py:754 ../ui/MainWindow.py:811
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: ../ui/MainWindow.py:759 ../ui/MainWindow.py:810
+#: ../ui/MainWindow.py:756 ../ui/MainWindow.py:812
 msgid "Status"
 msgstr "Status"
 
-#: ../ui/MainWindow.py:761 ../ui/MainWindow.py:811
+#: ../ui/MainWindow.py:758 ../ui/MainWindow.py:813
 msgid "Severity"
 msgstr "Dringlichkeit"
 
-#: ../ui/MainWindow.py:807
+#: ../ui/MainWindow.py:810
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:808
-msgid "Enter a package name or a filter expression"
-msgstr "Geben Sie einen Paketnamen oder einen Filterausdruck ein"
-
-#: ../ui/MainWindow.py:812 ../ui/MainWindow.py:813
+#: ../ui/MainWindow.py:814 ../ui/MainWindow.py:815
 msgid "New Bugreport"
 msgstr "Neuer Fehlerbericht"
 
-#: ../ui/MainWindow.py:814
+#: ../ui/MainWindow.py:816
 msgid "Create new bugreport for current package"
 msgstr "Neuen Fehlerbericht für aktuelles Paket erstellen"
 
-#: ../ui/MainWindow.py:815
+#: ../ui/MainWindow.py:817
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#: ../ui/MainWindow.py:816
+#: ../ui/MainWindow.py:818
 msgid "Additional Info"
 msgstr "Zusätzliche Informationen"
 
-#: ../ui/MainWindow.py:817
+#: ../ui/MainWindow.py:819
 msgid "Provide additional information for the current bugreport"
 msgstr "Zusätzliche Informationen zu aktuellem Fehlerbericht bereitstellen"
 
-#: ../ui/MainWindow.py:818
+#: ../ui/MainWindow.py:820
 msgid "Alt+A"
 msgstr "Alt+A"
 
-#: ../ui/MainWindow.py:819 ../ui/MainWindow.py:820
+#: ../ui/MainWindow.py:821 ../ui/MainWindow.py:822
 msgid "WNPP"
 msgstr "WNPP"
 
-#: ../ui/MainWindow.py:821
+#: ../ui/MainWindow.py:823
 msgid "Create a new WNPP bugreport"
 msgstr "Neuen WNPP Fehlerbericht erstellen"
 
-#: ../ui/MainWindow.py:822
+#: ../ui/MainWindow.py:824
 msgid "Alt+W"
 msgstr "Alt+W"
 
-#: ../ui/MainWindow.py:823
+#: ../ui/MainWindow.py:825
 msgid "Toolbar"
 msgstr "Werkzeugleiste"
+
+#: ../ui/MainWindow.py:826
+msgid "Enter a package name or a filter expression"
+msgstr "Geben Sie einen Paketnamen oder einen Filterausdruck ein"
 
 #: ../ui/MyMainWindow.py:37
 msgid ""
@@ -214,7 +214,8 @@ msgstr "<h2>Lade Fehlerberichte von Einsender %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:230
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
@@ -222,7 +223,8 @@ msgstr "<h2>Lade Fehlerberichte mit tag %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:236
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:239
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
@@ -352,4 +354,3 @@ msgstr "WNPP &Aktion:"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "Kurze Pa&ketbeschreibung:"
-

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-07-06 15:45+CEST\n"
+"POT-Creation-Date: 2007-07-06 17:11+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,64 +15,64 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: ../ui/MainWindow.py:757 ../ui/MainWindow.py:809
+#: ../ui/MainWindow.py:754 ../ui/MainWindow.py:811
 msgid "Summary"
 msgstr ""
 
-#: ../ui/MainWindow.py:759 ../ui/MainWindow.py:810
+#: ../ui/MainWindow.py:756 ../ui/MainWindow.py:812
 msgid "Status"
 msgstr ""
 
-#: ../ui/MainWindow.py:761 ../ui/MainWindow.py:811
+#: ../ui/MainWindow.py:758 ../ui/MainWindow.py:813
 msgid "Severity"
 msgstr ""
 
-#: ../ui/MainWindow.py:807
+#: ../ui/MainWindow.py:810
 msgid "Reportbug NG"
 msgstr ""
 
-#: ../ui/MainWindow.py:808
-msgid "Enter a package name or a filter expression"
-msgstr ""
-
-#: ../ui/MainWindow.py:812 ../ui/MainWindow.py:813
+#: ../ui/MainWindow.py:814 ../ui/MainWindow.py:815
 msgid "New Bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:814
+#: ../ui/MainWindow.py:816
 msgid "Create new bugreport for current package"
 msgstr ""
 
-#: ../ui/MainWindow.py:815
+#: ../ui/MainWindow.py:817
 msgid "Alt+N"
 msgstr ""
 
-#: ../ui/MainWindow.py:816
+#: ../ui/MainWindow.py:818
 msgid "Additional Info"
 msgstr ""
 
-#: ../ui/MainWindow.py:817
+#: ../ui/MainWindow.py:819
 msgid "Provide additional information for the current bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:818
+#: ../ui/MainWindow.py:820
 msgid "Alt+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:819 ../ui/MainWindow.py:820
+#: ../ui/MainWindow.py:821 ../ui/MainWindow.py:822
 msgid "WNPP"
 msgstr ""
 
-#: ../ui/MainWindow.py:821
+#: ../ui/MainWindow.py:823
 msgid "Create a new WNPP bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:822
+#: ../ui/MainWindow.py:824
 msgid "Alt+W"
 msgstr ""
 
-#: ../ui/MainWindow.py:823
+#: ../ui/MainWindow.py:825
 msgid "Toolbar"
+msgstr ""
+
+#: ../ui/MainWindow.py:826
+msgid "Enter a package name or a filter expression"
 msgstr ""
 
 #: ../ui/MyMainWindow.py:37

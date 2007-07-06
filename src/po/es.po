@@ -32,7 +32,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.05.27\n"
-"POT-Creation-Date: 2007-07-06 15:44+CEST\n"
+"POT-Creation-Date: 2007-07-06 17:11+CEST\n"
 "PO-Revision-Date: 2007-05-28 21:37+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -40,69 +40,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../ui/MainWindow.py:757 ../ui/MainWindow.py:809
+#: ../ui/MainWindow.py:754 ../ui/MainWindow.py:811
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../ui/MainWindow.py:759 ../ui/MainWindow.py:810
+#: ../ui/MainWindow.py:756 ../ui/MainWindow.py:812
 msgid "Status"
 msgstr "Estado"
 
-#: ../ui/MainWindow.py:761 ../ui/MainWindow.py:811
+#: ../ui/MainWindow.py:758 ../ui/MainWindow.py:813
 msgid "Severity"
 msgstr "Gravedad"
 
-#: ../ui/MainWindow.py:807
+#: ../ui/MainWindow.py:810
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:808
-msgid "Enter a package name or a filter expression"
-msgstr "Introduzca un nombre de paquete o una expresión de filtro"
-
-#: ../ui/MainWindow.py:812 ../ui/MainWindow.py:813
+#: ../ui/MainWindow.py:814 ../ui/MainWindow.py:815
 #, fuzzy
 msgid "New Bugreport"
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:814
+#: ../ui/MainWindow.py:816
 msgid "Create new bugreport for current package"
 msgstr "Crear un nuevo informe de error para el paquete actual"
 
-#: ../ui/MainWindow.py:815
+#: ../ui/MainWindow.py:817
 msgid "Alt+N"
 msgstr "Alt+N"
 
-#: ../ui/MainWindow.py:816
+#: ../ui/MainWindow.py:818
 #, fuzzy
 msgid "Additional Info"
 msgstr "Información &adicional"
 
-#: ../ui/MainWindow.py:817
+#: ../ui/MainWindow.py:819
 msgid "Provide additional information for the current bugreport"
 msgstr "Proporcionar más información en el informe de error actual"
 
-#: ../ui/MainWindow.py:818
+#: ../ui/MainWindow.py:820
 msgid "Alt+A"
 msgstr "Alt+A"
 
-#: ../ui/MainWindow.py:819 ../ui/MainWindow.py:820
+#: ../ui/MainWindow.py:821 ../ui/MainWindow.py:822
 msgid "WNPP"
 msgstr ""
 
-#: ../ui/MainWindow.py:821
+#: ../ui/MainWindow.py:823
 #, fuzzy
 msgid "Create a new WNPP bugreport"
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:822
+#: ../ui/MainWindow.py:824
 #, fuzzy
 msgid "Alt+W"
 msgstr "Alt+N"
 
-#: ../ui/MainWindow.py:823
+#: ../ui/MainWindow.py:825
 msgid "Toolbar"
 msgstr ""
+
+#: ../ui/MainWindow.py:826
+msgid "Enter a package name or a filter expression"
+msgstr "Introduzca un nombre de paquete o una expresión de filtro"
 
 #: ../ui/MyMainWindow.py:37
 #, fuzzy
