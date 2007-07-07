@@ -257,15 +257,21 @@ class MyMainWindow(Form):
         # row gets hided.
         self.table.setSelectionMode(QTable.NoSelection)
 
+#        import time
+#        t = time.time()
+
 #        self.table.viewport().setUpdatesEnabled(False)
         filter = unicode(a0).lower()
         for row in range(len(self.bugs)):
             if unicode(self.bugs[row]).lower().find(filter) != -1:
                 self.table.showRow(row)
             else:
-                self.table.hideRow(row)           
+                self.table.hideRow(row)
 #        self.table.viewport().setUpdatesEnabled(True)
 #        self.table.updateContents()
+
+#        t = time.time() - t
+#        logger.info("Elapsed time: %f" % t)
 
         # Re-Enable selections again
         self.table.setSelectionMode(QTable.SingleRow)
@@ -301,17 +307,36 @@ class MyMainWindow(Form):
         thread.start_new_thread(self.loadBugreport, (self.currentBug.nr,))
     
     
-    def AdditionalInfoAction_activated(self):
-        """The user wants to provide additional info for the current bug."""
-    
-        package = self.currentBug.package
-        version = getInstalledPackageVersion(package)
+    def __submit_dialog(self, type):
         
         dialog = SubmitDialog()
-        # disable WNPP box
-        dialog.wnpp_groupBox.setEnabled(0)
+        
+        if type == 'wnpp':
+            dialog.wnpp_groupBox.setEnabled(1)
+            dialog.wnpp_groupBox.setChecked(1)
+            package = self.currentPackage
+            to = "submit@bugs.debian.org"
+        elif type == 'newbug':
+            dialog.wnpp_groupBox.setEnabled(1)
+            dialog.wnpp_groupBox.setChecked(0)
+            package = self.currentPackage
+            to = "submit@bugs.debian.org"
+        elif type == 'moreinfo':
+            dialog.wnpp_groupBox.setEnabled(0)
+            dialog.comboBoxSeverity.setEnabled(0)
+            dialog.checkBoxSecurity.setEnabled(0)
+            dialog.checkBoxPatch.setEnabled(0)
+            dialog.checkBoxL10n.setEnabled(0)
+            package = self.currentBug.package
+            to = "%s@bugs.debian.org" % self.currentBug.nr
+        else:
+            logger.critical("Received unknown submit dialog type!")
+        
+        version = getInstalledPackageVersion(package)
         dialog.lineEditPackage.setText(package)
         dialog.lineEditVersion.setText(version)
+        for action in WNPP_ACTIONS:
+            dialog.wnpp_comboBox.insertItem(action)
         for mua in SUPPORTED_MUA:
             dialog.comboBoxMUA.insertItem(mua.title())
         if self.settings.lastmua in SUPPORTED_MUA:
@@ -321,131 +346,48 @@ class MyMainWindow(Form):
         # Set default severity to 'normal'
         dialog.comboBoxSeverity.setCurrentItem(4)
         QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
-        dialog.comboBoxSeverity.setEnabled(0)
-        dialog.checkBoxSecurity.setEnabled(0)
-        dialog.checkBoxPatch.setEnabled(0)
-        dialog.checkBoxL10n.setEnabled(0)
         
+        # Run the dialog
         if dialog.exec_loop() == dialog.Accepted:
-            subject = unicode(dialog.lineEditSummary.text())
-            mua = str(dialog.comboBoxMUA.currentText().lower())
             package = dialog.lineEditPackage.text()
             version = dialog.lineEditVersion.text()
-            to = "%s@bugs.debian.org" % self.currentBug.nr
-            body = prepareBody(package, version)
-            
+            severity = dialog.comboBoxSeverity.currentText().lower()
+            tags = []
+            if dialog.checkBoxL10n.isChecked():
+                tags.append("l10n")
+            if dialog.checkBoxPatch.isChecked():
+                tags.append("patch")
+            if dialog.checkBoxSecurity.isChecked():
+                tags.append("security")
+            mua = str(dialog.comboBoxMUA.currentText().lower())
             self.settings.lastmua = mua
+
+            body, subject = '', ''
+            if dialog.wnpp_comboBox.isEnabled():
+                action = dialog.wnpp_comboBox.currentText()
+                descr = dialog.wnpp_lineEdit.text()
+                body = prepare_wnpp_body(action, package, version)
+                subject = prepare_wnpp_subject(action, package, descr)
+            else:
+                subject = unicode(dialog.lineEditSummary.text())
+                body = prepareBody(package, version, severity, tags)
+
             prepareMail(mua, to, subject, body)
+
+    
+    def AdditionalInfoAction_activated(self):
+        """The user wants to provide additional info for the current bug."""
+        dialog = self.__submit_dialog("moreinfo")
 
     
     def NewBugreportAction_activated(self):
         """The User wants to file a new bugreport against the current package."""
-        
-        package = self.currentPackage
-        version = getInstalledPackageVersion(package)
-        
-        dialog = SubmitDialog()
-        # enable WNPP box
-        dialog.wnpp_groupBox.setEnabled(1)
-        dialog.wnpp_groupBox.setChecked(0)
-        for action in WNPP_ACTIONS:
-            dialog.wnpp_comboBox.insertItem(action)
-        dialog.lineEditPackage.setText(package)
-        dialog.lineEditVersion.setText(version)
-        for mua in SUPPORTED_MUA:
-            dialog.comboBoxMUA.insertItem(mua.title())
-        if self.settings.lastmua in SUPPORTED_MUA:
-            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.settings.lastmua))
-        for sev in SEVERITY:
-            dialog.comboBoxSeverity.insertItem(sev)
-        # Set default severity to 'normal'
-        dialog.comboBoxSeverity.setCurrentItem(4)
-        QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
-               
-        if dialog.exec_loop() == dialog.Accepted:
-            if dialog.wnpp_comboBox.isEnabled():
-                package = dialog.lineEditPackage.text()
-                version = dialog.lineEditVersion.text()
-                action = dialog.wnpp_comboBox.currentText()
-                descr = dialog.wnpp_lineEdit.text()
-                body = prepare_wnpp_body(action, package, version)
-                subject = prepare_wnpp_subject(action, package, descr)
-            else:
-                subject = unicode(dialog.lineEditSummary.text())
-                severity = dialog.comboBoxSeverity.currentText().lower()
-                tags = []
-                if dialog.checkBoxL10n.isChecked():
-                    tags.append("l10n")
-                if dialog.checkBoxPatch.isChecked():
-                    tags.append("patch")
-                if dialog.checkBoxSecurity.isChecked():
-                    tags.append("security")
-            
-                package = dialog.lineEditPackage.text()
-                version = dialog.lineEditVersion.text()
-                body = prepareBody(package, version, severity, tags)
-
-
-            mua = str(dialog.comboBoxMUA.currentText().lower())
-            to = "submit@bugs.debian.org"
-            
-            self.settings.lastmua = mua
-            prepareMail(mua, to, subject, body)
+        dialog = self.__submit_dialog("newbug")
     
     
     def WNPPAction_activated(self):
-        logger.debug("WNPP action triggered.")
-        
-        package = self.currentPackage
-        version = getInstalledPackageVersion(package)
-        
-        dialog = SubmitDialog()
-        # enable WNPP box
-        dialog.wnpp_groupBox.setEnabled(1)
-        dialog.wnpp_groupBox.setChecked(1)
-        for action in WNPP_ACTIONS:
-            dialog.wnpp_comboBox.insertItem(action)
-        dialog.lineEditPackage.setText(package)
-        dialog.lineEditVersion.setText(version)
-        for mua in SUPPORTED_MUA:
-            dialog.comboBoxMUA.insertItem(mua.title())
-        if self.settings.lastmua in SUPPORTED_MUA:
-            dialog.comboBoxMUA.setCurrentItem(SUPPORTED_MUA.index(self.settings.lastmua))
-        for sev in SEVERITY:
-            dialog.comboBoxSeverity.insertItem(sev)
-        # Set default severity to 'normal'
-        dialog.comboBoxSeverity.setCurrentItem(4)
-        QWhatsThis.add(dialog.comboBoxSeverity, SEVERITY_EXPLANATION)
-               
-        if dialog.exec_loop() == dialog.Accepted:
-            if dialog.wnpp_comboBox.isEnabled():
-                package = dialog.lineEditPackage.text()
-                version = dialog.lineEditVersion.text()
-                action = dialog.wnpp_comboBox.currentText()
-                descr = dialog.wnpp_lineEdit.text()
-                body = prepare_wnpp_body(action, package, version)
-                subject = prepare_wnpp_subject(action, package, descr)
-            else:
-                subject = unicode(dialog.lineEditSummary.text())
-                severity = dialog.comboBoxSeverity.currentText().lower()
-                tags = []
-                if dialog.checkBoxL10n.isChecked():
-                    tags.append("l10n")
-                if dialog.checkBoxPatch.isChecked():
-                    tags.append("patch")
-                if dialog.checkBoxSecurity.isChecked():
-                    tags.append("security")
-            
-                package = dialog.lineEditPackage.text()
-                version = dialog.lineEditVersion.text()
-                body = prepareBody(package, version, severity, tags)
+        dialog = self.__submit_dialog("wnpp")
 
-
-            mua = str(dialog.comboBoxMUA.currentText().lower())
-            to = "submit@bugs.debian.org"
-            
-            self.settings.lastmua = mua
-            prepareMail(mua, to, subject, body)
 
     def textBrowser_highlighted(self,a0):
         self.statusBar().message(a0)

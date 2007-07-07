@@ -35,7 +35,7 @@ BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
 
 SOAP_URL = 'http://bugs.debian.org/cgi-bin/soap.cgi'
-SOAP_NAMESPACE = 'Debbugs/SOAP'
+SOAP_NAMESPACE = 'Debbugs/SOAP/V1'
 soapServer = SOAPpy.SOAPProxy(SOAP_URL, SOAP_NAMESPACE)
 
 
