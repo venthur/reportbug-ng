@@ -1,7 +1,8 @@
-reportbug-ng (0.2007.06.xx) unstable; urgency=low
+reportbug-ng (0.2007.07.08) unstable; urgency=low
 
   * Corrected Architecture to all (Closes: #430846)
-
+  * Updated menu file to new section Applications/System instead of Apps/System
+  
   * Switched from generic Widget to MainWindow, this brings a Menu, Toolbar and
     a Statusbar -- now we finally can show the links in the statusbar
     (Closes: #418763)
