@@ -2,14 +2,14 @@ Source: reportbug-ng
 Section: utils
 Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
-Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools, xdg-utils
+Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools
 Standards-Version: 3.7.2
 XS-VCS-bzr: http://bzr.debian.org/bzr/reportbug-ng/ 
 XS-Python-Version: current
 
 Package: reportbug-ng
 Architecture: all
-Depends: ${python:Depends}, python-qt3, python-soappy
+Depends: ${python:Depends}, python-qt3, python-soappy, xdg-utils
 XB-Python-Version: ${python:Versions}
 Description: An easy to use alternative to Debian's classic reportbug
  Reportbug-NG is an alternative to Debian's classic reportbug written with
