@@ -123,6 +123,7 @@ class MyMainWindow(Form):
         self.settings = settings
         self.resize(self.settings.width, self.settings.height)
         self.move(self.settings.x, self.settings.y)
+        self.reportbug_ngMenubarAction.setOn(self.settings.menubar)
 
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
 
@@ -135,6 +136,7 @@ class MyMainWindow(Form):
             self.lineEdit_returnPressed()
             
     def closeEvent(self, ce):
+        self.logger.debug("CloseEvent triggered.")
         # Dirty Hack. Due X's limitations, we must get the position of the 
         # window *before* it is get's undecorated.
         # See: http://doc.trolltech.com/3.3/geometry.html
@@ -146,6 +148,7 @@ class MyMainWindow(Form):
         self.settings.y = p.y()
         self.settings.width = s.width()
         self.settings.height = s.height()
+        self.settings.menubar = self.reportbug_ngMenubarAction.isOn()
 
         # Accecpt the closeEvent 
         ce.accept()
@@ -156,17 +159,19 @@ class MyMainWindow(Form):
         
         if package:
             self.currentPackage = package
-            self.NewBugreportAction.setEnabled(1)
+            self.bugreportNew_BugreportAction.setEnabled(1)
         else:
             self.currentPackage = ""
-            self.NewBugreportAction.setEnabled(0)
+            self.bugreportNew_BugreportAction.setEnabled(0)
         
         if bug:
             self.currentBug = bug
-            self.AdditionalInfoAction.setEnabled(1)
+            self.bugreportAdditional_InfoAction.setEnabled(1)
+            self.bugreportClose_BugreportAction.setEnabled(1)
         else:
             self.currentBug = Bugreport(0)
-            self.AdditionalInfoAction.setEnabled(0)
+            self.bugreportAdditional_InfoAction.setEnabled(0)
+            self.bugreportClose_BugreportAction.setEnabled(0)
         
     
     def loadAllBugSummaries(self, query):
@@ -329,6 +334,14 @@ class MyMainWindow(Form):
             dialog.checkBoxL10n.setEnabled(0)
             package = self.currentBug.package
             to = "%s@bugs.debian.org" % self.currentBug.nr
+        elif type == 'close':
+            dialog.wnpp_groupBox.setEnabled(0)
+            dialog.comboBoxSeverity.setEnabled(0)
+            dialog.checkBoxSecurity.setEnabled(0)
+            dialog.checkBoxPatch.setEnabled(0)
+            dialog.checkBoxL10n.setEnabled(0)
+            package = self.currentBug.package
+            to = "%s-done@bugs.debian.org" % self.currentBug.nr
         else:
             logger.critical("Received unknown submit dialog type!")
         
@@ -363,31 +376,53 @@ class MyMainWindow(Form):
             self.settings.lastmua = mua
 
             body, subject = '', ''
+            # WNPP Bugreport
             if dialog.wnpp_comboBox.isEnabled():
                 action = dialog.wnpp_comboBox.currentText()
                 descr = dialog.wnpp_lineEdit.text()
                 body = prepare_wnpp_body(action, package, version)
                 subject = prepare_wnpp_subject(action, package, descr)
+            # Closing a bug
+            elif type == 'close':
+                severity = ""
+                subject = unicode(dialog.lineEditSummary.text())
+                body = prepare_minimal_body(package, version, severity, tags)
+            # New or moreinfo
             else:
+                if type == 'moreinfo':
+                    severity = ""
                 subject = unicode(dialog.lineEditSummary.text())
                 body = prepareBody(package, version, severity, tags)
 
             prepareMail(mua, to, subject, body)
 
     
-    def AdditionalInfoAction_activated(self):
+    def bugreportAdditional_InfoAction_activated(self):
         """The user wants to provide additional info for the current bug."""
         dialog = self.__submit_dialog("moreinfo")
 
     
-    def NewBugreportAction_activated(self):
+    def bugreportNew_BugreportAction_activated(self):
         """The User wants to file a new bugreport against the current package."""
         dialog = self.__submit_dialog("newbug")
+        
     
+    def bugreportClose_BugreportAction_activated(self):
+        """The user wants to close the current bug."""
+        dialog = self.__submit_dialog("close")
+        
     
-    def WNPPAction_activated(self):
+    def bugreportWNPPAction_activated(self):
         dialog = self.__submit_dialog("wnpp")
 
+
+    def reportbug_ngMenubarAction_toggled(self, b):
+        self.logger.debug("Menubar Action toggled with %s" % str(b))
+        if b:
+            self.menuBar().show()
+        else:
+            self.menuBar().hide()
+        
 
     def textBrowser_highlighted(self,a0):
         self.statusBar().message(a0)

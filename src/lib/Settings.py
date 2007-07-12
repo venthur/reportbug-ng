@@ -33,6 +33,8 @@ class Settings:
         self.y = 0
         self.width = 800
         self.height = 600
+        self.menubar = True
+        
         
     def load(self):
     
@@ -47,6 +49,8 @@ class Settings:
             self.width = self.config.getint("mainwindow", "width")
         if self.config.has_option("mainwindow", "height"):
             self.height = self.config.getint("mainwindow", "height")
+        if self.config.has_option("mainwindow", "menubar"):
+            self.menubar = self.config.getboolean("mainwindow", "menubar")
 
     
     def save(self):
@@ -61,7 +65,7 @@ class Settings:
         self.config.set("mainwindow", "y", self.y)
         self.config.set("mainwindow", "width", self.width)
         self.config.set("mainwindow", "height", self.height)
-
+        self.config.set("mainwindow", "menubar", self.menubar)
         
         # Write everything to configfile
         self.config.write(open(self.configfile, "w"))

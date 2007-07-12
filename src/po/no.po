@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: no\n"
-"POT-Creation-Date: 2007-07-06 17:11+CEST\n"
+"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
 "PO-Revision-Date: 2007-06-24 17:04+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -17,69 +17,117 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../ui/MainWindow.py:754 ../ui/MainWindow.py:811
+#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1244
 msgid "Summary"
 msgstr "Sammendrag"
 
-#: ../ui/MainWindow.py:756 ../ui/MainWindow.py:812
+#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1245
 msgid "Status"
 msgstr "Status"
 
-#: ../ui/MainWindow.py:758 ../ui/MainWindow.py:813
+#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1246
 msgid "Severity"
 msgstr "Alvorlighetsgrad"
 
-#: ../ui/MainWindow.py:810
+#: ../ui/MainWindow.py:1243
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:814 ../ui/MainWindow.py:815
+#: ../ui/MainWindow.py:1247
 #, fuzzy
-msgid "New Bugreport"
-msgstr "&Ny feilrapport"
+msgid "Quits Reportbug NG"
+msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:816
-msgid "Create new bugreport for current package"
-msgstr "Opprett ny feilrapport for den aktuelle pakken"
+#: ../ui/MainWindow.py:1248
+msgid "&Quit"
+msgstr ""
 
-#: ../ui/MainWindow.py:817
-msgid "Alt+N"
-msgstr "Alt+N"
+#: ../ui/MainWindow.py:1249
+msgid "Ctrl+Q"
+msgstr ""
 
-#: ../ui/MainWindow.py:818
-#, fuzzy
-msgid "Additional Info"
-msgstr "&Ytterligere informasjon"
-
-#: ../ui/MainWindow.py:819
+#: ../ui/MainWindow.py:1250
 msgid "Provide additional information for the current bugreport"
 msgstr "Gi mer informasjon for den aktuelle feilrapporten"
 
-#: ../ui/MainWindow.py:820
-msgid "Alt+A"
-msgstr "Alt+Y"
+#: ../ui/MainWindow.py:1251
+#, fuzzy
+msgid "&Additional Info..."
+msgstr "&Ytterligere informasjon"
 
-#: ../ui/MainWindow.py:821 ../ui/MainWindow.py:822
-msgid "WNPP"
+#: ../ui/MainWindow.py:1252
+msgid "Ctrl+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:823
+#: ../ui/MainWindow.py:1253
+msgid "Create new bugreport for current package"
+msgstr "Opprett ny feilrapport for den aktuelle pakken"
+
+#: ../ui/MainWindow.py:1254
+#, fuzzy
+msgid "&New Bugreport..."
+msgstr "&Ny feilrapport"
+
+#: ../ui/MainWindow.py:1255
+msgid "Ctrl+N"
+msgstr ""
+
+#: ../ui/MainWindow.py:1256
 #, fuzzy
 msgid "Create a new WNPP bugreport"
 msgstr "&Ny feilrapport"
 
-#: ../ui/MainWindow.py:824
-#, fuzzy
-msgid "Alt+W"
-msgstr "Alt+N"
+#: ../ui/MainWindow.py:1257
+msgid "&WNPP..."
+msgstr ""
 
-#: ../ui/MainWindow.py:825
+#: ../ui/MainWindow.py:1258
+msgid "Ctrl+W"
+msgstr ""
+
+#: ../ui/MainWindow.py:1259
+msgid "Show or hide  the main menu"
+msgstr ""
+
+#: ../ui/MainWindow.py:1260
+msgid "&Menubar"
+msgstr ""
+
+#: ../ui/MainWindow.py:1261
+msgid "Ctrl+M"
+msgstr ""
+
+#: ../ui/MainWindow.py:1262
+#, fuzzy
+msgid "Close the current bugreport"
+msgstr "&Ny feilrapport"
+
+#: ../ui/MainWindow.py:1263
+#, fuzzy
+msgid "&Close Bugreport..."
+msgstr "&Ny feilrapport"
+
+#: ../ui/MainWindow.py:1264
+msgid "Ctrl+L"
+msgstr ""
+
+#: ../ui/MainWindow.py:1265
 msgid "Toolbar"
 msgstr ""
 
-#: ../ui/MainWindow.py:826
+#: ../ui/MainWindow.py:1266
 msgid "Enter a package name or a filter expression"
 msgstr "Angi et pakkenavn eller et filteruttrykk"
+
+#: ../ui/MainWindow.py:1268
+#, fuzzy
+msgid "&Reportbug NG"
+msgstr "Reportbug NG"
+
+#: ../ui/MainWindow.py:1270
+#, fuzzy
+msgid "&Bugreport"
+msgstr "&Ny feilrapport"
 
 #: ../ui/MyMainWindow.py:37
 msgid ""
@@ -194,43 +242,43 @@ msgstr ""
 "fikse. <br> <b>%(wis)s</b> for alle ønsker angående funksjoner og "
 "feilrapporter som er vanskelige å fikse grunnet større designfaktorer."
 
-#: ../ui/MyMainWindow.py:199
+#: ../ui/MyMainWindow.py:204
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Ingen feilrapporter for pakken %s funnet!</h2>"
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:209
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Klikk på feilrapporten for å se hele teksten.</h2>"
 
-#: ../ui/MyMainWindow.py:224
+#: ../ui/MyMainWindow.py:229
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene for %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:227
+#: ../ui/MyMainWindow.py:232
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene fra %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:230
+#: ../ui/MyMainWindow.py:235
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med alvorlighetsgrad %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:233
+#: ../ui/MyMainWindow.py:238
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med tagg %s, vent</h2>"
 
-#: ../ui/MyMainWindow.py:236
+#: ../ui/MyMainWindow.py:241
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene tildelt %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:239
+#: ../ui/MyMainWindow.py:244
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med nummer %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:247
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene for pakken %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:297
+#: ../ui/MyMainWindow.py:308
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapport %s, vent.</h2>"
 
@@ -350,3 +398,17 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
+
+#, fuzzy
+#~ msgid "&Reportbug-NG"
+#~ msgstr "Reportbug NG"
+
+#~ msgid "Alt+N"
+#~ msgstr "Alt+N"
+
+#~ msgid "Alt+A"
+#~ msgstr "Alt+Y"
+
+#, fuzzy
+#~ msgid "Alt+W"
+#~ msgstr "Alt+N"

@@ -83,6 +83,17 @@ def prepareMail(mua, to, subject, body):
 def prepareBody(package, version=None, severity=None, tags=[]):
     """Prepares the empty bugreport."""
     
+    s = prepare_minimal_body(package, version, severity, tags)
+
+    s += getSystemInfo() + "\n"
+    s += getDebianReleaseInfo() + "\n"
+    s += getPackageInfo(package) + "\n"
+
+    return s
+
+def prepare_minimal_body(package, version=None, severity=None, tags=[]):
+    """Prepares the empty bugreport."""
+    
     s = ""
     s += "Package: %s\n" % package
     if version:
@@ -96,10 +107,6 @@ def prepareBody(package, version=None, severity=None, tags=[]):
         s += "\n"
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
-
-    s += getSystemInfo() + "\n"
-    s += getDebianReleaseInfo() + "\n"
-    s += getPackageInfo(package) + "\n"
 
     return s
 
@@ -312,7 +319,7 @@ def callBrowser(url):
     # Try to find user's preferred browser via xdg-open. If that fails
     # (xdg-utils not installed or some other error), fall back to pythons
     # semi optimal solution.
-    status, output = commands.getstatusoutput("xdg-open %s" % url)
+    status, output = commands.getstatusoutput('xdg-open "%s"' % url)
     if status != 0:
         logger.warning("xdg-open %s returned (%i, %s), falling back to python's webbrowser.open" % (url, status, output))
         thread.start_new_thread(webbrowser.open, (url,))

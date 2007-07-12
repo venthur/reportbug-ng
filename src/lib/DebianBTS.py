@@ -20,6 +20,7 @@
 from Bugreport import Bugreport
 import ReportbugNG
 
+import os
 import urllib
 import re
 import logging
@@ -36,7 +37,20 @@ BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
 
 SOAP_URL = 'http://bugs.debian.org/cgi-bin/soap.cgi'
 SOAP_NAMESPACE = 'Debbugs/SOAP/V1'
-soapServer = SOAPpy.SOAPProxy(SOAP_URL, SOAP_NAMESPACE)
+# FIXME: soappy should recocnize http_proxy on it's own
+# Soappy should recognize the http_proxy environment variable on it's own like
+# urllib does. Unfortunately it doesn't so we have to check it manually until
+# we replaced Soappy with ZSI
+# See: #432319
+# http_proxy must have the form: http://server:port with or without trailing 
+# slash, the http:// is mandatory
+HTTP_PROXY = os.environ.get('http_proxy')
+try:
+    host, port = re.search('http://([^:]+):([0-9]+)', proxy_url).group(1,2)
+    HTTP_PROXY= "%s:%s" % (host, port)
+except:
+    HTTP_PROXY = None
+soapServer = SOAPpy.SOAPProxy(SOAP_URL, namespace=SOAP_NAMESPACE, http_proxy=HTTP_PROXY)
 
 
 # Some regular expressions to get some info from the html
