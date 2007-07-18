@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-06-23 04:27+0200\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -281,7 +281,7 @@ msgstr "<h2>Ophalen van bugrapport met nummer %s, een ogenblik geduld.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapporten voor pakket %s, een ogenblik geduld.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Ophalen van bugrapport %s, een ogenblik geduld.</h2>"
 

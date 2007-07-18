@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-05-27 21:05+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -294,7 +294,7 @@ msgstr "<h2>Hämtar felrapporten %s, vänta.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporterna %s %s, vänta.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Hämtar felrapporten %s, vänta.</h2>"
 

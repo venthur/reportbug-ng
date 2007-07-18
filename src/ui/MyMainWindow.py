@@ -265,15 +265,42 @@ class MyMainWindow(Form):
 #        import time
 #        t = time.time()
 
-#        self.table.viewport().setUpdatesEnabled(False)
         filter = unicode(a0).lower()
+        tokens = filter.split()
+        neg_filter = [e[1:] for e in tokens if e.startswith("-")]
+        pos_filter = [e for e in tokens if not e.startswith("-")]
+        self.logger.debug("neg: %s, pos: %s" % (str(neg_filter), str(pos_filter)) )
+
+        self.table.viewport().setUpdatesEnabled(False)
         for row in range(len(self.bugs)):
-            if unicode(self.bugs[row]).lower().find(filter) != -1:
+            bug = unicode(self.bugs[row]).lower()
+            show = True
+            for elem in pos_filter:
+                if bug.find(elem) == -1:
+                    show = False
+                    break
+            if not show:
+                self.table.hideRow(row)
+                continue
+            
+            for elem in neg_filter:
+                if bug.find(elem) != -1:
+                    show = False
+                    break
+            if show:
                 self.table.showRow(row)
             else:
                 self.table.hideRow(row)
-#        self.table.viewport().setUpdatesEnabled(True)
-#        self.table.updateContents()
+
+### Old version                 
+#        for row in range(len(self.bugs)):
+#            if unicode(self.bugs[row]).lower().find(filter) != -1:
+#                self.table.showRow(row)
+#            else:
+#                self.table.hideRow(row)
+        
+        self.table.viewport().setUpdatesEnabled(True)
+        self.table.repaintContents()
 
 #        t = time.time() - t
 #        logger.info("Elapsed time: %f" % t)

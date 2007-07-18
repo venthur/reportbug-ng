@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-05-29 19:37+0200\n"
 "Last-Translator: David Planella <david.planella@googlemail.com\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -302,7 +302,7 @@ msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr ""
 "<h2>S'estan recollint els informes d'error %s %s, espereu un moment.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>S'està recollint l'informe d'error %s, espereu un moment.</h2>"
 

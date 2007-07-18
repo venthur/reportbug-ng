@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-06-10 09:26+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -274,7 +274,7 @@ msgstr "<h2>Stahuji hlášení o chybě číslo %s, čekejte prosím.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách v balíku %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybě %s, čekejte prosím.</h2>"
 

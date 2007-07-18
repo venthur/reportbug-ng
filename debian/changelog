@@ -1,3 +1,14 @@
+reportbug-ng (0.2007.07.18) unstable; urgency=low
+
+  * Allow multiple filter keywords and negation 
+    "foo bar -baz" matches all reports with foo and bar and not baz 
+    (Closes: #428772)
+    
+  * Added Italian translation (Closes: #433114), thanks Gabriele Stilli!
+  * Added Hebrew translation (Closes: #433577), thanks Baruch Even!
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Jul 2007 15:22:39 +0200
+
 reportbug-ng (0.2007.07.12) unstable; urgency=low
 
   * New "Close Bugreport" action

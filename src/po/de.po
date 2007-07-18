@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-07-12 13:56+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -258,7 +258,8 @@ msgstr "<h2>Lade Fehlerberichte von Einsender %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:235
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:238
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
@@ -266,7 +267,8 @@ msgstr "<h2>Lade Fehlerberichte mit tag %s, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:241
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
 
 #: ../ui/MyMainWindow.py:244
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
@@ -276,7 +278,7 @@ msgstr "<h2>Lade Fehlerbericht mit Fehlernummer %s, bitte warten Sie.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte für Paket %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerbericht %s, bitte warten Sie.</h2>"
 
@@ -396,4 +398,3 @@ msgstr "WNPP &Aktion:"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "Kurze Pa&ketbeschreibung:"
-

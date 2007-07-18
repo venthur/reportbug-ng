@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: no\n"
-"POT-Creation-Date: 2007-07-12 13:52+CEST\n"
+"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
 "PO-Revision-Date: 2007-06-24 17:04+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -278,7 +278,7 @@ msgstr "<h2>Henter feilrapportene med nummer %s, vent.</h2>"
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene for pakken %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:308
+#: ../ui/MyMainWindow.py:335
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapport %s, vent.</h2>"
 
