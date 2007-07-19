@@ -28,9 +28,9 @@ from HTMLParser import HTMLParser
 import htmlentitydefs
 import SOAPpy
 
-
+# FIXME: 
 logger = logging.getLogger("DebianBTS")
-
+logger.info("Logger initialized.")
 
 BTS_URL = "http://bugs.debian.org/"
 BTS_CGIBIN_URL = BTS_URL + "cgi-bin/"
@@ -45,11 +45,16 @@ SOAP_NAMESPACE = 'Debbugs/SOAP/V1'
 # http_proxy must have the form: http://server:port with or without trailing 
 # slash, the http:// is mandatory
 HTTP_PROXY = os.environ.get('http_proxy')
-try:
-    host, port = re.search('http://([^:]+):([0-9]+)', proxy_url).group(1,2)
-    HTTP_PROXY= "%s:%s" % (host, port)
-except:
-    HTTP_PROXY = None
+if HTTP_PROXY:
+    try:
+        host, port = re.search('http://([^:]+):([0-9]+)', HTTP_PROXY).group(1,2)
+        HTTP_PROXY= "%s:%s" % (host, port)
+    except:
+        HTTP_PROXY = None
+        logger.warning("Something went wrong parsing the http_proxy variable, ignoring it.")
+    else:
+        logger.info("Using proxy %s" % HTTP_PROXY)
+
 soapServer = SOAPpy.SOAPProxy(SOAP_URL, namespace=SOAP_NAMESPACE, http_proxy=HTTP_PROXY)
 
 
