@@ -1,4 +1,4 @@
-reportbug-ng (0.2007.08.XX) unstable; urgency=low
+reportbug-ng (0.2007.08.02) unstable; urgency=low
 
   * Call mailclient and webbrowser in a new thread no matter what 
     (Closes: #432567)
