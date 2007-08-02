@@ -26,7 +26,7 @@ class Settings:
         self.config.read(self.configfile)
         
         # Users preferred mailclient
-        self.lastmua = ""
+        self.lastmua = "default"
         
         # Mainwindow
         self.x = 0

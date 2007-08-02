@@ -30,6 +30,7 @@ logger = logging.getLogger("ReportbugNG")
 
 RFC_MAILTO = '"mailto:%(to)s?subject=%(subject)s&body=%(body)s"'
 MUA_SYNTAX = {
+    "default" : 'xdg-email --utf8 --subject "%(subject)s" --body "%(body)s" "%(to)s"',
     "icedove" : 'icedove -compose ' + RFC_MAILTO,
     "iceape" : 'iceape -compose ' + RFC_MAILTO,
     "evolution" : 'evolution ' + RFC_MAILTO,
@@ -44,7 +45,7 @@ MUA_SYNTAX = {
 #    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
               }
 # Don't urllib.quote() their strings
-MUA_NO_URLQUOTE = ["kmail"]            
+MUA_NO_URLQUOTE = ["default", "kmail"]            
 # Who needs a terminal?
 MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
 # Who needs a browser?
@@ -74,14 +75,12 @@ def prepareMail(mua, to, subject, body):
 
     if mua in WEBMAIL:
         callBrowser(command)
-    elif not commands.getstatusoutput(command)[0] == 0:
-        print "Reportbug was not able to start your mailclient."
-        print "Please copy-paste the following text to your mailclient and send it to submit@bugs.debian.org"
-        print body
+    else:
+        callMailClient(command)
     
     
 def prepareBody(package, version=None, severity=None, tags=[]):
-    """Prepares the empty bugreport."""
+    """Prepares the empty bugreport including body and system information."""
     
     s = prepare_minimal_body(package, version, severity, tags)
 
@@ -91,8 +90,9 @@ def prepareBody(package, version=None, severity=None, tags=[]):
 
     return s
 
+
 def prepare_minimal_body(package, version=None, severity=None, tags=[]):
-    """Prepares the empty bugreport."""
+    """Prepares the body of the empty bugreport."""
     
     s = ""
     s += "Package: %s\n" % package
@@ -146,7 +146,7 @@ def prepare_wnpp_subject(action, package, descr):
 
 
 def getSystemInfo():
-    """Returns some hopefully usefull sysinfo"""
+    """Returns some hopefully useful sysinfo"""
     
     s = "--- System information. ---\n"
     s += "Architecture: %s\n" % commands.getoutput("dpkg --print-installation-architecture 2>/dev/null")
@@ -218,7 +218,7 @@ def getPackageInfo(package):
 
 
 def getInstalledPackageVersion(package):
-    """Returns the version of package, if installed or empty string not installed"""
+    """Returns the version of package, if installed or empty string if not installed"""
     
     out = commands.getoutput("dpkg --status %s 2>/dev/null" % package)
     version = re.findall("^Version:\s(.*)$", out, re.MULTILINE)
@@ -312,28 +312,26 @@ def getDebianReleaseInfo():
     return debinfo
 
 
-
 def callBrowser(url):
     """Calls an external Browser to upen the URL."""
 
     # Try to find user's preferred browser via xdg-open. If that fails
     # (xdg-utils not installed or some other error), fall back to pythons
     # semi optimal solution.
+    logger.debug("Just before xdg-open")
     status, output = commands.getstatusoutput('xdg-open "%s"' % url)
+    logger.debug("After xdg-open")
     if status != 0:
         logger.warning("xdg-open %s returned (%i, %s), falling back to python's webbrowser.open" % (url, status, output))
+        logger.debug("Just before webbrowser.open")
         thread.start_new_thread(webbrowser.open, (url,))
+        logger.debug("After webbrowser.open")
 
 
-if __name__ == "__main__":
-    #print getSystemInfo()
-    #print getDebianReleaseInfo()
-    #for package in "icedove", "wordpress", "foo":
-    #    print getPackageInfo(package)
-    
-    print "*** Supportet MUAs: ***"
-    print SUPPORTED_MUA
-    for mua in MUA_SYNTAX:
-        print mua.title().ljust(15), MUA_SYNTAX[mua] % {"to":"foo@example.com", "subject":"my subject", "body":"some body"}
-    
+def callMailClient(command):
+    """Calls the external mailclient via command."""
+    logger.debug("Just before the MUA call")
+    status, output = commands.getstatusoutput(command)
+    logger.debug("After the  MUA call")
+
     

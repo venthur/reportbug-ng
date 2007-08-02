@@ -420,8 +420,8 @@ class MyMainWindow(Form):
                     severity = ""
                 subject = unicode(dialog.lineEditSummary.text())
                 body = prepareBody(package, version, severity, tags)
-
-            prepareMail(mua, to, subject, body)
+            
+            thread.start_new_thread( prepareMail, (mua, to, subject, body) )
 
     
     def bugreportAdditional_InfoAction_activated(self):
@@ -459,6 +459,6 @@ class MyMainWindow(Form):
         """The user clicked a link in the Bugreport."""
   
         url = unicode(a0)
-        callBrowser(url)
+        thread.start_new_thread( callBrowser, (url,) )
         # Hack to open link in external Browser: just reload the current bugreport
         self.textBrowser.setText(self.currentBug.fulltext)

@@ -12,14 +12,10 @@ Architecture: all
 Depends: ${python:Depends}, python-qt3, python-soappy, xdg-utils
 XB-Python-Version: ${python:Versions}
 Description: An easy to use alternative to Debian's classic reportbug
- Reportbug-NG is an alternative to Debian's classic reportbug written with
- the end-user in mind. It has a nice and clean QT-interface allowing you to
- search for existing bugreports and filter them easy and fast. 
+ Graphical interface for interacting with the Debian Bug Tracking System.
  .
- You can give additional information to existing bugreports or create new 
- ones. In both cases a dialog will ask you for all relevant informations
- (summary, severity, tags, ...) and will finally start your favorite 
- mailclient, where you only have to fill the gap with your full report and
- click the "send" button.
+ Reportbug-NG is a graphical interface using Qt for searching, filtering,
+ reporting or manipulating bugs in Debian's Bug Tracking System. Reportbug-NG
+ can search bug reports and display, create and close a bug report.
  .
  Homepage: http://reportbug-ng.alioth.debian.org/

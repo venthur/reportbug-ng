@@ -1,3 +1,16 @@
+reportbug-ng (0.2007.08.XX) unstable; urgency=low
+
+  * Call mailclient and webbrowser in a new thread no matter what 
+    (Closes: #432567)
+
+  * Use xdg-email as default mail client if nothing else was chosen 
+    (Closes: #434293)
+
+  * Improved package description (Closes: #435486)
+  * Fixed some typos (Closes: #434367)
+
+ -- Bastian Venthur <venthur@debian.org>  Thu, 02 Aug 2007 10:54:55 +0200
+
 reportbug-ng (0.2007.07.19) unstable; urgency=low
 
   * Fixed handling of http_proxy environment variable (Closes: #433790)
