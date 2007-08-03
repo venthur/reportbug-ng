@@ -28,6 +28,10 @@ class Settings:
         # Users preferred mailclient
         self.lastmua = "default"
         
+        # Sorting option
+        self.sortByCol = 2
+        self.sortAsc = True
+        
         # Mainwindow
         self.x = 0
         self.y = 0
@@ -40,6 +44,10 @@ class Settings:
     
         if self.config.has_option("general", "lastMUA"):
             self.lastmua = self.config.get("general", "lastMUA")
+        if self.config.has_option("general", "sortByCol"):
+            self.sortByCol = self.config.getint("general", "sortByCol")
+        if self.config.has_option("general", "sortAsc"):
+            self.sortAsc = self.config.getboolean("general", "sortAsc")
             
         if self.config.has_option("mainwindow", "x"):
             self.x = self.config.getint("mainwindow", "x")
@@ -58,6 +66,8 @@ class Settings:
         if not self.config.has_section("general"):
             self.config.add_section("general")
         self.config.set("general", "lastMUA", self.lastmua)
+        self.config.set("general", "sortByCol", self.sortByCol)
+        self.config.set("general", "sortAsc", self.sortAsc)
         
         if not self.config.has_section("mainwindow"):
             self.config.add_section("mainwindow")

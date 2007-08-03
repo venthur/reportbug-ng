@@ -26,6 +26,7 @@ from qttable import QTableItem
 from qttable import QTable
 from qt import Qt
 from qt import QWhatsThis
+from qt import SIGNAL
 
 import thread
 import sys
@@ -82,25 +83,38 @@ SEVERITY_EXPLANATION = _("\
 class MyTableItem(QTableItem):
     """Derived from QTableItem to pretty-paint different bugtypes"""
 
-    def __init__(self, table, editType, text, status, severity):
+    def __init__(self, table, editType, bug, attribute):
+        text = {Bugreport.NR : bug.nr,
+                Bugreport.SUMMARY : bug.summary,
+                Bugreport.STATUS : bug.status,
+                Bugreport.SEVERITY : bug.severity,
+                Bugreport.LASTACTION : bug.lastaction}.get(attribute, "")
         QTableItem.__init__(self, table, editType, text)
-        self.status = status.lower()
-        self.severity = severity.lower()
-
+        self.bug = bug
+        self.attribute = attribute
+    
     def paint(self, painter, colorGroup, rect, selected):
-        if self.severity in ("grave", "serious", "critical"):
+        if self.bug.severity.lower() in ("grave", "serious", "critical"):
             colorGroup.setColor(colorGroup.Text, Qt.darkMagenta)
-        elif self.severity == "important":
+        elif self.bug.severity.lower() == "important":
             colorGroup.setColor(colorGroup.Text, Qt.red)
-        elif self.severity == "minor":
+        elif self.bug.severity.lower() == "minor":
             colorGroup.setColor(colorGroup.Text, Qt.darkGreen)
-        elif self.severity == "wishlist":
+        elif self.bug.severity.lower() == "wishlist":
             colorGroup.setColor(colorGroup.Text, Qt.darkYellow)
 
-        if self.status == "resolved":
+        if self.bug.status.lower() == "resolved":
             colorGroup.setColor(colorGroup.Text, Qt.gray)
         
         QTableItem.paint(self, painter, colorGroup, rect, selected)
+    
+    def key(self):
+        if self.attribute == Bugreport.STATUS:
+            return str(self.bug.value())
+        elif self.attribute == Bugreport.SEVERITY:
+            return str(Bugreport.SEVERITY_VALUE.get(self.bug.severity.lower(), ""))
+        else:
+            return QTableItem.key(self)
 
 
 class MyMainWindow(Form):
@@ -110,14 +124,14 @@ class MyMainWindow(Form):
         self.logger.info("Logger initialized.")
         
         Form.__init__(self)
-        self.bugs = []
+        self.bugs = dict()
         self.stateChanged(None, None)
 
         # The ID of the latest Thread which queried the BTS
         self.currentQuery = 0
         self.queryLock = thread.allocate_lock()
 
-        self.table.setColumnStretchable(0, True)
+        self.table.setColumnStretchable(1, True)
         self.splitter.setSizes([150,300])
 
         self.settings = settings
@@ -127,6 +141,14 @@ class MyMainWindow(Form):
 
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
 
+        self.connect(self.table.horizontalHeader(),SIGNAL("clicked(int)"), self.__sort_table)
+        self.sortOrder = dict()
+        for col in range(self.table.numCols()):
+            self.sortOrder[col] = True
+        self.sortOrder[self.settings.sortByCol] = self.settings.sortAsc
+        self.table.verticalHeader().hide()
+        self.table.setLeftMargin(0)
+        
         # For debugging purpose only:
         # self.pushButtonNewBugreport.setEnabled(1)
         
@@ -134,6 +156,7 @@ class MyMainWindow(Form):
         if args:
             self.lineEdit.setText(unicode(args[0], "utf-8"))
             self.lineEdit_returnPressed()
+
             
     def closeEvent(self, ce):
         self.logger.debug("CloseEvent triggered.")
@@ -152,6 +175,14 @@ class MyMainWindow(Form):
 
         # Accecpt the closeEvent 
         ce.accept()
+        
+    
+    def __sort_table(self, col):
+        self.sortOrder[col] = not self.sortOrder.get(col, False)
+        self.table.sortColumn(col, self.sortOrder[col], True)
+        self.lineEdit_textChanged(self.lineEdit.text())
+        self.settings.sortByCol = col
+        self.settings.sortAsc = self.sortOrder[col]
 
     
     def stateChanged(self, package, bug):
@@ -186,18 +217,20 @@ class MyMainWindow(Form):
         
         self.queryLock.acquire()
         
-        self.bugs = bugs
+        # Vonvert array to dict using the Bugnumber as key
+        self.bugs = dict()
+        for bug in bugs:
+            self.bugs[bug.nr] = bug
 
         self.table.setNumRows(len(self.bugs))
         row = 0
-        for bug in self.bugs:
-            self.table.verticalHeader().setLabel(row,bug.nr)
-            #self.table.setText(row,0, bug.summary)
-            #self.table.setText(row,1, bug.status)
-            #self.table.setText(row,2, bug.severity)
-            self.table.setItem(row,0, MyTableItem(self.table, QTableItem.Never, bug.summary, bug.status, bug.severity))
-            self.table.setItem(row,1, MyTableItem(self.table, QTableItem.Never, bug.status, bug.status, bug.severity))
-            self.table.setItem(row,2, MyTableItem(self.table, QTableItem.Never, bug.severity, bug.status, bug.severity))
+        for bugnr in self.bugs:
+            bug = self.bugs[bugnr]
+            self.table.setItem(row,0, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.NR))
+            self.table.setItem(row,1, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.SUMMARY))
+            self.table.setItem(row,2, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.STATUS))
+            self.table.setItem(row,3, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.SEVERITY))
+            self.table.setItem(row,4, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.LASTACTION))
             row += 1
         
         if len(self.bugs) == 0:
@@ -207,6 +240,8 @@ class MyMainWindow(Form):
             self.table_selectionChanged()
         else:
             self.textBrowser.setText(_("<h2>Click on a bugreport to see the full text.</h2>") + REPORTBUG_NG_INSTRUCTIONS)
+            col = self.settings.sortByCol
+            self.table.sortColumn(col, self.sortOrder[col], True)
     
         self.queryLock.release()
 
@@ -223,7 +258,7 @@ class MyMainWindow(Form):
         #     severity:foo
         #     tag:bar
         
-        self.bugs = []
+        self.bugs = dict()
         s = unicode(self.lineEdit.text()).strip()
         if (s.startswith('src:')):
             what = _("<h2>Fetching bugreports of source package %s, please wait.</h2>") % s.split(":")[1]
@@ -253,6 +288,10 @@ class MyMainWindow(Form):
     
         # Fetch the bugs in a thread
         self.currentQuery = thread.start_new_thread(self.loadAllBugSummaries, (s,))
+
+
+    def __get_bugnr_from_row(self, row):
+        return unicode(self.table.item(row, 0).text())
         
 
     def lineEdit_textChanged(self, a0):
@@ -262,8 +301,8 @@ class MyMainWindow(Form):
         # row gets hided.
         self.table.setSelectionMode(QTable.NoSelection)
 
-#        import time
-#        t = time.time()
+        import time
+        t = time.time()
 
         filter = unicode(a0).lower()
         tokens = filter.split()
@@ -273,7 +312,8 @@ class MyMainWindow(Form):
 
         self.table.viewport().setUpdatesEnabled(False)
         for row in range(len(self.bugs)):
-            bug = unicode(self.bugs[row]).lower()
+            bugnr = self.__get_bugnr_from_row(row)
+            bug = unicode(self.bugs[bugnr]).lower()
             show = True
             for elem in pos_filter:
                 if bug.find(elem) == -1:
@@ -302,8 +342,8 @@ class MyMainWindow(Form):
         self.table.viewport().setUpdatesEnabled(True)
         self.table.repaintContents()
 
-#        t = time.time() - t
-#        logger.info("Elapsed time: %f" % t)
+        t = time.time() - t
+        logger.info("Elapsed time: %f" % t)
 
         # Re-Enable selections again
         self.table.setSelectionMode(QTable.SingleRow)
@@ -311,12 +351,10 @@ class MyMainWindow(Form):
         
     def loadBugreport(self, bugnr):
         """Loads the bugreport and writes the result to build in browser. (Intended to run in a thread)"""
-
-        for bug in self.bugs:
-            if bug.nr == bugnr:
-                if len(bug.fulltext) == 0:
-                    bug.fulltext = DebianBTS.getFullText(bugnr)
-                break
+            
+        bug = self.bugs.get(bugnr, Bugreport(bugnr))
+        if len(bug.fulltext) == 0:
+            bug.fulltext = DebianBTS.getFullText(bugnr)
         
         # While loading the bugreport the user switched to another bug, abort showing
         # the report.
@@ -331,7 +369,8 @@ class MyMainWindow(Form):
         if self.table.currentRow() < 0 or self.table.currentRow() > len(self.bugs)-1:
             return
         
-        self.currentBug = self.bugs[self.table.currentRow()]
+        bugnr = self.__get_bugnr_from_row(self.table.currentRow())
+        self.currentBug = self.bugs[bugnr]
         self.textBrowser.setText(_("<h2>Fetching bugreport %s, please wait.</h2>") % self.currentBug)
         self.stateChanged(self.currentBug.package, self.currentBug)
         

@@ -19,6 +19,12 @@
 class Bugreport:
     """Represents a Bugreport from Debian's BTS."""
     
+    NR = 1
+    SUMMARY = 2
+    STATUS = 3
+    SEVERITY = 4
+    LASTACTION = 5
+    
     STATUS_VALUE = {u'outstanding' : 100,
                     u'resolved' : 50,
                     u'archived' : 0}

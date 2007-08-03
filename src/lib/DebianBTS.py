@@ -24,6 +24,7 @@ import os
 import urllib
 import re
 import logging
+import time
 from HTMLParser import HTMLParser
 import htmlentitydefs
 import SOAPpy
@@ -228,7 +229,8 @@ def __soapGetStatus(*query):
             tmp = elem['value']
             bug.summary = unicode(tmp['subject'], 'utf-8')
             bug.package =  unicode(tmp['package'], 'utf-8')
-            
+            bug.firstaction = time.strftime('%Y-%m-%d',time.gmtime(tmp['date']))
+            bug.lastaction = time.strftime('%Y-%m-%d',time.gmtime(tmp['log_modified']))
             # Default values
             bug.severity = unicode(tmp['severity'], 'utf-8')
             if tmp['done']:

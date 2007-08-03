@@ -32,17 +32,42 @@
             <widget class="QTable">
                 <column>
                     <property name="text">
+                        <string>Bugnumber</string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap></pixmap>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
                         <string>Summary</string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap></pixmap>
                     </property>
                 </column>
                 <column>
                     <property name="text">
                         <string>Status</string>
                     </property>
+                    <property name="pixmap">
+                        <pixmap></pixmap>
+                    </property>
                 </column>
                 <column>
                     <property name="text">
                         <string>Severity</string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap></pixmap>
+                    </property>
+                </column>
+                <column>
+                    <property name="text">
+                        <string>Last Action</string>
+                    </property>
+                    <property name="pixmap">
+                        <pixmap></pixmap>
                     </property>
                 </column>
                 <property name="name">
@@ -52,7 +77,7 @@
                     <number>0</number>
                 </property>
                 <property name="numCols">
-                    <number>3</number>
+                    <number>5</number>
                 </property>
                 <property name="showGrid">
                     <bool>false</bool>
