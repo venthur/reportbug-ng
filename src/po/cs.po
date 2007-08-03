@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
+"POT-Creation-Date: 2007-08-03 13:53+CEST\n"
 "PO-Revision-Date: 2007-06-10 09:26+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -14,119 +14,127 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1244
+#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1248
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1249
 msgid "Summary"
 msgstr "Souhrn"
 
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1245
+#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1250
 msgid "Status"
 msgstr "Stav"
 
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1246
+#: ../ui/MainWindow.py:1168 ../ui/MainWindow.py:1251
 msgid "Severity"
 msgstr "Závažnost"
 
-#: ../ui/MainWindow.py:1243
+#: ../ui/MainWindow.py:1170 ../ui/MainWindow.py:1252
+msgid "Last Action"
+msgstr ""
+
+#: ../ui/MainWindow.py:1247
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1253
 #, fuzzy
 msgid "Quits Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1248
+#: ../ui/MainWindow.py:1254
 msgid "&Quit"
 msgstr ""
 
-#: ../ui/MainWindow.py:1249
+#: ../ui/MainWindow.py:1255
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../ui/MainWindow.py:1250
+#: ../ui/MainWindow.py:1256
 msgid "Provide additional information for the current bugreport"
 msgstr "Přidá další informace ke stávajícímu hlášení o chybě"
 
-#: ../ui/MainWindow.py:1251
+#: ../ui/MainWindow.py:1257
 #, fuzzy
 msgid "&Additional Info..."
 msgstr "Dod&atečné informace"
 
-#: ../ui/MainWindow.py:1252
+#: ../ui/MainWindow.py:1258
 msgid "Ctrl+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1259
 msgid "Create new bugreport for current package"
 msgstr "Vytvoří nové hlášení o chybě v aktuálním balíku"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1260
 #, fuzzy
 msgid "&New Bugreport..."
 msgstr "&Nové hlášení o chybě"
 
-#: ../ui/MainWindow.py:1255
-msgid "Ctrl+N"
-msgstr ""
-
-#: ../ui/MainWindow.py:1256
-#, fuzzy
-msgid "Create a new WNPP bugreport"
-msgstr "&Nové hlášení o chybě"
-
-#: ../ui/MainWindow.py:1257
-msgid "&WNPP..."
-msgstr ""
-
-#: ../ui/MainWindow.py:1258
-msgid "Ctrl+W"
-msgstr ""
-
-#: ../ui/MainWindow.py:1259
-msgid "Show or hide  the main menu"
-msgstr ""
-
-#: ../ui/MainWindow.py:1260
-msgid "&Menubar"
-msgstr ""
-
 #: ../ui/MainWindow.py:1261
-msgid "Ctrl+M"
+msgid "Ctrl+N"
 msgstr ""
 
 #: ../ui/MainWindow.py:1262
 #, fuzzy
-msgid "Close the current bugreport"
+msgid "Create a new WNPP bugreport"
 msgstr "&Nové hlášení o chybě"
 
 #: ../ui/MainWindow.py:1263
+msgid "&WNPP..."
+msgstr ""
+
+#: ../ui/MainWindow.py:1264
+msgid "Ctrl+W"
+msgstr ""
+
+#: ../ui/MainWindow.py:1265
+msgid "Show or hide  the main menu"
+msgstr ""
+
+#: ../ui/MainWindow.py:1266
+msgid "&Menubar"
+msgstr ""
+
+#: ../ui/MainWindow.py:1267
+msgid "Ctrl+M"
+msgstr ""
+
+#: ../ui/MainWindow.py:1268
+#, fuzzy
+msgid "Close the current bugreport"
+msgstr "&Nové hlášení o chybě"
+
+#: ../ui/MainWindow.py:1269
 #, fuzzy
 msgid "&Close Bugreport..."
 msgstr "&Nové hlášení o chybě"
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1270
 msgid "Ctrl+L"
 msgstr ""
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1271
 msgid "Toolbar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1272
 msgid "Enter a package name or a filter expression"
 msgstr "Zadejte jméno balíku nebo filtrovací výraz"
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1274
 #, fuzzy
 msgid "&Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1276
 #, fuzzy
 msgid "&Bugreport"
 msgstr "&Nové hlášení o chybě"
 
-#: ../ui/MyMainWindow.py:37
+#: ../ui/MyMainWindow.py:38
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -205,7 +213,7 @@ msgstr ""
 "vytvořit úplně nové hlášení o chybě v aktuálním balíku kliknutím na tlačítko "
 "„Nové hlášení o chybě“.</p>\n"
 
-#: ../ui/MyMainWindow.py:67
+#: ../ui/MyMainWindow.py:68
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
 "break, or causes serious data loss, or introduces a security hole on systems "
@@ -237,44 +245,44 @@ msgstr ""
 "novou funkcionalitu a také pro chyby, které se dají velmi těžko opravit, "
 "protože se liší od toho, jak byl balík navržen."
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Žádná chybová hlášení pro balík %s nebyla nalezena!</h2>"
 
-#: ../ui/MyMainWindow.py:209
+#: ../ui/MyMainWindow.py:242
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Pro zobrazení celého textu klikněte na hlášení o chybě.</h2>"
 
-#: ../ui/MyMainWindow.py:229
+#: ../ui/MyMainWindow.py:264
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 "<h2>Stahuji hlášení o chybách ve zdrojovém balíku %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:232
+#: ../ui/MyMainWindow.py:267
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách od zasilatele %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:235
+#: ../ui/MyMainWindow.py:270
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách se závažností %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:238
+#: ../ui/MyMainWindow.py:273
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách se značkou %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:241
+#: ../ui/MyMainWindow.py:276
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách přiřazené %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:244
+#: ../ui/MyMainWindow.py:279
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybě číslo %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:247
+#: ../ui/MyMainWindow.py:282
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybách v balíku %s, čekejte prosím.</h2>"
 
-#: ../ui/MyMainWindow.py:335
+#: ../ui/MyMainWindow.py:374
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Stahuji hlášení o chybě %s, čekejte prosím.</h2>"
 

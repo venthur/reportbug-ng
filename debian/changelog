@@ -1,3 +1,12 @@
+reportbug-ng (0.2007.08.03) unstable; urgency=low
+
+  * Show date of last action in Buglist (Closes: #416134)
+  * Enabled sorting of tableitems by all available headers (Closes: #433521)
+  
+  * Updated German translation
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 03 Aug 2007 13:55:16 +0200
+
 reportbug-ng (0.2007.08.02) unstable; urgency=low
 
   * Call mailclient and webbrowser in a new thread no matter what 
