@@ -1,3 +1,9 @@
+reportbug-ng (0.2007.08.03.2) unstable; urgency=low
+
+  * Corrected sorting order for sort-by-status (Closes: #435822)
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 03 Aug 2007 15:33:18 +0200
+
 reportbug-ng (0.2007.08.03) unstable; urgency=low
 
   * Show date of last action in Buglist (Closes: #416134)

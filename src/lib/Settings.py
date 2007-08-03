@@ -30,7 +30,7 @@ class Settings:
         
         # Sorting option
         self.sortByCol = 2
-        self.sortAsc = True
+        self.sortAsc = False
         
         # Mainwindow
         self.x = 0

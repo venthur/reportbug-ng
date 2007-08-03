@@ -25,17 +25,17 @@ class Bugreport:
     SEVERITY = 4
     LASTACTION = 5
     
-    STATUS_VALUE = {u'outstanding' : 100,
+    STATUS_VALUE = {u'outstanding' : 90,
                     u'resolved' : 50,
-                    u'archived' : 0}
+                    u'archived' : 10}
     
-    SEVERITY_VALUE = {u"critical" : 10,
-                      u"grave" : 9,
-                      u"serious" : 8,
-                      u"important" : 7,
-                      u"normal" : 6,
-                      u"minor" : 5,
-                      u"wishlist" : 4
+    SEVERITY_VALUE = {u"critical" : 7,
+                      u"grave" : 6,
+                      u"serious" : 5,
+                      u"important" : 4,
+                      u"normal" : 3,
+                      u"minor" : 2,
+                      u"wishlist" : 1
                       }
     
     def __init__(self, nr, summary="", submitter="", status="", severity="", fulltext="", package=""):
