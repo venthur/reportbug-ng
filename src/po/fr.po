@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.06.23\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-07-25 04:34+0200\n"
 "Last-Translator: Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -231,6 +231,26 @@ msgstr ""
 "<br><b>%(wis)s</b> (souhait) pour une demande d'une fonctionnalité, et aussi "
 "pour un bogue très difficile à résoudre du fait de la conception du paquet."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Résumé"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "État"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Gravité"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Pas de rapport de bogue trouvé pour le paquet %s.</h2>"
@@ -401,12 +421,3 @@ msgstr "Action WNPP :"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "&Description courte :"
-
-#~ msgid "Summary"
-#~ msgstr "Résumé"
-
-#~ msgid "Status"
-#~ msgstr "État"
-
-#~ msgid "Severity"
-#~ msgstr "Gravité"

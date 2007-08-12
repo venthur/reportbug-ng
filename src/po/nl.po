@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-06-23 04:27+0200\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
@@ -229,6 +229,26 @@ msgstr ""
 "moeilijk te verhelpen zijn omdat er grote wijzigingen in de (architectuur "
 "van de) broncode moeten worden aangebracht."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Samenvatting"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Status"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Relevantie"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Geen bugrapporten voor pakket %s gevonden!</h2>"
@@ -390,15 +410,6 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
-
-#~ msgid "Summary"
-#~ msgstr "Samenvatting"
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
-#~ msgid "Severity"
-#~ msgstr "Relevantie"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

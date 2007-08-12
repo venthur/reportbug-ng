@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-05-29 19:37+0200\n"
 "Last-Translator: David Planella <david.planella@googlemail.com\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -241,6 +241,27 @@ msgstr ""
 "nova funcionalitat, i també per a errors molt difícils de resoldre degut a "
 "consideracions de disseny importants."
 
+#: ../ui/MyMainWindow.py:150
+#, fuzzy
+msgid "Bugnumber"
+msgstr "amb el número d'error"
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Resum"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Estat"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Severitat"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>No s'ha trobat cap informe d'error per al paquet %s</h2>"
@@ -412,19 +433,6 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Bugnumber"
-#~ msgstr "amb el número d'error"
-
-#~ msgid "Summary"
-#~ msgstr "Resum"
-
-#~ msgid "Status"
-#~ msgstr "Estat"
-
-#~ msgid "Severity"
-#~ msgstr "Severitat"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

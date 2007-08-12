@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: no\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-06-24 17:04+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -230,6 +230,26 @@ msgstr ""
 "fikse. <br> <b>%(wis)s</b> for alle ønsker angående funksjoner og "
 "feilrapporter som er vanskelige å fikse grunnet større designfaktorer."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Sammendrag"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Status"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Alvorlighetsgrad"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Ingen feilrapporter for pakken %s funnet!</h2>"
@@ -386,15 +406,6 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
-
-#~ msgid "Summary"
-#~ msgstr "Sammendrag"
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
-#~ msgid "Severity"
-#~ msgstr "Alvorlighetsgrad"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

@@ -32,7 +32,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.05.27\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-05-28 21:37+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -266,6 +266,27 @@ msgstr ""
 "cualquier fallo que sea muy difícil de arreglar debido a consideraciones de "
 "diseño mayores."
 
+#: ../ui/MyMainWindow.py:150
+#, fuzzy
+msgid "Bugnumber"
+msgstr "con número de fallo"
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Resumen"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Estado"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Gravedad"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>¡No se han encontrado informes de error para el paquete %s!</h2>"
@@ -429,19 +450,6 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Bugnumber"
-#~ msgstr "con número de fallo"
-
-#~ msgid "Summary"
-#~ msgstr "Resumen"
-
-#~ msgid "Status"
-#~ msgstr "Estado"
-
-#~ msgid "Severity"
-#~ msgstr "Gravedad"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.08.03.2\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-08-05 01:38+0100\n"
 "Last-Translator: Gabriele Stilli <superenzima@libero.it>\n"
 "Language-Team: Italian Translation Project <tp@lists.linux.it>\n"
@@ -219,6 +219,26 @@ msgstr ""
 "che sia molto arduo da correggere a causa di profonde considerazioni "
 "strutturali."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr "Numero del bug"
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Riassunto"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Stato"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Gravità"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr "Ultima azione"
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Non è stata trovata alcuna segnalazione per il pacchetto %s.</h2>"
@@ -373,18 +393,3 @@ msgstr "&Azione WNPP:"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "&Descrizione breve del pacchetto:"
-
-#~ msgid "Bugnumber"
-#~ msgstr "Numero del bug"
-
-#~ msgid "Summary"
-#~ msgstr "Riassunto"
-
-#~ msgid "Status"
-#~ msgstr "Stato"
-
-#~ msgid "Severity"
-#~ msgstr "Gravità"
-
-#~ msgid "Last Action"
-#~ msgstr "Ultima azione"

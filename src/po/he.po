@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportnbug-ng\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-07-18 06:24+0200\n"
 "Last-Translator: Baruch Even <baruch@debian.org>\n"
 "Language-Team: Debian Hebrew  <debian-hebrew-package@lists.alioth.debian."
@@ -163,6 +163,26 @@ msgid ""
 "are very difficult to fix due to major design considerations."
 msgstr ""
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "סיכום"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "סטאטוס"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "חשיבות"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>לא נמצאו באגים לחבילה %s!</h2>"
@@ -304,12 +324,3 @@ msgstr "&סוג בקשה ל-WNPP:"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "תיאור &חבילה קצר:"
-
-#~ msgid "Summary"
-#~ msgstr "סיכום"
-
-#~ msgid "Status"
-#~ msgstr "סטאטוס"
-
-#~ msgid "Severity"
-#~ msgstr "חשיבות"

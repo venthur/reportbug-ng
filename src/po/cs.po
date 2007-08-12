@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-06-10 09:26+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -225,6 +225,26 @@ msgstr ""
 "novou funkcionalitu a také pro chyby, které se dají velmi těžko opravit, "
 "protože se liší od toho, jak byl balík navržen."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr ""
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Souhrn"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Stav"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Závažnost"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr ""
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Žádná chybová hlášení pro balík %s nebyla nalezena!</h2>"
@@ -379,15 +399,6 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
-
-#~ msgid "Summary"
-#~ msgstr "Souhrn"
-
-#~ msgid "Status"
-#~ msgstr "Stav"
-
-#~ msgid "Severity"
-#~ msgstr "Závažnost"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

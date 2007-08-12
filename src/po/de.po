@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
 "PO-Revision-Date: 2007-08-03 13:54+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -226,6 +226,26 @@ msgstr ""
 "Feature-Requests, aber auch für beliebige Fehler, die aufgrund wesentlicher "
 "konzeptioneller Erwägungen sehr schwer zu beheben sind."
 
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr "Fehlernummer"
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "Status"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "Dringlichkeit"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr "Letzte Aktion"
+
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Keine Fehlerberichte für Paket %s gefunden!</h2>"
@@ -386,18 +406,3 @@ msgstr "WNPP &Aktion:"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "Kurze Pa&ketbeschreibung:"
-
-#~ msgid "Bugnumber"
-#~ msgstr "Fehlernummer"
-
-#~ msgid "Summary"
-#~ msgstr "Zusammenfassung"
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
-#~ msgid "Severity"
-#~ msgstr "Dringlichkeit"
-
-#~ msgid "Last Action"
-#~ msgstr "Letzte Aktion"
