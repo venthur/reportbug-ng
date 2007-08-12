@@ -147,11 +147,11 @@ class MyMainWindow(Form):
 
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
         
-        self.listView.addColumn("Bugnumber", self.settings.bugnrWidth)
-        self.listView.addColumn("Summary", self.settings.summaryWidth)
-        self.listView.addColumn("Status", self.settings.statusWidth)
-        self.listView.addColumn("Severity", self.settings.severityWidth)
-        self.listView.addColumn("Last Action", self.settings.lastactionWidth)
+        self.listView.addColumn(_("Bugnumber"), self.settings.bugnrWidth)
+        self.listView.addColumn(_("Summary"), self.settings.summaryWidth)
+        self.listView.addColumn(_("Status"), self.settings.statusWidth)
+        self.listView.addColumn(_("Severity"), self.settings.severityWidth)
+        self.listView.addColumn(_("Last Action"), self.settings.lastactionWidth)
         self.listView.setSorting(self.settings.sortByCol, self.settings.sortAsc)
         
         if args:
