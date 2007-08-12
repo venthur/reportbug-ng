@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.06.23\n"
-"POT-Creation-Date: 2007-07-18 15:21+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: 2007-07-25 04:34+0200\n"
 "Last-Translator: Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -19,112 +19,100 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1244
-msgid "Summary"
-msgstr "Résumé"
-
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1245
-msgid "Status"
-msgstr "État"
-
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1246
-msgid "Severity"
-msgstr "Gravité"
-
-#: ../ui/MainWindow.py:1243
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1232
 msgid "Quits Reportbug NG"
 msgstr "Quitte Reportbug NG"
 
-#: ../ui/MainWindow.py:1248
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr "&Quitter"
 
-#: ../ui/MainWindow.py:1249
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../ui/MainWindow.py:1250
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr ""
 "Fournit des informations supplémentaires pour le rapport de bogue actuel"
 
-#: ../ui/MainWindow.py:1251
+#: ../ui/MainWindow.py:1236
 msgid "&Additional Info..."
 msgstr "&Informations supplémentaires"
 
-#: ../ui/MainWindow.py:1252
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Crée un nouveau rapport de bogue pour le paquet actuel"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1239
 msgid "&New Bugreport..."
 msgstr "&Nouveau rapport de bogue"
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1241
 msgid "Create a new WNPP bugreport"
 msgstr "Crée un nouveau rapport de bogue WNPP"
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr "&WNPP"
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr "Affiche ou cache le menu principal"
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr "Barre de &Menu"
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1247
 msgid "Close the current bugreport"
 msgstr "Ferme le rapport de bogue actuel"
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1248
 msgid "&Close Bugreport..."
 msgstr "&Ferme le rapport de bogue"
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr "Barre d'outils"
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Veuillez indiquer un nom de paquet ou une expression de filtrage"
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1253
 msgid "&Reportbug NG"
 msgstr "&Reportbug NG"
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1255
 msgid "&Bugreport"
 msgstr "Rapport de &Bogue"
 
-#: ../ui/MyMainWindow.py:37
+#: ../ui/MyMainWindow.py:36
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -208,7 +196,7 @@ msgstr ""
 "pour le paquet en cours en cliquant sur le bouton « Nouveau rapport de "
 "bogue ».</p>\n"
 
-#: ../ui/MyMainWindow.py:67
+#: ../ui/MyMainWindow.py:66
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
 "break, or causes serious data loss, or introduces a security hole on systems "
@@ -243,57 +231,57 @@ msgstr ""
 "<br><b>%(wis)s</b> (souhait) pour une demande d'une fonctionnalité, et aussi "
 "pour un bogue très difficile à résoudre du fait de la conception du paquet."
 
-#: ../ui/MyMainWindow.py:204
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Pas de rapport de bogue trouvé pour le paquet %s.</h2>"
 
-#: ../ui/MyMainWindow.py:209
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr ""
 "<h2>Cliquez sur un rapport de bogue pour afficher l'ensemble du texte.</h2>"
 
-#: ../ui/MyMainWindow.py:229
+#: ../ui/MyMainWindow.py:257
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue du paquet source %s, veuillez "
 "patienter.</h2>"
 
-#: ../ui/MyMainWindow.py:232
+#: ../ui/MyMainWindow.py:260
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de l'expéditeur %s, veuillez patienter.</h2>"
 
-#: ../ui/MyMainWindow.py:235
+#: ../ui/MyMainWindow.py:263
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue de gravité %s, veuillez patienter.</"
 "h2>"
 
-#: ../ui/MyMainWindow.py:238
+#: ../ui/MyMainWindow.py:266
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue avec l'étiquette %s, veuillez "
 "patienter.</h2>"
 
-#: ../ui/MyMainWindow.py:241
+#: ../ui/MyMainWindow.py:269
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue assignés à %s, veuillez patienter.</"
 "h2>"
 
-#: ../ui/MyMainWindow.py:244
+#: ../ui/MyMainWindow.py:272
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue avec le numéro de bogue %s, veuillez "
 "patienter.</h2>"
 
-#: ../ui/MyMainWindow.py:247
+#: ../ui/MyMainWindow.py:275
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr ""
 "<h2>Récupération des rapports de bogue pour le paquet %s, veuillez patienter."
 "</h2>"
 
-#: ../ui/MyMainWindow.py:335
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Récupération du rapport de bogue %s, veuillez patienter.</h2>"
 
@@ -413,3 +401,12 @@ msgstr "Action WNPP :"
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr "&Description courte :"
+
+#~ msgid "Summary"
+#~ msgstr "Résumé"
+
+#~ msgid "Status"
+#~ msgstr "État"
+
+#~ msgid "Severity"
+#~ msgstr "Gravité"

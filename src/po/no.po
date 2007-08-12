@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: no\n"
-"POT-Creation-Date: 2007-08-03 13:53+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: 2007-06-24 17:04+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -17,127 +17,107 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1248
-msgid "Bugnumber"
-msgstr ""
-
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1249
-msgid "Summary"
-msgstr "Sammendrag"
-
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1250
-msgid "Status"
-msgstr "Status"
-
-#: ../ui/MainWindow.py:1168 ../ui/MainWindow.py:1251
-msgid "Severity"
-msgstr "Alvorlighetsgrad"
-
-#: ../ui/MainWindow.py:1170 ../ui/MainWindow.py:1252
-msgid "Last Action"
-msgstr ""
-
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1232
 #, fuzzy
 msgid "Quits Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr ""
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr "Gi mer informasjon for den aktuelle feilrapporten"
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1236
 #, fuzzy
 msgid "&Additional Info..."
 msgstr "&Ytterligere informasjon"
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Opprett ny feilrapport for den aktuelle pakken"
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1239
 #, fuzzy
 msgid "&New Bugreport..."
 msgstr "&Ny feilrapport"
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr ""
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1241
 #, fuzzy
 msgid "Create a new WNPP bugreport"
 msgstr "&Ny feilrapport"
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr ""
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr ""
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1267
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr ""
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1247
 #, fuzzy
 msgid "Close the current bugreport"
 msgstr "&Ny feilrapport"
 
-#: ../ui/MainWindow.py:1269
+#: ../ui/MainWindow.py:1248
 #, fuzzy
 msgid "&Close Bugreport..."
 msgstr "&Ny feilrapport"
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr ""
 
-#: ../ui/MainWindow.py:1271
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1272
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Angi et pakkenavn eller et filteruttrykk"
 
-#: ../ui/MainWindow.py:1274
+#: ../ui/MainWindow.py:1253
 #, fuzzy
 msgid "&Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1276
+#: ../ui/MainWindow.py:1255
 #, fuzzy
 msgid "&Bugreport"
 msgstr "&Ny feilrapport"
 
-#: ../ui/MyMainWindow.py:38
+#: ../ui/MyMainWindow.py:36
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -218,7 +198,7 @@ msgstr ""
 "eller så kan du opprette en ny feilrapport for den aktuelle pakken ved å "
 "klikke på \"Ny feilrapport\".</p>\n"
 
-#: ../ui/MyMainWindow.py:68
+#: ../ui/MyMainWindow.py:66
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
 "break, or causes serious data loss, or introduces a security hole on systems "
@@ -250,43 +230,43 @@ msgstr ""
 "fikse. <br> <b>%(wis)s</b> for alle ønsker angående funksjoner og "
 "feilrapporter som er vanskelige å fikse grunnet større designfaktorer."
 
-#: ../ui/MyMainWindow.py:237
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Ingen feilrapporter for pakken %s funnet!</h2>"
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Klikk på feilrapporten for å se hele teksten.</h2>"
 
-#: ../ui/MyMainWindow.py:264
+#: ../ui/MyMainWindow.py:257
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene for %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:267
+#: ../ui/MyMainWindow.py:260
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene fra %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:270
+#: ../ui/MyMainWindow.py:263
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med alvorlighetsgrad %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:273
+#: ../ui/MyMainWindow.py:266
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med tagg %s, vent</h2>"
 
-#: ../ui/MyMainWindow.py:276
+#: ../ui/MyMainWindow.py:269
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene tildelt %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:279
+#: ../ui/MyMainWindow.py:272
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene med nummer %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:282
+#: ../ui/MyMainWindow.py:275
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapportene for pakken %s, vent.</h2>"
 
-#: ../ui/MyMainWindow.py:374
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Henter feilrapport %s, vent.</h2>"
 
@@ -406,6 +386,15 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
+
+#~ msgid "Summary"
+#~ msgstr "Sammendrag"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Severity"
+#~ msgstr "Alvorlighetsgrad"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

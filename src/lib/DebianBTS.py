@@ -18,7 +18,6 @@
 
 
 from Bugreport import Bugreport
-import ReportbugNG
 
 import os
 import urllib
@@ -49,7 +48,7 @@ HTTP_PROXY = os.environ.get('http_proxy')
 if HTTP_PROXY:
     try:
         host, port = re.search('http://([^:]+):([0-9]+)', HTTP_PROXY).group(1,2)
-        HTTP_PROXY= "%s:%s" % (host, port)
+        HTTP_PROXY = "%s:%s" % (host, port)
     except:
         HTTP_PROXY = None
         logger.warning("Something went wrong parsing the http_proxy variable, ignoring it.")
@@ -216,7 +215,12 @@ def __soapGetStatus(*query):
     """Get a list of Bugreports matching the query."""
     # SOAP returns a list of dicts with the keys:
     bugs = []
-    list = soapServer.get_status(*query)
+    try:
+        list = soapServer.get_status(*query)
+    except:
+        logger.warning("Caught exception in __soapGetStatus(%s), returning empty bug list." % str(query))
+        list = []
+        
 
     # If we called get_status with one single bug, we get a single bug,
     # if we called it with a list of bugs, we get a list,

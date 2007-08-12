@@ -330,7 +330,7 @@ def callBrowser(url):
 
 def callMailClient(command):
     """Calls the external mailclient via command."""
-    logger.debug("Just before the MUA call")
+    logger.debug("Just before the MUA call: %s" % str(command))
     status, output = commands.getstatusoutput(command)
     logger.debug("After the  MUA call")
 

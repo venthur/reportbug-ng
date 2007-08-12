@@ -6,12 +6,12 @@ class BugreportTestCase(unittest.TestCase):
     
     def setUp(self):
         self.nr = "12345"
-        self.summary="my summary"
-        self.submitter="my submitter"
-        self.status="my status"
-        self.severity="my severity"
-        self.fulltext="my fulltext"
-        self.package="my package"
+        self.summary = "my summary"
+        self.submitter = "my submitter"
+        self.status = "my status"
+        self.severity = "my severity"
+        self.fulltext = "my fulltext"
+        self.package = "my package"
         
         self.bugreport = Bugreport(self.nr, self.summary, self.submitter, self.status, self.severity, self.fulltext, self.package)
 

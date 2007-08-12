@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.08.03.2\n"
-"POT-Creation-Date: 2007-08-03 13:53+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: 2007-08-05 01:38+0100\n"
 "Last-Translator: Gabriele Stilli <superenzima@libero.it>\n"
 "Language-Team: Italian Translation Project <tp@lists.linux.it>\n"
@@ -12,216 +12,252 @@ msgstr ""
 "X-Poedit-Country: ITALY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../ui/MainWindow.py:1162
-#: ../ui/MainWindow.py:1248
-msgid "Bugnumber"
-msgstr "Numero del bug"
-
-#: ../ui/MainWindow.py:1164
-#: ../ui/MainWindow.py:1249
-msgid "Summary"
-msgstr "Riassunto"
-
-#: ../ui/MainWindow.py:1166
-#: ../ui/MainWindow.py:1250
-msgid "Status"
-msgstr "Stato"
-
-#: ../ui/MainWindow.py:1168
-#: ../ui/MainWindow.py:1251
-msgid "Severity"
-msgstr "Gravità"
-
-#: ../ui/MainWindow.py:1170
-#: ../ui/MainWindow.py:1252
-msgid "Last Action"
-msgstr "Ultima azione"
-
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1232
 msgid "Quits Reportbug NG"
 msgstr "Esce da Reportbug NG"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr "&Esci"
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr "Fornisce informazioni aggiuntive su questa segnalazione"
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1236
 msgid "&Additional Info..."
 msgstr "Inform&azioni aggiuntive..."
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Crea una nuova segnalazione per questo pacchetto"
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1239
 msgid "&New Bugreport..."
 msgstr "&Nuova segnalazione..."
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1241
 msgid "Create a new WNPP bugreport"
 msgstr "Crea una nuova segnalazione WNPP"
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr "&WNPP..."
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr "Mostra/nasconde il menu principale"
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr "Barra del &menu"
 
-#: ../ui/MainWindow.py:1267
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1247
 msgid "Close the current bugreport"
 msgstr "Chiude questa segnalazione"
 
-#: ../ui/MainWindow.py:1269
+#: ../ui/MainWindow.py:1248
 msgid "&Close Bugreport..."
 msgstr "&Chiudi segnalazione..."
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: ../ui/MainWindow.py:1271
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr "Barra degli strumenti"
 
-#: ../ui/MainWindow.py:1272
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Inserire il nome di un pacchetto o una espressione filtro"
 
-#: ../ui/MainWindow.py:1274
+#: ../ui/MainWindow.py:1253
 msgid "&Reportbug NG"
 msgstr "&Reportbug NG"
 
-#: ../ui/MainWindow.py:1276
+#: ../ui/MainWindow.py:1255
 msgid "&Bugreport"
 msgstr "Segnalazione di &bug"
 
-#: ../ui/MyMainWindow.py:38
+#: ../ui/MyMainWindow.py:36
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
-"<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>\n"
+"<p>To find a bug just enter a query and press Enter. Loading the list might "
+"take a few seconds.</p>\n"
 "\n"
 "<p>The following queries are supported:\n"
 "<dl>\n"
-"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>\n"
+"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the "
+"PACKAGE</dd>\n"
 "<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>\n"
-"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>\n"
-"<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>\n"
-"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>\n"
-"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to "
+"MAINTAINER</dd>\n"
+"<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to "
+"the SOURCEPACKAGE</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed "
+"by SUBMITTER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. "
+"Warning: this list is probably very long. Recognized are the values: "
+"critical, grave, serious, important, normal, minor and wishlist</dd>\n"
 "<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>\n"
+"<p>To see the full bugreport click on the bug in the list. Links in the "
+"bugreport will open in an external browser when clicked.</p>\n"
 "\n"
 "<h3>Step 2: Filtering Bugs</h3>\n"
-"<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and\n"
-"affects the packagename, bugnumber, summary, status and severity of a bug.</p>\n"
+"<p>To filter the list of existing bugs enter a few letters (without pressing "
+"Enter). The filter is case insensitive and\n"
+"affects the packagename, bugnumber, summary, status and severity of a bug.</"
+"p>\n"
 "\n"
 "<h3>Step 3: Reporting Bugs</h3>\n"
-"<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
+"<p>You can either provide additional information for an existing bug by "
+"clicking on the bug in the list and pressing the \"Additional Info\" button "
+"or you can create a new bugreport for the current package by clicking the "
+"\"New Bugreport\" button.</p>\n"
 msgstr ""
 "<h2>Utilizzo di Reportbug-NG</h2>\n"
 "<h3>Passo 1: trovare i bug</h3>\n"
-"<p>Per trovare un bug inserire una query e premere Invio. Il caricamento della lista potrà impiegare alcuni secondi.</p>\n"
+"<p>Per trovare un bug inserire una query e premere Invio. Il caricamento "
+"della lista potrà impiegare alcuni secondi.</p>\n"
 "\n"
 "<p>Sono supportate le seguenti query:\n"
 "<dl>\n"
-"<dt><code>pacchetto</code></dt><dd>Restituisce tutti i bug che appartengono al PACCHETTO</dd>\n"
+"<dt><code>pacchetto</code></dt><dd>Restituisce tutti i bug che appartengono "
+"al PACCHETTO</dd>\n"
 "<dt><code>numerobug</code></dt><dd>Restituisce il bug numero NUMEROBUG</dd>\n"
-"<dt><code>responsabile@pippo.pluto</code></dt><dd>Restituisce tutti i bug assegnati a RESPONSABILE</dd>\n"
-"<dt><code>src:pacchettosorgente</code></dt><dd>Restituisce tutti i bug che appartengono al PACCHETTOSORGENTE</dd>\n"
-"<dt><code>from:segnalatore@pippo.pluto</code></dt><dd>Restituisce tutti i bug sottoposti da SEGNALATORE</dd>\n"
-"<dt><code>severity:pippo</code></dt><dd>Restituisce tutti i bug con GRAVITÀ. Attenzione: questa lista può essere molto lunga. Valori riconosciuti: critical, grave, serious, important, normal, minor e wishlist</dd>\n"
-"<dt><code>tag:pluto</code></dt><dd>Restituisce tutti i bug contrassegnati con TAG</dd>\n"
+"<dt><code>responsabile@pippo.pluto</code></dt><dd>Restituisce tutti i bug "
+"assegnati a RESPONSABILE</dd>\n"
+"<dt><code>src:pacchettosorgente</code></dt><dd>Restituisce tutti i bug che "
+"appartengono al PACCHETTOSORGENTE</dd>\n"
+"<dt><code>from:segnalatore@pippo.pluto</code></dt><dd>Restituisce tutti i "
+"bug sottoposti da SEGNALATORE</dd>\n"
+"<dt><code>severity:pippo</code></dt><dd>Restituisce tutti i bug con GRAVITÀ. "
+"Attenzione: questa lista può essere molto lunga. Valori riconosciuti: "
+"critical, grave, serious, important, normal, minor e wishlist</dd>\n"
+"<dt><code>tag:pluto</code></dt><dd>Restituisce tutti i bug contrassegnati "
+"con TAG</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>Per vedere la segnalazione completa fare clic sul bug nella lista. Facendo clic sui collegamenti contenuti nella segnalazione, questi verranno aperti in un browser esterno.</p>\n"
+"<p>Per vedere la segnalazione completa fare clic sul bug nella lista. "
+"Facendo clic sui collegamenti contenuti nella segnalazione, questi verranno "
+"aperti in un browser esterno.</p>\n"
 "\n"
 "<h3>Passo 2: Filtrare i bug</h3>\n"
-"<p>Per filtrare la lista dei bug esistenti inserire alcune lettere (senza premere Invio). Il filtro non distingue maiuscole e minuscole\n"
-"e ha effetto su nome del pacchetto, numero, riassunto, stato e gravità di un bug.</p>\n"
+"<p>Per filtrare la lista dei bug esistenti inserire alcune lettere (senza "
+"premere Invio). Il filtro non distingue maiuscole e minuscole\n"
+"e ha effetto su nome del pacchetto, numero, riassunto, stato e gravità di un "
+"bug.</p>\n"
 "\n"
 "<h3> Passo 3: Segnalare i bug</h3>\n"
-"<p>È possibile fornire ulteriori informazioni su un bug esistente facendo clic sul bug nella lista e premendo il pulsante «Ulteriori informazioni» oppure creare una nuova segnalazione per il pacchetto corrente facendo clic sul pulsante «Nuova segnalazione».</p>\n"
+"<p>È possibile fornire ulteriori informazioni su un bug esistente facendo "
+"clic sul bug nella lista e premendo il pulsante «Ulteriori informazioni» "
+"oppure creare una nuova segnalazione per il pacchetto corrente facendo clic "
+"sul pulsante «Nuova segnalazione».</p>\n"
 
-#: ../ui/MyMainWindow.py:68
-msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
-msgstr "<b>%(cri)s</b> rende inutilizzabile altro software non correlato al pacchetto (oppure l'intero sistema) o causa una grave perdita di dati o introduce un buco di sicurezza sui sistemi in cui il pacchetto viene installato. <br> <b>%(gra)s</b> rende il pacchetto in questione inutilizzabile o quasi o causa perdita di dati o introduce un buco di sicurezza che consente l'accesso agli account degli utenti che utilizzano il pacchetto. <br> <b>%(ser)s</b> è una seria violazione della politica Debian (in pratica, viola una direttiva considerata «obbligatoria» o «richiesta») o, secondo il responsabile del pacchetto, lo rende inadatto al rilascio. <br> <b>%(imp)s</b> un bug che ha un effetto pesante sull'usabilità del pacchetto, senza renderlo completamente inutilizzabile a tutti. <br> <b>%(nor)s</b> il valore predefinito, applicabile alla maggior parte dei bug. <br> <b>%(min)s</b> un problema che non pregiudica l'utilità del pacchetto e la cui correzione si presume che sia banale. <br> <b>%(wis)s</b> per qualunque richiesta di funzionalità aggiuntive e inoltre per qualunque bug che sia molto arduo da correggere a causa di profonde considerazioni strutturali."
+#: ../ui/MyMainWindow.py:66
+msgid ""
+"<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
+"break, or causes serious data loss, or introduces a security hole on systems "
+"where you install the package. <br> <b>%(gra)s</b> makes the package in "
+"question unusable or mostly so, or causes data loss, or introduces a "
+"security hole allowing access to the accounts of users who use the package. "
+"<br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it "
+"violates a \"must\" or \"required\" directive), or, in the package "
+"maintainer's opinion, makes the package unsuitable for release. <br> <b>%"
+"(imp)s</b> a bug which has a major effect on the usability of a package, "
+"without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> "
+"the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem "
+"which doesn't affect the package's usefulness, and is presumably trivial to "
+"fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that "
+"are very difficult to fix due to major design considerations."
+msgstr ""
+"<b>%(cri)s</b> rende inutilizzabile altro software non correlato al "
+"pacchetto (oppure l'intero sistema) o causa una grave perdita di dati o "
+"introduce un buco di sicurezza sui sistemi in cui il pacchetto viene "
+"installato. <br> <b>%(gra)s</b> rende il pacchetto in questione "
+"inutilizzabile o quasi o causa perdita di dati o introduce un buco di "
+"sicurezza che consente l'accesso agli account degli utenti che utilizzano il "
+"pacchetto. <br> <b>%(ser)s</b> è una seria violazione della politica Debian "
+"(in pratica, viola una direttiva considerata «obbligatoria» o «richiesta») "
+"o, secondo il responsabile del pacchetto, lo rende inadatto al rilascio. "
+"<br> <b>%(imp)s</b> un bug che ha un effetto pesante sull'usabilità del "
+"pacchetto, senza renderlo completamente inutilizzabile a tutti. <br> <b>%"
+"(nor)s</b> il valore predefinito, applicabile alla maggior parte dei bug. "
+"<br> <b>%(min)s</b> un problema che non pregiudica l'utilità del pacchetto e "
+"la cui correzione si presume che sia banale. <br> <b>%(wis)s</b> per "
+"qualunque richiesta di funzionalità aggiuntive e inoltre per qualunque bug "
+"che sia molto arduo da correggere a causa di profonde considerazioni "
+"strutturali."
 
-#: ../ui/MyMainWindow.py:237
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Non è stata trovata alcuna segnalazione per il pacchetto %s.</h2>"
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Fare clic su una segnalazione per vedere il testo completo.</h2>"
 
-#: ../ui/MyMainWindow.py:264
+#: ../ui/MyMainWindow.py:257
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
-msgstr "<h2>Recupero delle segnalazioni per il pacchetto sorgente %s, attendere.</h2>"
+msgstr ""
+"<h2>Recupero delle segnalazioni per il pacchetto sorgente %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:267
+#: ../ui/MyMainWindow.py:260
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
-msgstr "<h2>Recupero delle segnalazioni presentate dall'utente %s, attendere.</h2>"
+msgstr ""
+"<h2>Recupero delle segnalazioni presentate dall'utente %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:270
+#: ../ui/MyMainWindow.py:263
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Recupero delle segnalazioni di gravità %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:273
+#: ../ui/MyMainWindow.py:266
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Recupero delle segnalazioni con tag %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:276
+#: ../ui/MyMainWindow.py:269
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Recupero delle segnalazioni assegnate a %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:279
+#: ../ui/MyMainWindow.py:272
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Recupero della segnalazione numero %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:282
+#: ../ui/MyMainWindow.py:275
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Recupero delle segnalazioni per il pacchetto %s, attendere.</h2>"
 
-#: ../ui/MyMainWindow.py:374
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Recupero della segnalazione %s, attendere.</h2>"
 
@@ -258,8 +294,12 @@ msgid "Alt+C"
 msgstr "Alt+C"
 
 #: ../ui/SubmitDialog.py:194
-msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
-msgstr "<b>Scegliere il client email preferito per scrivere la segnalazione completa.</b>"
+msgid ""
+"<b>Please choose the mailclient you want to use to write the full bugreport."
+"</b>"
+msgstr ""
+"<b>Scegliere il client email preferito per scrivere la segnalazione completa."
+"</b>"
 
 #: ../ui/SubmitDialog.py:195
 msgid "Normal Bugreport"
@@ -270,8 +310,14 @@ msgid "patch"
 msgstr "patch"
 
 #: ../ui/SubmitDialog.py:197
-msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
-msgstr "Nella segnalazione è inclusa una patch o un'altra semplice procedura per correggere il bug. Se la patch non risolve correttamente il bug oppure causa altri problemi, questo tag non deve essere usato."
+msgid ""
+"A patch or some other easy procedure for fixing the bug is included in the "
+"bug logs. If there's a patch, but it doesn't resolve the bug adequately or "
+"causes some other problems, this tag should not be used."
+msgstr ""
+"Nella segnalazione è inclusa una patch o un'altra semplice procedura per "
+"correggere il bug. Se la patch non risolve correttamente il bug oppure causa "
+"altri problemi, questo tag non deve essere usato."
 
 #: ../ui/SubmitDialog.py:198
 msgid "l10n"
@@ -286,8 +332,19 @@ msgid "security"
 msgstr "security"
 
 #: ../ui/SubmitDialog.py:201
-msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
-msgstr "Questo bug descrive un problema di sicurezza in un pacchetto (es. permessi sbagliati che consentono l'accesso a dati che non dovrebbero essere accessibili; «buffer overrun» che consentono a qualcuno di controllare un sistema in modi in cui non dovrebbe; attacchi «denial of service» che devono essere corretti ecc.). La maggior parte dei bug di sicurezza devono inoltre essere impostati con gravità critical o grave."
+msgid ""
+"This bug describes a security problem in a package (e.g., bad permissions "
+"allowing access to data that shouldn't be accessible; buffer overruns "
+"allowing people to control a system in ways they shouldn't be able to; "
+"denial of service attacks that should be fixed, etc). Most security bugs "
+"should also be set at critical or grave severity."
+msgstr ""
+"Questo bug descrive un problema di sicurezza in un pacchetto (es. permessi "
+"sbagliati che consentono l'accesso a dati che non dovrebbero essere "
+"accessibili; «buffer overrun» che consentono a qualcuno di controllare un "
+"sistema in modi in cui non dovrebbe; attacchi «denial of service» che devono "
+"essere corretti ecc.). La maggior parte dei bug di sicurezza devono inoltre "
+"essere impostati con gravità critical o grave."
 
 #: ../ui/SubmitDialog.py:202
 msgid "&Tags:"
@@ -317,3 +374,17 @@ msgstr "&Azione WNPP:"
 msgid "Short Package &Description:"
 msgstr "&Descrizione breve del pacchetto:"
 
+#~ msgid "Bugnumber"
+#~ msgstr "Numero del bug"
+
+#~ msgid "Summary"
+#~ msgstr "Riassunto"
+
+#~ msgid "Status"
+#~ msgstr "Stato"
+
+#~ msgid "Severity"
+#~ msgstr "Gravità"
+
+#~ msgid "Last Action"
+#~ msgstr "Ultima azione"

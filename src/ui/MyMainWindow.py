@@ -26,10 +26,8 @@ from qt import QListView, QListViewItem, QListViewItemIterator
 from qt import Qt
 from qt import QWhatsThis
 from qt import QColorGroup
-from qt import SIGNAL
 
 import thread
-import sys
 import logging
 
 
@@ -292,11 +290,11 @@ class MyMainWindow(Form):
         # row gets hided.
         self.listView.setSelectionMode(QListView.NoSelection)
 
-        import time
-        t = time.time()
+        #import time
+        #t = time.time()
 
-        filter = unicode(a0).lower()
-        tokens = filter.split()
+        filterstr = unicode(a0).lower()
+        tokens = filterstr.split()
         neg_filter = [e[1:] for e in tokens if e.startswith("-")]
         pos_filter = [e for e in tokens if not e.startswith("-")]
         self.logger.debug("neg: %s, pos: %s" % (str(neg_filter), str(pos_filter)) )
@@ -326,8 +324,8 @@ class MyMainWindow(Form):
             it += 1
             item = it.current()
 
-        t = time.time() - t
-        logger.info("Elapsed time: %f" % t)
+        #t = time.time() - t
+        #logger.info("Elapsed time: %f" % t)
 
         # Re-Enable selections again
         self.listView.setSelectionMode(QListView.Single)
@@ -447,21 +445,21 @@ class MyMainWindow(Form):
     
     def bugreportAdditional_InfoAction_activated(self):
         """The user wants to provide additional info for the current bug."""
-        dialog = self.__submit_dialog("moreinfo")
+        self.__submit_dialog("moreinfo")
 
     
     def bugreportNew_BugreportAction_activated(self):
         """The User wants to file a new bugreport against the current package."""
-        dialog = self.__submit_dialog("newbug")
+        self.__submit_dialog("newbug")
         
     
     def bugreportClose_BugreportAction_activated(self):
         """The user wants to close the current bug."""
-        dialog = self.__submit_dialog("close")
+        self.__submit_dialog("close")
         
     
     def bugreportWNPPAction_activated(self):
-        dialog = self.__submit_dialog("wnpp")
+        self.__submit_dialog("wnpp")
 
 
     def reportbug_ngMenubarAction_toggled(self, b):

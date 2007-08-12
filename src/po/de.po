@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
-"POT-Creation-Date: 2007-08-03 13:53+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: 2007-08-03 13:54+0200\n"
 "Last-Translator: Bastian Venthur <venthur@debian.org>\n"
 "Language-Team:  <debian-l10n-german@lists.debian.org>\n"
@@ -16,119 +16,99 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1248
-msgid "Bugnumber"
-msgstr "Fehlernummer"
-
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1249
-msgid "Summary"
-msgstr "Zusammenfassung"
-
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1250
-msgid "Status"
-msgstr "Status"
-
-#: ../ui/MainWindow.py:1168 ../ui/MainWindow.py:1251
-msgid "Severity"
-msgstr "Dringlichkeit"
-
-#: ../ui/MainWindow.py:1170 ../ui/MainWindow.py:1252
-msgid "Last Action"
-msgstr "Letzte Aktion"
-
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1232
 msgid "Quits Reportbug NG"
 msgstr "Beendet Reportbug NG"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr "B&eenden"
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr "Zusätzliche Informationen zu aktuellem Fehlerbericht bereitstellen"
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1236
 msgid "&Additional Info..."
 msgstr "Zusätzliche Inform&ationen..."
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Neuen Fehlerbericht für aktuelles Paket erstellen"
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1239
 msgid "&New Bugreport..."
 msgstr "&Neuer Fehlerbericht"
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1241
 msgid "Create a new WNPP bugreport"
 msgstr "Neuen WNPP Fehlerbericht erstellen"
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr "&WNPP..."
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr "Hauptmenü verstecken oder zeigen"
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr "&Menüleiste"
 
-#: ../ui/MainWindow.py:1267
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1247
 msgid "Close the current bugreport"
 msgstr "Den aktuellen Fehlerbericht schließen"
 
-#: ../ui/MainWindow.py:1269
+#: ../ui/MainWindow.py:1248
 msgid "&Close Bugreport..."
 msgstr "Fehlerberi&cht schließen... "
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: ../ui/MainWindow.py:1271
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr "Werkzeugleiste"
 
-#: ../ui/MainWindow.py:1272
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Geben Sie einen Paketnamen oder einen Filterausdruck ein"
 
-#: ../ui/MainWindow.py:1274
+#: ../ui/MainWindow.py:1253
 msgid "&Reportbug NG"
 msgstr "&Reportbug NG"
 
-#: ../ui/MainWindow.py:1276
+#: ../ui/MainWindow.py:1255
 msgid "&Bugreport"
 msgstr "Fehler&bericht"
 
-#: ../ui/MyMainWindow.py:38
+#: ../ui/MyMainWindow.py:36
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -211,7 +191,7 @@ msgstr ""
 "Sie können einen neuen Fehlerbericht erstellen indem Sie auf \"Neuer "
 "Fehlerbericht\" klicken.</p>\n"
 
-#: ../ui/MyMainWindow.py:68
+#: ../ui/MyMainWindow.py:66
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
 "break, or causes serious data loss, or introduces a security hole on systems "
@@ -246,45 +226,47 @@ msgstr ""
 "Feature-Requests, aber auch für beliebige Fehler, die aufgrund wesentlicher "
 "konzeptioneller Erwägungen sehr schwer zu beheben sind."
 
-#: ../ui/MyMainWindow.py:237
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>Keine Fehlerberichte für Paket %s gefunden!</h2>"
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr ""
 "<h2>Klicken Sie auf den Fehlerbericht um den vollständigen Text zu sehen.</"
 "h2>"
 
-#: ../ui/MyMainWindow.py:264
+#: ../ui/MyMainWindow.py:257
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte für Quellpaket %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:267
+#: ../ui/MyMainWindow.py:260
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte von Einsender %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:270
+#: ../ui/MyMainWindow.py:263
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte der Dringlichkeitstufe %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:273
+#: ../ui/MyMainWindow.py:266
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte mit tag %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:276
+#: ../ui/MyMainWindow.py:269
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
+msgstr ""
+"<h2>Lade Fehlerberichte die an %s zugewiesen wurden, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:279
+#: ../ui/MyMainWindow.py:272
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerbericht mit Fehlernummer %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:282
+#: ../ui/MyMainWindow.py:275
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerberichte für Paket %s, bitte warten Sie.</h2>"
 
-#: ../ui/MyMainWindow.py:374
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Lade Fehlerbericht %s, bitte warten Sie.</h2>"
 
@@ -405,3 +387,17 @@ msgstr "WNPP &Aktion:"
 msgid "Short Package &Description:"
 msgstr "Kurze Pa&ketbeschreibung:"
 
+#~ msgid "Bugnumber"
+#~ msgstr "Fehlernummer"
+
+#~ msgid "Summary"
+#~ msgstr "Zusammenfassung"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Severity"
+#~ msgstr "Dringlichkeit"
+
+#~ msgid "Last Action"
+#~ msgstr "Letzte Aktion"

@@ -7,6 +7,8 @@ reportbug-ng (0.2007.08.12) unstable; urgency=low
 
   * Updated French translation (Closes: #436171)
   * Updated Italian translation (Closes: #436051)
+  
+  * Minor cleanups
 
  -- Bastian Venthur <venthur@debian.org>  Sun, 12 Aug 2007 13:26:07 +0200
 

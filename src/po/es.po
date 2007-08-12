@@ -32,7 +32,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.05.27\n"
-"POT-Creation-Date: 2007-08-03 13:53+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: 2007-05-28 21:37+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
@@ -40,128 +40,107 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1248
-#, fuzzy
-msgid "Bugnumber"
-msgstr "con número de fallo"
-
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1249
-msgid "Summary"
-msgstr "Resumen"
-
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1250
-msgid "Status"
-msgstr "Estado"
-
-#: ../ui/MainWindow.py:1168 ../ui/MainWindow.py:1251
-msgid "Severity"
-msgstr "Gravedad"
-
-#: ../ui/MainWindow.py:1170 ../ui/MainWindow.py:1252
-msgid "Last Action"
-msgstr ""
-
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1232
 #, fuzzy
 msgid "Quits Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr ""
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr "Proporcionar más información en el informe de error actual"
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1236
 #, fuzzy
 msgid "&Additional Info..."
 msgstr "Información &adicional"
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Crear un nuevo informe de error para el paquete actual"
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1239
 #, fuzzy
 msgid "&New Bugreport..."
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr ""
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1241
 #, fuzzy
 msgid "Create a new WNPP bugreport"
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr ""
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr ""
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1267
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr ""
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1247
 #, fuzzy
 msgid "Close the current bugreport"
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:1269
+#: ../ui/MainWindow.py:1248
 #, fuzzy
 msgid "&Close Bugreport..."
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr ""
 
-#: ../ui/MainWindow.py:1271
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1272
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Introduzca un nombre de paquete o una expresión de filtro"
 
-#: ../ui/MainWindow.py:1274
+#: ../ui/MainWindow.py:1253
 #, fuzzy
 msgid "&Reportbug NG"
 msgstr "Reportbug NG"
 
-#: ../ui/MainWindow.py:1276
+#: ../ui/MainWindow.py:1255
 #, fuzzy
 msgid "&Bugreport"
 msgstr "&Nuevo informe de error"
 
-#: ../ui/MyMainWindow.py:38
+#: ../ui/MyMainWindow.py:36
 #, fuzzy
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
@@ -243,7 +222,7 @@ msgstr ""
 "crear un nuevo informe de error para el paquete seleccionado pulsando el "
 "botón «Nuevo informe de error».</p>\n"
 
-#: ../ui/MyMainWindow.py:68
+#: ../ui/MyMainWindow.py:66
 #, fuzzy
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
@@ -287,50 +266,50 @@ msgstr ""
 "cualquier fallo que sea muy difícil de arreglar debido a consideraciones de "
 "diseño mayores."
 
-#: ../ui/MyMainWindow.py:237
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr "<h2>¡No se han encontrado informes de error para el paquete %s!</h2>"
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Seleccione el informe de error para ver el texto completo.</h2>"
 
-#: ../ui/MyMainWindow.py:264
+#: ../ui/MyMainWindow.py:257
 #, fuzzy
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:267
+#: ../ui/MyMainWindow.py:260
 #, fuzzy
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:270
+#: ../ui/MyMainWindow.py:263
 #, fuzzy
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:273
+#: ../ui/MyMainWindow.py:266
 #, fuzzy
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:276
+#: ../ui/MyMainWindow.py:269
 #, fuzzy
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:279
+#: ../ui/MyMainWindow.py:272
 #, fuzzy
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informe de error %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:282
+#: ../ui/MyMainWindow.py:275
 #, fuzzy
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
 
-#: ../ui/MyMainWindow.py:374
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>Obteniendo informe de error %s. Espere por favor.</h2>"
 
@@ -450,6 +429,19 @@ msgstr ""
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Bugnumber"
+#~ msgstr "con número de fallo"
+
+#~ msgid "Summary"
+#~ msgstr "Resumen"
+
+#~ msgid "Status"
+#~ msgstr "Estado"
+
+#~ msgid "Severity"
+#~ msgstr "Gravedad"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

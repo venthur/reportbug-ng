@@ -27,12 +27,9 @@ from ui.MyMainWindow import MyMainWindow
 
 import signal
 import qt
-import sys
-import os
 from optparse import OptionParser
 import logging
 
-import lib.ReportbugNG
 from lib.Settings import Settings
 
 CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
@@ -55,30 +52,24 @@ the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.
 """
     parser = OptionParser(usage=usage, version=version, description=description)
-    
-    #
-    #parser.set_defaults(interface="html")
-    #parser.add_option("-i", "--interface", type="choice", choices=["soap", "html"], dest="interface",
-    #	help="which interface to use to query the BTS [default: html]", metavar="(html|soap)")
     parser.add_option('-l', '--loglevel', type='choice', choices=['critical', 
         'error', 'warning', 'info', 'debug', 'notset'], dest='loglevel',
         help='Which loglevel to use [default: warning]. Valid loglevels are: critical, error, warning, info, debug, notset',
         metavar='LEVEL')
     
-    (options, args) = parser.parse_args()
+    options, args = parser.parse_args()
 
     # Initialize logging
-    loglevel=logging.WARNING
-    l = options.loglevel
-    if l:
-        if l == 'critical' : loglevel=logging.CRITICAL
-        if l == 'error'    : loglevel=logging.ERROR
-        if l == 'warning'  : loglevel=logging.WARNING
-        if l == 'info'     : loglevel=logging.INFO
-        if l == 'debug'    : loglevel=logging.DEBUG
-        if l == 'notset'   : loglevel=logging.NOTSET
+    loglevel = {'critical' : logging.CRITICAL,
+                'error'    : logging.ERROR,
+                'warning'  : logging.WARNING,
+                'info'     : logging.INFO,
+                'debug'    : logging.DEBUG,
+                'notset'   : logging.NOTSET
+                }.get(options.loglevel, logging.WARNING)
+        
     logging.basicConfig(level=loglevel, format='%(name)-12s %(levelname)-8s %(message)s')
-    logging.info('Logger initialized with level %s.' % l)
+    logging.info('Logger initialized with level %s.' % options.loglevel)
 
     settings = Settings(CONFIGFILE)
     settings.load()

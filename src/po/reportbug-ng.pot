@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-08-03 13:54+CEST\n"
+"POT-Creation-Date: 2007-08-12 16:00+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,119 +15,99 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: ../ui/MainWindow.py:1162 ../ui/MainWindow.py:1248
-msgid "Bugnumber"
-msgstr ""
-
-#: ../ui/MainWindow.py:1164 ../ui/MainWindow.py:1249
-msgid "Summary"
-msgstr ""
-
-#: ../ui/MainWindow.py:1166 ../ui/MainWindow.py:1250
-msgid "Status"
-msgstr ""
-
-#: ../ui/MainWindow.py:1168 ../ui/MainWindow.py:1251
-msgid "Severity"
-msgstr ""
-
-#: ../ui/MainWindow.py:1170 ../ui/MainWindow.py:1252
-msgid "Last Action"
-msgstr ""
-
-#: ../ui/MainWindow.py:1247
+#: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr ""
 
-#: ../ui/MainWindow.py:1253
+#: ../ui/MainWindow.py:1232
 msgid "Quits Reportbug NG"
 msgstr ""
 
-#: ../ui/MainWindow.py:1254
+#: ../ui/MainWindow.py:1233
 msgid "&Quit"
 msgstr ""
 
-#: ../ui/MainWindow.py:1255
+#: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../ui/MainWindow.py:1256
+#: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:1257
+#: ../ui/MainWindow.py:1236
 msgid "&Additional Info..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1258
+#: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
 msgstr ""
 
-#: ../ui/MainWindow.py:1259
+#: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr ""
 
-#: ../ui/MainWindow.py:1260
+#: ../ui/MainWindow.py:1239
 msgid "&New Bugreport..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1261
+#: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
 msgstr ""
 
-#: ../ui/MainWindow.py:1262
+#: ../ui/MainWindow.py:1241
 msgid "Create a new WNPP bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:1263
+#: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1264
+#: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
 msgstr ""
 
-#: ../ui/MainWindow.py:1265
+#: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
 msgstr ""
 
-#: ../ui/MainWindow.py:1266
+#: ../ui/MainWindow.py:1245
 msgid "&Menubar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1267
+#: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
 msgstr ""
 
-#: ../ui/MainWindow.py:1268
+#: ../ui/MainWindow.py:1247
 msgid "Close the current bugreport"
 msgstr ""
 
-#: ../ui/MainWindow.py:1269
+#: ../ui/MainWindow.py:1248
 msgid "&Close Bugreport..."
 msgstr ""
 
-#: ../ui/MainWindow.py:1270
+#: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
 msgstr ""
 
-#: ../ui/MainWindow.py:1271
+#: ../ui/MainWindow.py:1250
 msgid "Toolbar"
 msgstr ""
 
-#: ../ui/MainWindow.py:1272
+#: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr ""
 
-#: ../ui/MainWindow.py:1274
+#: ../ui/MainWindow.py:1253
 msgid "&Reportbug NG"
 msgstr ""
 
-#: ../ui/MainWindow.py:1276
+#: ../ui/MainWindow.py:1255
 msgid "&Bugreport"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:38
+#: ../ui/MyMainWindow.py:36
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -155,47 +135,47 @@ msgid ""
 "<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:68
+#: ../ui/MyMainWindow.py:66
 msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
 msgstr ""
 
-#: ../ui/MyMainWindow.py:237
+#: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:242
+#: ../ui/MyMainWindow.py:237
 msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:264
+#: ../ui/MyMainWindow.py:257
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:267
+#: ../ui/MyMainWindow.py:260
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:270
+#: ../ui/MyMainWindow.py:263
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:273
+#: ../ui/MyMainWindow.py:266
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:276
+#: ../ui/MyMainWindow.py:269
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:279
+#: ../ui/MyMainWindow.py:272
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:282
+#: ../ui/MyMainWindow.py:275
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
 msgstr ""
 
-#: ../ui/MyMainWindow.py:374
+#: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr ""
 
