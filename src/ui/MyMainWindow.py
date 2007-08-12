@@ -22,10 +22,10 @@ from lib.Bugreport import Bugreport
 from lib import DebianBTS
 from lib.ReportbugNG import *
 
-from qttable import QTableItem
-from qttable import QTable
+from qt import QListView, QListViewItem, QListViewItemIterator
 from qt import Qt
 from qt import QWhatsThis
+from qt import QColorGroup
 from qt import SIGNAL
 
 import thread
@@ -80,42 +80,49 @@ SEVERITY_EXPLANATION = _("\
 <br> \
 <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.") % {'cri':"Critical", 'gra':"Grave", 'ser':"Serious", 'imp':"Important", 'nor':"Normal", 'min':"Minor", 'wis':"Wishlist"}
 
-class MyTableItem(QTableItem):
-    """Derived from QTableItem to pretty-paint different bugtypes"""
 
-    def __init__(self, table, editType, bug, attribute):
-        text = {Bugreport.NR : bug.nr,
-                Bugreport.SUMMARY : bug.summary,
-                Bugreport.STATUS : bug.status,
-                Bugreport.SEVERITY : bug.severity,
-                Bugreport.LASTACTION : bug.lastaction}.get(attribute, "")
-        QTableItem.__init__(self, table, editType, text)
+class SortItem(QListViewItem):
+    BUGNR = 0
+    STATUS = 2
+    SEVERITY = 3
+    
+    def __init__(self, parent, bug):
         self.bug = bug
-        self.attribute = attribute
+        QListViewItem.__init__(self, parent, bug.nr, bug.summary, bug.status, bug.severity, bug.lastaction)
     
-    def paint(self, painter, colorGroup, rect, selected):
-        if self.bug.severity.lower() in ("grave", "serious", "critical"):
-            colorGroup.setColor(colorGroup.Text, Qt.darkMagenta)
-        elif self.bug.severity.lower() == "important":
-            colorGroup.setColor(colorGroup.Text, Qt.red)
-        elif self.bug.severity.lower() == "minor":
-            colorGroup.setColor(colorGroup.Text, Qt.darkGreen)
-        elif self.bug.severity.lower() == "wishlist":
-            colorGroup.setColor(colorGroup.Text, Qt.darkYellow)
+    def paintCell(self, painter, colorGroup, col, width, align):
+        cg = QColorGroup(colorGroup)
+        if self.severity() in ("grave", "serious", "critical"):
+            cg.setColor(cg.Text, Qt.darkMagenta)
+        elif self.severity() == "important":
+            cg.setColor(cg.Text, Qt.red)
+        elif self.severity() == "minor":
+            cg.setColor(cg.Text, Qt.darkGreen)
+        elif self.severity() == "wishlist":
+            cg.setColor(cg.Text, Qt.darkYellow)
 
-        if self.bug.status.lower() == "resolved":
-            colorGroup.setColor(colorGroup.Text, Qt.gray)
+        if self.status() == "resolved":
+            cg.setColor(cg.Text, Qt.gray)
         
-        QTableItem.paint(self, painter, colorGroup, rect, selected)
-    
-    def key(self):
-        if self.attribute == Bugreport.STATUS:
-            return str(self.bug.value())
-        elif self.attribute == Bugreport.SEVERITY:
-            return str(Bugreport.SEVERITY_VALUE.get(self.bug.severity.lower(), ""))
+        QListViewItem.paintCell(self, painter, cg, col, width, align)
+        
+    def compare(self, item, col, ascending):
+        if col == self.BUGNR:
+            return int(self.bug.nr).__cmp__(int(item.bug.nr))
+        elif col == self.STATUS:
+            return self.bug.value().__cmp__(item.bug.value())
+        elif col == self.SEVERITY:
+            my = Bugreport.SEVERITY_VALUE.get(self.bug.severity.lower(), "")
+            theirs = Bugreport.SEVERITY_VALUE.get(item.bug.severity.lower(), "")
+            return my.__cmp__(theirs)
         else:
-            return QTableItem.key(self)
-
+            return QListViewItem.compare(self, item, col, ascending)
+        
+    def severity(self):
+        return unicode(self.text(3)).lower()
+    
+    def status(self):
+        return unicode(self.text(2)).lower()
 
 class MyMainWindow(Form):
     
@@ -131,7 +138,8 @@ class MyMainWindow(Form):
         self.currentQuery = 0
         self.queryLock = thread.allocate_lock()
 
-        self.table.setColumnStretchable(1, True)
+        # TODO: I want that for the listview too!
+        #self.table.setColumnStretchable(1, True)
         self.splitter.setSizes([150,300])
 
         self.settings = settings
@@ -140,18 +148,13 @@ class MyMainWindow(Form):
         self.reportbug_ngMenubarAction.setOn(self.settings.menubar)
 
         self.textBrowser.setText(REPORTBUG_NG_INSTRUCTIONS)
-
-        self.connect(self.table.horizontalHeader(),SIGNAL("clicked(int)"), self.__sort_table)
-        self.sortOrder = dict()
-        for col in range(self.table.numCols()):
-            self.sortOrder[col] = True
-        self.sortOrder[self.settings.sortByCol] = self.settings.sortAsc
-        self.table.verticalHeader().hide()
-        self.table.setLeftMargin(0)
         
-        # For debugging purpose only:
-        # self.pushButtonNewBugreport.setEnabled(1)
-        
+        self.listView.addColumn("Bugnumber", self.settings.bugnrWidth)
+        self.listView.addColumn("Summary", self.settings.summaryWidth)
+        self.listView.addColumn("Status", self.settings.statusWidth)
+        self.listView.addColumn("Severity", self.settings.severityWidth)
+        self.listView.addColumn("Last Action", self.settings.lastactionWidth)
+        self.listView.setSorting(self.settings.sortByCol, self.settings.sortAsc)
         
         if args:
             self.lineEdit.setText(unicode(args[0], "utf-8"))
@@ -172,17 +175,17 @@ class MyMainWindow(Form):
         self.settings.width = s.width()
         self.settings.height = s.height()
         self.settings.menubar = self.reportbug_ngMenubarAction.isOn()
+        self.settings.sortByCol = self.listView.sortColumn()
+        self.settings.sortAsc = {Qt.Ascending : True, 
+                                 Qt.Descending : False}[self.listView.sortOrder()]
+        self.settings.bugnrWidth = self.listView.columnWidth(0)
+        self.settings.summaryWidth = self.listView.columnWidth(1)
+        self.settings.statusWidth = self.listView.columnWidth(2)
+        self.settings.severityWidth = self.listView.columnWidth(3)
+        self.settings.lastactionWidth = self.listView.columnWidth(4)
 
         # Accecpt the closeEvent 
         ce.accept()
-        
-    
-    def __sort_table(self, col):
-        self.sortOrder[col] = not self.sortOrder.get(col, False)
-        self.table.sortColumn(col, self.sortOrder[col], True)
-        self.lineEdit_textChanged(self.lineEdit.text())
-        self.settings.sortByCol = col
-        self.settings.sortAsc = self.sortOrder[col]
 
     
     def stateChanged(self, package, bug):
@@ -221,27 +224,19 @@ class MyMainWindow(Form):
         self.bugs = dict()
         for bug in bugs:
             self.bugs[bug.nr] = bug
-
-        self.table.setNumRows(len(self.bugs))
-        row = 0
+            
+        # Fill the listview
         for bugnr in self.bugs:
             bug = self.bugs[bugnr]
-            self.table.setItem(row,0, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.NR))
-            self.table.setItem(row,1, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.SUMMARY))
-            self.table.setItem(row,2, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.STATUS))
-            self.table.setItem(row,3, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.SEVERITY))
-            self.table.setItem(row,4, MyTableItem(self.table, QTableItem.Never, bug, Bugreport.LASTACTION))
-            row += 1
+            SortItem(self.listView, bug)
+            
         
         if len(self.bugs) == 0:
             self.textBrowser.setText(_("<h2>No bugreports for package %s found!</h2>") % self.currentPackage + REPORTBUG_NG_INSTRUCTIONS)
         if len(self.bugs) == 1:
-            self.table.selectRow(0)
-            self.table_selectionChanged()
+            self.listView.setSelected( self.listView.firstChild(), True)
         else:
             self.textBrowser.setText(_("<h2>Click on a bugreport to see the full text.</h2>") + REPORTBUG_NG_INSTRUCTIONS)
-            col = self.settings.sortByCol
-            self.table.sortColumn(col, self.sortOrder[col], True)
     
         self.queryLock.release()
 
@@ -283,23 +278,19 @@ class MyMainWindow(Form):
             self.stateChanged(s, None)
 
         self.lineEdit.setText("")
-        self.table.setNumRows(0)
+        self.listView.clear()
         self.textBrowser.setText(what)
     
         # Fetch the bugs in a thread
         self.currentQuery = thread.start_new_thread(self.loadAllBugSummaries, (s,))
 
 
-    def __get_bugnr_from_row(self, row):
-        return unicode(self.table.item(row, 0).text())
-        
-
     def lineEdit_textChanged(self, a0):
         """The filter text has changed."""
         # Supress thousands of new selections everytime a row gets hided:
         # would be better if I just could turn of selections if the selected
         # row gets hided.
-        self.table.setSelectionMode(QTable.NoSelection)
+        self.listView.setSelectionMode(QListView.NoSelection)
 
         import time
         t = time.time()
@@ -310,43 +301,36 @@ class MyMainWindow(Form):
         pos_filter = [e for e in tokens if not e.startswith("-")]
         self.logger.debug("neg: %s, pos: %s" % (str(neg_filter), str(pos_filter)) )
 
-        self.table.viewport().setUpdatesEnabled(False)
-        for row in range(len(self.bugs)):
-            bugnr = self.__get_bugnr_from_row(row)
-            bug = unicode(self.bugs[bugnr]).lower()
-            show = True
+        it = QListViewItemIterator(self.listView)
+        item = it.current()
+        while item:
+            bugnr = unicode(item.text(0))
+            try:
+                bug = unicode(self.bugs[bugnr]).lower()
+            except KeyError:
+                bug = u''
+
+            show = 1
             for elem in pos_filter:
                 if bug.find(elem) == -1:
-                    show = False
+                    show = 0
                     break
-            if not show:
-                self.table.hideRow(row)
-                continue
+            if show != 0:
+                for elem in neg_filter:
+                    if bug.find(elem) != -1:
+                        show = 0
+                        break
+            item.setVisible(show)
             
-            for elem in neg_filter:
-                if bug.find(elem) != -1:
-                    show = False
-                    break
-            if show:
-                self.table.showRow(row)
-            else:
-                self.table.hideRow(row)
-
-### Old version                 
-#        for row in range(len(self.bugs)):
-#            if unicode(self.bugs[row]).lower().find(filter) != -1:
-#                self.table.showRow(row)
-#            else:
-#                self.table.hideRow(row)
-        
-        self.table.viewport().setUpdatesEnabled(True)
-        self.table.repaintContents()
+            # Next
+            it += 1
+            item = it.current()
 
         t = time.time() - t
         logger.info("Elapsed time: %f" % t)
 
         # Re-Enable selections again
-        self.table.setSelectionMode(QTable.SingleRow)
+        self.listView.setSelectionMode(QListView.Single)
         
         
     def loadBugreport(self, bugnr):
@@ -364,12 +348,10 @@ class MyMainWindow(Form):
         self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
 
 
-    def table_selectionChanged(self):
-        """The user selected a Bug from the list."""
-        if self.table.currentRow() < 0 or self.table.currentRow() > len(self.bugs)-1:
-            return
+    def listView_selectionChanged(self, listViewItem):
+        self.logger.debug("ListView selection Changed")
         
-        bugnr = self.__get_bugnr_from_row(self.table.currentRow())
+        bugnr = unicode(listViewItem.text(0))
         self.currentBug = self.bugs[bugnr]
         self.textBrowser.setText(_("<h2>Fetching bugreport %s, please wait.</h2>") % self.currentBug)
         self.stateChanged(self.currentBug.package, self.currentBug)

@@ -39,6 +39,13 @@ class Settings:
         self.height = 600
         self.menubar = True
         
+        # ListView
+        self.bugnrWidth = 100
+        self.summaryWidth = 350
+        self.statusWidth = 100
+        self.severityWidth = 100
+        self.lastactionWidth = 100
+        
         
     def load(self):
     
@@ -60,6 +67,17 @@ class Settings:
         if self.config.has_option("mainwindow", "menubar"):
             self.menubar = self.config.getboolean("mainwindow", "menubar")
 
+        if self.config.has_option("listview", "bugnrwidth"):
+            self.bugnrWidth = self.config.getint("listview", "bugnrwidth")
+        if self.config.has_option("listview", "summarywidth"):
+            self.summaryWidth = self.config.getint("listview", "summarywidth")
+        if self.config.has_option("listview", "statuswidth"):
+            self.statusWidth = self.config.getint("listview", "statuswidth")
+        if self.config.has_option("listview", "severitywidth"):
+            self.severityWidth = self.config.getint("listview", "severitywidth")
+        if self.config.has_option("listview", "lastactionwidth"):
+            self.lastactionWidth = self.config.getint("listview", "lastactionwidth")
+
     
     def save(self):
 
@@ -76,6 +94,14 @@ class Settings:
         self.config.set("mainwindow", "width", self.width)
         self.config.set("mainwindow", "height", self.height)
         self.config.set("mainwindow", "menubar", self.menubar)
+        
+        if not self.config.has_section("listview"):
+            self.config.add_section("listview")
+        self.config.set("listview", "bugnrwidth", self.bugnrWidth)
+        self.config.set("listview", "summarywidth", self.summaryWidth)
+        self.config.set("listview", "statuswidth", self.statusWidth)
+        self.config.set("listview", "severitywidth", self.severityWidth)
+        self.config.set("listview", "lastactionwidth", self.lastactionWidth)
         
         # Write everything to configfile
         self.config.write(open(self.configfile, "w"))

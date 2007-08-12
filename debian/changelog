@@ -1,3 +1,15 @@
+reportbug-ng (0.2007.08.12) unstable; urgency=low
+
+  * Replaced QTable with QListView:
+    - Really fast filtering of very long bug lists (Closes: #416579)
+    - Correctly sorts all columns (Closes: #435830)
+    - Save width for every column and restore it on next start
+
+  * Updated French translation (Closes: #436171)
+  * Updated Italian translation (Closes: #436051)
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 12 Aug 2007 13:26:07 +0200
+
 reportbug-ng (0.2007.08.03.2) unstable; urgency=low
 
   * Corrected sorting order for sort-by-status (Closes: #435822)

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>674</width>
-            <height>520</height>
+            <width>673</width>
+            <height>564</height>
         </rect>
     </property>
     <property name="caption">
@@ -29,67 +29,15 @@
             <property name="orientation">
                 <enum>Vertical</enum>
             </property>
-            <widget class="QTable">
-                <column>
-                    <property name="text">
-                        <string>Bugnumber</string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap></pixmap>
-                    </property>
-                </column>
-                <column>
-                    <property name="text">
-                        <string>Summary</string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap></pixmap>
-                    </property>
-                </column>
-                <column>
-                    <property name="text">
-                        <string>Status</string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap></pixmap>
-                    </property>
-                </column>
-                <column>
-                    <property name="text">
-                        <string>Severity</string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap></pixmap>
-                    </property>
-                </column>
-                <column>
-                    <property name="text">
-                        <string>Last Action</string>
-                    </property>
-                    <property name="pixmap">
-                        <pixmap></pixmap>
-                    </property>
-                </column>
+            <widget class="QListView">
                 <property name="name">
-                    <cstring>table</cstring>
+                    <cstring>listView</cstring>
                 </property>
-                <property name="numRows">
-                    <number>0</number>
-                </property>
-                <property name="numCols">
-                    <number>5</number>
-                </property>
-                <property name="showGrid">
-                    <bool>false</bool>
-                </property>
-                <property name="readOnly">
+                <property name="allColumnsShowFocus">
                     <bool>true</bool>
                 </property>
-                <property name="selectionMode">
-                    <enum>SingleRow</enum>
-                </property>
-                <property name="focusStyle">
-                    <enum>FollowStyle</enum>
+                <property name="showSortIndicator">
+                    <bool>true</bool>
                 </property>
             </widget>
             <widget class="QTextBrowser">
@@ -283,12 +231,6 @@
         <slot>textBrowser_highlighted(const QString&amp;)</slot>
     </connection>
     <connection>
-        <sender>table</sender>
-        <signal>selectionChanged()</signal>
-        <receiver>Form</receiver>
-        <slot>table_selectionChanged()</slot>
-    </connection>
-    <connection>
         <sender>lineEdit</sender>
         <signal>returnPressed()</signal>
         <receiver>Form</receiver>
@@ -336,10 +278,15 @@
         <receiver>Form</receiver>
         <slot>bugreportClose_BugreportAction_activated()</slot>
     </connection>
+    <connection>
+        <sender>listView</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>Form</receiver>
+        <slot>listView_selectionChanged(QListViewItem*)</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>lineEdit</tabstop>
-    <tabstop>table</tabstop>
     <tabstop>textBrowser</tabstop>
 </tabstops>
 <includes>
@@ -359,6 +306,8 @@
     <slot>bugreportAdditional_InfoAction_activated()</slot>
     <slot>reportbug_ngMenubarAction_toggled( bool )</slot>
     <slot>bugreportClose_BugreportAction_activated()</slot>
+    <slot>listView1_selectionChanged( QListViewItem * )</slot>
+    <slot>listView_selectionChanged( QListViewItem * )</slot>
 </slots>
 <layoutdefaults spacing="1" margin="1"/>
 </UI>
