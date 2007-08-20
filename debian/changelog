@@ -1,3 +1,10 @@
+reportbug-ng (0.2007.08.20) unstable; urgency=low
+
+  * Fixed bug where rng failed to load bug report if invoked with a single
+    bug number as argument
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 20 Aug 2007 16:44:07 +0200
+
 reportbug-ng (0.2007.08.12) unstable; urgency=low
 
   * Replaced QTable with QListView:

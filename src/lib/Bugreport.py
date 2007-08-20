@@ -46,8 +46,8 @@ class Bugreport:
         self.severity = severity
         self.fulltext = fulltext
         self.package = package
-        self.firstaction = 0 # When was the bug reported (in seconds)
-        self.lastaction = 0  # When dit the bug received the last mail
+        self.firstaction = "0" # When was the bug reported (in seconds)
+        self.lastaction = "0"  # When dit the bug received the last mail
 
     def __str__(self):
         return self.package+" #"+self.nr +": "+ self.summary+" --- "+self.status+", "+self.severity
