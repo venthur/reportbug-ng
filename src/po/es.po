@@ -33,115 +33,109 @@ msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-ng 0.2007.05.27\n"
 "POT-Creation-Date: 2007-08-12 16:19+CEST\n"
-"PO-Revision-Date: 2007-05-28 21:37+0200\n"
+"PO-Revision-Date: 2007-08-26 13:00+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: WNPP tag wis from severity min NG imp gra foo\n"
+"X-POFile-SpellExtra: Reportbug nor must src Cltr required Intro usabilidad\n"
+"X-POFile-SpellExtra: reportbug cri\n"
 
 #: ../ui/MainWindow.py:1231
 msgid "Reportbug NG"
 msgstr "Reportbug NG"
 
 #: ../ui/MainWindow.py:1232
-#, fuzzy
 msgid "Quits Reportbug NG"
-msgstr "Reportbug NG"
+msgstr "Sale de reportbug NG"
 
 #: ../ui/MainWindow.py:1233
 msgid "&Quit"
-msgstr ""
+msgstr "&Salir"
 
 #: ../ui/MainWindow.py:1234
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
 #: ../ui/MainWindow.py:1235
 msgid "Provide additional information for the current bugreport"
 msgstr "Proporcionar más información en el informe de error actual"
 
 #: ../ui/MainWindow.py:1236
-#, fuzzy
 msgid "&Additional Info..."
-msgstr "Información &adicional"
+msgstr "Información &adicional..."
 
 #: ../ui/MainWindow.py:1237
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
 #: ../ui/MainWindow.py:1238
 msgid "Create new bugreport for current package"
 msgstr "Crear un nuevo informe de error para el paquete actual"
 
 #: ../ui/MainWindow.py:1239
-#, fuzzy
 msgid "&New Bugreport..."
-msgstr "&Nuevo informe de error"
+msgstr "&Nuevo informe de error..."
 
 #: ../ui/MainWindow.py:1240
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+N"
 
 #: ../ui/MainWindow.py:1241
-#, fuzzy
 msgid "Create a new WNPP bugreport"
-msgstr "&Nuevo informe de error"
+msgstr "&Nuevo informe de error WNPP"
 
 #: ../ui/MainWindow.py:1242
 msgid "&WNPP..."
-msgstr ""
+msgstr "&WNPP..."
 
 #: ../ui/MainWindow.py:1243
 msgid "Ctrl+W"
-msgstr ""
+msgstr "Ctrl+W"
 
 #: ../ui/MainWindow.py:1244
 msgid "Show or hide  the main menu"
-msgstr ""
+msgstr "Mostrar u ocultar el menú principal"
 
 #: ../ui/MainWindow.py:1245
 msgid "&Menubar"
-msgstr ""
+msgstr "Barra de &menú"
 
 #: ../ui/MainWindow.py:1246
 msgid "Ctrl+M"
-msgstr ""
+msgstr "Ctrl+M"
 
 #: ../ui/MainWindow.py:1247
-#, fuzzy
 msgid "Close the current bugreport"
-msgstr "&Nuevo informe de error"
+msgstr "Cerrar el informe de error actual"
 
 #: ../ui/MainWindow.py:1248
-#, fuzzy
 msgid "&Close Bugreport..."
-msgstr "&Nuevo informe de error"
+msgstr "&Cerrar informe de error..."
 
 #: ../ui/MainWindow.py:1249
 msgid "Ctrl+L"
-msgstr ""
+msgstr "Cltr+L"
 
 #: ../ui/MainWindow.py:1250
 msgid "Toolbar"
-msgstr ""
+msgstr "Barra de herramientas"
 
 #: ../ui/MainWindow.py:1251
 msgid "Enter a package name or a filter expression"
 msgstr "Introduzca un nombre de paquete o una expresión de filtro"
 
 #: ../ui/MainWindow.py:1253
-#, fuzzy
 msgid "&Reportbug NG"
-msgstr "Reportbug NG"
+msgstr "&Reportbug NG"
 
 #: ../ui/MainWindow.py:1255
-#, fuzzy
 msgid "&Bugreport"
 msgstr "&Nuevo informe de error"
 
 #: ../ui/MyMainWindow.py:36
-#, fuzzy
 msgid ""
 "<h2>Using Reportbug-NG</h2>\n"
 "<h3>Step 1: Finding Bugs</h3>\n"
@@ -183,47 +177,29 @@ msgid ""
 msgstr ""
 "<h2>Utilización de Reportbug-NG</h2>\n"
 "<h3>Paso 1: Encontrar fallos</h3>\n"
-"<p>Para encontrar un fallo sólo tiene que introducir una consulta y pulsar "
-"Intro. La carga de la lista puede llevar algunos segundos.</p>\n"
+"<p>Para encontrar un fallo sólo tiene que introducir una consulta y pulsar Intro. La carga de la lista puede llevar algunos segundos.</p>\n"
 "\n"
 "<p>Se pueden utilizar las siguientes consultas\n"
 "<dl>\n"
-"<dt><code>paquete</code></dt><dd>Devuelve todos los fallos que pertenecen al "
-"PAQUETE</dd>\n"
-"<dt><code>númerodefallo</code></dt><dd>Devuelve el fallo con el número "
-"indicado</dd>\n"
-"<dt><code>desarrollador@foo.bar</code></dt><dd>Devuelve todos los fallos que "
-"están asociados al MANTENEDOR</dd>\n"
-"<dt><code>src:paquete</code></dt><dd>Devuelve todos los fallos cuyo paquete "
-"fuente es PAQUETE</dd>\n"
-"<dt><code>from:remitente@foo.bar</code></dt><dd>Devuelve todos los fallos "
-"enviados por el REMITENTE</dd>\n"
-"<dt><code>severity:foo</code></dt><dd>Devuelve todos los fallos de la "
-"GRAVEDAD indicada. Aviso: es posible que la lista devuelta sea muy larga. "
-"Valores permitidos: crítico, grave, serio, importante, normal, menor y "
-"deseo</dd>\n"
-"<dt><code>tag:bar</code></dt><dd>Devuelve todos los fallos marcados con "
-"ETIQUETA</dd>\n"
+"<dt><code>paquete</code></dt><dd>Devuelve todos los fallos que pertenecen al PAQUETE</dd>\n"
+"<dt><code>número_de_fallo</code></dt><dd>Devuelve el fallo con el número indicado</dd>\n"
+"<dt><code>desarrollador@foo.bar</code></dt><dd>Devuelve todos los fallos que están asociados al MANTENEDOR</dd>\n"
+"<dt><code>src:paquete_fuente</code></dt><dd>Devuelve todos los fallos cuyo paquete fuente es PAQUETE</dd>\n"
+"<dt><code>from:remitente@foo.bar</code></dt><dd>Devuelve todos los fallos enviados por el REMITENTE</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Devuelve todos los fallos de la GRAVEDAD indicada. Aviso: es posible que la lista devuelta sea muy larga. Valores permitidos: crítico, grave, serio, importante, normal, menor y deseo</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Devuelve todos los fallos marcados con ETIQUETA</dd>\n"
 "</dl>\n"
 "</p>\n"
 "\n"
-"<p>Pulse en un fallo de la lista para ver el informe de error completo. Los "
-"enlaces a los informes de error se abrirán en un navegador externo cuando se "
-"pulsen.</p>\n"
+"<p>Pulse en un fallo de la lista para ver el informe de error completo. Los enlaces a los informes de error se abrirán en un navegador externo cuando se pulsen.</p>\n"
 "\n"
 "<h3>Paso 2: Filtrado de errores</h3>\n"
-"<p>Para filtrar los errores en la lista introduzca algunas letras (sin "
-"pulsar Intro). El filtro es sensible a la capitalización y afecta al nombre "
-"del paquete, número de error, resumen, estado y gravedad de un fallo.</p>\n"
+"<p>Para filtrar los errores en la lista introduzca algunas letras (sin pulsar Intro). El filtro es sensible a la capitalización y afecta al nombre del paquete, número de error, resumen, estado y gravedad de un fallo.</p>\n"
 "\n"
 "<h3>Paso 3: Informar de errores</h3>\n"
-"<p>Puede proporcionar información adicional para un error existente pulsando "
-"en el fallo y seleccionando el botón «Información adicional». También puede "
-"crear un nuevo informe de error para el paquete seleccionado pulsando el "
-"botón «Nuevo informe de error».</p>\n"
+"<p>Puede proporcionar información adicional para un error existente pulsando en el fallo y seleccionando el botón «Información adicional». También puede crear un nuevo informe de error para el paquete seleccionado pulsando el botón «Nuevo informe de error».</p>\n"
 
 #: ../ui/MyMainWindow.py:66
-#, fuzzy
 msgid ""
 "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) "
 "break, or causes serious data loss, or introduces a security hole on systems "
@@ -240,36 +216,23 @@ msgid ""
 "fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that "
 "are very difficult to fix due to major design considerations."
 msgstr ""
-"<b>crítico</b> hace que software no relacionado entre sí en el sistema (o el "
-"sistema entero) falle, o cause pérdidas serias de datos, o introduce un "
-"agujero de seguridad en el sistema donde se instale el paquete.\n"
+"<b>%(cri)s</b> hace que software no relacionado entre sí en el sistema (o el sistema entero) falle, o cause pérdidas serias de datos, o introduce un agujero de seguridad en el sistema donde se instale el paquete.\n"
 "<br>\n"
-"<b>grave</b> hace que el paquete en cuestión no se pueda utilizar o no se "
-"pueda casi nunca, o cause pérdida de datos, o introduce un agujero de "
-"seguridad que permite el acceso a las cuentas de los usuarios que usen el "
-"paquete.\n"
+"<b>%(gra)s</b> hace que el paquete en cuestión no se pueda utilizar o no se pueda casi nunca, o cause pérdida de datos, o introduce un agujero de seguridad que permite el acceso a las cuentas de los usuarios que usen el paquete.\n"
 "<br>\n"
-"<b>serio</b> es una violación severa de la normativa de Debian (en pocas "
-"palabras, viola una directiva «debe» (must) o «requerida» (required)), o, en "
-"opinión del responsable del paquete, hace que el paquete no se pueda "
-"publicar.\n"
+"<b>%(ser)s</b> es una violación severa de la normativa de Debian (en pocas palabras, viola una directiva «debe» (must) o «requerida» (required)), o, en opinión del responsable del paquete, hace que el paquete no se pueda publicar.\n"
 "<br>\n"
-"<b>importante</b> un fallo que tiene un efecto importante en la usabilidad "
-"de un paquete, sin hacerle completamente inútil para todo el mundo.\n"
+"<b>%(imp)s</b> un fallo que tiene un efecto importante en la usabilidad de un paquete, sin hacerle completamente inútil para todo el mundo.\n"
 "<br>\n"
-"<b>normal</b> el valor por omisión, aplicable a la mayoría de los fallos.\n"
+"<b>%(nor)s</b> el valor por omisión, aplicable a la mayoría de los fallos.\n"
 "<br>\n"
-"<b>menor</b> un problema que no afecta a la utilidad del paquete, y "
-"presumiblemente es trivial de arreglar.\n"
+"<b>%(min)s</b> un problema que no afecta a la utilidad del paquete, y presumiblemente es trivial de arreglar.\n"
 "<br>\n"
-"<b>deseo</b> para la petición de cualquier característica, y también para "
-"cualquier fallo que sea muy difícil de arreglar debido a consideraciones de "
-"diseño mayores."
+"<b>%(wis)s</b> para la petición de cualquier característica, y también para cualquier fallo que sea muy difícil de arreglar debido a consideraciones de diseño mayores."
 
 #: ../ui/MyMainWindow.py:150
-#, fuzzy
 msgid "Bugnumber"
-msgstr "con número de fallo"
+msgstr "Número de fallo"
 
 #: ../ui/MyMainWindow.py:151
 msgid "Summary"
@@ -285,7 +248,7 @@ msgstr "Gravedad"
 
 #: ../ui/MyMainWindow.py:154
 msgid "Last Action"
-msgstr ""
+msgstr "Última acción"
 
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
@@ -296,39 +259,32 @@ msgid "<h2>Click on a bugreport to see the full text.</h2>"
 msgstr "<h2>Seleccione el informe de error para ver el texto completo.</h2>"
 
 #: ../ui/MyMainWindow.py:257
-#, fuzzy
 msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error del paquete fuente %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:260
-#, fuzzy
 msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error remitidos por %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:263
-#, fuzzy
 msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error de gravedad %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:266
-#, fuzzy
 msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error con la marca %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:269
-#, fuzzy
 msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error asignados a %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:272
-#, fuzzy
 msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informe de error %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informe de error con número de error %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:275
-#, fuzzy
 msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
-msgstr "<h2>Obteniendo informes de error %s %s. Espere por favor.</h2>"
+msgstr "<h2>Obteniendo informes de error para el paquete %s. Espere por favor.</h2>"
 
 #: ../ui/MyMainWindow.py:354
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
@@ -375,9 +331,8 @@ msgstr ""
 "completo de error.</b>"
 
 #: ../ui/SubmitDialog.py:195
-#, fuzzy
 msgid "Normal Bugreport"
-msgstr "&Nuevo informe de error"
+msgstr "Informe de error &normal"
 
 #: ../ui/SubmitDialog.py:196
 msgid "patch"
@@ -439,21 +394,19 @@ msgid "S&everity:"
 msgstr "&Gravedad:"
 
 #: ../ui/SubmitDialog.py:206
-#, fuzzy
 msgid "&WNPP Bugreport"
-msgstr "&Nuevo informe de error"
+msgstr "Informe &WNPP"
 
 #: ../ui/SubmitDialog.py:207
 msgid "WNPP &Action:"
-msgstr ""
+msgstr "&Acción WNPP:"
 
 #: ../ui/SubmitDialog.py:208
 msgid "Short Package &Description:"
-msgstr ""
+msgstr "&Descripción corta del paquete:"
 
-#, fuzzy
 #~ msgid "&Reportbug-NG"
-#~ msgstr "Reportbug NG"
+#~ msgstr "&Reportbug NG"
 
 #~ msgid "Alt+N"
 #~ msgstr "Alt+N"
@@ -461,9 +414,8 @@ msgstr ""
 #~ msgid "Alt+A"
 #~ msgstr "Alt+A"
 
-#, fuzzy
 #~ msgid "Alt+W"
-#~ msgstr "Alt+N"
+#~ msgstr "Alt+W"
 
 #~ msgid "Click on bugreport to see the full conversation below"
 #~ msgstr ""

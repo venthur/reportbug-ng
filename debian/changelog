@@ -1,3 +1,13 @@
+reportbug-ng (0.2007.10.30) unstable; urgency=low
+
+  * Translation updates:
+    - Updated Spanish translation, thanks Javier Fernández-Sanguino Peña
+      (Closes: #439652)
+    - Updated French translation, thanks Cyril Brulebois (Closes: #440112)
+    - Updated Polish translation, thanks Mateusz Skowroński (Closes: #440523)
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 30 Oct 2007 20:02:59 +0100
+
 reportbug-ng (0.2007.08.20) unstable; urgency=low
 
   * Fixed bug where rng failed to load bug report if invoked with a single

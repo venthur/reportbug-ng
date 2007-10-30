@@ -233,7 +233,7 @@ msgstr ""
 
 #: ../ui/MyMainWindow.py:150
 msgid "Bugnumber"
-msgstr ""
+msgstr "Numéro de bogue"
 
 #: ../ui/MyMainWindow.py:151
 msgid "Summary"
@@ -249,7 +249,7 @@ msgstr "Gravité"
 
 #: ../ui/MyMainWindow.py:154
 msgid "Last Action"
-msgstr ""
+msgstr "Dernière action"
 
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
