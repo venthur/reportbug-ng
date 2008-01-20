@@ -1,3 +1,10 @@
+reportbug-ng (0.2008.01.20) unstable; urgency=low
+
+  * Escape quotes in arguments passed to MUA (if MUA_SYNTAX uses quotes)
+    (Closes: #457139, #445568) -- thanks Daniel Hahler for the patch!
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 20 Jan 2008 18:48:59 +0100
+
 reportbug-ng (0.2007.10.30) unstable; urgency=low
 
   * Translation updates:

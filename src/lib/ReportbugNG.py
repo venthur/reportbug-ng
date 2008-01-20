@@ -66,7 +66,12 @@ def prepareMail(mua, to, subject, body):
         to = to.encode("ascii", "replace")
         subject = subject.encode("ascii", "replace")
         body = body.encode("ascii", "replace")
-    
+
+    # If quotes are used for this MUA, escape the quotes in the arguments:
+    if '"' in MUA_SYNTAX[mua] and MUA_SYNTAX[mua].count('"')%2 == 0:
+        to = to.replace('"', '\\"')
+        subject = subject.replace('"', '\\"')
+        body = body.replace('"', '\\"')
     
     command = MUA_SYNTAX[mua] % {"to":to, "subject":subject, "body":body}
     
