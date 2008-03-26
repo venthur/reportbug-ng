@@ -1,119 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2007 Junichi Uekawa 
+# Copyright (C) 2007-2008 Junichi Uekawa 
 # Junichi Uekawa <dancer@debian.org>, 2007.
 # picked some text from http://www.debian.org/Bugs/Developer.ja.html
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: reportbug-NG\n"
-"POT-Creation-Date: 2007-08-12 16:19+CEST\n"
-"PO-Revision-Date: 2007-06-01 17:41+0900\n"
+"POT-Creation-Date: 2008-01-26 14:13+JST\n"
+"PO-Revision-Date: 2008-01-26 14:14+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: UTF-8\n"
 "Generated-By: pygettext.py 1.5\n"
-
-#: ../ui/MainWindow.py:1231
-msgid "Reportbug NG"
-msgstr "Reportbug NG"
-
-#: ../ui/MainWindow.py:1232
-#, fuzzy
-msgid "Quits Reportbug NG"
-msgstr "Reportbug NG"
-
-#: ../ui/MainWindow.py:1233
-msgid "&Quit"
-msgstr ""
-
-#: ../ui/MainWindow.py:1234
-msgid "Ctrl+Q"
-msgstr ""
-
-#: ../ui/MainWindow.py:1235
-msgid "Provide additional information for the current bugreport"
-msgstr "現在のバグレポートに追加の情報を提供する"
-
-#: ../ui/MainWindow.py:1236
-#, fuzzy
-msgid "&Additional Info..."
-msgstr "追加情報(&A)"
-
-#: ../ui/MainWindow.py:1237
-msgid "Ctrl+A"
-msgstr ""
-
-#: ../ui/MainWindow.py:1238
-msgid "Create new bugreport for current package"
-msgstr "現在のパッケージのために新規バグレポートを作成する"
-
-#: ../ui/MainWindow.py:1239
-#, fuzzy
-msgid "&New Bugreport..."
-msgstr "新規バグレポート(&N)"
-
-#: ../ui/MainWindow.py:1240
-msgid "Ctrl+N"
-msgstr ""
-
-#: ../ui/MainWindow.py:1241
-#, fuzzy
-msgid "Create a new WNPP bugreport"
-msgstr "新規バグレポート(&N)"
-
-#: ../ui/MainWindow.py:1242
-msgid "&WNPP..."
-msgstr ""
-
-#: ../ui/MainWindow.py:1243
-msgid "Ctrl+W"
-msgstr ""
-
-#: ../ui/MainWindow.py:1244
-msgid "Show or hide  the main menu"
-msgstr ""
-
-#: ../ui/MainWindow.py:1245
-msgid "&Menubar"
-msgstr ""
-
-#: ../ui/MainWindow.py:1246
-msgid "Ctrl+M"
-msgstr ""
-
-#: ../ui/MainWindow.py:1247
-#, fuzzy
-msgid "Close the current bugreport"
-msgstr "新規バグレポート(&N)"
-
-#: ../ui/MainWindow.py:1248
-#, fuzzy
-msgid "&Close Bugreport..."
-msgstr "新規バグレポート(&N)"
-
-#: ../ui/MainWindow.py:1249
-msgid "Ctrl+L"
-msgstr ""
-
-#: ../ui/MainWindow.py:1250
-msgid "Toolbar"
-msgstr ""
-
-#: ../ui/MainWindow.py:1251
-msgid "Enter a package name or a filter expression"
-msgstr "パッケージ名かフィルター表現を入力してください"
-
-#: ../ui/MainWindow.py:1253
-#, fuzzy
-msgid "&Reportbug NG"
-msgstr "Reportbug NG"
-
-#: ../ui/MainWindow.py:1255
-#, fuzzy
-msgid "&Bugreport"
-msgstr "新規バグレポート(&N)"
 
 #: ../ui/MyMainWindow.py:36
 msgid ""
@@ -237,7 +137,6 @@ msgstr ""
 "    将来的な要望、主に設計上の理由により修正が非常に困難なバグ。"
 
 #: ../ui/MyMainWindow.py:150
-#, fuzzy
 msgid "Bugnumber"
 msgstr "バグ番号"
 
@@ -255,7 +154,7 @@ msgstr "重要度"
 
 #: ../ui/MyMainWindow.py:154
 msgid "Last Action"
-msgstr ""
+msgstr "最後の操作"
 
 #: ../ui/MyMainWindow.py:233
 msgid "<h2>No bugreports for package %s found!</h2>"
@@ -302,120 +201,135 @@ msgstr ""
 msgid "<h2>Fetching bugreport %s, please wait.</h2>"
 msgstr "<h2>バグレポート %s を取得中、お待ちください。</h2>"
 
-#: ../ui/SubmitDialog.py:184
-msgid "Please tell us some details..."
-msgstr "詳細をおしえてください・・・"
+#~ msgid "Reportbug NG"
+#~ msgstr "Reportbug NG"
 
-#: ../ui/SubmitDialog.py:186
-msgid "&Package:"
-msgstr "パッケージ(&P):"
-
-#: ../ui/SubmitDialog.py:188
-msgid "&Version:"
-msgstr "バージョン(&V):"
-
-#: ../ui/SubmitDialog.py:189
-msgid "&Mailclient:"
-msgstr "Mailclient(&M):"
-
-#: ../ui/SubmitDialog.py:190
-msgid "&OK"
-msgstr "OK(O)"
-
-#: ../ui/SubmitDialog.py:191
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: ../ui/SubmitDialog.py:192
-msgid "&Cancel"
-msgstr "Cancel(&C)"
-
-#: ../ui/SubmitDialog.py:193
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: ../ui/SubmitDialog.py:194
-msgid ""
-"<b>Please choose the mailclient you want to use to write the full bugreport."
-"</b>"
-msgstr ""
-"<b>バグレポートを報告するのに利用するメールクライアントを選択してください。</"
-"b>"
-
-#: ../ui/SubmitDialog.py:195
 #, fuzzy
-msgid "Normal Bugreport"
-msgstr "新規バグレポート(&N)"
+#~ msgid "Quits Reportbug NG"
+#~ msgstr "Reportbug NG"
 
-#: ../ui/SubmitDialog.py:196
-msgid "patch"
-msgstr "patch"
+#~ msgid "Provide additional information for the current bugreport"
+#~ msgstr "現在のバグレポートに追加の情報を提供する"
 
-#: ../ui/SubmitDialog.py:197
-msgid ""
-"A patch or some other easy procedure for fixing the bug is included in the "
-"bug logs. If there's a patch, but it doesn't resolve the bug adequately or "
-"causes some other problems, this tag should not be used."
-msgstr ""
-"バグ報告に、バグを修正するためのパッチや簡単な手順が含まれています。 パッチが"
-"あってもバグを適切に解決できない場合や別の問題を生じる場合は、 このタグは使う"
-"べきではありません。"
-
-#: ../ui/SubmitDialog.py:198
-msgid "l10n"
-msgstr "l10n"
-
-#: ../ui/SubmitDialog.py:199
-msgid "This bug is relevant to the localisation of the package."
-msgstr "<このバグは、パッケージの地域化に関するものです。"
-
-#: ../ui/SubmitDialog.py:200
-msgid "security"
-msgstr "security"
-
-#: ../ui/SubmitDialog.py:201
-msgid ""
-"This bug describes a security problem in a package (e.g., bad permissions "
-"allowing access to data that shouldn't be accessible; buffer overruns "
-"allowing people to control a system in ways they shouldn't be able to; "
-"denial of service attacks that should be fixed, etc). Most security bugs "
-"should also be set at critical or grave severity."
-msgstr ""
-"このバグはパッケージのセキュリティ問題を説明します (例: アクセスされてはいけ"
-"ないデータへのアクセスを許可する不正な許可属性がある、 やれるべきではない方法"
-"でシステムを制御できるバッファオーバーフローがある、 修正すべき DoS 攻撃の穴"
-"がある、等)。ほとんどのセキュリティバグは、critical (致命的) や grave (重大) "
-"の severity (重要度) も設定すべきです。"
-
-#: ../ui/SubmitDialog.py:202
-msgid "&Tags:"
-msgstr "タグ(&T):"
-
-#: ../ui/SubmitDialog.py:203
-msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
-msgstr ""
-"<b>短いサマリーを入力してください。重要度とタグは必須ではありません。</b>"
-
-#: ../ui/SubmitDialog.py:204
-msgid "&Summary:"
-msgstr "サマリー(&S):"
-
-#: ../ui/SubmitDialog.py:205
-msgid "S&everity:"
-msgstr "重要度(&e):"
-
-#: ../ui/SubmitDialog.py:206
 #, fuzzy
-msgid "&WNPP Bugreport"
-msgstr "新規バグレポート(&N)"
+#~ msgid "&Additional Info..."
+#~ msgstr "追加情報(&A)"
 
-#: ../ui/SubmitDialog.py:207
-msgid "WNPP &Action:"
-msgstr ""
+#~ msgid "Create new bugreport for current package"
+#~ msgstr "現在のパッケージのために新規バグレポートを作成する"
 
-#: ../ui/SubmitDialog.py:208
-msgid "Short Package &Description:"
-msgstr ""
+#, fuzzy
+#~ msgid "&New Bugreport..."
+#~ msgstr "新規バグレポート(&N)"
+
+#, fuzzy
+#~ msgid "Create a new WNPP bugreport"
+#~ msgstr "新規バグレポート(&N)"
+
+#, fuzzy
+#~ msgid "Close the current bugreport"
+#~ msgstr "新規バグレポート(&N)"
+
+#, fuzzy
+#~ msgid "&Close Bugreport..."
+#~ msgstr "新規バグレポート(&N)"
+
+#~ msgid "Enter a package name or a filter expression"
+#~ msgstr "パッケージ名かフィルター表現を入力してください"
+
+#, fuzzy
+#~ msgid "&Reportbug NG"
+#~ msgstr "Reportbug NG"
+
+#, fuzzy
+#~ msgid "&Bugreport"
+#~ msgstr "新規バグレポート(&N)"
+
+#~ msgid "Please tell us some details..."
+#~ msgstr "詳細をおしえてください・・・"
+
+#~ msgid "&Package:"
+#~ msgstr "パッケージ(&P):"
+
+#~ msgid "&Version:"
+#~ msgstr "バージョン(&V):"
+
+#~ msgid "&Mailclient:"
+#~ msgstr "Mailclient(&M):"
+
+#~ msgid "&OK"
+#~ msgstr "OK(O)"
+
+#~ msgid "Alt+O"
+#~ msgstr "Alt+O"
+
+#~ msgid "&Cancel"
+#~ msgstr "Cancel(&C)"
+
+#~ msgid "Alt+C"
+#~ msgstr "Alt+C"
+
+#~ msgid ""
+#~ "<b>Please choose the mailclient you want to use to write the full "
+#~ "bugreport.</b>"
+#~ msgstr ""
+#~ "<b>バグレポートを報告するのに利用するメールクライアントを選択してくださ"
+#~ "い。</b>"
+
+#, fuzzy
+#~ msgid "Normal Bugreport"
+#~ msgstr "新規バグレポート(&N)"
+
+#~ msgid "patch"
+#~ msgstr "patch"
+
+#~ msgid ""
+#~ "A patch or some other easy procedure for fixing the bug is included in "
+#~ "the bug logs. If there's a patch, but it doesn't resolve the bug "
+#~ "adequately or causes some other problems, this tag should not be used."
+#~ msgstr ""
+#~ "バグ報告に、バグを修正するためのパッチや簡単な手順が含まれています。 パッ"
+#~ "チがあってもバグを適切に解決できない場合や別の問題を生じる場合は、 このタ"
+#~ "グは使うべきではありません。"
+
+#~ msgid "l10n"
+#~ msgstr "l10n"
+
+#~ msgid "This bug is relevant to the localisation of the package."
+#~ msgstr "<このバグは、パッケージの地域化に関するものです。"
+
+#~ msgid "security"
+#~ msgstr "security"
+
+#~ msgid ""
+#~ "This bug describes a security problem in a package (e.g., bad permissions "
+#~ "allowing access to data that shouldn't be accessible; buffer overruns "
+#~ "allowing people to control a system in ways they shouldn't be able to; "
+#~ "denial of service attacks that should be fixed, etc). Most security bugs "
+#~ "should also be set at critical or grave severity."
+#~ msgstr ""
+#~ "このバグはパッケージのセキュリティ問題を説明します (例: アクセスされてはい"
+#~ "けないデータへのアクセスを許可する不正な許可属性がある、 やれるべきではな"
+#~ "い方法でシステムを制御できるバッファオーバーフローがある、 修正すべき DoS "
+#~ "攻撃の穴がある、等)。ほとんどのセキュリティバグは、critical (致命的) や "
+#~ "grave (重大) の severity (重要度) も設定すべきです。"
+
+#~ msgid "&Tags:"
+#~ msgstr "タグ(&T):"
+
+#~ msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+#~ msgstr ""
+#~ "<b>短いサマリーを入力してください。重要度とタグは必須ではありません。</b>"
+
+#~ msgid "&Summary:"
+#~ msgstr "サマリー(&S):"
+
+#~ msgid "S&everity:"
+#~ msgstr "重要度(&e):"
+
+#, fuzzy
+#~ msgid "&WNPP Bugreport"
+#~ msgstr "新規バグレポート(&N)"
 
 #, fuzzy
 #~ msgid "&Reportbug-NG"

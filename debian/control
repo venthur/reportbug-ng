@@ -3,9 +3,10 @@ Section: utils
 Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
 Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools
-Standards-Version: 3.7.2
+Standards-Version: 3.7.3
 XS-VCS-bzr: http://bzr.debian.org/bzr/reportbug-ng/ 
 XS-Python-Version: current
+Homepage: http://reportbug-ng.alioth.debian.org/
 
 Package: reportbug-ng
 Architecture: all
@@ -17,5 +18,3 @@ Description: An easy to use alternative to Debian's classic reportbug
  Reportbug-NG is a graphical interface using Qt for searching, filtering,
  reporting or manipulating bugs in Debian's Bug Tracking System. Reportbug-NG
  can search bug reports and display, create and close a bug report.
- .
- Homepage: http://reportbug-ng.alioth.debian.org/

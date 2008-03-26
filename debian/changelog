@@ -1,3 +1,14 @@
+reportbug-ng (0.2008.03.26) unstable; urgency=low
+
+  * Added Simplified Chinese translation, thanks Liu Yubao (Closes: #471056)
+  * Updated Japanese translation, thanks again Junichi Uekawa (Closes: #462616)
+
+  * Bumped standards version
+  * Removed superfluous dirs
+  * Added Homepage field
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 18:09:56 +0100
+
 reportbug-ng (0.2008.01.20) unstable; urgency=low
 
   * Escape quotes in arguments passed to MUA (if MUA_SYNTAX uses quotes)

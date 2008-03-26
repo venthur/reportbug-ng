@@ -1,0 +1,322 @@
+# Simplified Chinese translation for Reportbug-NG.
+# Copyright (C) 2008 Bastian Venthur <venthur at debian org>
+# Liu Yubao <yubao.liu@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Reportbug-NG 0.2008.01.20\n"
+"POT-Creation-Date: 2007-10-30 20:02+CET\n"
+"PO-Revision-Date: 2008-03-15 22:05+0800\n"
+"Last-Translator: Liu Yubao <yubao.liu@gmail.com>\n"
+"Language-Team: i18n-zh <i18n-zh@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ../ui/MainWindow.py:1231
+msgid "Reportbug NG"
+msgstr "Reportbug NG"
+
+#: ../ui/MainWindow.py:1232
+msgid "Quits Reportbug NG"
+msgstr "退出 Reportbug NG"
+
+#: ../ui/MainWindow.py:1233
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+#: ../ui/MainWindow.py:1234
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../ui/MainWindow.py:1235
+msgid "Provide additional information for the current bugreport"
+msgstr "为当前错误报告提供附加信息"
+
+#: ../ui/MainWindow.py:1236
+msgid "&Additional Info..."
+msgstr "附加信息(&A)"
+
+#: ../ui/MainWindow.py:1237
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: ../ui/MainWindow.py:1238
+msgid "Create new bugreport for current package"
+msgstr "为当前软件包创建新错误报告"
+
+#: ../ui/MainWindow.py:1239
+msgid "&New Bugreport..."
+msgstr "新建错误报告(&N)..."
+
+#: ../ui/MainWindow.py:1240
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../ui/MainWindow.py:1241
+msgid "Create a new WNPP bugreport"
+msgstr "新建 WNPP 报告"
+
+#: ../ui/MainWindow.py:1242
+msgid "&WNPP..."
+msgstr "&WNPP..."
+
+#: ../ui/MainWindow.py:1243
+msgid "Ctrl+W"
+msgstr "Ctrl+W"
+
+#: ../ui/MainWindow.py:1244
+msgid "Show or hide  the main menu"
+msgstr "显示或隐藏主菜单"
+
+#: ../ui/MainWindow.py:1245
+msgid "&Menubar"
+msgstr "菜单条(&M)"
+
+#: ../ui/MainWindow.py:1246
+msgid "Ctrl+M"
+msgstr "Ctrl+M"
+
+#: ../ui/MainWindow.py:1247
+msgid "Close the current bugreport"
+msgstr "关闭当前错误报告"
+
+#: ../ui/MainWindow.py:1248
+msgid "&Close Bugreport..."
+msgstr "关闭错误报告(&C)..."
+
+#: ../ui/MainWindow.py:1249
+msgid "Ctrl+L"
+msgstr "Ctrl+L"
+
+#: ../ui/MainWindow.py:1250
+msgid "Toolbar"
+msgstr "工具条"
+
+#: ../ui/MainWindow.py:1251
+msgid "Enter a package name or a filter expression"
+msgstr "输入包名或者过滤表达式"
+
+#: ../ui/MainWindow.py:1253
+msgid "&Reportbug NG"
+msgstr "Reportbug NG(&R)"
+
+#: ../ui/MainWindow.py:1255
+msgid "&Bugreport"
+msgstr "报告错误(&B)"
+
+#: ../ui/MyMainWindow.py:36
+msgid ""
+"<h2>Using Reportbug-NG</h2>\n"
+"<h3>Step 1: Finding Bugs</h3>\n"
+"<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>\n"
+"\n"
+"<p>The following queries are supported:\n"
+"<dl>\n"
+"<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>\n"
+"<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>\n"
+"<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>\n"
+"<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>\n"
+"<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>\n"
+"<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>\n"
+"<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>\n"
+"\n"
+"<h3>Step 2: Filtering Bugs</h3>\n"
+"<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and\n"
+"affects the packagename, bugnumber, summary, status and severity of a bug.</p>\n"
+"\n"
+"<h3>Step 3: Reporting Bugs</h3>\n"
+"<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the \"Additional Info\" button or you can create a new bugreport for the current package by clicking the \"New Bugreport\" button.</p>\n"
+msgstr ""
+"<h2>使用 Reportbug-NG</h2>\n"
+"<h3>第一步：查找错误报告</h3>\n"
+"<p>输入查询请求并按回车键。加载结果列表可能会花几秒钟。</p>\n"
+"\n"
+"<p>支持如下请求：\n"
+"<dl>\n"
+"<dt><code>包名</code></dt><dd>返回此软件包的所有错误报告</dd>\n"
+"<dt><code>错误报告编号</code></dt><dd>返回此编号的错误报告</dd>\n"
+"<dt><code>维护者电子邮箱地址</code></dt><dd>返回分配给此维护者的所有错误报告</dd>\n"
+"<dt><code>src:源码包名字</code></dt><dd>返货此源码包的所有错误报告</dd>\n"
+"<dt><code>from:报告者电子邮箱地址</code></dt><dd>返回此报告者提交的所有错误报告</dd>\n"
+"<dt><code>severity:严重级别</code></dt><dd>返回此严重级别的所有错误报告。警告：这个列表可能非常长！可识别的严重级别：critical, grave, serious, important, normal, minor 和 wishlist</dd>\n"
+"<dt><code>tag:标签名</code></dt><dd>返回所有标记了此标签的错误报告</dd>\n"
+"</dl>\n"
+"</p>\n"
+"\n"
+"<p>点击错误报告列表中的条目查看详情。点击错误报告中的超链接将在外部网页浏览器中打开它。</p>\n"
+"\n"
+"<h3>第二步：过滤错误报告</h3>\n"
+"<p>输入一些字符以过滤错误列表中的条目(不要按回车键)，过滤表达式是大小写无关的，作用于错误报告的软件包名字、错误报告编号、摘要、状态、严重级别。</p>\n"
+"\n"
+"<h3>第三步：报告错误</h3>\n"
+"<p>选择错误列表中的条目，再点击“附加信息”按钮为已有错误报告提供附加信息，或者点击“新建错误报告”按钮报告新错误。<p>\n"
+
+#: ../ui/MyMainWindow.py:66
+msgid "<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. <br> <b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. <br> <b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. <br> <b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. <br> <b>%(nor)s</b> the default value, applicable to most bugs. <br> <b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. <br> <b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations."
+msgstr ""
+"<b>%(cri)s</b> 使其它软件不能正常运行，或引起严重的数据丢失，或引入安全漏洞。<br>\n"
+"<b>%(gra)s</b> 软件不可用或者基本不可用，或引起数据丢失，或引入安全漏洞导致能获得此软件包用户的帐号。<br>\n"
+"<b>%(ser)s</b> 严重违背 Debian 准则(大体上指违背了 Debian 准则中的“必须”和“需要”条目)，或者从软件包维护者看来使得此版本的软件包不宜发布。<br>\n"
+"<b>%(imp)s</b> 严重影响此软件包的可用性，但并不会导致对所有用户都不可用。<br>\n"
+"<b>%(nor)s</b> 默认严重级别，适用于大部分错误报告。<br>\n"
+"<b>%(min)s</b> 不影响软件包正常使用，容易修复的问题。<br>\n"
+"<b>%(wis)s</b> 希望实现的特性，或者因当初设计局限难以修复的问题。"
+
+#: ../ui/MyMainWindow.py:150
+msgid "Bugnumber"
+msgstr "错误报告编号"
+
+#: ../ui/MyMainWindow.py:151
+msgid "Summary"
+msgstr "摘要"
+
+#: ../ui/MyMainWindow.py:152
+msgid "Status"
+msgstr "状态"
+
+#: ../ui/MyMainWindow.py:153
+msgid "Severity"
+msgstr "严重级别"
+
+#: ../ui/MyMainWindow.py:154
+msgid "Last Action"
+msgstr "最近反馈"
+
+#: ../ui/MyMainWindow.py:233
+msgid "<h2>No bugreports for package %s found!</h2>"
+msgstr "<h2>没有 %s 的错误报告！</h2>"
+
+#: ../ui/MyMainWindow.py:237
+msgid "<h2>Click on a bugreport to see the full text.</h2>"
+msgstr "<h2>点击错误报告查看详情。</h2>"
+
+#: ../ui/MyMainWindow.py:257
+msgid "<h2>Fetching bugreports of source package %s, please wait.</h2>"
+msgstr "<h2>正在查询 %s 源码包的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:260
+msgid "<h2>Fetching bugreports from submitter %s, please wait.</h2>"
+msgstr "<h2>正在查询提交者 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:263
+msgid "<h2>Fetching bugreports of severity %s, please wait.</h2>"
+msgstr "<h2>正在查询严重级别 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:266
+msgid "<h2>Fetching bugreports with tag %s, please wait.</h2>"
+msgstr "<h2>正在查询具有标签 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:269
+msgid "<h2>Fetching bugreports assigned to %s, please wait.</h2>"
+msgstr "<h2>正在查询分配给 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:272
+msgid "<h2>Fetching bugreport with bug number %s, please wait.</h2>"
+msgstr "<h2>正在查询编号为 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:275
+msgid "<h2>Fetching bugreports for package %s, please wait.</h2>"
+msgstr "<h2>正在查询软件包 %s 的错误报告，请稍候。</h2>"
+
+#: ../ui/MyMainWindow.py:354
+msgid "<h2>Fetching bugreport %s, please wait.</h2>"
+msgstr "<h2>正在查询错误报告 %s，请稍候。</h2>"
+
+#: ../ui/SubmitDialog.py:184
+msgid "Please tell us some details..."
+msgstr "请告诉我们一些细节..."
+
+#: ../ui/SubmitDialog.py:186
+msgid "&Package:"
+msgstr "软件包(&P)："
+
+#: ../ui/SubmitDialog.py:188
+msgid "&Version:"
+msgstr "版本(&V)："
+
+#: ../ui/SubmitDialog.py:189
+msgid "&Mailclient:"
+msgstr "邮件客户端(&M)："
+
+#: ../ui/SubmitDialog.py:190
+msgid "&OK"
+msgstr "确定(&O)"
+
+#: ../ui/SubmitDialog.py:191
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../ui/SubmitDialog.py:192
+msgid "&Cancel"
+msgstr "取消(&C)"
+
+#: ../ui/SubmitDialog.py:193
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../ui/SubmitDialog.py:194
+msgid "<b>Please choose the mailclient you want to use to write the full bugreport.</b>"
+msgstr "<b>请选择用来填写完整错误报告的邮件客户端。</b>"
+
+#: ../ui/SubmitDialog.py:195
+msgid "Normal Bugreport"
+msgstr "一般错误报告"
+
+#: ../ui/SubmitDialog.py:196
+msgid "patch"
+msgstr "补丁(patch)"
+
+#: ../ui/SubmitDialog.py:197
+msgid "A patch or some other easy procedure for fixing the bug is included in the bug logs. If there's a patch, but it doesn't resolve the bug adequately or causes some other problems, this tag should not be used."
+msgstr "在错误日志中包含一个补丁或者有助修正错误的描述。如果包含的补丁没有完全修正错误或者引入新的问题，那么不要使用此标签。"
+
+#: ../ui/SubmitDialog.py:198
+msgid "l10n"
+msgstr "本地化(L10N)"
+
+#: ../ui/SubmitDialog.py:199
+msgid "This bug is relevant to the localisation of the package."
+msgstr "与此软件包本地化相关的问题"
+
+#: ../ui/SubmitDialog.py:200
+msgid "security"
+msgstr "安全(security)"
+
+#: ../ui/SubmitDialog.py:201
+msgid "This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn't be accessible; buffer overruns allowing people to control a system in ways they shouldn't be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity."
+msgstr "这个错误报告描述对应软件包的安全问题，比如权限设置不当导致非法的数据访问，缓冲区溢出攻击以获得更高权限，拒绝服务攻击等等。大部分安全问题的严重级别应设置为 critical 或者 grave。"
+
+#: ../ui/SubmitDialog.py:202
+msgid "&Tags:"
+msgstr "标签(&T)："
+
+#: ../ui/SubmitDialog.py:203
+msgid "<b>Please enter a short summary. Severity and Tags are optional.</b>"
+msgstr "<b>请输入简短摘要。严重级别和标签可以不填。</b>"
+
+#: ../ui/SubmitDialog.py:204
+msgid "&Summary:"
+msgstr "摘要(&S)："
+
+#: ../ui/SubmitDialog.py:205
+msgid "S&everity:"
+msgstr "严重级别(e)："
+
+#: ../ui/SubmitDialog.py:206
+msgid "&WNPP Bugreport"
+msgstr "WNPP 报告(&W)"
+
+#: ../ui/SubmitDialog.py:207
+msgid "WNPP &Action:"
+msgstr "WNPP 操作(&A):"
+
+#: ../ui/SubmitDialog.py:208
+msgid "Short Package &Description:"
+msgstr "简单的软件包描述(&D)："
