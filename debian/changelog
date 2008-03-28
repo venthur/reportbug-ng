@@ -1,4 +1,4 @@
-reportbug-ng (0.2008.03.27) unstable; urgency=low
+reportbug-ng (0.2008.03.28) unstable; urgency=low
 
   * CC the secure-testing-team when submitting bugreports with tag "security"
     (Closes: #457690)
