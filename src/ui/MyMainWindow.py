@@ -386,6 +386,7 @@ class MyMainWindow(Form):
             dialog.checkBoxSecurity.setEnabled(0)
             dialog.checkBoxPatch.setEnabled(0)
             dialog.checkBoxL10n.setEnabled(0)
+            dialog.lineEditSummary.setText("Done: %s" % self.currentBug.summary)
             package = self.currentBug.package
             to = "%s-done@bugs.debian.org" % self.currentBug.nr
         else:
@@ -412,12 +413,14 @@ class MyMainWindow(Form):
             version = dialog.lineEditVersion.text()
             severity = dialog.comboBoxSeverity.currentText().lower()
             tags = []
+            cc = []
             if dialog.checkBoxL10n.isChecked():
                 tags.append("l10n")
             if dialog.checkBoxPatch.isChecked():
                 tags.append("patch")
             if dialog.checkBoxSecurity.isChecked():
                 tags.append("security")
+                cc.append("secure-testing-team@lists.alioth.debian.org")
             mua = str(dialog.comboBoxMUA.currentText().lower())
             self.settings.lastmua = mua
 
@@ -432,16 +435,18 @@ class MyMainWindow(Form):
             elif type == 'close':
                 severity = ""
                 subject = unicode(dialog.lineEditSummary.text())
-                body = prepare_minimal_body(package, version, severity, tags)
+                body = prepare_minimal_body(package, version, severity, tags, cc)
             # New or moreinfo
             else:
                 if type == 'moreinfo':
                     severity = ""
-                subject = unicode(dialog.lineEditSummary.text())
-                body = prepareBody(package, version, severity, tags)
+                subject = unicode("[%s] %s" % (package, dialog.lineEditSummary.text()))
+                body = prepareBody(package, version, severity, tags, cc)
+
+            if len(subject) == 0:
+                subject = "Please enter a subject before submitting the report."
             
             thread.start_new_thread( prepareMail, (mua, to, subject, body) )
-
     
     def bugreportAdditional_InfoAction_activated(self):
         """The user wants to provide additional info for the current bug."""

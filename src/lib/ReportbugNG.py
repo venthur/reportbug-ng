@@ -51,11 +51,33 @@ MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
 # Who needs a browser?
 WEBMAIL = ["googlemail"]
 
-SUPPORTED_MUA = MUA_SYNTAX.keys()
+
+def getAvailableMUAs():
+    """
+    Returns a tuple of strings with available MUAs on this system. The Webmails
+    are always available, since there is no way to check.
+    """
+    list = []
+    for mua in MUA_SYNTAX:
+        if mua in WEBMAIL:
+            list.append(mua)
+            continue
+        command = MUA_SYNTAX[mua].split()[0]
+        for p in os.defpath.split(os.pathsep):
+            if os.path.exists(os.path.join(p, command)):
+                list.append(mua)
+                continue
+    return list
+
+
+SUPPORTED_MUA = getAvailableMUAs()
 SUPPORTED_MUA.sort()
 
+
 def prepareMail(mua, to, subject, body):
-    """Tries to call MUA with given parameters"""
+    """
+    Tries to call MUA with given parameters.
+    """
     
     mua = mua.lower()
     
@@ -81,13 +103,13 @@ def prepareMail(mua, to, subject, body):
     if mua in WEBMAIL:
         callBrowser(command)
     else:
-        callMailClient(command)
+        status, output = callMailClient(command)
+   
     
-    
-def prepareBody(package, version=None, severity=None, tags=[]):
+def prepareBody(package, version=None, severity=None, tags=[], cc=[]):
     """Prepares the empty bugreport including body and system information."""
     
-    s = prepare_minimal_body(package, version, severity, tags)
+    s = prepare_minimal_body(package, version, severity, tags, cc)
 
     s += getSystemInfo() + "\n"
     s += getDebianReleaseInfo() + "\n"
@@ -96,7 +118,7 @@ def prepareBody(package, version=None, severity=None, tags=[]):
     return s
 
 
-def prepare_minimal_body(package, version=None, severity=None, tags=[]):
+def prepare_minimal_body(package, version=None, severity=None, tags=[], cc=[]):
     """Prepares the body of the empty bugreport."""
     
     s = ""
@@ -110,6 +132,8 @@ def prepare_minimal_body(package, version=None, severity=None, tags=[]):
         for tag in tags:
             s += " %s" % tag
         s += "\n"
+    for i in cc:
+            s += "X-Debbugs-CC: %s\n" % i
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
@@ -334,9 +358,11 @@ def callBrowser(url):
 
 
 def callMailClient(command):
-    """Calls the external mailclient via command."""
+    """
+    Calls the external mailclient via command and returns the tuple:
+    (status, output)
+    """
     logger.debug("Just before the MUA call: %s" % str(command))
     status, output = commands.getstatusoutput(command)
     logger.debug("After the  MUA call")
-
-    
+    return status, output

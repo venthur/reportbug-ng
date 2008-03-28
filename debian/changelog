@@ -1,3 +1,19 @@
+reportbug-ng (0.2008.03.27) unstable; urgency=low
+
+  * CC the secure-testing-team when submitting bugreports with tag "security"
+    (Closes: #457690)
+
+  * Prefix the package name in the subject of new bugreports and additional
+    information reports (Closes: #450708)
+
+  * Prefill the subject with "Done: bugreport-summary" in submitt dialog when
+    closing a bug (Closes: #435837)
+
+  * Rng now only makes MUAs available in the submit dialog, which are installed
+    on the system (Closes: #440568, #440567)
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 28 Mar 2008 12:46:19 +0100
+
 reportbug-ng (0.2008.03.26) unstable; urgency=low
 
   * Added Simplified Chinese translation, thanks Liu Yubao (Closes: #471056)
