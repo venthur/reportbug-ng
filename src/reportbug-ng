@@ -21,7 +21,11 @@ import gettext
 gettext.install('reportbug-ng', '/usr/share/locale', unicode=1)
 
 import sys, os
-sys.path = sys.path + [os.curdir, '/usr/share/reportbug-ng']
+
+# Dont' forget to comment the following line out before uploading to Debian!
+# See #484474
+#sys.path = sys.path + [os.curdir]
+sys.path = sys.path + ['/usr/share/reportbug-ng']
 
 from ui.MyMainWindow import MyMainWindow
 
