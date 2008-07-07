@@ -366,3 +366,22 @@ def callMailClient(command):
     status, output = commands.getstatusoutput(command)
     logger.debug("After the  MUA call")
     return status, output
+
+def translate_query(query):
+    """Translate query to a query the SOAP interface accepts."""
+
+    split = query.split(':', 1)
+    if (query.startswith('src:')):
+        return split
+    elif (query.startswith('from:')):
+        return 'submitter', split[1]
+    elif (query.startswith('severity:')):
+        return split
+    elif (query.startswith('tag:')):
+        return split
+    elif (query.find("@") != -1):
+        return 'maint', query
+    elif (re.match("^[0-9]*$", query)):
+        print "Hey, should have catched me in soapGetBugsByQuery"
+    else:
+        return 'package', query

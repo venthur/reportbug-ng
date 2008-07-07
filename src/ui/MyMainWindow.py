@@ -18,8 +18,8 @@
 
 from MainWindow import Form
 from SubmitDialog import SubmitDialog
-from lib.Bugreport import Bugreport
-from lib import DebianBTS
+from debianbts import Bugreport
+import debianbts
 from lib.ReportbugNG import *
 
 from qt import QListView, QListViewItem, QListViewItemIterator
@@ -210,7 +210,10 @@ class MyMainWindow(Form):
         """Loads all bug summaries of a package. (Intended to run as thread)"""
         
         bugs = []
-        bugs = DebianBTS.getBugsByQuery(query)
+        # was:
+        #bugs = DebianBTS.getBugsByQuery(query)
+        query = translate_query(query)
+        bugs = debianbts.get_status(debianbts.get_bugs(query))
         
         # Check if we are still the latest query
         if self.currentQuery != thread.get_ident():
@@ -335,15 +338,15 @@ class MyMainWindow(Form):
         """Loads the bugreport and writes the result to build in browser. (Intended to run in a thread)"""
             
         bug = self.bugs.get(bugnr, Bugreport(bugnr))
-        if len(bug.fulltext) == 0:
-            bug.fulltext = DebianBTS.getFullText(bugnr)
+        if not bug.fulltext:
+            bug.fulltext = debianbts.get_html_fulltext(bugnr)
         
         # While loading the bugreport the user switched to another bug, abort showing
         # the report.
         if bugnr != self.currentBug.nr:
             return
         
-        self.textBrowser.setText(self.currentBug.fulltext, DebianBTS.BTS_CGIBIN_URL)
+        self.textBrowser.setText(self.currentBug.fulltext)
 
 
     def listView_selectionChanged(self, listViewItem):

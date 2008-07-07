@@ -1,3 +1,10 @@
+reportbug-ng (0.2008.07.07) unstable; urgency=low
+
+  * Externalized Debian's BTS SOAP stuff to python-debianbts and depend on
+    this package instead of python-soappy
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 07 Jul 2008 23:21:36 +0200
+
 reportbug-ng (0.2008.06.04) unstable; urgency=high
 
   * Fixed possible code execution by preparing module files in os.curdir
