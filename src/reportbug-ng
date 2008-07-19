@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # reportbug-ng - Report a bug in Debian's BTS.
-# Copyright (C) 2007  Bastian Venthur
+# Copyright (C) 2007-2008  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,24 +20,11 @@
 import gettext
 gettext.install('reportbug-ng', '/usr/share/locale', unicode=1)
 
-import sys, os
-
-# Dont' forget to comment the following line out before uploading to Debian!
-# See #484474
-#sys.path = sys.path + [os.curdir]
-sys.path = sys.path + ['/usr/share/reportbug-ng']
-
-from ui.MyMainWindow import MyMainWindow
-
-import signal
-import qt
-from optparse import OptionParser
+import sys
 import logging
-
-from lib.Settings import Settings
-
-CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
-
+from optparse import OptionParser
+from PyQt4 import QtCore, QtGui
+from rnggui import RngGui
 
 if __name__ == "__main__":
     # Get Options
@@ -71,23 +58,11 @@ the Free Software Foundation; either version 2 of the License, or
                 'debug'    : logging.DEBUG,
                 'notset'   : logging.NOTSET
                 }.get(options.loglevel, logging.WARNING)
-        
+
     logging.basicConfig(level=loglevel, format='%(name)-12s %(levelname)-8s %(message)s')
     logging.info('Logger initialized with level %s.' % options.loglevel)
 
-    settings = Settings(CONFIGFILE)
-    settings.load()
-
-    app = qt.QApplication(sys.argv)
-    app.connect(app, qt.SIGNAL("lastWindowClosed()"), app, qt.SLOT("quit()"))
-    
-    mw = MyMainWindow(settings, args)
-    app.setMainWidget(mw)
-    mw.show()
-
-    signal.signal(signal.SIGINT, signal.SIG_DFL) 
-    app.exec_loop()
-    
-    settings.save()    
-   
-    
+    app = QtGui.QApplication(sys.argv)
+    gui = RngGui(args)
+    gui.show()
+    sys.exit(app.exec_())

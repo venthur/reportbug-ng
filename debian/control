@@ -2,16 +2,14 @@ Source: reportbug-ng
 Section: utils
 Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
-Build-Depends: debhelper (>= 5), python-central (>= 0.5), pyqt-tools
-Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 5), python-support (>= 0.6), pyqt4-dev-tools, libqt4-dev
+Standards-Version: 3.8.0
 XS-VCS-bzr: http://bzr.debian.org/bzr/reportbug-ng/ 
-XS-Python-Version: current
 Homepage: http://reportbug-ng.alioth.debian.org/
 
 Package: reportbug-ng
 Architecture: all
-Depends: ${python:Depends}, python-debianbts, python-qt3, xdg-utils
-XB-Python-Version: ${python:Versions}
+Depends: ${python:Depends}, python-debianbts, python-qt4, xdg-utils
 Description: An easy to use alternative to Debian's classic reportbug
  Graphical interface for interacting with the Debian Bug Tracking System.
  .

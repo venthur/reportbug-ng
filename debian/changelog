@@ -1,3 +1,21 @@
+reportbug-ng (1.0) unstable; urgency=low
+
+  The 'don't fear the 1.0'-release.
+
+  * Ported rng from qt3 to qt4 (Closes: #469332)
+  * Use Webkit as internal browser:
+    - Smoother fonts, CSS, etc (Closes: #417823)
+    - No crashes (Closes: #486212, #486743, #488122)
+    - passes acid1 and acid2 :P
+  * Merged several stuff fom lib to rnghelpers (Closes: #459439)
+  * Removed option to hide main menu (Closes: #434130, #433524, #433550)
+  
+  * Depends on python2.5
+  * Bumped standards version
+  * Moved from pycentral to python-support
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Jul 2008 13:45:24 +0200
+
 reportbug-ng (0.2008.07.07) unstable; urgency=low
 
   * Externalized Debian's BTS SOAP stuff to python-debianbts and depend on

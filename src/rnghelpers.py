@@ -1,5 +1,5 @@
-# BugreportNG.py - Reportbug-NG's main library.
-# Copyright (C) 2007  Bastian Venthur
+# rnghelpers.py - Various helpers for Reportbug-NG.
+# Copyright (C) 2007-2008  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,6 +23,8 @@ import webbrowser
 import urllib
 import thread
 import logging
+import ConfigParser
+
 
 
 logger = logging.getLogger("ReportbugNG")
@@ -51,6 +53,51 @@ MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
 # Who needs a browser?
 WEBMAIL = ["googlemail"]
 
+# Those strings must not be translated!
+WNPP_ACTIONS = ("RFP", "ITP", "RFH", "RFA", "O")
+SEVERITY = ("Critical", "Grave", "Serious", "Important", "Normal", "Minor", "Wishlist")
+
+SEVERITY_EXPLANATION = _("\
+<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. \
+<br> \
+<b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. \
+<br> \
+<b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. \
+<br> \
+<b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. \
+<br> \
+<b>%(nor)s</b> the default value, applicable to most bugs. \
+<br> \
+<b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. \
+<br> \
+<b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.") % {'cri':"Critical", 'gra':"Grave", 'ser':"Serious", 'imp':"Important", 'nor':"Normal", 'min':"Minor", 'wis':"Wishlist"}
+
+REPORTBUG_NG_INSTRUCTIONS = _("""\
+<h2>Using Reportbug-NG</h2>
+<h3>Step 1: Finding Bugs</h3>
+<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>
+
+<p>The following queries are supported:
+<dl>
+<dt><code>package</code></dt><dd>Returns all the bugs belonging to the PACKAGE</dd>
+<dt><code>bugnumber</code></dt><dd>Returns the bug with BUGNUMBER</dd>
+<dt><code>maintainer@foo.bar</code></dt><dd>Returns all the bugs assigned to MAINTAINER</dd>
+<dt><code>src:sourcepackage</code></dt><dd>Returns all the bugs belonging to the SOURCEPACKAGE</dd>
+<dt><code>from:submitter@foo.bar</code></dt><dd>Returns all the bugs filed by SUBMITTER</dd>
+<dt><code>severity:foo</code></dt><dd>Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist</dd>
+<dt><code>tag:bar</code></dt><dd>Returns all the bugs marked with TAG</dd>
+</dl>
+</p>
+
+<p>To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.</p>
+
+<h3>Step 2: Filtering Bugs</h3>
+<p>To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and
+affects the packagename, bugnumber, summary, status and severity of a bug.</p>
+
+<h3>Step 3: Reporting Bugs</h3>
+<p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
+""")
 
 def getAvailableMUAs():
     """
@@ -382,6 +429,99 @@ def translate_query(query):
     elif (query.find("@") != -1):
         return 'maint', query
     elif (re.match("^[0-9]*$", query)):
-        print "Hey, should have catched me in soapGetBugsByQuery"
+        return None, query
     else:
         return 'package', query
+
+    
+class Settings:
+    
+    CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
+    
+    def __init__(self, configfile):
+       
+        self.configfile = configfile
+        self.config = ConfigParser.ConfigParser()
+        self.config.read(self.configfile)
+        
+        # Users preferred mailclient
+        self.lastmua = "default"
+        
+        # Sorting option
+        self.sortByCol = 2
+        self.sortAsc = False
+        
+        # Mainwindow
+        self.x = 0
+        self.y = 0
+        self.width = 800
+        self.height = 600
+        self.menubar = True
+        
+        # ListView
+        self.bugnrWidth = 100
+        self.summaryWidth = 350
+        self.statusWidth = 100
+        self.severityWidth = 100
+        self.lastactionWidth = 100
+        
+        
+    def load(self):
+    
+        if self.config.has_option("general", "lastMUA"):
+            self.lastmua = self.config.get("general", "lastMUA")
+        if self.config.has_option("general", "sortByCol"):
+            self.sortByCol = self.config.getint("general", "sortByCol")
+        if self.config.has_option("general", "sortAsc"):
+            self.sortAsc = self.config.getboolean("general", "sortAsc")
+            
+        if self.config.has_option("mainwindow", "x"):
+            self.x = self.config.getint("mainwindow", "x")
+        if self.config.has_option("mainwindow", "y"):
+            self.y = self.config.getint("mainwindow", "y")
+        if self.config.has_option("mainwindow", "width"):
+            self.width = self.config.getint("mainwindow", "width")
+        if self.config.has_option("mainwindow", "height"):
+            self.height = self.config.getint("mainwindow", "height")
+        if self.config.has_option("mainwindow", "menubar"):
+            self.menubar = self.config.getboolean("mainwindow", "menubar")
+
+        if self.config.has_option("listview", "bugnrwidth"):
+            self.bugnrWidth = self.config.getint("listview", "bugnrwidth")
+        if self.config.has_option("listview", "summarywidth"):
+            self.summaryWidth = self.config.getint("listview", "summarywidth")
+        if self.config.has_option("listview", "statuswidth"):
+            self.statusWidth = self.config.getint("listview", "statuswidth")
+        if self.config.has_option("listview", "severitywidth"):
+            self.severityWidth = self.config.getint("listview", "severitywidth")
+        if self.config.has_option("listview", "lastactionwidth"):
+            self.lastactionWidth = self.config.getint("listview", "lastactionwidth")
+
+    
+    def save(self):
+
+        if not self.config.has_section("general"):
+            self.config.add_section("general")
+        self.config.set("general", "lastMUA", self.lastmua)
+        self.config.set("general", "sortByCol", self.sortByCol)
+        self.config.set("general", "sortAsc", self.sortAsc)
+        
+        if not self.config.has_section("mainwindow"):
+            self.config.add_section("mainwindow")
+        self.config.set("mainwindow", "x", self.x)
+        self.config.set("mainwindow", "y", self.y)
+        self.config.set("mainwindow", "width", self.width)
+        self.config.set("mainwindow", "height", self.height)
+        self.config.set("mainwindow", "menubar", self.menubar)
+        
+        if not self.config.has_section("listview"):
+            self.config.add_section("listview")
+        self.config.set("listview", "bugnrwidth", self.bugnrWidth)
+        self.config.set("listview", "summarywidth", self.summaryWidth)
+        self.config.set("listview", "statuswidth", self.statusWidth)
+        self.config.set("listview", "severitywidth", self.severityWidth)
+        self.config.set("listview", "lastactionwidth", self.lastactionWidth)
+        
+        # Write everything to configfile
+        self.config.write(open(self.configfile, "w"))
+

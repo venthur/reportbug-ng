@@ -1,17 +1,29 @@
-PYUIC = pyuic
+PYUIC = pyuic4
+RCC = rcc
+PYRCC = pyrcc4
 
-GUI_CLASSES = MainWindow.py \
-	SubmitDialog.py
+GUI_CLASSES = mainwindow.py \
+	submitdialog.py
+RCCS = icons.rcc
+PYRCCS = icons_rc.py
 
-all: $(GUI_CLASSES)
+
+all: $(GUI_CLASSES) $(RCCS) $(PYRCCS)
+
+%.rcc: %.qrc
+	$(RCC) $< -o $@
+
+%_rc.py: %.qrc
+	$(PYRCC) $< -o $@
 
 %.py: %.ui
-	$(PYUIC) -tr _ $< -o $@
+	$(PYUIC) $< -o $@
 
 install:
-	mkdir -p $(DESTDIR)/usr/share/reportbug-ng/ui
-	cp -r *.py $(DESTDIR)/usr/share/reportbug-ng/ui/
+	mkdir -p $(DESTDIR)/usr/share/python-support/reportbug-ng/ui
+	cp -r *.py $(DESTDIR)/usr/share/python-support/reportbug-ng/ui/
 
 clean:
-	rm -f $(GUI_CLASSES)
+	rm -f $(GUI_CLASSES) $(RCCS) $(PYRCCS)
 	rm -f *.pyc
+

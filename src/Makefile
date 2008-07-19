@@ -1,4 +1,4 @@
-DIRS = ui lib po
+DIRS = ui po
 
 all:
 	for i in $(DIRS); do \
@@ -9,6 +9,9 @@ install:
 	for i in $(DIRS); do \
 	    $(MAKE) install -C $$i; \
 	done
+
+	mkdir -p $(DESTDIR)/usr/share/python-support/reportbug-ng
+	cp *.py $(DESTDIR)/usr/share/python-support/reportbug-ng/
 
 	mkdir -p $(DESTDIR)/usr/bin
 	cp reportbug-ng $(DESTDIR)/usr/bin/reportbug-ng
@@ -25,3 +28,4 @@ clean:
 	for i in $(DIRS); do \
 	    $(MAKE) clean -C $$i; \
 	done
+	rm -f *.pyc

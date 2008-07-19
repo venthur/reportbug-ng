@@ -61,10 +61,6 @@ install: build
 
 # Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs 
@@ -77,7 +73,7 @@ binary-arch: build install
 #	dh_installemacsen
 #	dh_installpam
 #	dh_installmime
-	dh_pycentral
+	dh_pysupport -V2.5
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
@@ -93,6 +89,9 @@ binary-arch: build install
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+# Build architecture-dependent files here.
+binary-arch: build install
 
 binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install configure

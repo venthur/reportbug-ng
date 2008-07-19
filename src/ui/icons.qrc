@@ -1,0 +1,12 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+<file>edit-clear-locationbar-rtl.png</file>
+<file>face-angel.png</file>
+<file>face-devilish.png</file>
+<file>face-glasses.png</file>
+<file>face-smile-gearhead-female.png</file>
+<file>tools-report-bug.png</file>
+<file>window-close.png</file>
+</qresource>
+</RCC>
