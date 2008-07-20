@@ -1,3 +1,4 @@
+# encoding: utf8
 # rnghelpers.py - Various helpers for Reportbug-NG.
 # Copyright (C) 2007-2008  Bastian Venthur
 #
@@ -24,7 +25,7 @@ import urllib
 import thread
 import logging
 import ConfigParser
-
+import tempfile
 
 
 logger = logging.getLogger("ReportbugNG")
@@ -52,6 +53,10 @@ MUA_NO_URLQUOTE = ["default", "kmail"]
 MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
 # Who needs a browser?
 WEBMAIL = ["googlemail"]
+
+# HACK: don't know the maximum lenght of a command yet
+MAX_BODY_LEN = 10000
+
 
 # Those strings must not be translated!
 WNPP_ACTIONS = ("RFP", "ITP", "RFH", "RFA", "O")
@@ -122,7 +127,8 @@ SUPPORTED_MUA.sort()
 
 
 def prepareMail(mua, to, subject, body):
-    """
+    """    print output
+
     Tries to call MUA with given parameters.
     """
     
@@ -151,6 +157,14 @@ def prepareMail(mua, to, subject, body):
         callBrowser(command)
     else:
         status, output = callMailClient(command)
+        if status == 0:
+            return
+        # Great, calling the MUA failed, probably due too long output of the
+        # /usr/share/bug/$package/script...
+        logger.warning("Grr! Calling the MUA failed. Length of the command is: %s" % str(len(command)))
+        body = body[:MAX_BODY_LEN] + "\n\n[ MAILBODY EXCEEDED REASONABLE LENGTH, OUTPUT TRUNCATED ]"
+        prepareMail(mua, to, subject, body)
+            
    
     
 def prepareBody(package, version=None, severity=None, tags=[], cc=[]):
@@ -161,6 +175,23 @@ def prepareBody(package, version=None, severity=None, tags=[], cc=[]):
     s += getSystemInfo() + "\n"
     s += getDebianReleaseInfo() + "\n"
     s += getPackageInfo(package) + "\n"
+    
+    s2 = getPackageScriptOutput(package) + "\n"
+    if len(s+s2) > MAX_BODY_LEN:
+        logger.warning("Mailbody to long for os.pipe")
+        fd, fname = tempfile.mkstemp(".txt", "reportbug-ng-%s-" % package)
+        f = os.fdopen(fd, "w")
+        f.write(s2)
+        f.close()
+        s2 = """
+-8<---8<---8<---8<---8<---8<---8<---8<---8<--
+Please attach the file: 
+  %s 
+to the mail. I'd do it myself if the output wasn't too long to handle.
+
+  Thank you!
+->8--->8--->8--->8--->8--->8--->8--->8--->8--""" % fname
+    s += s2
 
     return s
 
@@ -291,6 +322,24 @@ def getPackageInfo(package):
             s += depname.ljust(pwidth) +depversion.rjust(vwidth)+" | "+ instversions[depname] + "\n"
     
     return s
+
+
+def getPackageScriptOutput(package):
+    """Runs the package's script in /usr/share/bug/packagename/script and
+       returns the output."""
+    output = ''
+    path = "/usr/share/bug/" + str(package) + "/script"
+    xterm_path = "/usr/bin/x-terminal-emulator"
+    # pop up a terminal if we can because scripts can be interactive
+    if os.path.exists(xterm_path):
+        cmd = xterm_path + " -e "
+    else:
+        cmd = ""
+    cmd += path + " 3>&1"
+    if os.path.exists(path):
+        output += "--- Output from package bug script ---\n"
+        output += commands.getoutput(cmd)
+    return output
 
 
 def getInstalledPackageVersion(package):

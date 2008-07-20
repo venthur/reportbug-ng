@@ -64,13 +64,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QWebView" name="webView" >
-       <property name="url" >
-        <url>
-         <string>http://reportbug-ng.alioth.debian.org/</string>
-        </url>
-       </property>
-      </widget>
+      <widget class="QWebView" name="webView" />
      </widget>
     </item>
    </layout>
@@ -180,7 +174,7 @@
     <string>Close the current Bugreport.</string>
    </property>
    <property name="shortcut" >
-    <string>Ctrl+C</string>
+    <string>Ctrl+L</string>
    </property>
   </action>
   <action name="actionNewWnpp" >
@@ -236,5 +230,22 @@
  <resources>
   <include location="icons.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>473</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
