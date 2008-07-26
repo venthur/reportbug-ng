@@ -3,7 +3,9 @@ RCC = rcc
 PYRCC = pyrcc4
 
 GUI_CLASSES = mainwindow.py \
-	submitdialog.py
+	submitdialog.py \
+	settings.py
+
 RCCS = icons.rcc
 PYRCCS = icons_rc.py
 

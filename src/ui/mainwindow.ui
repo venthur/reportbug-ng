@@ -84,6 +84,8 @@
     <property name="title" >
      <string>Reportbug-NG</string>
     </property>
+    <addaction name="actionSettings" />
+    <addaction name="separator" />
     <addaction name="actionQuit" />
    </widget>
    <widget class="QMenu" name="menuBugreport" >
@@ -217,6 +219,15 @@
    </property>
    <property name="shortcut" >
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSettings" >
+   <property name="icon" >
+    <iconset resource="icons.qrc" >
+     <normaloff>:/tools-report-bug.png</normaloff>:/tools-report-bug.png</iconset>
+   </property>
+   <property name="text" >
+    <string>settings</string>
    </property>
   </action>
  </widget>

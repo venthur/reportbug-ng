@@ -492,9 +492,24 @@ class Settings:
         self.configfile = configfile
         self.config = ConfigParser.ConfigParser()
         self.config.read(self.configfile)
+        self.load_defaults()
+
         
+    def load_defaults(self):
         # Users preferred mailclient
         self.lastmua = "default"
+        
+        self.script = True
+        self.presubj = True
+        
+        self.c_wishlist = "#808000"
+        self.c_minor = "#008000"
+        self.c_normal = "#000000"
+        self.c_important = "#ff0000"
+        self.c_serious = "#800080"
+        self.c_grave = "#800080"
+        self.c_critical = "#800080"
+        self.c_resolved = "#a0a0a4"
         
         # Sorting option
         self.sortByCol = 2
@@ -523,6 +538,28 @@ class Settings:
             self.sortByCol = self.config.getint("general", "sortByCol")
         if self.config.has_option("general", "sortAsc"):
             self.sortAsc = self.config.getboolean("general", "sortAsc")
+
+        if self.config.has_option("general", "script"):
+            self.script = self.config.getboolean("general", "script")
+        if self.config.has_option("general", "presubj"):
+            self.presubj = self.config.getboolean("general", "presubj")
+ 
+        if self.config.has_option("general", "wishlist"):
+            self.c_wishlist = self.config.get("general", "wishlist")
+        if self.config.has_option("general", "minor"):
+            self.c_minor = self.config.get("general", "minor")
+        if self.config.has_option("general", "normal"):
+            self.c_normal = self.config.get("general", "normal")
+        if self.config.has_option("general", "important"):
+            self.c_important = self.config.get("general", "important")
+        if self.config.has_option("general", "serious"):
+            self.c_serious = self.config.get("general", "serious")
+        if self.config.has_option("general", "grave"):
+            self.c_grave = self.config.get("general", "grave")
+        if self.config.has_option("general", "critical"):
+            self.c_critical = self.config.get("general", "critical")
+        if self.config.has_option("general", "resolved"):
+            self.c_resolved = self.config.get("general", "resolved")
             
         if self.config.has_option("mainwindow", "x"):
             self.x = self.config.getint("mainwindow", "x")
@@ -554,6 +591,19 @@ class Settings:
         self.config.set("general", "lastMUA", self.lastmua)
         self.config.set("general", "sortByCol", self.sortByCol)
         self.config.set("general", "sortAsc", self.sortAsc)
+
+        self.config.set("general", "script", self.script)
+        self.config.set("general", "presubj", self.presubj)
+        
+        self.config.set("general", "wishlist", self.c_wishlist)
+        self.config.set("general", "minor", self.c_minor)
+        self.config.set("general", "normal", self.c_normal)
+        self.config.set("general", "important", self.c_important)
+        self.config.set("general", "serious", self.c_serious)
+        self.config.set("general", "grave", self.c_grave)
+        self.config.set("general", "critical", self.c_critical)
+        self.config.set("general", "resolved",self.c_resolved)
+
         
         if not self.config.has_section("mainwindow"):
             self.config.add_section("mainwindow")
@@ -570,6 +620,8 @@ class Settings:
         self.config.set("listview", "statuswidth", self.statusWidth)
         self.config.set("listview", "severitywidth", self.severityWidth)
         self.config.set("listview", "lastactionwidth", self.lastactionWidth)
+
+
         
         # Write everything to configfile
         self.config.write(open(self.configfile, "w"))

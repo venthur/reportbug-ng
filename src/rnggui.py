@@ -25,6 +25,8 @@ from ui import mainwindow
 from ui import submitdialog
 import rnghelpers as rng
 import debianbts as bts
+from rngsettings import RngSettings
+
 
 class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     
@@ -44,6 +46,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.actionCloseBugreport, QtCore.SIGNAL("triggered()"), self.close_bugreport)
         QtCore.QObject.connect(self.actionNewWnpp, QtCore.SIGNAL("triggered()"), self.new_wnpp)
         QtCore.QObject.connect(self.actionClearLineEdit, QtCore.SIGNAL("triggered()"), self.clear_lineedit)
+        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings)
 
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("textChanged(const QString&)"), self.lineedit_text_changed)
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("returnPressed()"), self.lineedit_return_pressed)
@@ -158,6 +161,12 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.bugs = bts.get_status(list)
         self.model.set_elements(self.bugs)
         self.tableView.resizeRowsToContents()
+        
+    
+    def settings(self):
+        s = RngSettings(self.settings)
+        if s.exec_() != s.Accepted:
+            self.settings = s.settings
 
 
     def _stateChanged(self, package, bug):
@@ -310,6 +319,7 @@ class TableModel(QtCore.QAbstractTableModel):
     
     def __init__(self, parent = None):
         QtCore.QAbstractTableModel.__init__(self, parent)
+        self.parent = parent
         self.logger = logging.getLogger("TableModel")
         self.elements = []
     
@@ -329,16 +339,20 @@ class TableModel(QtCore.QAbstractTableModel):
             severity = self.elements[index.row()].severity.lower()
             status = self.elements[index.row()].status.lower()
             c = QtCore.Qt.black
-            if severity in ("grave", "serious", "critical"):
-                c = QtCore.Qt.darkMagenta
+            if severity == "grave":
+                c = self.parent.settings.c_grave
+            elif severity == "serious":
+                c = self.parent.settings.c_serious
+            elif severity == "critical":
+                c = self.parent.settings.c_critical
             elif severity == "important":
-                c = QtCore.Qt.red
+                c = self.parent.settings.c_important
             elif severity == "minor":
-                c = QtCore.Qt.darkGreen
+                c = self.parent.settings.c_minor
             elif severity == "wishlist":
-                c = QtCore.Qt.darkYellow
+                c = self.parent.settings.c_wishlist
             if status == "resolved":
-                c = QtCore.Qt.gray
+                c = self.parent.settings.c_resolved
             return QtCore.QVariant(QtGui.QColor(c))
         if role != QtCore.Qt.DisplayRole:
             return QtCore.QVariant()
