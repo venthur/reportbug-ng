@@ -227,7 +227,10 @@
      <normaloff>:/tools-report-bug.png</normaloff>:/tools-report-bug.png</iconset>
    </property>
    <property name="text" >
-    <string>settings</string>
+    <string>&amp;Settings</string>
+   </property>
+   <property name="statusTip" >
+    <string>Change Reportbug-NG's settings.</string>
    </property>
   </action>
  </widget>

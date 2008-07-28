@@ -167,7 +167,7 @@ def prepareMail(mua, to, subject, body):
             
    
     
-def prepareBody(package, version=None, severity=None, tags=[], cc=[]):
+def prepareBody(package, version=None, severity=None, tags=[], cc=[], script=True):
     """Prepares the empty bugreport including body and system information."""
     
     s = prepare_minimal_body(package, version, severity, tags, cc)
@@ -175,6 +175,9 @@ def prepareBody(package, version=None, severity=None, tags=[], cc=[]):
     s += getSystemInfo() + "\n"
     s += getDebianReleaseInfo() + "\n"
     s += getPackageInfo(package) + "\n"
+    
+    if not script:
+        return s
     
     s2 = getPackageScriptOutput(package) + "\n"
     if len(s+s2) > MAX_BODY_LEN:
@@ -435,6 +438,16 @@ def getDebianReleaseInfo():
         debinfo += "%+5s %-15s %s \n" % i
 
     return debinfo
+
+
+def get_presubj(package):
+    path = "/usr/share/bug/" + str(package) + "/presubj"
+    if not os.path.exists(path):
+        return None
+    f = file(path)
+    c = f.read()
+    f.close()
+    return c
 
 
 def callBrowser(url):

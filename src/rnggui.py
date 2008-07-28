@@ -193,9 +193,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 #        dialog.setupUi()
         dialog = SubmitDialog()
         
+        dialog.checkBox_script.setChecked(self.settings.script)
+        dialog.checkBox_presubj.setChecked(self.settings.presubj)
+        
         if type == 'wnpp':
             dialog.wnpp_groupBox.setEnabled(1)
             dialog.wnpp_groupBox.setChecked(1)
+            dialog.groupBox_other.setEnabled(0)
             package = self.currentPackage
             to = "submit@bugs.debian.org"
         elif type == 'newbug':
@@ -212,6 +216,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             package = self.currentBug.package
             to = "%s@bugs.debian.org" % self.currentBug.nr
         elif type == 'close':
+            dialog.groupBox_other.setEnabled(0)
             dialog.wnpp_groupBox.setEnabled(0)
             dialog.comboBoxSeverity.setEnabled(0)
             dialog.checkBoxSecurity.setEnabled(0)
@@ -228,10 +233,6 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         dialog.lineEditVersion.setText(version)
         for action in rng.WNPP_ACTIONS:
             dialog.wnpp_comboBox.addItem(action)
-        for mua in rng.SUPPORTED_MUA:
-            dialog.comboBoxMUA.addItem(mua.title())
-        if self.settings.lastmua in rng.SUPPORTED_MUA:
-            dialog.comboBoxMUA.setCurrentIndex(rng.SUPPORTED_MUA.index(self.settings.lastmua))
         for sev in rng.SEVERITY:
             dialog.comboBoxSeverity.addItem(sev)
         # Set default severity to 'normal'
@@ -252,8 +253,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             if dialog.checkBoxSecurity.isChecked():
                 tags.append("security")
                 cc.append("secure-testing-team@lists.alioth.debian.org")
-            mua = unicode(dialog.comboBoxMUA.currentText()).lower()
-            self.settings.lastmua = mua
+            mua = self.settings.lastmua
+            script = dialog.checkBox_script.isChecked()
+            presubj = dialog.checkBox_presubj.isChecked()
 
             body, subject = '', ''
             # WNPP Bugreport
@@ -272,11 +274,15 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                 if type == 'moreinfo':
                     severity = ""
                 subject = unicode("[%s] %s" % (package, dialog.lineEditSummary.text()))
-                body = rng.prepareBody(package, version, severity, tags, cc)
+                body = rng.prepareBody(package, version, severity, tags, cc, script)
 
             if len(subject) == 0:
                 subject = "Please enter a subject before submitting the report."
             
+            if presubj:
+                txt = rng.get_presubj(package)
+                if txt:
+                    QtGui.QMessageBox.information(self, "Information", txt)
             thread.start_new_thread( rng.prepareMail, (mua, to, subject, body) )
             
             

@@ -5,12 +5,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>545</width>
+    <width>546</width>
     <height>555</height>
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Dialog</string>
+   <string>Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3" >
    <item>
@@ -41,7 +41,7 @@
       <item>
        <widget class="QLabel" name="label_2" >
         <property name="text" >
-         <string>Click to select a different colour:</string>
+         <string>Click to select a different color:</string>
         </property>
        </widget>
       </item>
@@ -117,14 +117,14 @@
       <item>
        <widget class="QCheckBox" name="checkBox_script" >
         <property name="text" >
-         <string>Send additional bugscript information if available (reccomended)</string>
+         <string>Send additional bugscript information if available (recommended)</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QCheckBox" name="checkBox_presubj" >
         <property name="text" >
-         <string>Show package specivic information before sending bugreport if available (reccomended)</string>
+         <string>Show package specific information before sending bugreport if available (recommended)</string>
         </property>
        </widget>
       </item>

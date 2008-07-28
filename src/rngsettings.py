@@ -20,6 +20,7 @@ import logging
 from PyQt4 import QtCore, QtGui
 
 from ui import settings
+import rnghelpers as rng
 from rnghelpers import Settings
 
 class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
@@ -44,6 +45,7 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         QtCore.QObject.connect(self.pushButton_resolved, QtCore.SIGNAL("clicked()"), self._change_resolved_color)
         QtCore.QObject.connect(self.checkBox_presubj, QtCore.SIGNAL("stateChanged(int)"), self._presubj_changed)
         QtCore.QObject.connect(self.checkBox_script, QtCore.SIGNAL("stateChanged(int)"), self._script_changed)
+        QtCore.QObject.connect(self.comboBox_mua, QtCore.SIGNAL("activated(int)"), self._mua_changed)
 
 
         self.load_settings()
@@ -52,6 +54,10 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
     def load_settings(self):
         
         # mua
+        for mua in rng.SUPPORTED_MUA:
+            self.comboBox_mua.addItem(mua.title())
+        if self.settings.lastmua in rng.SUPPORTED_MUA:
+            self.comboBox_mua.setCurrentIndex(rng.SUPPORTED_MUA.index(self.settings.lastmua))
         
         # colors
         buttoncolor = [(self.pushButton_wishlist, self.settings.c_wishlist), 
@@ -124,3 +130,8 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
             self.settings.script = True
         else:
             self.settings.script = False
+    
+    def _mua_changed(self, index):
+        mua = unicode(self.comboBox_mua.currentText()).lower()
+        self.settings.lastmua = mua
+
