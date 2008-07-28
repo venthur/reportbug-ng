@@ -1,3 +1,14 @@
+reportbug-ng (1.1) unstable; urgency=low
+
+  * Added settings window which allows to chose the default MUA, the colors
+    for the table and other stuff
+  * Show presubj of a package if available (Closes: #417256)
+  * Made script-output and the appearance of the presubj optional through
+    settings
+  * Correctly load/save settings for the column and sortorder of the tableview
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 28 Jul 2008 12:25:18 +0200
+
 reportbug-ng (1.0.1) unstable; urgency=high
 
   * Send the output of /usr/share/bug/PACKAGE/script if available

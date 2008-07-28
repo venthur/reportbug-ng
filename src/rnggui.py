@@ -290,13 +290,15 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 
         self.resize(self.settings.width, self.settings.height)
         self.move(self.settings.x, self.settings.y)
-        #self.reportbug_ngMenubarAction.setOn(self.settings.menubar)
         self.tableView.horizontalHeader().resizeSection(0, self.settings.bugnrWidth)
         self.tableView.horizontalHeader().resizeSection(1, self.settings.summaryWidth)
         self.tableView.horizontalHeader().resizeSection(2, self.settings.statusWidth)
         self.tableView.horizontalHeader().resizeSection(3, self.settings.severityWidth)
         self.tableView.horizontalHeader().resizeSection(4, self.settings.lastactionWidth)
-#           self.listView.setSorting(self.settings.sortByCol, self.settings.sortAsc)
+        order = QtCore.Qt.DescendingOrder
+        if self.settings.sortAsc:
+            order = QtCore.Qt.AscendingOrder
+        self.tableView.horizontalHeader().setSortIndicator(self.settings.sortByCol, order)
 
     def _get_settings(self):
         p = self.pos()
@@ -305,10 +307,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.settings.y = p.y()
         self.settings.width = s.width()
         self.settings.height = s.height()
-        #self.settings.menubar = self.reportbug_ngMenubarAction.isOn()
-        #self.settings.sortByCol = self.tableView.sortColumn()
-        #self.settings.sortAsc = {Qt.Ascending : True, 
-        #                         Qt.Descending : False}[self.listView.sortOrder()]
+        self.settings.sortByCol = self.tableView.horizontalHeader().sortIndicatorSection()
+        self.settings.sortAsc = {QtCore.Qt.AscendingOrder : True, 
+                                 QtCore.Qt.DescendingOrder : False}[self.tableView.horizontalHeader().sortIndicatorOrder()]
         self.settings.bugnrWidth = self.tableView.columnWidth(0)
         self.settings.summaryWidth = self.tableView.columnWidth(1)
         self.settings.statusWidth = self.tableView.columnWidth(2)
