@@ -7,9 +7,10 @@ reportbug-ng (1.1.1) unstable; urgency=low
     - MUA strings now translateable (Closes: #445569)
   Thank you very much Pino!
 
+  * Added Russian and Traditional Chinese translations (Closes: #498335, #476298)
+    - Thanks Yuri Kozlov and Rex Tsai
 
-
- -- Bastian Venthur <venthur@debian.org>  Sun, 14 Sep 2008 12:48:04 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sun, 14 Sep 2008 13:03:34 +0200
 
 reportbug-ng (1.1) unstable; urgency=low
 
