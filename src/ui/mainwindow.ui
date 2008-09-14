@@ -10,15 +10,15 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Reportbug-NG</string>
+   <string>Reportbug NG</string>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>69</y>
+     <y>68</y>
      <width>948</width>
-     <height>590</height>
+     <height>592</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout" >
@@ -77,20 +77,18 @@
      <x>0</x>
      <y>0</y>
      <width>948</width>
-     <height>30</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuReportbug_NG" >
     <property name="title" >
-     <string>Reportbug-NG</string>
+     <string>&amp;File</string>
     </property>
-    <addaction name="actionSettings" />
-    <addaction name="separator" />
     <addaction name="actionQuit" />
    </widget>
    <widget class="QMenu" name="menuBugreport" >
     <property name="title" >
-     <string>Bugreport</string>
+     <string>&amp;Bugs</string>
     </property>
     <addaction name="actionNewBugreport" />
     <addaction name="actionAdditionalInfo" />
@@ -98,16 +96,31 @@
     <addaction name="separator" />
     <addaction name="actionNewWnpp" />
    </widget>
+   <widget class="QMenu" name="menuEdit" >
+    <property name="title" >
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionSettings" />
+   </widget>
+   <widget class="QMenu" name="menu_Help" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout" />
+    <addaction name="actionAboutQt" />
+   </widget>
    <addaction name="menuReportbug_NG" />
+   <addaction name="menuEdit" />
    <addaction name="menuBugreport" />
+   <addaction name="menu_Help" />
   </widget>
   <widget class="QStatusBar" name="statusbar" >
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>659</y>
+     <y>660</y>
      <width>948</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -115,7 +128,7 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>29</y>
      <width>948</width>
      <height>39</height>
     </rect>
@@ -222,15 +235,21 @@
    </property>
   </action>
   <action name="actionSettings" >
-   <property name="icon" >
-    <iconset resource="icons.qrc" >
-     <normaloff>:/tools-report-bug.png</normaloff>:/tools-report-bug.png</iconset>
-   </property>
    <property name="text" >
     <string>&amp;Settings</string>
    </property>
    <property name="statusTip" >
     <string>Change Reportbug-NG's settings.</string>
+   </property>
+  </action>
+  <action name="actionAbout" >
+   <property name="text" >
+    <string>About Reportbug NG</string>
+   </property>
+  </action>
+  <action name="actionAboutQt" >
+   <property name="text" >
+    <string>About Qt</string>
    </property>
   </action>
  </widget>

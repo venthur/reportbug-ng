@@ -47,6 +47,21 @@ MUA_SYNTAX = {
     "pine" : 'pine -url ' + RFC_MAILTO,
 #    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
               }
+MUA_STRINGS = {
+    "default" : _("Default"),
+    "icedove" : _("Icedove"),
+    "iceape" : _("Iceape"),
+    "evolution" : _("Evolution"),
+    "kmail" : _("KMail"),
+#    "opera" : _("Opera"),
+    "sylpheed" : _("Sylpheed"),
+    "sylpheed-claws" : _("Sylpheed Claws"),
+    "sylpheed-claws-gtk2" : _("Sylpheed Claws (Gtk 2)"),
+    "mutt" : _("Mutt"),
+    "mutt-ng" : _("Mutt NG"),
+    "pine" : _("Pine"),
+#    "googlemail" : _("Google")
+              }
 # Don't urllib.quote() their strings
 MUA_NO_URLQUOTE = ["default", "kmail"]            
 # Who needs a terminal?
@@ -121,6 +136,14 @@ def getAvailableMUAs():
                 continue
     return list
 
+def getMUAString(mua):
+    """
+    Returns the user-visible string for the specified MUA.
+    """
+    if mua in MUA_STRINGS:
+        return MUA_STRINGS[mua]
+
+    return mua
 
 SUPPORTED_MUA = getAvailableMUAs()
 SUPPORTED_MUA.sort()

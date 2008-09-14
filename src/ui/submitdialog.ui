@@ -5,80 +5,75 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>546</width>
-    <height>517</height>
+    <width>621</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Please tell us some details...</string>
+   <string>Bug report details</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3" >
-   <item row="0" column="0" >
-    <widget class="QLabel" name="textLabel1_2" >
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QLabel" name="label" >
      <property name="text" >
-      <string>&amp;Package:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>lineEditPackage</cstring>
+      <string>Please add details about the bug report you want to report.</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="1" >
-    <widget class="QLineEdit" name="lineEditPackage" >
-     <property name="enabled" >
-      <bool>true</bool>
-     </property>
-     <property name="text" >
-      <string/>
-     </property>
-    </widget>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3" >
+     <item row="0" column="0" >
+      <widget class="QLabel" name="textLabel1_2" >
+       <property name="text" >
+        <string>&amp;Package:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>lineEditPackage</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QLineEdit" name="lineEditPackage" >
+       <property name="enabled" >
+        <bool>true</bool>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="textLabel2_2" >
+       <property name="text" >
+        <string>&amp;Version:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>lineEditVersion</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QLineEdit" name="lineEditVersion" >
+       <property name="text" >
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="1" column="0" >
-    <widget class="QLabel" name="textLabel2_2" >
-     <property name="text" >
-      <string>&amp;Version:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>lineEditVersion</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" >
-    <widget class="QLineEdit" name="lineEditVersion" >
-     <property name="text" >
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" >
-    <spacer name="spacer4_2" >
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0" >
-      <size>
-       <width>20</width>
-       <height>16</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="0" colspan="2" >
+   <item>
     <widget class="QGroupBox" name="wnpp_groupBox" >
      <property name="title" >
       <string>&amp;WNPP Bugreport</string>
@@ -131,7 +126,7 @@
      </layout>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2" >
+   <item>
     <widget class="QGroupBox" name="bug_groupBox" >
      <property name="title" >
       <string>Normal Bugreport</string>
@@ -238,10 +233,10 @@
      </layout>
     </widget>
    </item>
-   <item row="5" column="0" colspan="2" >
+   <item>
     <widget class="QGroupBox" name="groupBox_other" >
      <property name="title" >
-      <string>Other...</string>
+      <string>Miscellaneous</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2" >
       <item>
@@ -259,9 +254,12 @@
        </widget>
       </item>
      </layout>
+     <zorder>checkBox_script</zorder>
+     <zorder>checkBox_presubj</zorder>
+     <zorder>bug_groupBox</zorder>
     </widget>
    </item>
-   <item row="6" column="1" >
+   <item>
     <spacer name="spacer7" >
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
@@ -271,51 +269,18 @@
      </property>
      <property name="sizeHint" stdset="0" >
       <size>
-       <width>20</width>
-       <height>16</height>
+       <width>17</width>
+       <height>13</height>
       </size>
      </property>
     </spacer>
    </item>
-   <item row="7" column="0" colspan="2" >
-    <layout class="QHBoxLayout" >
-     <item>
-      <spacer name="spacer3" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonStart" >
-       <property name="text" >
-        <string>&amp;OK</string>
-       </property>
-       <property name="shortcut" >
-        <string>Alt+O</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonCancel" >
-       <property name="text" >
-        <string>&amp;Cancel</string>
-       </property>
-       <property name="shortcut" >
-        <string>Alt+C</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
@@ -325,44 +290,9 @@
   <tabstop>checkBoxPatch</tabstop>
   <tabstop>checkBoxL10n</tabstop>
   <tabstop>checkBoxSecurity</tabstop>
-  <tabstop>pushButtonStart</tabstop>
-  <tabstop>pushButtonCancel</tabstop>
   <tabstop>lineEditVersion</tabstop>
   <tabstop>lineEditPackage</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButtonStart</sender>
-   <signal>clicked()</signal>
-   <receiver>SubmitDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButtonCancel</sender>
-   <signal>clicked()</signal>
-   <receiver>SubmitDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

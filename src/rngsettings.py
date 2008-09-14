@@ -34,7 +34,9 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         
         self.settings = settings
 
-        QtCore.QObject.connect(self.pushButton_defaults, QtCore.SIGNAL("clicked()"), self.load_default)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.RestoreDefaults), QtCore.SIGNAL("clicked()"), self.load_default)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), QtCore.SIGNAL("clicked()"), self.accept)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel), QtCore.SIGNAL("clicked()"), self.reject)
         QtCore.QObject.connect(self.pushButton_wishlist, QtCore.SIGNAL("clicked()"), self._change_wishlist_color)
         QtCore.QObject.connect(self.pushButton_minor, QtCore.SIGNAL("clicked()"), self._change_minor_color)
         QtCore.QObject.connect(self.pushButton_normal, QtCore.SIGNAL("clicked()"), self._change_normal_color)
@@ -55,7 +57,7 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         
         # mua
         for mua in rng.SUPPORTED_MUA:
-            self.comboBox_mua.addItem(mua.title())
+            self.comboBox_mua.addItem(rng.getMUAString(mua))
         if self.settings.lastmua in rng.SUPPORTED_MUA:
             self.comboBox_mua.setCurrentIndex(rng.SUPPORTED_MUA.index(self.settings.lastmua))
         
@@ -81,7 +83,7 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         self.load_settings()
         
     def _change_button_color(self, button, color):
-        button.setStyleSheet("background-color: white; color: %s;" % color)
+        button.setStyleSheet("background-color: %s;" % color)
 
 
     def _change_wishlist_color(self):

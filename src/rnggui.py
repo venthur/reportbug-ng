@@ -47,6 +47,8 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.actionNewWnpp, QtCore.SIGNAL("triggered()"), self.new_wnpp)
         QtCore.QObject.connect(self.actionClearLineEdit, QtCore.SIGNAL("triggered()"), self.clear_lineedit)
         QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings)
+        QtCore.QObject.connect(self.actionAbout, QtCore.SIGNAL("triggered()"), self.about)
+        QtCore.QObject.connect(self.actionAboutQt, QtCore.SIGNAL("triggered()"), self.about_qt)
 
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("textChanged(const QString&)"), self.lineedit_text_changed)
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("returnPressed()"), self.lineedit_return_pressed)
@@ -167,6 +169,12 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         s = RngSettings(self.settings)
         if s.exec_() != s.Accepted:
             self.settings = s.settings
+
+    def about(self):
+        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr("Report bugs in Debian's BTS."))
+
+    def about_qt(self):
+        QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))
 
 
     def _stateChanged(self, package, bug):
@@ -413,3 +421,5 @@ class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
     def __init__(self):
         QtGui.QDialog.__init__(self)
         self.setupUi(self)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), QtCore.SIGNAL("clicked()"), self.accept)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel), QtCore.SIGNAL("clicked()"), self.reject)
