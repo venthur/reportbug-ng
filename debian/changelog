@@ -6,8 +6,9 @@ reportbug-ng (1.2) unstable; urgency=low
   * Corrected small issue in internal state machine (Closes: #501888)
   * Moved rng's modules from /usr/share/python-support/reportbug-ng to 
     /usr/share/reportbug-ng/ (Closes: #496544)
+  * Converted output of package script to unicode (Closes: 495397)
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 16:42:21 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 18:07:12 +0200
 
 reportbug-ng (1.1.1) unstable; urgency=low
 

@@ -365,7 +365,7 @@ def getPackageScriptOutput(package):
     if os.path.exists(path):
         output += "--- Output from package bug script ---\n"
         output += commands.getoutput(cmd)
-    return output
+    return unicode(output, errors="replace")
 
 
 def getInstalledPackageVersion(package):
