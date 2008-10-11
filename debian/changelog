@@ -9,8 +9,10 @@ reportbug-ng (1.2) unstable; urgency=low
   * Converted output of package script to unicode (Closes: #495397)
   * Changed Sylpheed Claws GTK2 to Claws Mail (Closes: #431711)
     - Fixed another issue wich caused translated MUAS not to work
+  * Added font color to buttons just in case they stay white 
+    (Closes: #499129)
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 20:14:59 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 20:36:19 +0200
 
 reportbug-ng (1.1.1) unstable; urgency=low
 

@@ -83,7 +83,7 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         self.load_settings()
         
     def _change_button_color(self, button, color):
-        button.setStyleSheet("background-color: %s;" % color)
+        button.setStyleSheet("background-color: %s; color: %s" % (color, color))
 
 
     def _change_wishlist_color(self):
