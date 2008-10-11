@@ -1,10 +1,13 @@
 reportbug-ng (1.2) unstable; urgency=low
 
   * Added support for tags
-    - A new column "tags" shows all the available tags for the bugs (Closes: #491927)
+    - A new column "tags" shows all the available tags for the bugs 
+      (Closes: #491927)
   * Corrected small issue in internal state machine (Closes: #501888)
+  * Moved rng's modules from /usr/share/python-support/reportbug-ng to 
+    /usr/share/reportbug-ng/ (Closes: #496544)
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 15:58:59 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 16:42:21 +0200
 
 reportbug-ng (1.1.1) unstable; urgency=low
 

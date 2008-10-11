@@ -22,8 +22,8 @@ all: $(GUI_CLASSES) $(RCCS) $(PYRCCS)
 	$(PYUIC) $< -o $@
 
 install:
-	mkdir -p $(DESTDIR)/usr/share/python-support/reportbug-ng/ui
-	cp -r *.py $(DESTDIR)/usr/share/python-support/reportbug-ng/ui/
+	mkdir -p $(DESTDIR)/usr/share/reportbug-ng/ui
+	cp -r *.py $(DESTDIR)/usr/share/reportbug-ng/ui/
 
 clean:
 	rm -f $(GUI_CLASSES) $(RCCS) $(PYRCCS)

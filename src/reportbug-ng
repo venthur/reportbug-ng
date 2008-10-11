@@ -21,6 +21,7 @@ import gettext
 gettext.install('reportbug-ng', '/usr/share/locale', unicode=1)
 
 import sys
+sys.path.append('/usr/share/reportbug-ng')
 import logging
 from optparse import OptionParser
 from PyQt4 import QtCore, QtGui

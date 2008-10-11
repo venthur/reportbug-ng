@@ -10,8 +10,8 @@ install:
 	    $(MAKE) install -C $$i; \
 	done
 
-	mkdir -p $(DESTDIR)/usr/share/python-support/reportbug-ng
-	cp *.py $(DESTDIR)/usr/share/python-support/reportbug-ng/
+	mkdir -p $(DESTDIR)/usr/share/reportbug-ng
+	cp *.py $(DESTDIR)/usr/share/reportbug-ng/
 
 	mkdir -p $(DESTDIR)/usr/bin
 	cp reportbug-ng $(DESTDIR)/usr/bin/reportbug-ng
