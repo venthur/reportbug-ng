@@ -134,6 +134,15 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
             self.settings.script = False
     
     def _mua_changed(self, index):
-        mua = unicode(self.comboBox_mua.currentText()).lower()
-        self.settings.lastmua = mua
+        mua = unicode(self.comboBox_mua.currentText())
+        # translate back
+        found = False
+        for mua_orig, mua_transl in rng.MUA_STRINGS.iteritems():
+            if mua_transl == mua:
+                self.settings.lastmua = mua_orig
+                found = True
+                self.logger.debug("Found match for MUA: %s %s" % (mua, mua_orig))
+                break
+        if not found:
+            self.logger.error("Mua not found: %s" % mua) 
 

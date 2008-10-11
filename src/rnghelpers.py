@@ -41,7 +41,7 @@ MUA_SYNTAX = {
 #    "opera" : 'opera -newpage ' + RFC_MAILTO,
     "sylpheed" : 'sylpheed --compose ' + RFC_MAILTO,
     "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
-    "sylpheed-claws-gtk2" : 'sylpheed-claws-gtk2 --compose ' + RFC_MAILTO,
+    "claws-mail" : 'claws-mail --compose ' + RFC_MAILTO,
     "mutt" : 'mutt ' + RFC_MAILTO,
     "mutt-ng" : 'muttng ' + RFC_MAILTO,
     "pine" : 'pine -url ' + RFC_MAILTO,
@@ -56,7 +56,7 @@ MUA_STRINGS = {
 #    "opera" : _("Opera"),
     "sylpheed" : _("Sylpheed"),
     "sylpheed-claws" : _("Sylpheed Claws"),
-    "sylpheed-claws-gtk2" : _("Sylpheed Claws (Gtk 2)"),
+    "claws-mail" : _("Claws Mail"),
     "mutt" : _("Mutt"),
     "mutt-ng" : _("Mutt NG"),
     "pine" : _("Pine"),
@@ -149,7 +149,7 @@ SUPPORTED_MUA = getAvailableMUAs()
 SUPPORTED_MUA.sort()
 
 
-def prepareMail(mua, to, subject, body):
+def prepareMail(mua, to, subject, body, firstcall=True):
     """    print output
 
     Tries to call MUA with given parameters.
@@ -184,9 +184,12 @@ def prepareMail(mua, to, subject, body):
             return
         # Great, calling the MUA failed, probably due too long output of the
         # /usr/share/bug/$package/script...
-        logger.warning("Grr! Calling the MUA failed. Length of the command is: %s" % str(len(command)))
+        if firstcall == False:
+            logger.error("Calling the MUA a second time with an even shorter message failed. Giving up.")
+            return
+        logger.warning("Grr! Calling the MUA failed. Status and output was: %s, %s. Length of the command is: %s" % (str(status), str(output), str(len(command))))
         body = body[:MAX_BODY_LEN] + "\n\n[ MAILBODY EXCEEDED REASONABLE LENGTH, OUTPUT TRUNCATED ]"
-        prepareMail(mua, to, subject, body)
+        prepareMail(mua, to, subject, body, False)
             
    
     
