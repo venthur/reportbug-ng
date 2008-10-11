@@ -152,15 +152,23 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         else:
             # just a signle bug
             list = [query[1]]
-        # change the state
+        # ok, we know the package, so enable some buttons which don't depend
+        # on the existence of the acutal packe (wnpp) or bugreports for that
+        # package.
         if query[0] in ("src", "package"):
             self._stateChanged(query[1], None)
-        elif query[0] in (None,):
-            self._stateChanged(None, query[1])
+        # if we got a bugnumber we'd like to select it and enable some more
+        # buttons. unfortunately we don't know if the bugnumber actually exists
+        # for now, so we have to wait a bit until the bug is fetched.
         else:
             self._stateChanged(None, None)
         self.logger.debug("Buglist matching the query: %s" % str(list))
         self.bugs = bts.get_status(list)
+        # ok, we fetched the bugs. see if the list isn't empty
+        if query[0] in (None,) and len(self.bugs) > 0:
+            self.currentBug = self.bugs[0]
+            self.currentPackage = self.currentBug.package
+            self._stateChanged(self.currentPackage, self.currentBug)
         self.model.set_elements(self.bugs)
         self.tableView.resizeRowsToContents()
         
@@ -342,7 +350,7 @@ class TableModel(QtCore.QAbstractTableModel):
         return len(self.elements)
     
     def columnCount(self, parent):
-        return 5
+        return 6
 
     #
     # DAMMIT DONT IGNORE THE DISPLAY ROLE!!
@@ -376,7 +384,8 @@ class TableModel(QtCore.QAbstractTableModel):
                 1 : bug.summary,
                 2 : bug.status,
                 3 : bug.severity,
-                4 : bug.lastaction}[index.column()]
+                4 : bug.tags,
+                5 : bug.lastaction}[index.column()]
         return QtCore.QVariant(data)
 
     #
@@ -390,7 +399,8 @@ class TableModel(QtCore.QAbstractTableModel):
                 1 : "Summary",
                 2 : "Status",
                 3 : "Severity",
-                4 : "Last Action"}[section]
+                4 : "Tags",
+                5 : "Last Action"}[section]
             return QtCore.QVariant(txt)
         else:
             return QtCore.QVariant()

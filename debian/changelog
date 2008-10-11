@@ -1,3 +1,11 @@
+reportbug-ng (1.2) unstable; urgency=low
+
+  * Added support for tags
+    - A new column "tags" shows all the available tags for the bugs (Closes: #491927)
+  * Corrected small issue in internal state machine (Closes: #501888)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 11 Oct 2008 15:58:59 +0200
+
 reportbug-ng (1.1.1) unstable; urgency=low
 
   * Applied patches from Pino Toscano:
