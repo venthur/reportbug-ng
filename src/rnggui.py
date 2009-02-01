@@ -179,7 +179,14 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self.settings = s.settings
 
     def about(self):
-        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr("Report bugs in Debian's BTS."))
+        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr("""Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
+
+Homepage: http://reportbug-ng.alioth.debian.org
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version."""))
 
     def about_qt(self):
         QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))

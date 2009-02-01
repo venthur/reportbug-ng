@@ -34,7 +34,7 @@ Report a bug in Debian's BTS. The optional paremter QUERY behaves exactly like t
 Supported queries are: packagename, bugnumber, maintainer@foo.bar, src:package, from:submitter@foo.bar, severity:foo and tag:bar."""
     usage = "%prog [Options] [Query]"
     version = """
-Copyright (C) 2007 Bastian Venthur <venthur at debian org>
+Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 

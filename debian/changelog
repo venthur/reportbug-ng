@@ -1,3 +1,10 @@
+reportbug-ng (1.2.1) unstable; urgency=low
+
+  * Fixed bug where a bug-script output with unicode output prevents to spawn
+    the mail client. 
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 01 Feb 2009 17:14:29 +0100
+
 reportbug-ng (1.2) unstable; urgency=low
 
   * Added support for tags

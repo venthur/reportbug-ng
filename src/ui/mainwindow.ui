@@ -30,7 +30,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit" />
+       <widget class="QLineEdit" name="lineEdit" >
+        <property name="focusPolicy" >
+         <enum>Qt::StrongFocus</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -42,6 +46,9 @@
       <widget class="QTableView" name="tableView" >
        <property name="editTriggers" >
         <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="tabKeyNavigation" >
+        <bool>false</bool>
        </property>
        <property name="selectionMode" >
         <enum>QAbstractItemView::SingleSelection</enum>
@@ -69,7 +76,7 @@
      <x>0</x>
      <y>0</y>
      <width>948</width>
-     <height>30</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuReportbug_NG" >
@@ -235,6 +242,11 @@
    <header>QtWebKit/QWebView</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>webView</tabstop>
+ </tabstops>
  <resources>
   <include location="icons.qrc" />
  </resources>

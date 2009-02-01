@@ -210,7 +210,7 @@ def prepareBody(package, version=None, severity=None, tags=[], cc=[], script=Tru
         logger.warning("Mailbody to long for os.pipe")
         fd, fname = tempfile.mkstemp(".txt", "reportbug-ng-%s-" % package)
         f = os.fdopen(fd, "w")
-        f.write(s2)
+        f.write(s2.encode('utf-8', 'replace'))
         f.close()
         s2 = """
 -8<---8<---8<---8<---8<---8<---8<---8<---8<--
