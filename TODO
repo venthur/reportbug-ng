@@ -12,33 +12,5 @@ normal:
 optional:
  - Severity by definition?
 
-QT4:
- * port to qt4 someday,
- * Note to self: Signals and Slots work slightly different in QT4 this worked:
- 
- class MyMainWindow(QtGui.QWidget, Ui_Form):
-    
-    def __init__(self):
-        QtGui.QWidget.__init__(self)
-        # Set up the user interface from Designer.
-        self.setupUi(self)
-        
-        self.bugs = []
-        self.visibleBugs = []
-        self.currentPackage = ""
-        self.currentBug = Bugreport(0)
-      
-        # For debugging purpose only:
-        # self.pushButtonNewBugreport.setEnabled(1)
-
-if __name__ == "__main__":
-	app = QtGui.QApplication(sys.argv)
-
-	window = MyMainWindow()
-	window.show()
-
-	sys.exit(app.exec_())
-
-
 done:
  - see CHANGELOG
