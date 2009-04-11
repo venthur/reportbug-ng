@@ -3,8 +3,11 @@ reportbug-ng (1.2.2) unstable; urgency=low
   * Fix "[reportbug-ng] Does not use /usr/share/bug/$package if it's a
     script and not a directory" <explain what you changed and why>
     (Closes: #523681)
+  * Added keyboard shortcut for the filter/query bar, navigation between 
+    this bar, the table and the browser is possible with TAB and SHIFT-TAB
+    (Closes: #492835, #498011)
 
- -- Bastian Venthur <venthur@debian.org>  Sun, 12 Apr 2009 00:03:25 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sun, 12 Apr 2009 00:33:32 +0200
 
 reportbug-ng (1.2.1) unstable; urgency=low
 

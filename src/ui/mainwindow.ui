@@ -19,7 +19,7 @@
       <item>
        <widget class="QLabel" name="label" >
         <property name="text" >
-         <string>Query or Filter:</string>
+         <string>Q&amp;uery or Filter:</string>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
