@@ -354,18 +354,25 @@ def getPackageInfo(package):
 
 
 def getPackageScriptOutput(package):
-    """Runs the package's script in /usr/share/bug/packagename/script and
-       returns the output."""
+    """Runs the package's script in /usr/share/bug/packagename/script or 
+    /usr/share/bug/packagename and returns the output."""
     output = ''
-    path = "/usr/share/bug/" + str(package) + "/script"
+    # In the first case the script is called "script", in the second one the
+    # script is just the packagename under /usr/share/bug
+    path = ["/usr/share/bug/" + str(package) + "/script", 
+             "/usr/share/bug/" +str(package)]
     xterm_path = "/usr/bin/x-terminal-emulator"
     # pop up a terminal if we can because scripts can be interactive
     if os.path.exists(xterm_path):
         cmd = xterm_path + " -e "
     else:
         cmd = ""
-    cmd += path + " 3>&1"
-    if os.path.exists(path):
+    if os.path.isfile(path[1]):
+        cmd += path[1] + " 3>&1"
+        output += "--- Output from package bug script ---\n"
+        output += commands.getoutput(cmd)
+    elif os.path.exists(path[0]):
+        cmd += path[0] + " 3>&1"
         output += "--- Output from package bug script ---\n"
         output += commands.getoutput(cmd)
     return unicode(output, errors="replace")
