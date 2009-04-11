@@ -6,8 +6,9 @@ reportbug-ng (1.2.2) unstable; urgency=low
   * Added keyboard shortcut for the filter/query bar, navigation between 
     this bar, the table and the browser is possible with TAB and SHIFT-TAB
     (Closes: #492835, #498011)
+  * Bumped standards version 
 
- -- Bastian Venthur <venthur@debian.org>  Sun, 12 Apr 2009 00:33:32 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sun, 12 Apr 2009 00:42:03 +0200
 
 reportbug-ng (1.2.1) unstable; urgency=low
 
