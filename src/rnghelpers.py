@@ -300,9 +300,32 @@ def getPackageInfo(package):
     s = "--- Package information. ---\n"
     
     depends = getDepends(package)
-    if not depends:
-        return "Package depends on nothing."
+    s += pretty_print_depends(depends, "Depends")
+    s += "\n\n"
+
+    depends = getRecommends(package)
+    s += pretty_print_depends(depends, "Recommends")
+    s += "\n\n"
+
+    depends = getSuggests(package)
+    s += pretty_print_depends(depends, "Suggests")
+    s += "\n\n"
+    return s
+
+
+def pretty_print_depends(depends, depstring):
+    """Pretty prints dependencies in a table.
     
+    The in the depstring goes: Depends, Suggests or Recommends.
+    """
+
+    if not depends:
+        return "Package's %s field is empty." % depstring
+    
+    pwidth = len(depstring)
+    vwidth = len("(Version) ")
+    s = ""
+
     plist = []
     for packagestring in depends:
         split = packagestring.split(" ", 1)
@@ -328,7 +351,7 @@ def getPackageInfo(package):
     pwidth += len(" OR ")
     vwidth += 1
 
-    s += "Depends".ljust(pwidth) + "(Version)".rjust(vwidth) +" | " + "Installed\n"
+    s += depstring.ljust(pwidth) + "(Version)".rjust(vwidth) +" | " + "Installed\n"
     s += "".zfill(pwidth).replace("0", "=")+"".zfill(vwidth).replace("0", "=")+"-+-"+"".zfill(vwidth).replace("0", "=") +"\n"
     
     alternative = False
@@ -428,11 +451,49 @@ def getDepends(package):
     if depends:
         depends = depends[0]
     else:
-        depends = ""
+        return []
     
     depends = depends.replace("| ", ", |")
     
     list = depends.split(", ")
+    return list
+
+
+def getSuggests(package):
+    """Returns strings of all the packages the given package suggests. 
+    The format is like:
+    ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
+
+    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+    suggests = re.findall("^Suggests:\s(.*)$", out, re.MULTILINE)
+    
+    if suggests:
+        suggests = suggests[0]
+    else:
+        return []
+    
+    suggests = suggests.replace("| ", ", |")
+    
+    list = suggests.split(", ")
+    return list
+
+
+def getRecommends(package):
+    """Returns strings of all the packages the given package recommends. 
+    The format is like:
+    ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
+
+    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+    recommends = re.findall("^Recommends:\s(.*)$", out, re.MULTILINE)
+    
+    if recommends:
+        recommends = recommends[0]
+    else:
+        return []
+    
+    recommends = recommends.replace("| ", ", |")
+    
+    list = recommends.split(", ")
     return list
 
 
