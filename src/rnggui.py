@@ -28,6 +28,16 @@ import debianbts as bts
 from rngsettings import RngSettings
 
 
+about = """Reportbug-NG
+Copyright (C) 2007-2009 Bastian Venthur <venthur@debian.org>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+"""
+
+
 class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     
     def __init__(self, args):
@@ -54,6 +64,17 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("returnPressed()"), self.lineedit_return_pressed)
 
         QtCore.QObject.connect(self.tableView, QtCore.SIGNAL("activated(const QModelIndex&)"), self.activated)
+        #QtCore.QObject.connect(self.tableView, QtCore.SIGNAL("clicked(const QModelIndex&)"), self.activated)
+        QtCore.QObject.connect(self.tableView, QtCore.SIGNAL('customContextMenuRequested(const QPoint&)'), self.context_menu)
+        #QtCore.QObject.connect(self.tableView, QtCore.SIGNAL('currentChanged(const QItemSelection&, const QItemSelection&)'), self.selection_changed)
+ 
+        QtCore.QObject.connect(self.actionCritical, QtCore.SIGNAL("triggered()"), self.bts_critical)
+        QtCore.QObject.connect(self.actionGrave, QtCore.SIGNAL("triggered()"), self.bts_grave)
+        QtCore.QObject.connect(self.actionSerious, QtCore.SIGNAL("triggered()"), self.bts_serious)
+        QtCore.QObject.connect(self.actionImportant, QtCore.SIGNAL("triggered()"), self.bts_important)
+        QtCore.QObject.connect(self.actionNormal, QtCore.SIGNAL("triggered()"), self.bts_normal)
+        QtCore.QObject.connect(self.actionMinor, QtCore.SIGNAL("triggered()"), self.bts_minor)
+        QtCore.QObject.connect(self.actionWishlist, QtCore.SIGNAL("triggered()"), self.bts_wishlist)
 
         # setup the table
         self.model = TableModel(self)
@@ -104,6 +125,10 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self._stateChanged(self.currentBug.package, self.currentBug)
         url = bts.BTS_URL + bugnr
         self._show_url(url)
+    
+    def selection_changed(self, selected, deselected):
+        print selected, deselected
+        print "foooo"
     
     def new_bugreport(self):
         self.logger.info("New Bugreport.")
@@ -172,6 +197,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.model.set_elements(self.bugs)
         self.tableView.resizeRowsToContents()
         
+    def context_menu(self, qpoint):
+        """The context menu for the Buglist was requested."""
+        self.logger.debug("Context menu requested.")
+        menu = QtGui.QMenu(self)
+        menu.addMenu(self.menuBugreport)
+        menu.addMenu(self.menuSeverity)
+        menu.popup(self.tableView.mapToGlobal(qpoint))
     
     def settings(self):
         s = RngSettings(self.settings)
@@ -179,17 +211,38 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self.settings = s.settings
 
     def about(self):
-        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr("""Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
-
-Homepage: http://reportbug-ng.alioth.debian.org
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version."""))
+        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr(about))
 
     def about_qt(self):
         QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))
+        
+################################################################################    
+# BTS Severity
+    def bts_critical(self):
+        self.bts_severity(rng.SEVERITY_CRITICAL)
+
+    def bts_grave(self):
+        self.bts_severity(rng.SEVERITY_GRAVE)
+
+    def bts_serious(self):
+        self.bts_severity(rng.SEVERITY_SERIOUS)
+
+    def bts_important(self):
+        self.bts_severity(rng.SEVERITY_IMPORTANT)
+
+    def bts_normal(self):
+        self.bts_severity(rng.SEVERITY_NORMAL)
+
+    def bts_minor(self):
+        self.bts_severity(rng.SEVERITY_MINOR)
+
+    def bts_wishlist(self):
+        self.bts_severity(rng.SEVERITY_WISHLIST)
+        
+    def bts_severity(self, severity):
+        print rng.bts_set_severity(self.currentBug, severity)
+# /BTS Severity
+################################################################################    
 
 
     def _stateChanged(self, package, bug):

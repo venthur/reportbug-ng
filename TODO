@@ -3,7 +3,6 @@ Things I have on my list...
 urgent:
  
 normal:
- - More package information? (Suggest, Recommends, Configs)
  - Write unittests
  - Integrate Throbber
  - Improve packaging (Makefiles and sys.path-HACK in top level reportbug-ng)

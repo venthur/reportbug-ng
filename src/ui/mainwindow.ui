@@ -45,6 +45,9 @@
        <enum>Qt::Vertical</enum>
       </property>
       <widget class="QTableView" name="tableView" >
+       <property name="contextMenuPolicy" >
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
        <property name="editTriggers" >
         <set>QAbstractItemView::NoEditTriggers</set>
        </property>
@@ -52,7 +55,7 @@
         <bool>false</bool>
        </property>
        <property name="selectionMode" >
-        <enum>QAbstractItemView::SingleSelection</enum>
+        <enum>QAbstractItemView::ExtendedSelection</enum>
        </property>
        <property name="selectionBehavior" >
         <enum>QAbstractItemView::SelectRows</enum>
@@ -109,9 +112,28 @@
     <addaction name="actionAbout" />
     <addaction name="actionAboutQt" />
    </widget>
+   <widget class="QMenu" name="menuTag" >
+    <property name="title" >
+     <string>Tag</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuSeverity" >
+    <property name="title" >
+     <string>Severity</string>
+    </property>
+    <addaction name="actionCritical" />
+    <addaction name="actionGrave" />
+    <addaction name="actionSerious" />
+    <addaction name="actionImportant" />
+    <addaction name="actionNormal" />
+    <addaction name="actionMinor" />
+    <addaction name="actionWishlist" />
+   </widget>
    <addaction name="menuReportbug_NG" />
    <addaction name="menuEdit" />
    <addaction name="menuBugreport" />
+   <addaction name="menuTag" />
+   <addaction name="menuSeverity" />
    <addaction name="menu_Help" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
@@ -233,6 +255,41 @@
   <action name="actionAboutQt" >
    <property name="text" >
     <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionCritical" >
+   <property name="text" >
+    <string>Critical</string>
+   </property>
+  </action>
+  <action name="actionGrave" >
+   <property name="text" >
+    <string>Grave</string>
+   </property>
+  </action>
+  <action name="actionSerious" >
+   <property name="text" >
+    <string>Serious</string>
+   </property>
+  </action>
+  <action name="actionImportant" >
+   <property name="text" >
+    <string>Important</string>
+   </property>
+  </action>
+  <action name="actionNormal" >
+   <property name="text" >
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionMinor" >
+   <property name="text" >
+    <string>Minor</string>
+   </property>
+  </action>
+  <action name="actionWishlist" >
+   <property name="text" >
+    <string>Wishlist</string>
    </property>
   </action>
  </widget>

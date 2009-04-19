@@ -119,6 +119,14 @@ affects the packagename, bugnumber, summary, status and severity of a bug.</p>
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
 """)
 
+SEVERITY_CRITICAL = 1
+SEVERITY_GRAVE = 2
+SEVERITY_SERIOUS = 3
+SEVERITY_IMPORTANT = 4
+SEVERITY_NORMAL = 5
+SEVERITY_MINOR = 6
+SEVERITY_WISHLIST = 7
+
 def getAvailableMUAs():
     """
     Returns a tuple of strings with available MUAs on this system. The Webmails
@@ -588,6 +596,19 @@ def translate_query(query):
         return None, query
     else:
         return 'package', query
+    
+def bts_set_severity(nr, severity):
+    """Create the BTS string to set the severity of a given bug."""
+    sev = {SEVERITY_CRITICAL : "critical",
+           SEVERITY_GRAVE : "grave",
+           SEVERITY_SERIOUS : "serious",
+           SEVERITY_IMPORTANT : "important",
+           SEVERITY_NORMAL : "normal",
+           SEVERITY_MINOR : "minor",
+           SEVERITY_WISHLIST : "wishlist"}[severity]
+    # TODO: what to do if the severity is invalid?
+    return """severity %s %s""" % (nr, sev)   
+   
 
     
 class Settings:
