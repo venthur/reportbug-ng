@@ -11,8 +11,6 @@ Package: reportbug-ng
 Architecture: all
 Depends: ${python:Depends}, python-debianbts (>= 0.3), python-qt4, xdg-utils
 Description: An easy to use alternative to Debian's classic reportbug
- Graphical interface for interacting with the Debian Bug Tracking System.
- .
  Reportbug-NG is a graphical interface using Qt for searching, filtering,
- reporting or manipulating bugs in Debian's Bug Tracking System. Reportbug-NG
- can search bug reports and display, create and close a bug report.
+ reporting or manipulating bugs in Debian's Bug Tracking System.
+
