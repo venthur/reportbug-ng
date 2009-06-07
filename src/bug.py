@@ -1,4 +1,10 @@
 
+# submit-as
+# package-status [plist], show installstatus of thos packages
+# report-with [plist], show deps, recommends, etc for those packages
+# the script
+# send-to domain, not used anymore?
+
 import os
 
 def get_control(package):
@@ -25,3 +31,9 @@ def submit_as(package):
     alias = get_control(package).get("submit-as")
     return alias[0] if alias else package
  
+def report_with(package):
+    rw = [package]
+    plist = get_control(package).get("report-with")
+    if plist:
+        rw.extend(plist)
+    return rw
