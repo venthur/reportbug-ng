@@ -26,7 +26,7 @@ from ui import submitdialog
 import rnghelpers as rng
 import debianbts as bts
 from rngsettings import RngSettings
-
+import bug
 
 class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     
@@ -148,6 +148,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.logger.debug("Query: %s" % str(query))
         list = None
         if query[0]:
+            if query[0] == 'package':
+                # test if there is a submit-as field available and rename the
+                # package if neccessairy
+                realname = bug.submit_as(query[1])
+                if query[1] != realname:
+                    self.logger.debug("Using %s as package name as requested by developer." % str(realname))
+                    query[1] = realname
             list = bts.get_bugs(query)
         else:
             # just a signle bug

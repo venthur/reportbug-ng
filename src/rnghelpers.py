@@ -577,17 +577,17 @@ def translate_query(query):
     if (query.startswith('src:')):
         return split
     elif (query.startswith('from:')):
-        return 'submitter', split[1]
+        return ['submitter', split[1]]
     elif (query.startswith('severity:')):
         return split
     elif (query.startswith('tag:')):
         return split
     elif (query.find("@") != -1):
-        return 'maint', query
+        return ['maint', query]
     elif (re.match("^[0-9]*$", query)):
-        return None, query
+        return [None, query]
     else:
-        return 'package', query
+        return ['package', query]
 
     
 class Settings:
