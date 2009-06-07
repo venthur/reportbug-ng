@@ -305,12 +305,7 @@ the Free Software Foundation; either version 2 of the License, or
             if presubj:
                 txt = rng.get_presubj(package)
                 if txt:
-                    msg = QtGui.QMessageBox(self)
-                    msg.setDetailedText(txt)
-                    msg.setStandardButtons(QtGui.QMessageBox.Ok)
-                    msg.setSizeGripEnabled(True)
-                    msg.adjustSize()
-                    msg.exec_()
+                    QtGui.QMessageBox.information(self, "Information", txt)
             thread.start_new_thread( rng.prepareMail, (mua, to, subject, body) )
             
             
