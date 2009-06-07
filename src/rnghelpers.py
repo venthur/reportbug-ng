@@ -27,6 +27,7 @@ import logging
 import ConfigParser
 import tempfile
 
+import bug
 
 logger = logging.getLogger("ReportbugNG")
 
@@ -307,15 +308,25 @@ def getPackageInfo(package):
 
     s = "--- Package information. ---\n"
     
-    depends = getDepends(package)
+    plist = bug.report_with(package)
+    if len(plist) > 1:
+        logger.debug("Reporting with additional packages as requested by maintainers: %s" % str(plist[1:]))
+    
+    depends = getDepends(plist)
     s += pretty_print_depends(depends, "Depends")
     s += "\n\n"
 
-    depends = getRecommends(package)
+    package_status = bug.package_status(package)
+    if package_status:
+        logging.debug("Reporting wit additional status of packages as requested by maintainers: %s" % str(package_status))
+        s += pretty_print_depends(package_status, "Package Status")
+        s += "\n\n"
+
+    depends = getRecommends(plist)
     s += pretty_print_depends(depends, "Recommends")
     s += "\n\n"
 
-    depends = getSuggests(package)
+    depends = getSuggests(plist)
     s += pretty_print_depends(depends, "Suggests")
     s += "\n\n"
     return s
@@ -449,59 +460,62 @@ def getInstalledPackageVersions(packages):
     return result
 
 
-def getDepends(package):
+def getDepends(packagelist):
     """Returns strings of all the packages the given package depends on. The format is like:
        ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
-
-    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
-    depends = re.findall("^Depends:\s(.*)$", out, re.MULTILINE)
     
-    if depends:
-        depends = depends[0]
-    else:
-        return []
+    list = []
+    for package in packagelist:
+        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        depends = re.findall("^Depends:\s(.*)$", out, re.MULTILINE)
+        if depends:
+            depends = depends[0]
+        else:
+            continue
     
-    depends = depends.replace("| ", ", |")
+        depends = depends.replace("| ", ", |")
     
-    list = depends.split(", ")
+        list.extend(depends.split(", "))
     return list
 
 
-def getSuggests(package):
+def getSuggests(packagelist):
     """Returns strings of all the packages the given package suggests. 
     The format is like:
     ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
-    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
-    suggests = re.findall("^Suggests:\s(.*)$", out, re.MULTILINE)
+    list = []
+    for package in packagelist:
+        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        suggests = re.findall("^Suggests:\s(.*)$", out, re.MULTILINE)
+        if suggests:
+            suggests = suggests[0]
+        else:
+            continue
     
-    if suggests:
-        suggests = suggests[0]
-    else:
-        return []
+        suggests = suggests.replace("| ", ", |")
     
-    suggests = suggests.replace("| ", ", |")
-    
-    list = suggests.split(", ")
+        list.extend(suggests.split(", "))
     return list
 
 
-def getRecommends(package):
+def getRecommends(packagelist):
     """Returns strings of all the packages the given package recommends. 
     The format is like:
     ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
-    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
-    recommends = re.findall("^Recommends:\s(.*)$", out, re.MULTILINE)
+    list = []
+    for package in packagelist:
+        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        recommends = re.findall("^Recommends:\s(.*)$", out, re.MULTILINE)
+        if recommends:
+            recommends = recommends[0]
+        else:
+            continue
     
-    if recommends:
-        recommends = recommends[0]
-    else:
-        return []
+        recommends = recommends.replace("| ", ", |")
     
-    recommends = recommends.replace("| ", ", |")
-    
-    list = recommends.split(", ")
+        list.extend(recommends.split(", "))
     return list
 
 
@@ -585,17 +599,17 @@ def translate_query(query):
     if (query.startswith('src:')):
         return split
     elif (query.startswith('from:')):
-        return 'submitter', split[1]
+        return ['submitter', split[1]]
     elif (query.startswith('severity:')):
         return split
     elif (query.startswith('tag:')):
         return split
     elif (query.find("@") != -1):
-        return 'maint', query
+        return ['maint', query]
     elif (re.match("^[0-9]*$", query)):
-        return None, query
+        return [None, query]
     else:
-        return 'package', query
+        return ['package', query]
     
 def bts_set_severity(nr, severity):
     """Create the BTS string to set the severity of a given bug."""
@@ -609,7 +623,6 @@ def bts_set_severity(nr, severity):
     # TODO: what to do if the severity is invalid?
     return """severity %s %s""" % (nr, sev)   
    
-
     
 class Settings:
     

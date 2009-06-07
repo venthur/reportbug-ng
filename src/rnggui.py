@@ -26,7 +26,7 @@ from ui import submitdialog
 import rnghelpers as rng
 import debianbts as bts
 from rngsettings import RngSettings
-
+import bug
 
 about = """Reportbug-NG
 Copyright (C) 2007-2009 Bastian Venthur <venthur@debian.org>
@@ -56,7 +56,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.actionCloseBugreport, QtCore.SIGNAL("triggered()"), self.close_bugreport)
         QtCore.QObject.connect(self.actionNewWnpp, QtCore.SIGNAL("triggered()"), self.new_wnpp)
         QtCore.QObject.connect(self.actionClearLineEdit, QtCore.SIGNAL("triggered()"), self.clear_lineedit)
-        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings)
+        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings_diag)
         QtCore.QObject.connect(self.actionAbout, QtCore.SIGNAL("triggered()"), self.about)
         QtCore.QObject.connect(self.actionAboutQt, QtCore.SIGNAL("triggered()"), self.about_qt)
 
@@ -173,6 +173,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.logger.debug("Query: %s" % str(query))
         list = None
         if query[0]:
+            if query[0] == 'package':
+                # test if there is a submit-as field available and rename the
+                # package if neccessairy
+                realname = bug.submit_as(query[1])
+                if query[1] != realname:
+                    self.logger.debug("Using %s as package name as requested by developer." % str(realname))
+                    query[1] = realname
             list = bts.get_bugs(query)
         else:
             # just a signle bug
@@ -205,7 +212,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         menu.addMenu(self.menuSeverity)
         menu.popup(self.tableView.mapToGlobal(qpoint))
     
-    def settings(self):
+    def settings_diag(self):
         s = RngSettings(self.settings)
         if s.exec_() != s.Accepted:
             self.settings = s.settings
@@ -302,7 +309,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             package = self.currentBug.package
             to = "%s-done@bugs.debian.org" % self.currentBug.nr
         else:
-            logger.critical("Received unknown submit dialog type!")
+            self.logger.critical("Received unknown submit dialog type!")
         
         version = rng.getInstalledPackageVersion(package)
         dialog.lineEditPackage.setText(package)
