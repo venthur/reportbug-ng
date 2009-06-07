@@ -46,7 +46,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.actionCloseBugreport, QtCore.SIGNAL("triggered()"), self.close_bugreport)
         QtCore.QObject.connect(self.actionNewWnpp, QtCore.SIGNAL("triggered()"), self.new_wnpp)
         QtCore.QObject.connect(self.actionClearLineEdit, QtCore.SIGNAL("triggered()"), self.clear_lineedit)
-        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings)
+        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings_diag)
         QtCore.QObject.connect(self.actionAbout, QtCore.SIGNAL("triggered()"), self.about)
         QtCore.QObject.connect(self.actionAboutQt, QtCore.SIGNAL("triggered()"), self.about_qt)
 
@@ -173,7 +173,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.tableView.resizeRowsToContents()
         
     
-    def settings(self):
+    def settings_diag(self):
         s = RngSettings(self.settings)
         if s.exec_() != s.Accepted:
             self.settings = s.settings
@@ -249,7 +249,7 @@ the Free Software Foundation; either version 2 of the License, or
             package = self.currentBug.package
             to = "%s-done@bugs.debian.org" % self.currentBug.nr
         else:
-            logger.critical("Received unknown submit dialog type!")
+            self.logger.critical("Received unknown submit dialog type!")
         
         version = rng.getInstalledPackageVersion(package)
         dialog.lineEditPackage.setText(package)
@@ -305,7 +305,12 @@ the Free Software Foundation; either version 2 of the License, or
             if presubj:
                 txt = rng.get_presubj(package)
                 if txt:
-                    QtGui.QMessageBox.information(self, "Information", txt)
+                    msg = QtGui.QMessageBox(self)
+                    msg.setDetailedText(txt)
+                    msg.setStandardButtons(QtGui.QMessageBox.Ok)
+                    msg.setSizeGripEnabled(True)
+                    msg.adjustSize()
+                    msg.exec_()
             thread.start_new_thread( rng.prepareMail, (mua, to, subject, body) )
             
             
