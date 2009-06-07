@@ -308,6 +308,12 @@ def getPackageInfo(package):
     s += pretty_print_depends(depends, "Depends")
     s += "\n\n"
 
+    package_status = bug.package_status(package)
+    if package_status:
+        logging.debug("Reporting wit additional status of packages as requested by maintainers: %s" % str(package_status))
+        s += pretty_print_depends(package_status, "Package Status")
+        s += "\n\n"
+
     depends = getRecommends(plist)
     s += pretty_print_depends(depends, "Recommends")
     s += "\n\n"
