@@ -1,3 +1,12 @@
+reportbug-ng (1.4.1) unstable; urgency=low
+
+  * Fix "rng still doesn't include the output of package bug scripts", rng now
+    uses xterm instead of the generic x-terminal-emulator, which waits until
+    the bugscript finished before returning to rng.
+    - Consequently rng also depends on xterm now (Closes: #526119)
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 08 Jun 2009 14:33:29 +0200
+
 reportbug-ng (1.4) unstable; urgency=low
 
   * Finalized /usr/share/bug/* support. Added support for:

@@ -395,18 +395,19 @@ def getPackageScriptOutput(package):
     # script is just the packagename under /usr/share/bug
     path = ["/usr/share/bug/" + str(package) + "/script", 
              "/usr/share/bug/" +str(package)]
-    xterm_path = "/usr/bin/x-terminal-emulator"
+    xterm_path = "/usr/bin/xterm"
     # pop up a terminal if we can because scripts can be interactive
     if os.path.exists(xterm_path):
         cmd = xterm_path + " -e "
     else:
+        logger.error("Xterm not found, cannot start bugscript.")
         cmd = ""
     if os.path.isfile(path[1]):
-        cmd += path[1] + " 3>&1"
+        cmd += commands.mkarg(path[1]) + " 3>&1"
         output += "--- Output from package bug script ---\n"
         output += commands.getoutput(cmd)
     elif os.path.exists(path[0]):
-        cmd += path[0] + " 3>&1"
+        cmd += commands.mkarg(path[0]) + " 3>&1"
         output += "--- Output from package bug script ---\n"
         output += commands.getoutput(cmd)
     return unicode(output, errors="replace")
