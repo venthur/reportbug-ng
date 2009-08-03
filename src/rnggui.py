@@ -132,7 +132,6 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         text = unicode(text)
         self.proxymodel.setFilterRegExp(QtCore.QRegExp(text, QtCore.Qt.CaseInsensitive, QtCore.QRegExp.FixedString))
 
-    
     def lineedit_return_pressed(self):
         
         #

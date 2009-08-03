@@ -1,3 +1,13 @@
+reportbug-ng (1.5) unstable; urgency=low
+
+  * Applied patch from Daniel Schaal:
+    - Added Packagecompletion in lineedit
+    - Fix for "Last Action" Column to show the dates again
+    - Lineedit now has focus on start
+  * Added dependency on python-apt for package completion
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 03 Aug 2009 19:40:31 +0200
+
 reportbug-ng (1.4.1) unstable; urgency=low
 
   * Fix "rng still doesn't include the output of package bug scripts", rng now
