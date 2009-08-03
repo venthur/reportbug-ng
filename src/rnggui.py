@@ -84,6 +84,8 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self.lineEdit.setText(unicode(args[0]))
             self.lineedit_return_pressed()
 
+	QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("setFocus()"))
+
     def closeEvent(self, ce):
         self.logger.info("Catched close event.")
         self._get_settings()
@@ -142,8 +144,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             return
         
         self.logger.info("Return pressed.")
-        text = unicode(self.lineEdit.text())
-        self.lineEdit.clear()
+        QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
         list = None
