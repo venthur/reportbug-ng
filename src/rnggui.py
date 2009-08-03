@@ -400,7 +400,7 @@ class TableModel(QtCore.QAbstractTableModel):
                 2 : bug.status,
                 3 : bug.severity,
                 4 : bug.tags,
-                5 : bug.lastaction}[index.column()]
+                5 : QtCore.QDate(bug.lastaction)}[index.column()]
         return QtCore.QVariant(data)
 
     #
