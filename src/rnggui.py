@@ -28,6 +28,7 @@ import debianbts as bts
 from rngsettings import RngSettings
 import bug
 
+
 class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     
     def __init__(self, args):
@@ -37,69 +38,85 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.logger = logging.getLogger("RngGui")
         self.logger.info("Logger initialized.")
         
-        # connect toolbuttons to actions
-        #self.toolButton_clear.setDefaultAction(self.actionClearLineEdit)
+        # Since this is not possible withon qtcreator
+        self.toolButton.setDefaultAction(self.actionClearLineEdit)
 
-        # connect acionts to methods
-        QtCore.QObject.connect(self.actionNewBugreport, QtCore.SIGNAL("triggered()"), self.new_bugreport)
-        QtCore.QObject.connect(self.actionAdditionalInfo, QtCore.SIGNAL("triggered()"), self.additional_info)
-        QtCore.QObject.connect(self.actionCloseBugreport, QtCore.SIGNAL("triggered()"), self.close_bugreport)
-        QtCore.QObject.connect(self.actionNewWnpp, QtCore.SIGNAL("triggered()"), self.new_wnpp)
-        QtCore.QObject.connect(self.actionClearLineEdit, QtCore.SIGNAL("triggered()"), self.clear_lineedit)
-        QtCore.QObject.connect(self.actionSettings, QtCore.SIGNAL("triggered()"), self.settings_diag)
-        QtCore.QObject.connect(self.actionAbout, QtCore.SIGNAL("triggered()"), self.about)
-        QtCore.QObject.connect(self.actionAboutQt, QtCore.SIGNAL("triggered()"), self.about_qt)
-
-        QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("textChanged(const QString&)"), self.lineedit_text_changed)
-        QtCore.QObject.connect(self.lineEdit, QtCore.SIGNAL("returnPressed()"), self.lineedit_return_pressed)
-
-        QtCore.QObject.connect(self.tableView, QtCore.SIGNAL("activated(const QModelIndex&)"), self.activated)
+        # connect actions to methods
+        QtCore.QObject.connect(self.actionNewBugreport, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.new_bugreport)
+        QtCore.QObject.connect(self.actionAdditionalInfo, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.additional_info)
+        QtCore.QObject.connect(self.actionCloseBugreport, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.close_bugreport)
+        QtCore.QObject.connect(self.actionNewWnpp, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.new_wnpp)
+        QtCore.QObject.connect(self.actionClearLineEdit, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.clear_lineedit)
+        QtCore.QObject.connect(self.actionSettings, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.settings_diag)
+        QtCore.QObject.connect(self.actionAbout, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.about)
+        QtCore.QObject.connect(self.actionAboutQt, 
+                               QtCore.SIGNAL("triggered()"), 
+                               self.about_qt)
+        QtCore.QObject.connect(self.lineEdit, 
+                               QtCore.SIGNAL("textChanged(const QString&)"), 
+                               self.lineedit_text_changed)
+        QtCore.QObject.connect(self.lineEdit, 
+                               QtCore.SIGNAL("returnPressed()"), 
+                               self.lineedit_return_pressed)
+        QtCore.QObject.connect(self.tableView, 
+                               QtCore.SIGNAL("activated(const QModelIndex&)"), 
+                               self.activated)
 
         # setup the table
         self.model = TableModel(self)
-        #self.proxymodel = QtGui.QSortFilterProxyModel(self)
         self.proxymodel = MySortFilterProxyModel(self)
         self.proxymodel.setSourceModel(self.model)
         self.proxymodel.setFilterKeyColumn(-1)
         self.tableView.setModel(self.proxymodel)
         self.tableView.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
-        #self.tableView.horizontalHeader().setMovable(True)
-        #self.tableView.horizontalHeader().setVisible(True)
         self.tableView.verticalHeader().setVisible(False)
 
-        self.toolButton.setDefaultAction(self.actionClearLineEdit)
-        
+        # setup the settings
         self.settings = rng.Settings(rng.Settings.CONFIGFILE)
         self.settings.load()
         self._apply_settings()
 
         self.webView.setHtml(rng.REPORTBUG_NG_INSTRUCTIONS)
         
+        # setup the finite state machine
         self._stateChanged(None, None)
         
         if args:
             self.lineEdit.setText(unicode(args[0]))
             self.lineedit_return_pressed()
 
-	QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("setFocus()"))
 
     def closeEvent(self, ce):
+        """Save the settings and close the GUI."""
         self.logger.info("Catched close event.")
         self._get_settings()
         self.settings.save()
         ce.accept()
 
     def activated(self, index):
+        """React on click in table."""
         self.logger.info("Row %s activated." % str(index.row()))
         realrow = self.proxymodel.mapToSource(index).row()
         bugnr = self.model.elements[realrow].nr
         # find the bug in our list, and get the package and nr
-        package = None
         for i in self.bugs:
             if i.nr == bugnr:
                 self.currentBug = i
                 break
-            
         self._stateChanged(self.currentBug.package, self.currentBug)
         url = bts.BTS_URL + bugnr
         self._show_url(url)
@@ -127,10 +144,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     def lineedit_text_changed(self, text):
         self.logger.info("Text changed: %s" % text)
         text = unicode(text)
-        self.proxymodel.setFilterRegExp(QtCore.QRegExp(text, QtCore.Qt.CaseInsensitive, QtCore.QRegExp.FixedString))
+        self.proxymodel.setFilterRegExp( \
+            QtCore.QRegExp(text, 
+                           QtCore.Qt.CaseInsensitive, 
+                           QtCore.QRegExp.FixedString)
+            )
 
     def lineedit_return_pressed(self):
-        
         #
         # just in case ;)
         #
@@ -140,10 +160,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             return
         
         self.logger.info("Return pressed.")
-        QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
+        self.lineEdit.clear()
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
-        list = None
         if query[0]:
             if query[0] == 'package':
                 # test if there is a submit-as field available and rename the
@@ -152,10 +171,10 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                 if query[1] != realname:
                     self.logger.debug("Using %s as package name as requested by developer." % str(realname))
                     query[1] = realname
-            list = bts.get_bugs(query)
+            buglist = bts.get_bugs(query)
         else:
             # just a signle bug
-            list = [query[1]]
+            buglist = [query[1]]
         # ok, we know the package, so enable some buttons which don't depend
         # on the existence of the acutal packe (wnpp) or bugreports for that
         # package.
@@ -166,8 +185,8 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         # for now, so we have to wait a bit until the bug is fetched.
         else:
             self._stateChanged(None, None)
-        self.logger.debug("Buglist matching the query: %s" % str(list))
-        self.bugs = bts.get_status(list)
+        self.logger.debug("Buglist matching the query: %s" % str(buglist))
+        self.bugs = bts.get_status(buglist)
         # ok, we fetched the bugs. see if the list isn't empty
         if query[0] in (None,) and len(self.bugs) > 0:
             self.currentBug = self.bugs[0]
@@ -178,12 +197,19 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         
     
     def settings_diag(self):
+        """Spawn settings dialog and get settings."""
         s = RngSettings(self.settings)
         if s.exec_() != s.Accepted:
             self.settings = s.settings
 
     def about(self):
-        QtGui.QMessageBox.about(self, self.tr("About Reportbug-NG"), self.tr("""Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
+        """Shows the about box."""
+        # TODO: copyright string below should be a constant
+        QtGui.QMessageBox.about( \
+            self, 
+            self.tr("About Reportbug-NG"), 
+            self.tr( \
+"""Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -194,7 +220,6 @@ the Free Software Foundation; either version 2 of the License, or
 
     def about_qt(self):
         QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))
-
 
     def _stateChanged(self, package, bug):
         """Transition for our finite state machine logic"""
@@ -213,13 +238,11 @@ the Free Software Foundation; either version 2 of the License, or
             self.currentBug = bts.Bugreport(0)
             self.actionAdditionalInfo.setEnabled(0)
             self.actionCloseBugreport.setEnabled(0)
+
         
     def __submit_dialog(self, type):
-        
-#        dialog = submitdialog.Ui_SubmitDialog()
-#        dialog.setupUi()
+        """Setup and spawn the submit dialog."""
         dialog = SubmitDialog()
-        
         dialog.checkBox_script.setChecked(self.settings.script)
         dialog.checkBox_presubj.setChecked(self.settings.presubj)
         
@@ -314,7 +337,7 @@ the Free Software Foundation; either version 2 of the License, or
             
             
     def _apply_settings(self):
-
+        """Apply settings."""
         self.resize(self.settings.width, self.settings.height)
         self.move(self.settings.x, self.settings.y)
         self.tableView.horizontalHeader().resizeSection(0, self.settings.bugnrWidth)
@@ -328,6 +351,7 @@ the Free Software Foundation; either version 2 of the License, or
         self.tableView.horizontalHeader().setSortIndicator(self.settings.sortByCol, order)
 
     def _get_settings(self):
+        """Get current settings."""
         p = self.pos()
         s = self.size()
         self.settings.x = p.x()
@@ -437,10 +461,15 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
         r = right.row()
         return self.sourceModel().elements[l].value() < self.sourceModel().elements[r].value()
 
+
 class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
     
     def __init__(self):
         QtGui.QDialog.__init__(self)
         self.setupUi(self)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), QtCore.SIGNAL("clicked()"), self.accept)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel), QtCore.SIGNAL("clicked()"), self.reject)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), 
+                               QtCore.SIGNAL("clicked()"), 
+                               self.accept)
+        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel), 
+                               QtCore.SIGNAL("clicked()"), 
+                               self.reject)
