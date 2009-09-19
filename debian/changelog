@@ -7,8 +7,9 @@ reportbug-ng (1.6) unstable; urgency=low
   * Fix "[reportbug-ng] Severity colors set to black even when clicking
     "Cancel"" Fixed bug where settings where applied to rng even when the user
     clicked cancel.(Closes: #526332)
+  * Bumped standards version (no changes)
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 15:26:41 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 16:17:13 +0200
 
 reportbug-ng (1.5) unstable; urgency=low
 
