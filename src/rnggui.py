@@ -105,6 +105,8 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self.lineEdit.setText(unicode(args[0]))
             self.lineedit_return_pressed()
 
+	QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("setFocus()"))
+
     def closeEvent(self, ce):
         self.logger.info("Catched close event.")
         self._get_settings()
@@ -155,7 +157,6 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         text = unicode(text)
         self.proxymodel.setFilterRegExp(QtCore.QRegExp(text, QtCore.Qt.CaseInsensitive, QtCore.QRegExp.FixedString))
 
-    
     def lineedit_return_pressed(self):
         
         #
@@ -167,8 +168,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             return
         
         self.logger.info("Return pressed.")
-        text = unicode(self.lineEdit.text())
-        self.lineEdit.clear()
+        QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
         list = None
@@ -452,7 +452,7 @@ class TableModel(QtCore.QAbstractTableModel):
                 2 : bug.status,
                 3 : bug.severity,
                 4 : bug.tags,
-                5 : bug.lastaction}[index.column()]
+                5 : QtCore.QDate(bug.lastaction)}[index.column()]
         return QtCore.QVariant(data)
 
     #
