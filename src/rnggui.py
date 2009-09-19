@@ -67,10 +67,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         #self.tableView.horizontalHeader().setVisible(True)
         self.tableView.verticalHeader().setVisible(False)
 
-        self.toolBar.insertWidget(self.actionNewBugreport, self.label)
-        self.toolBar.insertWidget(self.actionNewBugreport, self.lineEdit)
-        self.toolBar.insertAction(self.actionNewBugreport, self.actionClearLineEdit)
-        self.toolBar.insertSeparator(self.actionNewBugreport)
+        self.toolButton.setDefaultAction(self.actionClearLineEdit)
         
         self.settings = rng.Settings(rng.Settings.CONFIGFILE)
         self.settings.load()

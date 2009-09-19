@@ -1,8 +1,11 @@
 reportbug-ng (1.6) unstable; urgency=low
 
   * Updated VCS-git field in debian/control, we moved to github
+  * Moved Toolbuttons in seperate toolbar and put Strings besides them, this
+    should improve usability by making clearer what the buttons mean and also
+    bigger to make it easier to click
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 12:16:18 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 14:31:49 +0200
 
 reportbug-ng (1.5) unstable; urgency=low
 
