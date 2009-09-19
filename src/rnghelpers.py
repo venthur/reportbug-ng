@@ -605,12 +605,17 @@ def translate_query(query):
         return ['package', query]
 
     
-class Settings:
+class Settings(object):
+    """A Settings object contains all the settings for reportbug-ng.
+    
+    This object supports, loading default values, as well as loading and saving
+    the settings to a configfile.
+    """
     
     CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
     
     def __init__(self, configfile):
-       
+        """Initialize Settings object and load defaults."""
         self.configfile = configfile
         self.config = ConfigParser.ConfigParser()
         self.config.read(self.configfile)
@@ -618,6 +623,7 @@ class Settings:
 
         
     def load_defaults(self):
+        """Load default settings."""
         # Users preferred mailclient
         self.lastmua = "default"
         
@@ -653,7 +659,7 @@ class Settings:
         
         
     def load(self):
-    
+        """Load settings from configfile."""
         if self.config.has_option("general", "lastMUA"):
             self.lastmua = self.config.get("general", "lastMUA")
         if self.config.has_option("general", "sortByCol"):
@@ -707,7 +713,7 @@ class Settings:
 
     
     def save(self):
-
+        """Save settings to configfile."""
         if not self.config.has_section("general"):
             self.config.add_section("general")
         self.config.set("general", "lastMUA", self.lastmua)
@@ -742,9 +748,6 @@ class Settings:
         self.config.set("listview", "statuswidth", self.statusWidth)
         self.config.set("listview", "severitywidth", self.severityWidth)
         self.config.set("listview", "lastactionwidth", self.lastactionWidth)
-
-
         
         # Write everything to configfile
         self.config.write(open(self.configfile, "w"))
-

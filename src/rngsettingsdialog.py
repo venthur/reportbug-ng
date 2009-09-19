@@ -16,6 +16,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import logging
+import copy
 
 from PyQt4 import QtCore, QtGui
 
@@ -23,7 +24,7 @@ from ui import settings
 import rnghelpers as rng
 from rnghelpers import Settings
 
-class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
+class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
     
     def __init__(self, settings):
         QtGui.QDialog.__init__(self)
@@ -32,7 +33,7 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         self.logger = logging.getLogger("Settings")
         self.logger.info("Logger initialized.")
         
-        self.settings = settings
+        self.settings = copy.deepcopy(settings)
 
         QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.RestoreDefaults), QtCore.SIGNAL("clicked()"), self.load_default)
         QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), QtCore.SIGNAL("clicked()"), self.accept)
@@ -48,7 +49,6 @@ class RngSettings(QtGui.QDialog, settings.Ui_Dialog):
         QtCore.QObject.connect(self.checkBox_presubj, QtCore.SIGNAL("stateChanged(int)"), self._presubj_changed)
         QtCore.QObject.connect(self.checkBox_script, QtCore.SIGNAL("stateChanged(int)"), self._script_changed)
         QtCore.QObject.connect(self.comboBox_mua, QtCore.SIGNAL("activated(int)"), self._mua_changed)
-
 
         self.load_settings()
         

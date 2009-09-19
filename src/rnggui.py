@@ -25,7 +25,7 @@ from ui import mainwindow
 from ui import submitdialog
 import rnghelpers as rng
 import debianbts as bts
-from rngsettings import RngSettings
+from rngsettingsdialog import RngSettingsDialog
 import bug
 
 
@@ -198,8 +198,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 
     def settings_diag(self):
         """Spawn settings dialog and get settings."""
-        s = RngSettings(self.settings)
-        if s.exec_() != s.Accepted:
+        s = RngSettingsDialog(self.settings)
+        if s.exec_() == s.Accepted:
+            self.logger.debug("Accepted settings change, applying.")
             self.settings = s.settings
 
     def about(self):

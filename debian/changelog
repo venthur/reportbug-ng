@@ -4,8 +4,11 @@ reportbug-ng (1.6) unstable; urgency=low
   * Moved Toolbuttons in seperate toolbar and put Strings besides them, this
     should improve usability by making clearer what the buttons mean and also
     bigger to make it easier to click
+  * Fix "[reportbug-ng] Severity colors set to black even when clicking
+    "Cancel"" Fixed bug where settings where applied to rng even when the user
+    clicked cancel.(Closes: #526332)
 
- -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 14:31:49 +0200
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 15:26:41 +0200
 
 reportbug-ng (1.5) unstable; urgency=low
 
