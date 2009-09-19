@@ -1,3 +1,9 @@
+reportbug-ng (1.6) unstable; urgency=low
+
+  * Updated VCS-git field in debian/control, we moved to github
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Sep 2009 12:16:18 +0200
+
 reportbug-ng (1.5) unstable; urgency=low
 
   * Applied patch from Daniel Schaal:
