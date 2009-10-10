@@ -1,3 +1,16 @@
+reportbug-ng (1.7) unstable; urgency=low
+
+  * Various adjustments because python-debianbts introduced some non-backwards
+    compatible changes.
+  * rng now depends on pyton-debianbts >= 1.0
+  * Sorting by severity works again
+  * Status now shows "Open", "Closed" and "Archived"
+  * Fix "[reportbug-ng] ordering by column Bugnumber works as a string
+    not as a number" python-debianbts provides now numbers instead of strings
+    (Closes: #542544)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 10 Oct 2009 20:36:05 +0200
+
 reportbug-ng (1.6) unstable; urgency=low
 
   * Updated VCS-git field in debian/control, we moved to github

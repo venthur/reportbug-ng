@@ -118,7 +118,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                 self.currentBug = i
                 break
         self._stateChanged(self.currentBug.package, self.currentBug)
-        url = bts.BTS_URL + bugnr
+        url = bts.BTS_URL + str(bugnr)
         self._show_url(url)
 
     def new_bugreport(self):
@@ -237,7 +237,7 @@ the Free Software Foundation; either version 2 of the License, or
             self.actionAdditionalInfo.setEnabled(1)
             self.actionCloseBugreport.setEnabled(1)
         else:
-            self.currentBug = bts.Bugreport(0)
+            self.currentBug = bts.Bugreport()
             self.actionAdditionalInfo.setEnabled(0)
             self.actionCloseBugreport.setEnabled(0)
 
@@ -397,7 +397,7 @@ class TableModel(QtCore.QAbstractTableModel):
             return QtCore.QVariant()
         if role == QtCore.Qt.ForegroundRole:
             severity = self.elements[index.row()].severity.lower()
-            status = self.elements[index.row()].status.lower()
+            done = self.elements[index.row()].done
             c = QtCore.Qt.black
             if severity == "grave":
                 c = self.parent.settings.c_grave
@@ -411,18 +411,24 @@ class TableModel(QtCore.QAbstractTableModel):
                 c = self.parent.settings.c_minor
             elif severity == "wishlist":
                 c = self.parent.settings.c_wishlist
-            if status == "resolved":
+            if done:
                 c = self.parent.settings.c_resolved
             return QtCore.QVariant(QtGui.QColor(c))
         if role != QtCore.Qt.DisplayRole:
             return QtCore.QVariant()
         bug = self.elements[index.row()]
-        data = {0 : bug.nr,
-                1 : bug.summary,
-                2 : bug.status,
+        if bug.archived:
+            status = "Archived"
+        elif bug.done:
+            status = "Closed"
+        else:
+            status = "Open"
+        data = {0 : bug.id,
+                1 : bug.subject,
+                2 : status,
                 3 : bug.severity,
                 4 : bug.tags,
-                5 : QtCore.QDate(bug.lastaction)}[index.column()]
+                5 : QtCore.QDate(bug.log_modified)}[index.column()]
         return QtCore.QVariant(data)
 
     #
@@ -461,7 +467,7 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
             return QtGui.QSortFilterProxyModel.lessThan(self, left, right)
         l = left.row()
         r = right.row()
-        return self.sourceModel().elements[l].value() < self.sourceModel().elements[r].value()
+        return self.sourceModel().elements[l] < self.sourceModel().elements[r]
 
 
 class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
