@@ -111,10 +111,10 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         """React on click in table."""
         self.logger.info("Row %s activated." % str(index.row()))
         realrow = self.proxymodel.mapToSource(index).row()
-        bugnr = self.model.elements[realrow].nr
+        bugnr = self.model.elements[realrow].bug_num
         # find the bug in our list, and get the package and nr
         for i in self.bugs:
-            if i.nr == bugnr:
+            if i.bug_num == bugnr:
                 self.currentBug = i
                 break
         self._stateChanged(self.currentBug.package, self.currentBug)
@@ -266,7 +266,7 @@ the Free Software Foundation; either version 2 of the License, or
             dialog.checkBoxPatch.setEnabled(0)
             dialog.checkBoxL10n.setEnabled(0)
             package = self.currentBug.package
-            to = "%s@bugs.debian.org" % self.currentBug.nr
+            to = "%s@bugs.debian.org" % self.currentBug.bug_num
         elif type == 'close':
             dialog.groupBox_other.setEnabled(0)
             dialog.wnpp_groupBox.setEnabled(0)
@@ -274,9 +274,9 @@ the Free Software Foundation; either version 2 of the License, or
             dialog.checkBoxSecurity.setEnabled(0)
             dialog.checkBoxPatch.setEnabled(0)
             dialog.checkBoxL10n.setEnabled(0)
-            dialog.lineEditSummary.setText("Done: %s" % self.currentBug.summary)
+            dialog.lineEditSummary.setText("Done: %s" % self.currentBug.subject)
             package = self.currentBug.package
-            to = "%s-done@bugs.debian.org" % self.currentBug.nr
+            to = "%s-done@bugs.debian.org" % self.currentBug.bug_num
         else:
             self.logger.critical("Received unknown submit dialog type!")
 
