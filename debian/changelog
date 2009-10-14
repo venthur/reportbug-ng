@@ -1,3 +1,10 @@
+reportbug-ng (1.9) unstable; urgency=low
+
+  * Fixed small bug where rng uses Bugreport.id instead of .bug_num (id will
+    vanish in future versions of debbugs according to Don) 
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 14 Oct 2009 23:59:01 +0200
+
 reportbug-ng (1.8) unstable; urgency=low
 
   * Fix "[reportbug-ng] 1.7 Does not download bug report text" fixed various

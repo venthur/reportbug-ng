@@ -423,7 +423,7 @@ class TableModel(QtCore.QAbstractTableModel):
             status = "Closed"
         else:
             status = "Open"
-        data = {0 : bug.id,
+        data = {0 : bug.bug_num,
                 1 : bug.subject,
                 2 : status,
                 3 : bug.severity,
