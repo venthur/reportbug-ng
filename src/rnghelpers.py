@@ -27,6 +27,9 @@ import logging
 import ConfigParser
 import tempfile
 
+#from PyQt4.QtCore import QObject
+_ = str
+
 import bug
 
 logger = logging.getLogger("ReportbugNG")

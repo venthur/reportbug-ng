@@ -1,4 +1,4 @@
-DIRS = ui po
+DIRS = ui translations
 
 all:
 	for i in $(DIRS); do \

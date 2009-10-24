@@ -1,4 +1,3 @@
-MSGFMT = msgfmt
 SRCFILES = ../*.py ../ui/*.py
 
 all:
@@ -8,10 +7,10 @@ all:
 	done
 
 install:
-	for i in $(shell find *.mo); do \
-	    LANG=$$(basename $$i .mo); \
-	    mkdir -p $(DESTDIR)/usr/share/locale/$$LANG/LC_MESSAGES/; \
-	    cp $$i $(DESTDIR)/usr/share/locale/$$LANG/LC_MESSAGES/reportbug-ng.mo; \
+	@echo Installing translation files...
+	mkdir -p $(DESTDIR)/usr/share/reportbug-ng/translations/;
+	for i in $(shell find *.qm); do \
+	    cp $$i $(DESTDIR)/usr/share/reportbug-ng/translations; \
 	done
 
 clean:
@@ -27,5 +26,5 @@ update:
 
 template:
 	@echo Generating translation template...
-	pylupdate4 ../*.py ../ui/*.py -ts rng_XX.ts
+	pylupdate4 ../*.py ../ui/*.py -ts xx_XX.ts
 	@echo Rename template according to your language and edit.

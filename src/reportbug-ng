@@ -17,15 +17,16 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import gettext
-gettext.install('reportbug-ng', '/usr/share/locale', unicode=1)
 
 import sys
 sys.path.append('/usr/share/reportbug-ng')
 import logging
 from optparse import OptionParser
+
 from PyQt4 import QtCore, QtGui
+
 from rnggui import RngGui
+
 
 if __name__ == "__main__":
     # Get Options
@@ -64,6 +65,10 @@ the Free Software Foundation; either version 2 of the License, or
     logging.info('Logger initialized with level %s.' % options.loglevel)
 
     app = QtGui.QApplication(sys.argv)
+    translator = QtCore.QTranslator()
+    locale = QtCore.QLocale.system().name()
+    translator.load(locale, "/usr/share/reportbug-ng/translations/")
+    app.installTranslator(translator)
     gui = RngGui(args)
     gui.show()
     sys.exit(app.exec_())
