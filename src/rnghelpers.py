@@ -28,6 +28,7 @@ import ConfigParser
 import tempfile
 
 #from PyQt4.QtCore import QObject
+# FIXME: hack to get rid of gettext related errors about _ not existing
 _ = str
 
 import bug
