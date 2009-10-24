@@ -289,7 +289,6 @@ the Free Software Foundation; either version 2 of the License, or
             dialog.comboBoxSeverity.addItem(sev)
         # Set default severity to 'normal'
         dialog.comboBoxSeverity.setCurrentIndex(4)
-        dialog.comboBoxSeverity.setWhatsThis(rng.SEVERITY_EXPLANATION)
 
         # Run the dialog
         if dialog.exec_() == dialog.Accepted:
@@ -481,4 +480,10 @@ class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
         QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel),
                                QtCore.SIGNAL("clicked()"),
                                self.reject)
+        QtCore.QObject.connect(self.comboBoxSeverity,
+                               QtCore.SIGNAL("currentIndexChanged(int)"),
+                               self.severity_changed)
+        
+    def severity_changed(self, index):
+        self.label_severity.setText(rng.SEVERITY_EXPLANATION[index])
 

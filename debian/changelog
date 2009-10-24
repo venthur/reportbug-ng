@@ -1,3 +1,13 @@
+reportbug-ng (1.10) unstable; urgency=low
+
+  * Fix "Doesn't give any explanations of the severities and what they
+    mean" (Closes: #439203)
+    - Moved the explanations from what-is-this-help to to a always visible
+      lable
+    - Also Moved the help for the tags from what-is-this to tooltips
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 24 Oct 2009 12:17:25 +0200
+
 reportbug-ng (1.9) unstable; urgency=low
 
   * Fixed small bug where rng uses Bugreport.id instead of .bug_num (id will

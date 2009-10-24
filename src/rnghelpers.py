@@ -78,20 +78,15 @@ MAX_BODY_LEN = 10000
 WNPP_ACTIONS = ("RFP", "ITP", "RFH", "RFA", "O")
 SEVERITY = ("Critical", "Grave", "Serious", "Important", "Normal", "Minor", "Wishlist")
 
-SEVERITY_EXPLANATION = _("\
-<b>%(cri)s</b> makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. \
-<br> \
-<b>%(gra)s</b> makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. \
-<br> \
-<b>%(ser)s</b> is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release. \
-<br> \
-<b>%(imp)s</b> a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. \
-<br> \
-<b>%(nor)s</b> the default value, applicable to most bugs. \
-<br> \
-<b>%(min)s</b> a problem which doesn't affect the package's usefulness, and is presumably trivial to fix. \
-<br> \
-<b>%(wis)s</b> for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.") % {'cri':"Critical", 'gra':"Grave", 'ser':"Serious", 'imp':"Important", 'nor':"Normal", 'min':"Minor", 'wis':"Wishlist"}
+SEVERITY_EXPLANATION = [_("Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package."),
+                        _("Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package."),
+                        _("Is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release."),
+                        _("A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone."),
+                        _("The default value, applicable to most bugs."),
+                        _("A problem which doesn't affect the package's usefulness, and is presumably trivial to fix."),
+                        _("For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.")
+                        ]
+
 
 REPORTBUG_NG_INSTRUCTIONS = _("""\
 <h2>Using Reportbug-NG</h2>
