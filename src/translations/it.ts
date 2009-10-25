@@ -908,4 +908,126 @@ the Free Software Foundation; either version 2 of the License, or
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>rnghelpers</name>
+    <message>
+        <location filename="rnghelpers.py" line="57"/>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="58"/>
+        <source>Icedove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="59"/>
+        <source>Iceape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="60"/>
+        <source>Evolution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="61"/>
+        <source>KMail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="63"/>
+        <source>Sylpheed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="64"/>
+        <source>Sylpheed Claws</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="65"/>
+        <source>Claws Mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="66"/>
+        <source>Mutt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="67"/>
+        <source>Mutt NG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="68"/>
+        <source>Pine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="92"/>
+        <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="93"/>
+        <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="94"/>
+        <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="95"/>
+        <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="96"/>
+        <source>The default value, applicable to most bugs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="97"/>
+        <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="98"/>
+        <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="105"/>
+        <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
+&lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
+&lt;p&gt;To find a bug just enter a query and press Enter. Loading the list might take a few seconds.&lt;/p&gt;
+
+&lt;p&gt;The following queries are supported:
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;package&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs belonging to the PACKAGE&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;bugnumber&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns the bug with BUGNUMBER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;maintainer@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs assigned to MAINTAINER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;src:sourcepackage&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs belonging to the SOURCEPACKAGE&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;from:submitter@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs filed by SUBMITTER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;severity:foo&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;tag:bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs marked with TAG&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.&lt;/p&gt;
+
+&lt;h3&gt;Step 2: Filtering Bugs&lt;/h3&gt;
+&lt;p&gt;To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and
+affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p&gt;
+
+&lt;h3&gt;Step 3: Reporting Bugs&lt;/h3&gt;
+&lt;p&gt;You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the &quot;Additional Info&quot; button or you can create a new bugreport for the current package by clicking the &quot;New Bugreport&quot; button.&lt;/p&gt;
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

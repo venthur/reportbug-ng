@@ -27,9 +27,8 @@ import logging
 import ConfigParser
 import tempfile
 
-#from PyQt4.QtCore import QObject
-# FIXME: hack to get rid of gettext related errors about _ not existing
-_ = str
+from PyQt4.QtCore import QCoreApplication
+
 
 import bug
 
@@ -52,20 +51,26 @@ MUA_SYNTAX = {
     "pine" : 'pine -url ' + RFC_MAILTO,
 #    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
               }
+
+def getMUAString(mua):
+    """ Return the translated string for the specified MUA."""
+    if mua == "default": return QCoreApplication.translate("rnghelpers", "Default")
+    if mua == "icedove" : return QCoreApplication.translate("rnghelpers", "Icedove")
+    if mua == "iceape" : return QCoreApplication.translate("rnghelpers", "Iceape")
+    if mua == "evolution" : return QCoreApplication.translate("rnghelpers", "Evolution")
+    if mua == "kmail" : return QCoreApplication.translate("rnghelpers", "KMail")
+#   if mua == "opera" : return QCoreApplication.translate("rnghelpers", "Opera")
+    if mua == "sylpheed" : return QCoreApplication.translate("rnghelpers", "Sylpheed")
+    if mua == "sylpheed-claws" : return QCoreApplication.translate("rnghelpers", "Sylpheed Claws")
+    if mua == "claws-mail" : return QCoreApplication.translate("rnghelpers", "Claws Mail")
+    if mua == "mutt" : return QCoreApplication.translate("rnghelpers", "Mutt")
+    if mua == "mutt-ng" : return QCoreApplication.translate("rnghelpers", "Mutt NG")
+    if mua == "pine" : return QCoreApplication.translate("rnghelpers", "Pine")
+#   if mua == "googlemail" : return QCoreApplication.translate("Google")
+    # If everything else fails, just return the string we got
+    return mua
+
 MUA_STRINGS = {
-    "default" : _("Default"),
-    "icedove" : _("Icedove"),
-    "iceape" : _("Iceape"),
-    "evolution" : _("Evolution"),
-    "kmail" : _("KMail"),
-#    "opera" : _("Opera"),
-    "sylpheed" : _("Sylpheed"),
-    "sylpheed-claws" : _("Sylpheed Claws"),
-    "claws-mail" : _("Claws Mail"),
-    "mutt" : _("Mutt"),
-    "mutt-ng" : _("Mutt NG"),
-    "pine" : _("Pine"),
-#    "googlemail" : _("Google")
               }
 # Don't urllib.quote() their strings
 MUA_NO_URLQUOTE = ["default", "kmail"]            
@@ -82,18 +87,22 @@ MAX_BODY_LEN = 10000
 WNPP_ACTIONS = ("RFP", "ITP", "RFH", "RFA", "O")
 SEVERITY = ("Critical", "Grave", "Serious", "Important", "Normal", "Minor", "Wishlist")
 
-SEVERITY_EXPLANATION = [_("Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package."),
-                        _("Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package."),
-                        _("Is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release."),
-                        _("A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone."),
-                        _("The default value, applicable to most bugs."),
-                        _("A problem which doesn't affect the package's usefulness, and is presumably trivial to fix."),
-                        _("For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.")
-                        ]
+def getSeverityExplanation(severity):
+    """Return a translated explanation of the severity."""
+    if severity == 0: return QCoreApplication.translate("rnghelpers", "Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.")
+    if severity == 1: return QCoreApplication.translate("rnghelpers", "Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.")
+    if severity == 2: return QCoreApplication.translate("rnghelpers", "Is a severe violation of Debian policy (roughly, it violates a \"must\" or \"required\" directive), or, in the package maintainer's opinion, makes the package unsuitable for release.")
+    if severity == 3: return QCoreApplication.translate("rnghelpers", "A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.")
+    if severity == 4: return QCoreApplication.translate("rnghelpers", "The default value, applicable to most bugs.")
+    if severity == 5: return QCoreApplication.translate("rnghelpers", "A problem which doesn't affect the package's usefulness, and is presumably trivial to fix.")
+    if severity == 6: return QCoreApplication.translate("rnghelpers", "For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.")
+    # if erverything fails return severity:
+    return severity
 
 
-REPORTBUG_NG_INSTRUCTIONS = _("""\
-<h2>Using Reportbug-NG</h2>
+def getRngInstructions():
+    """Return translated instructions for reportbug ng."""
+    return QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
 <p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>
 
@@ -136,14 +145,6 @@ def getAvailableMUAs():
                 continue
     return list
 
-def getMUAString(mua):
-    """
-    Returns the user-visible string for the specified MUA.
-    """
-    if mua in MUA_STRINGS:
-        return MUA_STRINGS[mua]
-
-    return mua
 
 SUPPORTED_MUA = getAvailableMUAs()
 SUPPORTED_MUA.sort()

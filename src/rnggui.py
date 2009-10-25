@@ -90,7 +90,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.settings.load()
         self._apply_settings()
 
-        self.webView.setHtml(rng.REPORTBUG_NG_INSTRUCTIONS)
+        self.webView.setHtml(rng.getRngInstructions())
 
         # setup the finite state machine
         self._stateChanged(None, None)
@@ -485,5 +485,5 @@ class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
                                self.severity_changed)
         
     def severity_changed(self, index):
-        self.label_severity.setText(rng.SEVERITY_EXPLANATION[index])
+        self.label_severity.setText(rng.getSeverityExplanation(index))
 
