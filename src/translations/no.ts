@@ -645,6 +645,52 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
         <translation type="unfinished">Reportbug NG</translation>
     </message>
     <message>
+        <location filename="mainwindow.py" line="138"/>
+        <source>&amp;New Bugreport...</source>
+        <translation type="unfinished">&amp;Ny feilrapport</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="140"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="143"/>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="144"/>
+        <source>&amp;Close Bugreport...</source>
+        <translation type="unfinished">&amp;Ny feilrapport</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="146"/>
+        <source>Ctrl+L</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="149"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="152"/>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="154"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
         <location filename="mainwindow.py" line="131"/>
         <source>Q&amp;uery or Filter:</source>
         <translation type="unfinished"></translation>
@@ -680,20 +726,9 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="138"/>
-        <source>&amp;New Bugreport...</source>
-        <translation type="unfinished">&amp;Ny feilrapport</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="139"/>
         <source>Create a new Bugreport for the current package.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="140"/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished">
-            </translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="141"/>
@@ -706,26 +741,9 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="143"/>
-        <source>Ctrl+A</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="144"/>
-        <source>&amp;Close Bugreport...</source>
-        <translation type="unfinished">&amp;Ny feilrapport</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="145"/>
         <source>Close the current Bugreport.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="146"/>
-        <source>Ctrl+L</source>
-        <translation type="unfinished">
-            </translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="147"/>
@@ -738,12 +756,6 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="149"/>
-        <source>Ctrl+W</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="150"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
@@ -754,21 +766,9 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="152"/>
-        <source>&amp;Quit</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="153"/>
         <source>Quit Reportbug-NG.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="154"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished">
-            </translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="155"/>
@@ -819,16 +819,6 @@ the Free Software Foundation; either version 2 of the License, or
 <context>
     <name>SubmitDialog</name>
     <message>
-        <location filename="submitdialog.py" line="140"/>
-        <source>Bug report details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="submitdialog.py" line="141"/>
-        <source>Please add details about the bug report you want to report.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="submitdialog.py" line="142"/>
         <source>&amp;Package:</source>
         <translation type="unfinished">&amp;Pakke:</translation>
@@ -876,11 +866,6 @@ the Free Software Foundation; either version 2 of the License, or
         <translation type="unfinished">A&amp;lvorlighetsgrad:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="151"/>
-        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="submitdialog.py" line="152"/>
         <source>&amp;Tags:</source>
         <translation type="unfinished">&amp;Tagger:</translation>
@@ -916,6 +901,21 @@ the Free Software Foundation; either version 2 of the License, or
         <translation type="unfinished">sikkerhet</translation>
     </message>
     <message>
+        <location filename="submitdialog.py" line="140"/>
+        <source>Bug report details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="submitdialog.py" line="141"/>
+        <source>Please add details about the bug report you want to report.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="submitdialog.py" line="151"/>
+        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="submitdialog.py" line="159"/>
         <source>Miscellaneous</source>
         <translation type="unfinished"></translation>
@@ -929,6 +929,41 @@ the Free Software Foundation; either version 2 of the License, or
         <location filename="submitdialog.py" line="161"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TableModel</name>
+    <message>
+        <location filename="rnggui.py" line="440"/>
+        <source>Bugnumber</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="441"/>
+        <source>Summary</source>
+        <translation type="unfinished">Sammendrag</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="442"/>
+        <source>Status</source>
+        <translation type="unfinished">Status</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="443"/>
+        <source>Severity</source>
+        <translation type="unfinished">Alvorlighetsgrad</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="444"/>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="445"/>
+        <source>Last Action</source>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 <context>

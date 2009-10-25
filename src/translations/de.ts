@@ -548,72 +548,72 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
     <message>
         <location filename="settings.py" line="102"/>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="unfinished">Einstellungen</translation>
     </message>
     <message>
         <location filename="settings.py" line="103"/>
         <source>External Applications</source>
-        <translation>Externe Anwendungen</translation>
+        <translation type="unfinished">Externe Anwendungen</translation>
     </message>
     <message>
         <location filename="settings.py" line="104"/>
         <source>Mail Client:</source>
-        <translation>Mail Anwendung:</translation>
+        <translation type="unfinished">Mail Anwendung:</translation>
     </message>
     <message>
         <location filename="settings.py" line="105"/>
         <source>User Interface</source>
-        <translation>Benutzerinterface</translation>
+        <translation type="unfinished">Benutzerinterface</translation>
     </message>
     <message>
         <location filename="settings.py" line="106"/>
         <source>Critical:</source>
-        <translation>Kritisch:</translation>
+        <translation type="unfinished">Kritisch:</translation>
     </message>
     <message>
         <location filename="settings.py" line="107"/>
         <source>Grave:</source>
-        <translation>Gravierend:</translation>
+        <translation type="unfinished">Gravierend:</translation>
     </message>
     <message>
         <location filename="settings.py" line="108"/>
         <source>Serious:</source>
-        <translation>Ernst:</translation>
+        <translation type="unfinished">Ernst:</translation>
     </message>
     <message>
         <location filename="settings.py" line="109"/>
         <source>Important:</source>
-        <translation>Wichtig:</translation>
+        <translation type="unfinished">Wichtig:</translation>
     </message>
     <message>
         <location filename="settings.py" line="110"/>
         <source>Normal:</source>
-        <translation>Normal:</translation>
+        <translation type="unfinished">Normal:</translation>
     </message>
     <message>
         <location filename="settings.py" line="111"/>
         <source>Minor:</source>
-        <translation>Kleinigkeit:</translation>
+        <translation type="unfinished">Kleinigkeit:</translation>
     </message>
     <message>
         <location filename="settings.py" line="112"/>
         <source>Wishlist:</source>
-        <translation>Wunschliste:</translation>
+        <translation type="unfinished">Wunschliste:</translation>
     </message>
     <message>
         <location filename="settings.py" line="113"/>
         <source>Resolved:</source>
-        <translation>Gelöst:</translation>
+        <translation type="unfinished">Gelöst:</translation>
     </message>
     <message>
         <location filename="settings.py" line="114"/>
         <source>Miscellaneous</source>
-        <translation>Verschiedenes</translation>
+        <translation type="unfinished">Verschiedenes</translation>
     </message>
     <message>
         <location filename="settings.py" line="115"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation>Sende zusätzliche Bugskript Informationen falls verfügbar (empfohlen)</translation>
+        <translation type="unfinished">Sende zusätzliche Bugskript Informationen falls verfügbar (empfohlen)</translation>
     </message>
     <message>
         <location filename="settings.py" line="116"/>
@@ -626,137 +626,137 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
     <message>
         <location filename="mainwindow.py" line="130"/>
         <source>Reportbug NG</source>
-        <translation>Reportbug NG</translation>
+        <translation type="unfinished">Reportbug NG</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="131"/>
         <source>Q&amp;uery or Filter:</source>
-        <translation>Q&amp;uery oder Filter:</translation>
+        <translation type="unfinished">Q&amp;uery oder Filter:</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="132"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="133"/>
         <source>&amp;File</source>
-        <translation>&amp;Datei</translation>
+        <translation type="unfinished">&amp;Datei</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="134"/>
         <source>&amp;Bugs</source>
-        <translation>&amp;Fehler</translation>
+        <translation type="unfinished">&amp;Fehler</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="135"/>
         <source>&amp;Edit</source>
-        <translation>B&amp;earbeiten</translation>
+        <translation type="unfinished">B&amp;earbeiten</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="136"/>
         <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
+        <translation type="unfinished">&amp;Hilfe</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="137"/>
         <source>toolBar</source>
-        <translation>Symbolleiste</translation>
+        <translation type="unfinished">Symbolleiste</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="138"/>
         <source>&amp;New Bugreport...</source>
-        <translation>&amp;Neuer Fehlerbericht...</translation>
+        <translation type="unfinished">&amp;Neuer Fehlerbericht...</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="139"/>
         <source>Create a new Bugreport for the current package.</source>
-        <translation>Erstelle einen neuen Fehlerbericht für das aktuelle Paket.</translation>
+        <translation type="unfinished">Erstelle einen neuen Fehlerbericht für das aktuelle Paket.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="140"/>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="141"/>
         <source>&amp;Additional Information...</source>
-        <translation>Zusätzliche Inform&amp;ationen...</translation>
+        <translation type="unfinished">Zusätzliche Inform&amp;ationen...</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="142"/>
         <source>Provide additional information for this Bugreport.</source>
-        <translation>Zusätzliche Informationen für diesen Fehlerbericht bereitstellen.</translation>
+        <translation type="unfinished">Zusätzliche Informationen für diesen Fehlerbericht bereitstellen.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="143"/>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="144"/>
         <source>&amp;Close Bugreport...</source>
-        <translation>Fehlerberi&amp;cht schließen... </translation>
+        <translation type="unfinished">Fehlerberi&amp;cht schließen... </translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="145"/>
         <source>Close the current Bugreport.</source>
-        <translation>Aktuellen Fehlerbericht schließen.</translation>
+        <translation type="unfinished">Aktuellen Fehlerbericht schließen.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="146"/>
         <source>Ctrl+L</source>
-        <translation>Ctrl+L</translation>
+        <translation type="unfinished">Ctrl+L</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="147"/>
         <source>New &amp;WNPP Bugreport...</source>
-        <translation>Neuer &amp;WNPP Fehlerbericht...</translation>
+        <translation type="unfinished">Neuer &amp;WNPP Fehlerbericht...</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="148"/>
         <source>Create a new WNPP Bugreport.</source>
-        <translation>Einen neuen WNPP Fehlerbericht erstellen.</translation>
+        <translation type="unfinished">Einen neuen WNPP Fehlerbericht erstellen.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="149"/>
         <source>Ctrl+W</source>
-        <translation>Ctrl+W</translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="150"/>
         <source>Clear</source>
-        <translation>Leeren</translation>
+        <translation type="unfinished">Leeren</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="151"/>
         <source>Clear.</source>
-        <translation>Leeren.</translation>
+        <translation type="unfinished">Leeren.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="152"/>
         <source>&amp;Quit</source>
-        <translation>B&amp;eenden</translation>
+        <translation type="unfinished">B&amp;eenden</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="153"/>
         <source>Quit Reportbug-NG.</source>
-        <translation>Reportbug-NG beenden.</translation>
+        <translation type="unfinished">Reportbug-NG beenden.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="154"/>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="155"/>
         <source>&amp;Settings</source>
-        <translation>Ein&amp;stellungen</translation>
+        <translation type="unfinished">Ein&amp;stellungen</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="156"/>
         <source>Change Reportbug-NG&apos;s settings.</source>
-        <translation>Reportbug-NGs Einstellungen ändern.</translation>
+        <translation type="unfinished">Reportbug-NGs Einstellungen ändern.</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="157"/>
@@ -799,7 +799,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.py" line="140"/>
         <source>Bug report details</source>
-        <translation>Fehlerbericht Details</translation>
+        <translation type="unfinished">Fehlerbericht Details</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="141"/>
@@ -809,77 +809,72 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.py" line="142"/>
         <source>&amp;Package:</source>
-        <translation>&amp;Paket:</translation>
+        <translation type="unfinished">&amp;Paket:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="143"/>
         <source>&amp;Version:</source>
-        <translation>&amp;Version:</translation>
+        <translation type="unfinished">&amp;Version:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="144"/>
         <source>&amp;WNPP Bugreport</source>
-        <translation>&amp;WNPP Fehlerbericht</translation>
+        <translation type="unfinished">&amp;WNPP Fehlerbericht</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="145"/>
         <source>Short Package &amp;Description:</source>
-        <translation>Kurze Pa&amp;ketbeschreibung:</translation>
+        <translation type="unfinished">Kurze Pa&amp;ketbeschreibung:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="146"/>
         <source>WNPP &amp;Action:</source>
-        <translation>WNPP &amp;Aktion:</translation>
+        <translation type="unfinished">WNPP &amp;Aktion:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="147"/>
         <source>Normal Bugreport</source>
-        <translation>Normaler Fehlerbericht</translation>
+        <translation type="unfinished">Normaler Fehlerbericht</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="148"/>
         <source>&lt;b&gt;Please enter a short summary. Severity and Tags are optional.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Bitte geben Sie eine kurze Zusammenfassung ein. Dringlichkeit und Tags sind optional.&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Bitte geben Sie eine kurze Zusammenfassung ein. Dringlichkeit und Tags sind optional.&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="149"/>
         <source>&amp;Summary:</source>
-        <translation>Zu&amp;sammenfassung:</translation>
+        <translation type="unfinished">Zu&amp;sammenfassung:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="150"/>
         <source>S&amp;everity:</source>
-        <translation>Dringlichk&amp;eit:</translation>
-    </message>
-    <message>
-        <location filename="submitdialog.py" line="151"/>
-        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dringlichk&amp;eit:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="152"/>
         <source>&amp;Tags:</source>
-        <translation>&amp;Tags:</translation>
+        <translation type="unfinished">&amp;Tags:</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="153"/>
         <source>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there&apos;s a patch, but it doesn&apos;t resolve the bug adequately or causes some other problems, this tag should not be used.</source>
-        <translation>Ein Patch oder eine andere leichte Prozedur, die den Fehler behebt, ist im Fehlerprotokoll enthalten. Wenn es einen Patch gibt, der jedoch den Fehler nicht hinreichend behebt, oder irgendwelche andere Probleme verursacht, dann sollte diese Markierung nicht verwendet werden.</translation>
+        <translation type="unfinished">Ein Patch oder eine andere leichte Prozedur, die den Fehler behebt, ist im Fehlerprotokoll enthalten. Wenn es einen Patch gibt, der jedoch den Fehler nicht hinreichend behebt, oder irgendwelche andere Probleme verursacht, dann sollte diese Markierung nicht verwendet werden.</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="154"/>
         <source>patch</source>
-        <translation>Patch</translation>
+        <translation type="unfinished">Patch</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="155"/>
         <source>This bug is relevant to the localisation of the package.</source>
-        <translation>Dieser Fehler ist für die Lokalisierung des Pakets relevant.</translation>
+        <translation type="unfinished">Dieser Fehler ist für die Lokalisierung des Pakets relevant.</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="156"/>
         <source>l10n</source>
-        <translation>l10n</translation>
+        <translation type="unfinished">l10n</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="157"/>
@@ -889,22 +884,60 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.py" line="158"/>
         <source>security</source>
-        <translation>Sicherheit</translation>
+        <translation type="unfinished">Sicherheit</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="159"/>
         <source>Miscellaneous</source>
-        <translation>Verschiedenes</translation>
+        <translation type="unfinished">Verschiedenes</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="160"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation>Sende zusätzliche Bugskript Informationen falls verfügbar (empfohlen)</translation>
+        <translation type="unfinished">Sende zusätzliche Bugskript Informationen falls verfügbar (empfohlen)</translation>
     </message>
     <message>
         <location filename="submitdialog.py" line="161"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
         <translation type="unfinished">Falls verfügbar, zeige paketspezifische Informationen bevor der Fehlerbericht gesendet wird (empfohlen)</translation>
+    </message>
+    <message>
+        <location filename="submitdialog.py" line="151"/>
+        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TableModel</name>
+    <message>
+        <location filename="rnggui.py" line="440"/>
+        <source>Bugnumber</source>
+        <translation>Fehlernummer</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="441"/>
+        <source>Summary</source>
+        <translation>Zusammenfassung</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="442"/>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="443"/>
+        <source>Severity</source>
+        <translation>Dringlichkeit</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="444"/>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="445"/>
+        <source>Last Action</source>
+        <translation>Letzte Aktion</translation>
     </message>
 </context>
 <context>

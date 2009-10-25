@@ -616,6 +616,46 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished">Reportbug NG</translation>
     </message>
     <message>
+        <location filename="mainwindow.py" line="138"/>
+        <source>&amp;New Bugreport...</source>
+        <translation type="unfinished">&amp;דווח באג חדש...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="140"/>
+        <source>Ctrl+N</source>
+        <translation type="unfinished">Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="143"/>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">Ctrl+A</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="144"/>
+        <source>&amp;Close Bugreport...</source>
+        <translation type="unfinished">&amp;סגור באג...</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="146"/>
+        <source>Ctrl+L</source>
+        <translation type="unfinished">Ctrl+L</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="149"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">Ctrl+W</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="152"/>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">י&amp;ציאה</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="154"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished">Ctrl+Q</translation>
+    </message>
+    <message>
         <location filename="mainwindow.py" line="131"/>
         <source>Q&amp;uery or Filter:</source>
         <translation type="unfinished"></translation>
@@ -651,19 +691,9 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="138"/>
-        <source>&amp;New Bugreport...</source>
-        <translation type="unfinished">&amp;דווח באג חדש...</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="139"/>
         <source>Create a new Bugreport for the current package.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="140"/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="141"/>
@@ -676,24 +706,9 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="143"/>
-        <source>Ctrl+A</source>
-        <translation type="unfinished">Ctrl+A</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="144"/>
-        <source>&amp;Close Bugreport...</source>
-        <translation type="unfinished">&amp;סגור באג...</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="145"/>
         <source>Close the current Bugreport.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="146"/>
-        <source>Ctrl+L</source>
-        <translation type="unfinished">Ctrl+L</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="147"/>
@@ -706,11 +721,6 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="149"/>
-        <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="150"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
@@ -721,19 +731,9 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="152"/>
-        <source>&amp;Quit</source>
-        <translation type="unfinished">י&amp;ציאה</translation>
-    </message>
-    <message>
         <location filename="mainwindow.py" line="153"/>
         <source>Quit Reportbug-NG.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.py" line="154"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="mainwindow.py" line="155"/>
@@ -784,16 +784,6 @@ the Free Software Foundation; either version 2 of the License, or
 <context>
     <name>SubmitDialog</name>
     <message>
-        <location filename="submitdialog.py" line="140"/>
-        <source>Bug report details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="submitdialog.py" line="141"/>
-        <source>Please add details about the bug report you want to report.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="submitdialog.py" line="142"/>
         <source>&amp;Package:</source>
         <translation type="unfinished">&amp;חבילה:</translation>
@@ -839,11 +829,6 @@ the Free Software Foundation; either version 2 of the License, or
         <translation type="unfinished">&amp;חשיבות:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="151"/>
-        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="submitdialog.py" line="152"/>
         <source>&amp;Tags:</source>
         <translation type="unfinished">&amp;תגיות:</translation>
@@ -881,6 +866,21 @@ the Free Software Foundation; either version 2 of the License, or
         <translation type="unfinished">security</translation>
     </message>
     <message>
+        <location filename="submitdialog.py" line="140"/>
+        <source>Bug report details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="submitdialog.py" line="141"/>
+        <source>Please add details about the bug report you want to report.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="submitdialog.py" line="151"/>
+        <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="submitdialog.py" line="159"/>
         <source>Miscellaneous</source>
         <translation type="unfinished"></translation>
@@ -894,6 +894,41 @@ the Free Software Foundation; either version 2 of the License, or
         <location filename="submitdialog.py" line="161"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TableModel</name>
+    <message>
+        <location filename="rnggui.py" line="440"/>
+        <source>Bugnumber</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="441"/>
+        <source>Summary</source>
+        <translation type="unfinished">סיכום</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="442"/>
+        <source>Status</source>
+        <translation type="unfinished">סטאטוס</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="443"/>
+        <source>Severity</source>
+        <translation type="unfinished">חשיבות</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="444"/>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="445"/>
+        <source>Last Action</source>
+        <translation type="unfinished">
+            </translation>
     </message>
 </context>
 <context>

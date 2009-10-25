@@ -437,12 +437,12 @@ class TableModel(QtCore.QAbstractTableModel):
         if role != QtCore.Qt.DisplayRole:
             return QtCore.QVariant()
         if orientation == QtCore.Qt.Horizontal:
-            txt = {0 : "Bugnumber",
-                1 : "Summary",
-                2 : "Status",
-                3 : "Severity",
-                4 : "Tags",
-                5 : "Last Action"}[section]
+            txt = {0 : self.tr("Bugnumber"),
+                1 : self.tr("Summary"),
+                2 : self.tr("Status"),
+                3 : self.tr("Severity"),
+                4 : self.tr("Tags"),
+                5 : self.tr("Last Action")}[section]
             return QtCore.QVariant(txt)
         else:
             return QtCore.QVariant()

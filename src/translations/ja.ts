@@ -559,6 +559,39 @@ the Free Software Foundation; either version 2 of the License, or
     </message>
 </context>
 <context>
+    <name>TableModel</name>
+    <message>
+        <location filename="rnggui.py" line="440"/>
+        <source>Bugnumber</source>
+        <translation type="unfinished">バグ番号</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="441"/>
+        <source>Summary</source>
+        <translation type="unfinished">サマリー</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="442"/>
+        <source>Status</source>
+        <translation type="unfinished">ステータス</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="443"/>
+        <source>Severity</source>
+        <translation type="unfinished">重要度</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="444"/>
+        <source>Tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="445"/>
+        <source>Last Action</source>
+        <translation type="unfinished">最後の操作</translation>
+    </message>
+</context>
+<context>
     <name>rnghelpers</name>
     <message>
         <location filename="rnghelpers.py" line="57"/>
