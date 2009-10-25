@@ -1,0 +1,60 @@
+General Info:
+=============
+
+Reportbug-NG uses QT's translation mechanism. The basic workflow is:
+1. Generate/Update .ts files from the sources
+2. Modify the .ts files (=> translate)
+3. Generate .qm files from the .ts files
+
+Step 1. is done by the programmer who modifies the code, not by the 
+        translator
+Step 2. is done by the translator
+Step 3. is done automatically during the build process
+
+
+Gettext to QT transition:
+=========================
+
+I moved the existing gettext tranlations (.po files) to QT's system. 
+Unfortunately all translations where marked as "obsolete", so they are not
+used. They live still in the .ts files though, so one can reuse them when 
+working on the translation.
+
+
+1. Generating a new .ts file:
+=============================
+
+Goto src/translations and do 
+
+  make template
+
+this will generate a template named xx_XX.ts. Rename this file according to
+the translation you wish to create and edit this file with linguist or an
+editor.
+
+
+2. Updating existing Translations:
+==================================
+
+Just use linguist or an editor and modify the existing translation.
+
+
+3. Refreshing the .ts files after changes in the source:
+========================================================
+
+This step is usually done by me (the guy who modifies the sources) and not
+needed by translators:
+
+Call
+
+  make upgrade
+
+this will look in the source files for modifikations and modifies the existing
+.ts files. If strings where added in the source, the entries are added in the
+.ts file, if strings where removed, they are marked as obsolete in the .ts.
+
+
+
+-- Bastian Venthur <venthur at debian org>
+    2009-10-25
+
