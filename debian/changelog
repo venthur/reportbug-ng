@@ -1,3 +1,10 @@
+reportbug-ng (1.12) unstable; urgency=low
+
+  * Fix "Email client does not open when reporting a new bug" 
+    Thanks Lars Kruse for the patch! (Closes: #554591)
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 27 Dec 2009 17:48:56 +0100
+
 reportbug-ng (1.11) unstable; urgency=low
 
   * Ported gettext to QT's translation mechanism (brain huuuurts!)

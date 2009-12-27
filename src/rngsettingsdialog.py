@@ -22,7 +22,7 @@ from PyQt4 import QtCore, QtGui
 
 from ui import settings
 import rnghelpers as rng
-from rnghelpers import Settings
+from rnghelpers import Settings, getMUAString
 
 class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
     
@@ -137,8 +137,8 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
         mua = unicode(self.comboBox_mua.currentText())
         # translate back
         found = False
-        for mua_orig, mua_transl in rng.MUA_STRINGS.iteritems():
-            if mua_transl == mua:
+        for mua_orig in rng.MUA_SYNTAX.keys():
+            if getMUAString(mua_orig) == mua:
                 self.settings.lastmua = mua_orig
                 found = True
                 self.logger.debug("Found match for MUA: %s %s" % (mua, mua_orig))
