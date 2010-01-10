@@ -41,6 +41,13 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         # Since this is not possible withon qtcreator
         self.toolButton.setDefaultAction(self.actionClearLineEdit)
 
+        #
+        self.progressbar = QtGui.QProgressBar(self.statusbar)
+        self.progressbar.setFixedHeight(15)
+        self.progressbar.setFixedWidth(100)
+        self.progressbar.hide()
+        self.statusbar.addPermanentWidget(self.progressbar)
+        
         # connect actions to methods
         QtCore.QObject.connect(self.actionNewBugreport,
                                QtCore.SIGNAL("triggered()"),
@@ -75,6 +82,16 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.tableView,
                                QtCore.SIGNAL("activated(const QModelIndex&)"),
                                self.activated)
+        QtCore.QObject.connect(self.webView,
+                               QtCore.SIGNAL("loadProgress(int)"),
+                               self.load_progress)
+        QtCore.QObject.connect(self.webView,
+                               QtCore.SIGNAL("loadStarted()"),
+                               self.load_started)
+        QtCore.QObject.connect(self.webView,
+                               QtCore.SIGNAL("loadFinished(bool)"),
+                               self.load_finished)
+
 
         # setup the table
         self.model = TableModel(self)
@@ -372,6 +389,18 @@ the Free Software Foundation; either version 2 of the License, or
         url = QtCore.QUrl(url)
         self.webView.setUrl(url)
 
+    def load_started(self):
+        """Webwiew started to load a page."""
+        self.progressbar.show()
+
+    def load_progress(self, progress):
+        """Webwiew progress advanced."""
+        self.progressbar.setValue(progress)
+
+    def load_finished(self, ok):
+        """Webview finished do load the page."""
+        self.progressbar.reset()
+        self.progressbar.hide()
 
 
 class TableModel(QtCore.QAbstractTableModel):
