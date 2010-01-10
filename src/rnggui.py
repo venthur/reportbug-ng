@@ -213,7 +213,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         chunksize = 50
         if len(buglist) > chunksize:
             self.load_started()
-            self.logger.debug("Buglist longer than 1000, splitting in chunks.")
+            self.logger.debug("Buglist longer than %i, splitting in chunks." % chunksize)
             self.bugs = []
             i = 0
             for chunk in chunks(buglist, chunksize):
@@ -222,7 +222,10 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                 if progress > 100:
                     progress = 100
                 self.load_progress(progress)
-                self.bugs.extend(bts.get_status(chunk))
+                bl = bts.get_status(chunk)
+                if len(bl) == 0:
+                    self.logger.error("One of the following bugs caused the BTS to hickup: %s" % str(bl))
+                self.bugs.extend(bl)
             self.load_finished(True)
         else:
             self.bugs = bts.get_status(buglist)

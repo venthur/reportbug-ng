@@ -1,3 +1,10 @@
+reportbug-ng (1.13) unstable; urgency=low
+
+  * Added Progressbar for Webview and loading of Bugreports
+  * Added Debian logo as MainWindow icon
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 10 Jan 2010 15:31:10 +0100
+
 reportbug-ng (1.12) unstable; urgency=low
 
   * Fix "Email client does not open when reporting a new bug" 
