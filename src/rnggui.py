@@ -29,6 +29,12 @@ from rngsettingsdialog import RngSettingsDialog
 import bug
 
 
+
+def chunks(l, n):
+    for i in range(0, len(l), n):
+        yield l[i:i+n]
+
+
 class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 
     def __init__(self, args):
@@ -43,7 +49,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 
         #
         self.progressbar = QtGui.QProgressBar(self.statusbar)
-        self.progressbar.setFixedHeight(15)
+        self.progressbar.setFixedHeight(20)
         self.progressbar.setFixedWidth(100)
         self.progressbar.hide()
         self.statusbar.addPermanentWidget(self.progressbar)
@@ -204,7 +210,22 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         else:
             self._stateChanged(None, None)
         self.logger.debug("Buglist matching the query: %s" % str(buglist))
-        self.bugs = bts.get_status(buglist)
+        chunksize = 50
+        if len(buglist) > chunksize:
+            self.load_started()
+            self.logger.debug("Buglist longer than 1000, splitting in chunks.")
+            self.bugs = []
+            i = 0
+            for chunk in chunks(buglist, chunksize):
+                i += 1
+                progress = int(100. * i * chunksize / len(buglist))
+                if progress > 100:
+                    progress = 100
+                self.load_progress(progress)
+                self.bugs.extend(bts.get_status(chunk))
+            self.load_finished(True)
+        else:
+            self.bugs = bts.get_status(buglist)
         # ok, we fetched the bugs. see if the list isn't empty
         if query[0] in (None,) and len(self.bugs) > 0:
             self.currentBug = self.bugs[0]
