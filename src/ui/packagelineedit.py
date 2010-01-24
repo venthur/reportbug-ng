@@ -6,14 +6,14 @@ from apt.cache import Cache, FilteredCache, Filter
 class InstalledFilter(Filter):
     """ Filter that returns all installed packages """
     def apply(self, pkg):
-        return pkg.isInstalled
+        return pkg.is_installed
 
 class PackageLineEdit(QtGui.QLineEdit):
     def __init__(self, parent):
         QtGui.QLineEdit.__init__(self, parent)
         self.logger = logging.getLogger("PackageLineEdit") 
         cache = FilteredCache(Cache())
-        cache.setFilter(InstalledFilter())
+        cache.set_filter(InstalledFilter())
         self._completer = QtGui.QCompleter(sorted(cache.keys()))
         self._completer.setModelSorting(QtGui.QCompleter.CaseSensitivelySortedModel)
         self.setCompleter(self._completer)

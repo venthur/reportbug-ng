@@ -1,3 +1,10 @@
+reportbug-ng (1.14) unstable; urgency=low
+
+  * Silence deprecation warning in packagelineedit.py by using new method
+    names 
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 24 Jan 2010 13:04:48 +0100
+
 reportbug-ng (1.13) unstable; urgency=low
 
   * Added Progressbar for Webview and loading of Bugreports
