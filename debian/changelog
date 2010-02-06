@@ -1,3 +1,12 @@
+reportbug-ng (1.15) unstable; urgency=low
+
+  * Fix "fails to start ("AttributeError: 'Cache' object has no
+    attribute 'set_filter'")", rng now depends on python-apt >= 0.7.93 which
+    provides this method (Closes: #568352)
+  * Removed had dependency on Python 2.5 
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 06 Feb 2010 14:55:38 +0100
+
 reportbug-ng (1.14) unstable; urgency=low
 
   * Silence deprecation warning in packagelineedit.py by using new method
