@@ -1,3 +1,9 @@
+reportbug-ng (1.16) unstable; urgency=low
+
+  * Fixed tags column, tags are now showed again.
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 14 Feb 2010 14:29:51 +0100
+
 reportbug-ng (1.15) unstable; urgency=low
 
   * Fix "fails to start ("AttributeError: 'Cache' object has no
