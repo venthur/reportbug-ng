@@ -102,17 +102,17 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         # setup the table
         self.model = TableModel(self)
         self.proxymodel = MySortFilterProxyModel(self)
-        self.proxymodel.setSourceModel(self.model)
         self.proxymodel.setFilterKeyColumn(-1)
+        self.proxymodel.setDynamicSortFilter(True)
+        self.proxymodel.setSourceModel(self.model)
         self.tableView.setModel(self.proxymodel)
-        self.tableView.horizontalHeader().setResizeMode(1, QtGui.QHeaderView.Stretch)
+        self.tableView.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.Stretch)
         self.tableView.verticalHeader().setVisible(False)
 
         # setup the settings
         self.settings = rng.Settings(rng.Settings.CONFIGFILE)
         self.settings.load()
         self._apply_settings()
-
         self.webView.setHtml(rng.getRngInstructions())
 
         # setup the finite state machine
@@ -385,14 +385,17 @@ the Free Software Foundation; either version 2 of the License, or
         self.resize(self.settings.width, self.settings.height)
         self.move(self.settings.x, self.settings.y)
         self.tableView.horizontalHeader().resizeSection(0, self.settings.bugnrWidth)
-        self.tableView.horizontalHeader().resizeSection(1, self.settings.summaryWidth)
-        self.tableView.horizontalHeader().resizeSection(2, self.settings.statusWidth)
-        self.tableView.horizontalHeader().resizeSection(3, self.settings.severityWidth)
-        self.tableView.horizontalHeader().resizeSection(4, self.settings.lastactionWidth)
+        self.tableView.horizontalHeader().resizeSection(1, self.settings.packageWidth)
+        self.tableView.horizontalHeader().resizeSection(2, self.settings.summaryWidth)
+        self.tableView.horizontalHeader().resizeSection(3, self.settings.statusWidth)
+        self.tableView.horizontalHeader().resizeSection(4, self.settings.severityWidth)
+        self.tableView.horizontalHeader().resizeSection(5, self.settings.lastactionWidth)
         order = QtCore.Qt.DescendingOrder
         if self.settings.sortAsc:
             order = QtCore.Qt.AscendingOrder
-        self.tableView.horizontalHeader().setSortIndicator(self.settings.sortByCol, order)
+        self.tableView.setSortingEnabled(True)
+        self.tableView.sortByColumn(self.settings.sortByCol, order)
+
 
     def _get_settings(self):
         """Get current settings."""
@@ -406,10 +409,11 @@ the Free Software Foundation; either version 2 of the License, or
         self.settings.sortAsc = {QtCore.Qt.AscendingOrder : True,
                                  QtCore.Qt.DescendingOrder : False}[self.tableView.horizontalHeader().sortIndicatorOrder()]
         self.settings.bugnrWidth = self.tableView.columnWidth(0)
-        self.settings.summaryWidth = self.tableView.columnWidth(1)
-        self.settings.statusWidth = self.tableView.columnWidth(2)
-        self.settings.severityWidth = self.tableView.columnWidth(3)
-        self.settings.lastactionWidth = self.tableView.columnWidth(4)
+        self.settings.bugnrWidth = self.tableView.columnWidth(1)
+        self.settings.summaryWidth = self.tableView.columnWidth(2)
+        self.settings.statusWidth = self.tableView.columnWidth(3)
+        self.settings.severityWidth = self.tableView.columnWidth(4)
+        self.settings.lastactionWidth = self.tableView.columnWidth(5)
 
     def _show_url(self, url):
         url = QtCore.QUrl(url)
@@ -436,12 +440,14 @@ class TableModel(QtCore.QAbstractTableModel):
         self.parent = parent
         self.logger = logging.getLogger("TableModel")
         self.elements = []
-
+        self.header = ["Bugnumber", "Package", "Summary", "Status", 
+                        "Severity", "Tags", "Last Action"]
+ 
     def rowCount(self, parent):
         return len(self.elements)
 
     def columnCount(self, parent):
-        return 6
+        return len(self.header)
 
     #
     # DAMMIT DONT IGNORE THE DISPLAY ROLE!!
@@ -478,11 +484,12 @@ class TableModel(QtCore.QAbstractTableModel):
         else:
             status = "Open"
         data = {0 : bug.bug_num,
-                1 : bug.subject,
-                2 : status,
-                3 : bug.severity,
-                4 : ", ".join(bug.tags),
-                5 : QtCore.QDate(bug.log_modified)}[index.column()]
+                1 : bug.package,
+                2 : bug.subject,
+                3 : status,
+                4 : bug.severity,
+                5 : ", ".join(bug.tags),
+                6 : QtCore.QDate(bug.log_modified)}[index.column()]
         return QtCore.QVariant(data)
 
     #
@@ -492,13 +499,7 @@ class TableModel(QtCore.QAbstractTableModel):
         if role != QtCore.Qt.DisplayRole:
             return QtCore.QVariant()
         if orientation == QtCore.Qt.Horizontal:
-            txt = {0 : self.tr("Bugnumber"),
-                1 : self.tr("Summary"),
-                2 : self.tr("Status"),
-                3 : self.tr("Severity"),
-                4 : self.tr("Tags"),
-                5 : self.tr("Last Action")}[section]
-            return QtCore.QVariant(txt)
+            return QtCore.QVariant(self.header[section])
         else:
             return QtCore.QVariant()
 
@@ -506,7 +507,9 @@ class TableModel(QtCore.QAbstractTableModel):
     def set_elements(self, entries):
         self.logger.info("Setting Elements.")
         self.beginInsertRows(QtCore.QModelIndex(), 0, len(entries))
+        oldCount = len(self.elements)
         self.elements = entries
+        newCount = len(self.elements)
         self.endInsertRows()
         self.emit(QtCore.SIGNAL("layoutChanged()"))
 
@@ -517,7 +520,7 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
 
     def lessThan(self, left, right):
-        if left.column() != 3:
+        if left.column() != 4:
             return QtGui.QSortFilterProxyModel.lessThan(self, left, right)
         l = left.row()
         r = right.row()

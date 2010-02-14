@@ -664,6 +664,7 @@ class Settings(object):
         
         # ListView
         self.bugnrWidth = 100
+        self.packageWidth = 150
         self.summaryWidth = 350
         self.statusWidth = 100
         self.severityWidth = 100

@@ -1,8 +1,10 @@
 reportbug-ng (1.16) unstable; urgency=low
 
   * Fixed tags column, tags are now showed again.
+  * Added support for complex queries like "severity:grave tag:serious"
+  * Added row for package name
 
- -- Bastian Venthur <venthur@debian.org>  Sun, 14 Feb 2010 14:29:51 +0100
+ -- Bastian Venthur <venthur@debian.org>  Sun, 14 Feb 2010 16:55:26 +0100
 
 reportbug-ng (1.15) unstable; urgency=low
 
