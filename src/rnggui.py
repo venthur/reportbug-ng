@@ -506,18 +506,19 @@ class TableModel(QtCore.QAbstractTableModel):
 
     def set_elements(self, entries):
         self.logger.info("Setting Elements.")
+        self.beginRemoveRows(QtCore.QModelIndex(), 0, len(self.elements))
+        self.elements = []
+        self.endRemoveRows()
         self.beginInsertRows(QtCore.QModelIndex(), 0, len(entries))
-        oldCount = len(self.elements)
         self.elements = entries
-        newCount = len(self.elements)
         self.endInsertRows()
-        self.emit(QtCore.SIGNAL("layoutChanged()"))
-
+        self.emit(QtCore.SIGNAL("dataChanged()"))
 
 class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
 
     def __init__(self, parent=None):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
+        self.logger = logging.getLogger("MySortFilterProxyModel")
 
     def lessThan(self, left, right):
         if left.column() != 4:
