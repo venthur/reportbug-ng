@@ -481,7 +481,7 @@ class TableModel(QtCore.QAbstractTableModel):
                 1 : bug.subject,
                 2 : status,
                 3 : bug.severity,
-                4 : bug.tags,
+                4 : ", ".join(bug.tags),
                 5 : QtCore.QDate(bug.log_modified)}[index.column()]
         return QtCore.QVariant(data)
 
