@@ -588,21 +588,25 @@ def callMailClient(command):
 def translate_query(query):
     """Translate query to a query the SOAP interface accepts."""
 
-    split = query.split(':', 1)
-    if (query.startswith('src:')):
-        return split
-    elif (query.startswith('from:')):
-        return ['submitter', split[1]]
-    elif (query.startswith('severity:')):
-        return split
-    elif (query.startswith('tag:')):
-        return split
-    elif (query.find("@") != -1):
-        return ['maint', query]
-    elif (re.match("^[0-9]*$", query)):
-        return [None, query]
-    else:
-        return ['package', query]
+    queries = query.split()
+    ans = []
+    for q in queries:
+        split = q.split(':', 1)
+        if (query.startswith('src:')):
+            ans.extend(split)
+        elif (query.startswith('from:')):
+            ans.extens(['submitter', split[1]])
+        elif (query.startswith('severity:')):
+            ans.extend(split)
+        elif (query.startswith('tag:')):
+            ans.extend(split)
+        elif (query.find("@") != -1):
+            ans.extend(['maint', query])
+        elif (re.match("^[0-9]*$", query)):
+            ans.extend([None, query])
+        else:
+            ans.extend(['package', query])
+    return ans
 
     
 class Settings(object):
