@@ -1,6 +1,6 @@
 # encoding: utf8
 # rnghelpers.py - Various helpers for Reportbug-NG.
-# Copyright (C) 2007-2008  Bastian Venthur
+# Copyright (C) 2007-2010  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -104,7 +104,8 @@ def getRngInstructions():
     """Return translated instructions for reportbug ng."""
     return QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
-<p>To find a bug just enter a query and press Enter. Loading the list might take a few seconds.</p>
+<p>To find a bug just enter a query and press Enter. Combinations of multiple \
+queries are supported, e.g.: "severity:grave tag:patch".</p>
 
 <p>The following queries are supported:
 <dl>
@@ -586,26 +587,33 @@ def callMailClient(command):
     return status, output
 
 def translate_query(query):
-    """Translate query to a query the SOAP interface accepts."""
+    """Translate query to a query the SOAP interface accepts.
+    
+    Complex queries are seperated by one or more spaces: 
+    "somepackage severity:normal tag:patch"
+    """
 
     queries = query.split()
+    logger.debug("First split: %s" % queries)
     ans = []
     for q in queries:
         split = q.split(':', 1)
-        if (query.startswith('src:')):
+        logger.debug("Nested split: %s" % split)
+        if (q.startswith('src:')):
             ans.extend(split)
-        elif (query.startswith('from:')):
+        elif (q.startswith('from:')):
             ans.extens(['submitter', split[1]])
-        elif (query.startswith('severity:')):
+        elif (q.startswith('severity:')):
             ans.extend(split)
-        elif (query.startswith('tag:')):
+        elif (q.startswith('tag:')):
             ans.extend(split)
-        elif (query.find("@") != -1):
-            ans.extend(['maint', query])
-        elif (re.match("^[0-9]*$", query)):
-            ans.extend([None, query])
+        elif (q.find("@") != -1):
+            ans.extend(['maint', q])
+        elif (re.match("^[0-9]*$", q)):
+            ans.extend([None, q])
         else:
-            ans.extend(['package', query])
+            ans.extend(['package', q])
+    logger.debug("Translated query to %s" % ans)
     return ans
 
     

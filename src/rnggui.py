@@ -1,5 +1,5 @@
 # rnggui.py - MainWindow of Reportbug-NG.
-# Copyright (C) 2007-2008  Bastian Venthur
+# Copyright (C) 2007-2010  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -187,17 +187,19 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
-        if query[0]:
-            if query[0] == 'package':
-                # test if there is a submit-as field available and rename the
-                # package if neccessairy
-                realname = bug.submit_as(query[1])
-                if query[1] != realname:
+        
+        # test if there is a submit-as field available and rename the packages
+        # if nececesairy
+        for i in range(0, len(query), 2):
+            if query[i] == 'package':
+                realname = bug.submit_as(query[i+1])
+                if query[i+1] != realname:
                     self.logger.debug("Using %s as package name as requested by developer." % str(realname))
-                    query[1] = realname
+                    query[i+1] = realname
+        # Single bug or list of bugs?
+        if query[0]:
             buglist = bts.get_bugs(query)
         else:
-            # just a signle bug
             buglist = [query[1]]
         # ok, we know the package, so enable some buttons which don't depend
         # on the existence of the acutal packe (wnpp) or bugreports for that
@@ -252,7 +254,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self,
             self.tr("About Reportbug-NG"),
             self.tr(\
-"""Copyright (C) 2007-2009 Bastian Venthur <venthur at debian org>
+"""Copyright (C) 2007-2010 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
