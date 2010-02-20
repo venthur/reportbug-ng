@@ -512,16 +512,14 @@ class TableModel(QtCore.QAbstractTableModel):
         else:
             return QtCore.QVariant()
 
-
     def set_elements(self, entries):
         self.logger.info("Setting Elements.")
-        self.beginRemoveRows(QtCore.QModelIndex(), 0, len(self.elements))
+        self.beginRemoveRows(QtCore.QModelIndex(), 0, len(self.elements)-1)
         self.elements = []
         self.endRemoveRows()
-        self.beginInsertRows(QtCore.QModelIndex(), 0, len(entries))
+        self.beginInsertRows(QtCore.QModelIndex(), 0, len(entries)-1)
         self.elements = entries
         self.endInsertRows()
-        self.emit(QtCore.SIGNAL("dataChanged()"))
 
 class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
 
