@@ -49,6 +49,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="text">
+         <string>Hide Closed Bugreports</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>

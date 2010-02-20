@@ -1,3 +1,10 @@
+reportbug-ng (1.17) unstable; urgency=low
+
+  * Added option to hide closed bugs.
+  * Fixed loading/saving of bugnumber column width
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 20 Feb 2010 12:46:54 +0100
+
 reportbug-ng (1.16) unstable; urgency=low
 
   * Fixed tags column, tags are now showed again.

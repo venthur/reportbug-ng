@@ -669,6 +669,7 @@ class Settings(object):
         self.statusWidth = 100
         self.severityWidth = 100
         self.lastactionWidth = 100
+        self.hideClosedBugs = True
         
         
     def load(self):
@@ -723,6 +724,8 @@ class Settings(object):
             self.severityWidth = self.config.getint("listview", "severitywidth")
         if self.config.has_option("listview", "lastactionwidth"):
             self.lastactionWidth = self.config.getint("listview", "lastactionwidth")
+        if self.config.has_option("listview", "hideClosedBugs"):
+            self.hideClosedBugs = self.config.getboolean("listview", "hideclosedbugs")
 
     
     def save(self):
@@ -753,7 +756,7 @@ class Settings(object):
         self.config.set("mainwindow", "width", self.width)
         self.config.set("mainwindow", "height", self.height)
         self.config.set("mainwindow", "menubar", self.menubar)
-        
+
         if not self.config.has_section("listview"):
             self.config.add_section("listview")
         self.config.set("listview", "bugnrwidth", self.bugnrWidth)
@@ -761,6 +764,7 @@ class Settings(object):
         self.config.set("listview", "statuswidth", self.statusWidth)
         self.config.set("listview", "severitywidth", self.severityWidth)
         self.config.set("listview", "lastactionwidth", self.lastactionWidth)
-        
+        self.config.set("listview", "hideclosedbugs", self.hideClosedBugs)
+
         # Write everything to configfile
         self.config.write(open(self.configfile, "w"))

@@ -97,6 +97,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         QtCore.QObject.connect(self.webView,
                                QtCore.SIGNAL("loadFinished(bool)"),
                                self.load_finished)
+        QtCore.QObject.connect(self.checkBox,
+                               QtCore.SIGNAL("clicked(bool)"),
+                               self.checkbox_clicked)
 
 
         # setup the table
@@ -238,7 +241,6 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self._stateChanged(self.currentPackage, self.currentBug)
         self.model.set_elements(self.bugs)
         self.tableView.resizeRowsToContents()
-
 
     def settings_diag(self):
         """Spawn settings dialog and get settings."""
@@ -395,6 +397,7 @@ the Free Software Foundation; either version 2 of the License, or
             order = QtCore.Qt.AscendingOrder
         self.tableView.setSortingEnabled(True)
         self.tableView.sortByColumn(self.settings.sortByCol, order)
+        self.checkBox.setChecked(self.settings.hideClosedBugs)
 
 
     def _get_settings(self):
@@ -409,11 +412,12 @@ the Free Software Foundation; either version 2 of the License, or
         self.settings.sortAsc = {QtCore.Qt.AscendingOrder : True,
                                  QtCore.Qt.DescendingOrder : False}[self.tableView.horizontalHeader().sortIndicatorOrder()]
         self.settings.bugnrWidth = self.tableView.columnWidth(0)
-        self.settings.bugnrWidth = self.tableView.columnWidth(1)
+        self.settings.packageWidth = self.tableView.columnWidth(1)
         self.settings.summaryWidth = self.tableView.columnWidth(2)
         self.settings.statusWidth = self.tableView.columnWidth(3)
         self.settings.severityWidth = self.tableView.columnWidth(4)
         self.settings.lastactionWidth = self.tableView.columnWidth(5)
+        self.settings.hideClosedBugs = self.checkBox.isChecked()
 
     def _show_url(self, url):
         url = QtCore.QUrl(url)
@@ -431,6 +435,11 @@ the Free Software Foundation; either version 2 of the License, or
         """Webview finished do load the page."""
         self.progressbar.reset()
         self.progressbar.hide()
+
+    def checkbox_clicked(self, check):
+        """Checkbox to toggle hide/show closed Bugs was changed."""
+        self.settings.hideClosedBugs = check
+        self.proxymodel.invalidate()
 
 
 class TableModel(QtCore.QAbstractTableModel):
@@ -519,14 +528,19 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
     def __init__(self, parent=None):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
         self.logger = logging.getLogger("MySortFilterProxyModel")
+        self.parent = parent
 
     def lessThan(self, left, right):
         if left.column() != 4:
             return QtGui.QSortFilterProxyModel.lessThan(self, left, right)
-        l = left.row()
-        r = right.row()
-        return self.sourceModel().elements[l] < self.sourceModel().elements[r]
+        l = self.sourceModel().elements[left.row()]
+        r = self.sourceModel().elements[right.row()]
+        return l < r
 
+    def filterAcceptsRow(self, sourceRow, sourceParent):
+        if self.sourceModel().elements[sourceRow].done and self.parent.settings.hideClosedBugs:
+            return False
+        return QtGui.QSortFilterProxyModel.filterAcceptsRow(self, sourceRow, sourceParent)
 
 class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
 

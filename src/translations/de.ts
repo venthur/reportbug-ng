@@ -624,161 +624,171 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.py" line="130"/>
+        <location filename="mainwindow.py" line="136"/>
         <source>Reportbug NG</source>
         <translation type="unfinished">Reportbug NG</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="131"/>
+        <location filename="mainwindow.py" line="137"/>
         <source>Q&amp;uery or Filter:</source>
         <translation type="unfinished">Q&amp;uery oder Filter:</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="132"/>
+        <location filename="mainwindow.py" line="138"/>
         <source>...</source>
         <translation type="unfinished">...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="133"/>
+        <location filename="mainwindow.py" line="140"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Datei</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="134"/>
+        <location filename="mainwindow.py" line="141"/>
         <source>&amp;Bugs</source>
         <translation type="unfinished">&amp;Fehler</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="135"/>
+        <location filename="mainwindow.py" line="142"/>
         <source>&amp;Edit</source>
         <translation type="unfinished">B&amp;earbeiten</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="136"/>
+        <location filename="mainwindow.py" line="143"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="137"/>
+        <location filename="mainwindow.py" line="144"/>
         <source>toolBar</source>
         <translation type="unfinished">Symbolleiste</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="138"/>
+        <location filename="mainwindow.py" line="145"/>
         <source>&amp;New Bugreport...</source>
         <translation type="unfinished">&amp;Neuer Fehlerbericht...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="139"/>
+        <location filename="mainwindow.py" line="146"/>
         <source>Create a new Bugreport for the current package.</source>
         <translation type="unfinished">Erstelle einen neuen Fehlerbericht für das aktuelle Paket.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="140"/>
+        <location filename="mainwindow.py" line="147"/>
         <source>Ctrl+N</source>
         <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="141"/>
+        <location filename="mainwindow.py" line="148"/>
         <source>&amp;Additional Information...</source>
         <translation type="unfinished">Zusätzliche Inform&amp;ationen...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="142"/>
+        <location filename="mainwindow.py" line="149"/>
         <source>Provide additional information for this Bugreport.</source>
         <translation type="unfinished">Zusätzliche Informationen für diesen Fehlerbericht bereitstellen.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="143"/>
+        <location filename="mainwindow.py" line="150"/>
         <source>Ctrl+A</source>
         <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="144"/>
+        <location filename="mainwindow.py" line="151"/>
         <source>&amp;Close Bugreport...</source>
         <translation type="unfinished">Fehlerberi&amp;cht schließen... </translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="145"/>
+        <location filename="mainwindow.py" line="152"/>
         <source>Close the current Bugreport.</source>
         <translation type="unfinished">Aktuellen Fehlerbericht schließen.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="146"/>
+        <location filename="mainwindow.py" line="153"/>
         <source>Ctrl+L</source>
         <translation type="unfinished">Ctrl+L</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="147"/>
+        <location filename="mainwindow.py" line="154"/>
         <source>New &amp;WNPP Bugreport...</source>
         <translation type="unfinished">Neuer &amp;WNPP Fehlerbericht...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="148"/>
+        <location filename="mainwindow.py" line="155"/>
         <source>Create a new WNPP Bugreport.</source>
         <translation type="unfinished">Einen neuen WNPP Fehlerbericht erstellen.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="149"/>
+        <location filename="mainwindow.py" line="156"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="150"/>
+        <location filename="mainwindow.py" line="157"/>
         <source>Clear</source>
         <translation type="unfinished">Leeren</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="151"/>
+        <location filename="mainwindow.py" line="158"/>
         <source>Clear.</source>
         <translation type="unfinished">Leeren.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="152"/>
+        <location filename="mainwindow.py" line="159"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">B&amp;eenden</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="153"/>
+        <location filename="mainwindow.py" line="160"/>
         <source>Quit Reportbug-NG.</source>
         <translation type="unfinished">Reportbug-NG beenden.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="154"/>
+        <location filename="mainwindow.py" line="161"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="155"/>
+        <location filename="mainwindow.py" line="162"/>
         <source>&amp;Settings</source>
         <translation type="unfinished">Ein&amp;stellungen</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="156"/>
+        <location filename="mainwindow.py" line="163"/>
         <source>Change Reportbug-NG&apos;s settings.</source>
         <translation type="unfinished">Reportbug-NGs Einstellungen ändern.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="157"/>
+        <location filename="mainwindow.py" line="164"/>
         <source>About Reportbug NG</source>
         <translation type="unfinished">Über Reportbug NG</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="158"/>
+        <location filename="mainwindow.py" line="165"/>
         <source>About Qt</source>
         <translation type="unfinished">Über Qt</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="139"/>
+        <source>Hide Closed Bugreports</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="210"/>
+        <location filename="rnggui.py" line="255"/>
         <source>About Reportbug-NG</source>
-        <translation type="unfinished">Über Reportbug-NG</translation>
+        <translation>Über Reportbug-NG</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="210"/>
-        <source>Copyright (C) 2007-2009 Bastian Venthur &lt;venthur at debian org&gt;
+        <location filename="rnggui.py" line="269"/>
+        <source>About Qt</source>
+        <translation>Über Qt</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="255"/>
+        <source>Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -787,11 +797,6 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="rnggui.py" line="224"/>
-        <source>About Qt</source>
-        <translation type="unfinished">Über Qt</translation>
     </message>
 </context>
 <context>
@@ -910,34 +915,34 @@ the Free Software Foundation; either version 2 of the License, or
 <context>
     <name>TableModel</name>
     <message>
-        <location filename="rnggui.py" line="440"/>
+        <location filename="" line="7471221"/>
         <source>Bugnumber</source>
-        <translation>Fehlernummer</translation>
+        <translation type="obsolete">Fehlernummer</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="441"/>
+        <location filename="" line="7471221"/>
         <source>Summary</source>
-        <translation>Zusammenfassung</translation>
+        <translation type="obsolete">Zusammenfassung</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="442"/>
+        <location filename="" line="7471221"/>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation type="obsolete">Status</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="443"/>
+        <location filename="" line="7471221"/>
         <source>Severity</source>
-        <translation>Dringlichkeit</translation>
+        <translation type="obsolete">Dringlichkeit</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="444"/>
+        <location filename="" line="7471221"/>
         <source>Tags</source>
-        <translation>Tags</translation>
+        <translation type="obsolete">Tags</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="445"/>
+        <location filename="" line="7471221"/>
         <source>Last Action</source>
-        <translation>Letzte Aktion</translation>
+        <translation type="obsolete">Letzte Aktion</translation>
     </message>
 </context>
 <context>
@@ -1033,7 +1038,7 @@ the Free Software Foundation; either version 2 of the License, or
         <translation>Für beliebige Feature-Requests, aber auch für beliebige Fehler, die aufgrund wesentlicher konzeptioneller Erwägungen sehr schwer zu beheben sind.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="105"/>
+        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Loading the list might take a few seconds.&lt;/p&gt;
@@ -1059,7 +1064,7 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 &lt;h3&gt;Step 3: Reporting Bugs&lt;/h3&gt;
 &lt;p&gt;You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the &quot;Additional Info&quot; button or you can create a new bugreport for the current package by clicking the &quot;New Bugreport&quot; button.&lt;/p&gt;
 </source>
-        <translation>&lt;h2&gt;Reportbug-NG benutzen&lt;/h2&gt;
+        <translation type="obsolete">&lt;h2&gt;Reportbug-NG benutzen&lt;/h2&gt;
 &lt;h3&gt;Schritt 1: Fehlerbericht finden&lt;/h3&gt;
 &lt;p&gt;Um einen Fehlerbericht zu finden geben Sie einfach eine Anfrage ein und drücken anschließend Enter. Das Laden der Liste kann ein paar Sekunden dauern.&lt;/p&gt;
 &lt;p&gt;Folgende Anfragen werden unterstützt:
@@ -1079,6 +1084,36 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 &lt;h3&gt;Schritt 3: Fehler melden&lt;/h3&gt;
 &lt;p&gt;Sie können entweder zusätzliche Informationen zu einem existierenden Fehler einsenden indem Sie auf &quot;Zusätzliche Informationen&quot; klicken, oder Sie können einen neuen Fehlerbericht erstellen indem Sie auf &quot;Neuer Fehlerbericht&quot; klicken.&lt;/p&gt;
 </translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="105"/>
+        <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
+&lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
+&lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
+queries are supported, e.g.: &quot;severity:grave tag:patch&quot;.&lt;/p&gt;
+
+&lt;p&gt;The following queries are supported:
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;package&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs belonging to the PACKAGE&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;bugnumber&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns the bug with BUGNUMBER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;maintainer@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs assigned to MAINTAINER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;src:sourcepackage&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs belonging to the SOURCEPACKAGE&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;from:submitter@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs filed by SUBMITTER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;severity:foo&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs of SEVERITY. Warning: this list is probably very long. Recognized are the values: critical, grave, serious, important, normal, minor and wishlist&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;tag:bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returns all the bugs marked with TAG&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/p&gt;
+
+&lt;p&gt;To see the full bugreport click on the bug in the list. Links in the bugreport will open in an external browser when clicked.&lt;/p&gt;
+
+&lt;h3&gt;Step 2: Filtering Bugs&lt;/h3&gt;
+&lt;p&gt;To filter the list of existing bugs enter a few letters (without pressing Enter). The filter is case insensitive and
+affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p&gt;
+
+&lt;h3&gt;Step 3: Reporting Bugs&lt;/h3&gt;
+&lt;p&gt;You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the &quot;Additional Info&quot; button or you can create a new bugreport for the current package by clicking the &quot;New Bugreport&quot; button.&lt;/p&gt;
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

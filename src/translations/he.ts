@@ -611,147 +611,152 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.py" line="130"/>
+        <location filename="mainwindow.py" line="136"/>
         <source>Reportbug NG</source>
         <translation type="unfinished">Reportbug NG</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="138"/>
+        <location filename="mainwindow.py" line="145"/>
         <source>&amp;New Bugreport...</source>
         <translation type="unfinished">&amp;דווח באג חדש...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="140"/>
+        <location filename="mainwindow.py" line="147"/>
         <source>Ctrl+N</source>
         <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="143"/>
+        <location filename="mainwindow.py" line="150"/>
         <source>Ctrl+A</source>
         <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="144"/>
+        <location filename="mainwindow.py" line="151"/>
         <source>&amp;Close Bugreport...</source>
         <translation type="unfinished">&amp;סגור באג...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="146"/>
+        <location filename="mainwindow.py" line="153"/>
         <source>Ctrl+L</source>
         <translation type="unfinished">Ctrl+L</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="149"/>
+        <location filename="mainwindow.py" line="156"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="152"/>
+        <location filename="mainwindow.py" line="159"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">י&amp;ציאה</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="154"/>
+        <location filename="mainwindow.py" line="161"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="131"/>
+        <location filename="mainwindow.py" line="137"/>
         <source>Q&amp;uery or Filter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="132"/>
+        <location filename="mainwindow.py" line="138"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="133"/>
+        <location filename="mainwindow.py" line="139"/>
+        <source>Hide Closed Bugreports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.py" line="140"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="134"/>
+        <location filename="mainwindow.py" line="141"/>
         <source>&amp;Bugs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="135"/>
+        <location filename="mainwindow.py" line="142"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="136"/>
+        <location filename="mainwindow.py" line="143"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="137"/>
+        <location filename="mainwindow.py" line="144"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="139"/>
+        <location filename="mainwindow.py" line="146"/>
         <source>Create a new Bugreport for the current package.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="141"/>
+        <location filename="mainwindow.py" line="148"/>
         <source>&amp;Additional Information...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="142"/>
+        <location filename="mainwindow.py" line="149"/>
         <source>Provide additional information for this Bugreport.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="145"/>
+        <location filename="mainwindow.py" line="152"/>
         <source>Close the current Bugreport.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="147"/>
+        <location filename="mainwindow.py" line="154"/>
         <source>New &amp;WNPP Bugreport...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="148"/>
+        <location filename="mainwindow.py" line="155"/>
         <source>Create a new WNPP Bugreport.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="150"/>
+        <location filename="mainwindow.py" line="157"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="151"/>
+        <location filename="mainwindow.py" line="158"/>
         <source>Clear.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="153"/>
+        <location filename="mainwindow.py" line="160"/>
         <source>Quit Reportbug-NG.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="155"/>
+        <location filename="mainwindow.py" line="162"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="156"/>
+        <location filename="mainwindow.py" line="163"/>
         <source>Change Reportbug-NG&apos;s settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="157"/>
+        <location filename="mainwindow.py" line="164"/>
         <source>About Reportbug NG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="158"/>
+        <location filename="mainwindow.py" line="165"/>
         <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
@@ -759,13 +764,18 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="210"/>
+        <location filename="rnggui.py" line="255"/>
         <source>About Reportbug-NG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="210"/>
-        <source>Copyright (C) 2007-2009 Bastian Venthur &lt;venthur at debian org&gt;
+        <location filename="rnggui.py" line="269"/>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="255"/>
+        <source>Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -773,11 +783,6 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="rnggui.py" line="224"/>
-        <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -901,33 +906,28 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="440"/>
         <source>Bugnumber</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="rnggui.py" line="441"/>
         <source>Summary</source>
-        <translation type="unfinished">סיכום</translation>
+        <translation type="obsolete">סיכום</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="442"/>
         <source>Status</source>
-        <translation type="unfinished">סטאטוס</translation>
+        <translation type="obsolete">סטאטוס</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="443"/>
         <source>Severity</source>
-        <translation type="unfinished">חשיבות</translation>
-    </message>
-    <message>
-        <location filename="rnggui.py" line="444"/>
-        <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">חשיבות</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="445"/>
         <source>Last Action</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
 </context>
@@ -1027,7 +1027,8 @@ the Free Software Foundation; either version 2 of the License, or
         <location filename="rnghelpers.py" line="105"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
-&lt;p&gt;To find a bug just enter a query and press Enter. Loading the list might take a few seconds.&lt;/p&gt;
+&lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
+queries are supported, e.g.: &quot;severity:grave tag:patch&quot;.&lt;/p&gt;
 
 &lt;p&gt;The following queries are supported:
 &lt;dl&gt;
