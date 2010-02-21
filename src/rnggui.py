@@ -186,8 +186,9 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             return
 
         self.logger.info("Return pressed.")
+        self.lineEdit.clear()
         # TODO: self.lineEdit.clear() does not always work, why?
-        QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
+        #QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
         
