@@ -242,7 +242,7 @@ def prepare_minimal_body(package, version=None, severity=None, tags=[], cc=[]):
             s += " %s" % tag
         s += "\n"
     for i in cc:
-            s += "X-Debbugs-CC: %s\n" % i
+        s += "X-Debbugs-CC: %s\n" % i
     s += "\n"
     s += "--- Please enter the report below this line. ---\n\n\n"
 
@@ -602,7 +602,7 @@ def translate_query(query):
         if (q.startswith('src:')):
             ans.extend(split)
         elif (q.startswith('from:')):
-            ans.extens(['submitter', split[1]])
+            ans.extend(['submitter', split[1]])
         elif (q.startswith('severity:')):
             ans.extend(split)
         elif (q.startswith('tag:')):
