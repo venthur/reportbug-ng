@@ -150,10 +150,7 @@ SUPPORTED_MUA.sort()
 
 
 def prepareMail(mua, to, subject, body, firstcall=True):
-    """    print output
-
-    Tries to call MUA with given parameters.
-    """
+    """Tries to call MUA with given parameters."""
     
     mua = mua.lower()
     

@@ -184,6 +184,8 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         if text.startswith("http://"):
             self._show_url(text)
             return
+        if len(text) == 0:
+            return
 
         self.logger.info("Return pressed.")
         self.lineEdit.clear()
