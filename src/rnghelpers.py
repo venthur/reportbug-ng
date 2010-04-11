@@ -44,7 +44,6 @@ MUA_SYNTAX = {
     "kmail" : 'kmail --composer --subject "%(subject)s" --body "%(body)s" "%(to)s"',
 #    "opera" : 'opera -newpage ' + RFC_MAILTO,
     "sylpheed" : 'sylpheed --compose ' + RFC_MAILTO,
-    "sylpheed-claws" : 'sylpheed-claws --compose ' + RFC_MAILTO,
     "claws-mail" : 'claws-mail --compose ' + RFC_MAILTO,
     "mutt" : 'mutt ' + RFC_MAILTO,
     "mutt-ng" : 'muttng ' + RFC_MAILTO,
@@ -61,7 +60,6 @@ def getMUAString(mua):
     if mua == "kmail" : return QCoreApplication.translate("rnghelpers", "KMail")
 #   if mua == "opera" : return QCoreApplication.translate("rnghelpers", "Opera")
     if mua == "sylpheed" : return QCoreApplication.translate("rnghelpers", "Sylpheed")
-    if mua == "sylpheed-claws" : return QCoreApplication.translate("rnghelpers", "Sylpheed Claws")
     if mua == "claws-mail" : return QCoreApplication.translate("rnghelpers", "Claws Mail")
     if mua == "mutt" : return QCoreApplication.translate("rnghelpers", "Mutt")
     if mua == "mutt-ng" : return QCoreApplication.translate("rnghelpers", "Mutt NG")
