@@ -1,3 +1,10 @@
+reportbug-ng (1.21) unstable; urgency=low
+
+  * Updated Italian translation. (Closes: #577535) -- Grazie Gabriele Stilli!
+  * Updated German translation.
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 17 Apr 2010 15:14:46 +0200
+
 reportbug-ng (1.20) unstable; urgency=low
 
   * Bumped standards version (no changes).
