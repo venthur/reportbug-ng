@@ -470,7 +470,7 @@ class TableModel(QtCore.QAbstractTableModel):
         if role == QtCore.Qt.ForegroundRole:
             severity = self.elements[index.row()].severity.lower()
             done = self.elements[index.row()].done
-            c = QtCore.Qt.black
+            c = self.parent.settings.c_normal
             if severity == "grave":
                 c = self.parent.settings.c_grave
             elif severity == "serious":

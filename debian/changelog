@@ -1,3 +1,10 @@
+reportbug-ng (1.22) unstable; urgency=low
+
+  * Fix "Some colors not set properly on dark/inverted themes" Applied
+    Philipp's patch (Closes: #581341) -- Thank you Philipp Hartmann!
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 19 Jun 2010 15:01:40 +0200
+
 reportbug-ng (1.21) unstable; urgency=low
 
   * Updated Italian translation. (Closes: #577535) -- Grazie Gabriele Stilli!

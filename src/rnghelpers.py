@@ -100,7 +100,9 @@ def getSeverityExplanation(severity):
 
 def getRngInstructions():
     """Return translated instructions for reportbug ng."""
-    return QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
+    # TODO: use system colors?
+    return """<div style="background: #fff; color: #000;" >""" + \
+        QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
 <p>To find a bug just enter a query and press Enter. Combinations of multiple \
 queries are supported, e.g.: "severity:grave tag:patch".</p>
@@ -125,7 +127,7 @@ affects the packagename, bugnumber, summary, status and severity of a bug.</p>
 
 <h3>Step 3: Reporting Bugs</h3>
 <p>You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the "Additional Info" button or you can create a new bugreport for the current package by clicking the "New Bugreport" button.</p>
-""")
+""") + """</div>"""
 
 def getAvailableMUAs():
     """
