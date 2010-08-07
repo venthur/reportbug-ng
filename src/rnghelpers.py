@@ -49,6 +49,7 @@ MUA_SYNTAX = {
     "mutt-ng" : 'muttng ' + RFC_MAILTO,
     "pine" : 'pine -url ' + RFC_MAILTO,
 #    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
+    'alpine' : 'alpine -url ' + RFC_MAILTO,
               }
 
 def getMUAString(mua):
@@ -66,6 +67,7 @@ def getMUAString(mua):
     if mua == "pine" : return QCoreApplication.translate("rnghelpers", "Pine")
 #   if mua == "googlemail" : return QCoreApplication.translate("Google")
     # If everything else fails, just return the string we got
+    if mua == 'alpine': return QCoreApplication.translate("rnghelpers", "Alpine")
     return mua
 
 MUA_STRINGS = {
@@ -73,7 +75,7 @@ MUA_STRINGS = {
 # Don't urllib.quote() their strings
 MUA_NO_URLQUOTE = ["default", "kmail"]            
 # Who needs a terminal?
-MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine"]
+MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine", 'alpine']
 # Who needs a browser?
 WEBMAIL = ["googlemail"]
 
