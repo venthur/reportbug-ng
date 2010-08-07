@@ -175,6 +175,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                            QtCore.Qt.CaseInsensitive,
                            QtCore.QRegExp.FixedString)
             )
+        self.tableView.resizeRowsToContents()
 
     def lineedit_return_pressed(self):
         #

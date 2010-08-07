@@ -1,3 +1,10 @@
+reportbug-ng (1.23) unstable; urgency=low
+
+  * Fix "rtbug-ng: Row size increases after backspacing in the filter
+    expression field" (Closes: #591693)
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 06 Aug 2010 21:20:08 -0400
+
 reportbug-ng (1.22) unstable; urgency=low
 
   * Fix "Some colors not set properly on dark/inverted themes" Applied
