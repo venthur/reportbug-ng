@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS>
+<TS version="2.0" language="cs_CZ">
 <context>
     <name>../ui/MainWindow.py:1231</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Reportbug NG</source>
         <translation type="obsolete">Reportbug NG</translation>
     </message>
@@ -11,7 +11,6 @@
 <context>
     <name>../ui/MainWindow.py:1232</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Quits Reportbug NG</source>
         <translation type="obsolete">Reportbug NG</translation>
     </message>
@@ -19,7 +18,6 @@
 <context>
     <name>../ui/MainWindow.py:1233</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Quit</source>
         <translation type="obsolete">
             </translation>
@@ -28,7 +26,6 @@
 <context>
     <name>../ui/MainWindow.py:1234</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+Q</source>
         <translation type="obsolete">
             </translation>
@@ -37,7 +34,6 @@
 <context>
     <name>../ui/MainWindow.py:1235</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Provide additional information for the current bugreport</source>
         <translation type="obsolete">Přidá další informace ke stávajícímu hlášení o chybě</translation>
     </message>
@@ -45,7 +41,6 @@
 <context>
     <name>../ui/MainWindow.py:1236</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Additional Info...</source>
         <translation type="obsolete">Dod&amp;atečné informace</translation>
     </message>
@@ -53,7 +48,6 @@
 <context>
     <name>../ui/MainWindow.py:1237</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+A</source>
         <translation type="obsolete">
             </translation>
@@ -62,7 +56,6 @@
 <context>
     <name>../ui/MainWindow.py:1238</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Create new bugreport for current package</source>
         <translation type="obsolete">Vytvoří nové hlášení o chybě v aktuálním balíku</translation>
     </message>
@@ -70,7 +63,6 @@
 <context>
     <name>../ui/MainWindow.py:1239</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;New Bugreport...</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -78,7 +70,6 @@
 <context>
     <name>../ui/MainWindow.py:1240</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+N</source>
         <translation type="obsolete">
             </translation>
@@ -87,7 +78,6 @@
 <context>
     <name>../ui/MainWindow.py:1241</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Create a new WNPP bugreport</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -95,7 +85,6 @@
 <context>
     <name>../ui/MainWindow.py:1242</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;WNPP...</source>
         <translation type="obsolete">
             </translation>
@@ -104,7 +93,6 @@
 <context>
     <name>../ui/MainWindow.py:1243</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+W</source>
         <translation type="obsolete">
             </translation>
@@ -113,7 +101,6 @@
 <context>
     <name>../ui/MainWindow.py:1244</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Show or hide  the main menu</source>
         <translation type="obsolete">
             </translation>
@@ -122,7 +109,6 @@
 <context>
     <name>../ui/MainWindow.py:1245</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Menubar</source>
         <translation type="obsolete">
             </translation>
@@ -131,7 +117,6 @@
 <context>
     <name>../ui/MainWindow.py:1246</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+M</source>
         <translation type="obsolete">
             </translation>
@@ -140,7 +125,6 @@
 <context>
     <name>../ui/MainWindow.py:1247</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Close the current bugreport</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -148,7 +132,6 @@
 <context>
     <name>../ui/MainWindow.py:1248</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Close Bugreport...</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -156,7 +139,6 @@
 <context>
     <name>../ui/MainWindow.py:1249</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Ctrl+L</source>
         <translation type="obsolete">
             </translation>
@@ -165,7 +147,6 @@
 <context>
     <name>../ui/MainWindow.py:1250</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Toolbar</source>
         <translation type="obsolete">
             </translation>
@@ -174,7 +155,6 @@
 <context>
     <name>../ui/MainWindow.py:1251</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Enter a package name or a filter expression</source>
         <translation type="obsolete">Zadejte jméno balíku nebo filtrovací výraz</translation>
     </message>
@@ -182,7 +162,6 @@
 <context>
     <name>../ui/MainWindow.py:1253</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Reportbug NG</source>
         <translation type="obsolete">Reportbug NG</translation>
     </message>
@@ -190,7 +169,6 @@
 <context>
     <name>../ui/MainWindow.py:1255</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Bugreport</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -198,7 +176,6 @@
 <context>
     <name>../ui/MyMainWindow.py:150</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Bugnumber</source>
         <translation type="obsolete">
             </translation>
@@ -207,7 +184,6 @@
 <context>
     <name>../ui/MyMainWindow.py:151</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Summary</source>
         <translation type="obsolete">Souhrn</translation>
     </message>
@@ -215,7 +191,6 @@
 <context>
     <name>../ui/MyMainWindow.py:152</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Status</source>
         <translation type="obsolete">Stav</translation>
     </message>
@@ -223,7 +198,6 @@
 <context>
     <name>../ui/MyMainWindow.py:153</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Severity</source>
         <translation type="obsolete">Závažnost</translation>
     </message>
@@ -231,7 +205,6 @@
 <context>
     <name>../ui/MyMainWindow.py:154</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Last Action</source>
         <translation type="obsolete">
             </translation>
@@ -240,7 +213,6 @@
 <context>
     <name>../ui/MyMainWindow.py:233</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;No bugreports for package %s found!&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Žádná chybová hlášení pro balík %s nebyla nalezena!&lt;/h2&gt;</translation>
     </message>
@@ -248,7 +220,6 @@
 <context>
     <name>../ui/MyMainWindow.py:237</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Click on a bugreport to see the full text.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Pro zobrazení celého textu klikněte na hlášení o chybě.&lt;/h2&gt;</translation>
     </message>
@@ -256,7 +227,6 @@
 <context>
     <name>../ui/MyMainWindow.py:257</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports of source package %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách ve zdrojovém balíku %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -264,7 +234,6 @@
 <context>
     <name>../ui/MyMainWindow.py:260</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports from submitter %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách od zasilatele %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -272,7 +241,6 @@
 <context>
     <name>../ui/MyMainWindow.py:263</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports of severity %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách se závažností %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -280,7 +248,6 @@
 <context>
     <name>../ui/MyMainWindow.py:266</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports with tag %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách se značkou %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -288,7 +255,6 @@
 <context>
     <name>../ui/MyMainWindow.py:269</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports assigned to %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách přiřazené %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -296,7 +262,6 @@
 <context>
     <name>../ui/MyMainWindow.py:272</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreport with bug number %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybě číslo %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -304,7 +269,6 @@
 <context>
     <name>../ui/MyMainWindow.py:275</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreports for package %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybách v balíku %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -312,7 +276,6 @@
 <context>
     <name>../ui/MyMainWindow.py:354</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Fetching bugreport %s, please wait.&lt;/h2&gt;</source>
         <translation type="obsolete">&lt;h2&gt;Stahuji hlášení o chybě %s, čekejte prosím.&lt;/h2&gt;</translation>
     </message>
@@ -320,7 +283,6 @@
 <context>
     <name>../ui/MyMainWindow.py:36</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Loading the list might take a few seconds.&lt;/p&gt;
@@ -368,7 +330,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/MyMainWindow.py:66</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;b&gt;%(cri)s&lt;/b&gt; makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package. &lt;br&gt; &lt;b&gt;%(gra)s&lt;/b&gt; makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package. &lt;br&gt; &lt;b&gt;%(ser)s&lt;/b&gt; is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release. &lt;br&gt; &lt;b&gt;%(imp)s&lt;/b&gt; a bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone. &lt;br&gt; &lt;b&gt;%(nor)s&lt;/b&gt; the default value, applicable to most bugs. &lt;br&gt; &lt;b&gt;%(min)s&lt;/b&gt; a problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix. &lt;br&gt; &lt;b&gt;%(wis)s&lt;/b&gt; for any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
         <translation type="obsolete">&lt;b&gt;%(cri)s&lt;/b&gt; znamená, že se pokazí nesouvisející software (případně celý systém), způsobuje závažnou ztrátu dat, nebo v systému s tímto balíkem odhaluje závažnou bezpečnostní díru. &lt;br&gt; &lt;b&gt;%(gra)s&lt;/b&gt; znamená, že je daný balík nepoužitelný, způsobuje ztrátu dat, případně odhaluje bezpečnostní díru, která umožňuje přístup k účtům uživatelů, kteří balík využívají. &lt;br&gt; &lt;b&gt;%(ser)s&lt;/b&gt; je závažné porušení politiky Debianu (v zásadě porušuje nařízení „must“ nebo „required“), případně si správce balíku myslí, že balík není vhodný pro vydání. &lt;br&gt; &lt;b&gt;%(imp)s&lt;/b&gt; je chyba, která má velký vliv na použitelnost balíku, což ale neznamená, že nemůže fungovat pro někoho jiného. &lt;br&gt; &lt;b&gt;%(nor)s&lt;/b&gt; je výchozí hodnota vhodná pro většinu chyb. &lt;br&gt; &lt;b&gt;%(min)s&lt;/b&gt; problém, který nemá vliv na užitečnost balíku a je pravděpodobně jednoduše opravitelný. &lt;br&gt; &lt;b&gt;%(wis)s&lt;/b&gt; pro požadavky na novou funkcionalitu a také pro chyby, které se dají velmi těžko opravit, protože se liší od toho, jak byl balík navržen.</translation>
     </message>
@@ -376,7 +337,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:184</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Please tell us some details...</source>
         <translation type="obsolete">Povězte nám prosím podrobnosti...</translation>
     </message>
@@ -384,7 +344,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:186</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Package:</source>
         <translation type="obsolete">&amp;Balík:</translation>
     </message>
@@ -392,7 +351,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:188</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Version:</source>
         <translation type="obsolete">&amp;Verze:</translation>
     </message>
@@ -400,7 +358,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:189</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Mailclient:</source>
         <translation type="obsolete">Poštovní klient:</translation>
     </message>
@@ -408,7 +365,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:190</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;OK</source>
         <translation type="obsolete">&amp;OK</translation>
     </message>
@@ -416,7 +372,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:191</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Alt+O</source>
         <translation type="obsolete">Alt+O</translation>
     </message>
@@ -424,7 +379,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:192</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Cancel</source>
         <translation type="obsolete">&amp;Zrušit</translation>
     </message>
@@ -432,7 +386,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:193</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Alt+C</source>
         <translation type="obsolete">Alt+Z</translation>
     </message>
@@ -440,7 +393,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:194</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;b&gt;Please choose the mailclient you want to use to write the full bugreport.&lt;/b&gt;</source>
         <translation type="obsolete">&lt;b&gt;Vyberte prosím poštovního klienta, kterého chcete použít pro napsání kompletního hlášení o chybě.&lt;/b&gt;</translation>
     </message>
@@ -448,7 +400,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:195</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Normal Bugreport</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -456,7 +407,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:196</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>patch</source>
         <translation type="obsolete">patch</translation>
     </message>
@@ -464,7 +414,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:197</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there&apos;s a patch, but it doesn&apos;t resolve the bug adequately or causes some other problems, this tag should not be used.</source>
         <translation type="obsolete">Záplata nebo jiný jednoduchý postup pro opravení chyby je součástí tohoto hlášení. Pokud je záplata přiložena, ovšem neřeší problém úplně, případně pokud způsobuje jiné problémy, neměla by se tato značka používat.</translation>
     </message>
@@ -472,7 +421,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:198</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>l10n</source>
         <translation type="obsolete">l10n</translation>
     </message>
@@ -480,7 +428,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:199</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>This bug is relevant to the localisation of the package.</source>
         <translation type="obsolete">Tato chyba se týká lokalizace balíku.</translation>
     </message>
@@ -488,7 +435,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:200</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>security</source>
         <translation type="obsolete">security</translation>
     </message>
@@ -496,7 +442,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:201</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn&apos;t be accessible; buffer overruns allowing people to control a system in ways they shouldn&apos;t be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</source>
         <translation type="obsolete">Tato chyba popisuje bezpečnostní problém v balíku (např. chybná oprávnění umožňující přístup k citlivým datům, přetečení zásobníku vedoucí k získání kontroly nad systémem, možnost útoků typu odepření služby, atd.). Většina bezpečnostních chyb by měla mít také závažnost „critical“ nebo „grave“.</translation>
     </message>
@@ -504,7 +449,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:202</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Tags:</source>
         <translation type="obsolete">Znač&amp;ky:</translation>
     </message>
@@ -512,7 +456,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:203</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&lt;b&gt;Please enter a short summary. Severity and Tags are optional.&lt;/b&gt;</source>
         <translation type="obsolete">&lt;b&gt;Zadejte prosím krátký souhrn. Závažnost a značky jsou volitelné.&lt;/b&gt;</translation>
     </message>
@@ -520,7 +463,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:204</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;Summary:</source>
         <translation type="obsolete">&amp;Souhrn:</translation>
     </message>
@@ -528,7 +470,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:205</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>S&amp;everity:</source>
         <translation type="obsolete">Závažnos&amp;t:</translation>
     </message>
@@ -536,7 +477,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:206</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>&amp;WNPP Bugreport</source>
         <translation type="obsolete">&amp;Nové hlášení o chybě</translation>
     </message>
@@ -544,7 +484,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:207</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>WNPP &amp;Action:</source>
         <translation type="obsolete">
             </translation>
@@ -553,7 +492,6 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>../ui/SubmitDialog.py:208</name>
     <message>
-        <location filename="" line="7471221"/>
         <source>Short Package &amp;Description:</source>
         <translation type="obsolete">
             </translation>
@@ -562,254 +500,248 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="settings.py" line="102"/>
+        <location filename="settings.ui" line="13"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="settings.py" line="103"/>
+        <location filename="settings.ui" line="19"/>
         <source>External Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Externí aplikace</translation>
     </message>
     <message>
-        <location filename="settings.py" line="104"/>
+        <location filename="settings.ui" line="25"/>
         <source>Mail Client:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poštovní klient:</translation>
     </message>
     <message>
-        <location filename="settings.py" line="105"/>
+        <location filename="settings.ui" line="38"/>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Uživatelské rozhraní</translation>
     </message>
     <message>
-        <location filename="settings.py" line="106"/>
+        <location filename="settings.ui" line="44"/>
         <source>Critical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Critical (kritická):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="107"/>
+        <location filename="settings.ui" line="58"/>
         <source>Grave:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grave (velmi vážná):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="108"/>
+        <location filename="settings.ui" line="72"/>
         <source>Serious:</source>
-        <translation type="unfinished"></translation>
+        <translation>Serious (závažná):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="109"/>
+        <location filename="settings.ui" line="86"/>
         <source>Important:</source>
-        <translation type="unfinished"></translation>
+        <translation>Important (důležitá):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="110"/>
+        <location filename="settings.ui" line="100"/>
         <source>Normal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Normal (běžná):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="111"/>
+        <location filename="settings.ui" line="114"/>
         <source>Minor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minor (malá):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="112"/>
+        <location filename="settings.ui" line="128"/>
         <source>Wishlist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wishlist (přání):</translation>
     </message>
     <message>
-        <location filename="settings.py" line="113"/>
+        <location filename="settings.ui" line="142"/>
         <source>Resolved:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyřešená:</translation>
     </message>
     <message>
-        <location filename="settings.py" line="114"/>
+        <location filename="settings.ui" line="159"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>Různé</translation>
     </message>
     <message>
-        <location filename="settings.py" line="115"/>
+        <location filename="settings.ui" line="165"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud jsou dotupné, zaslat dodatečné informace (doporučeno)</translation>
     </message>
     <message>
-        <location filename="settings.py" line="116"/>
+        <location filename="settings.ui" line="172"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Před odesláním chybového hlášení zobrazit informace o balíku (doporučeno)</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.py" line="136"/>
+        <location filename="mainwindow.ui" line="15"/>
         <source>Reportbug NG</source>
-        <translation type="unfinished">Reportbug NG</translation>
+        <translation>Reportbug NG</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="145"/>
+        <location filename="mainwindow.ui" line="159"/>
         <source>&amp;New Bugreport...</source>
-        <translation type="unfinished">&amp;Nové hlášení o chybě</translation>
+        <translation>Hlášení o &amp;nové chybě...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="147"/>
+        <location filename="mainwindow.ui" line="165"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="150"/>
+        <location filename="mainwindow.ui" line="180"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="151"/>
+        <location filename="mainwindow.ui" line="189"/>
         <source>&amp;Close Bugreport...</source>
-        <translation type="unfinished">&amp;Nové hlášení o chybě</translation>
+        <translation>&amp;Uzavřít chybové hlášení...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="153"/>
+        <location filename="mainwindow.ui" line="195"/>
         <source>Ctrl+L</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="156"/>
+        <location filename="mainwindow.ui" line="210"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="159"/>
+        <location filename="mainwindow.ui" line="231"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>&amp;Ukončit</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="161"/>
+        <location filename="mainwindow.ui" line="237"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="137"/>
+        <location filename="mainwindow.ui" line="28"/>
         <source>Q&amp;uery or Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dotaz nebo filtr:</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="138"/>
+        <location filename="mainwindow.ui" line="48"/>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="139"/>
+        <location filename="mainwindow.ui" line="55"/>
         <source>Hide Closed Bugreports</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt uzavřená chybová hlášení</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="140"/>
+        <location filename="mainwindow.ui" line="102"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="141"/>
+        <location filename="mainwindow.ui" line="108"/>
         <source>&amp;Bugs</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Chyby</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="142"/>
+        <location filename="mainwindow.ui" line="118"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Upravit</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="143"/>
+        <location filename="mainwindow.ui" line="124"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nápověda</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="144"/>
+        <location filename="mainwindow.ui" line="137"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Lišta nástrojů</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="146"/>
+        <location filename="mainwindow.ui" line="162"/>
         <source>Create a new Bugreport for the current package.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořit hlášení o nové chybě v aktuálním balíku.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="148"/>
+        <location filename="mainwindow.ui" line="174"/>
         <source>&amp;Additional Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dod&amp;atečné informace...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="149"/>
+        <location filename="mainwindow.ui" line="177"/>
         <source>Provide additional information for this Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat další informace k tomuto chybovému hlášení.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="152"/>
+        <location filename="mainwindow.ui" line="192"/>
         <source>Close the current Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzavřít aktuální chybové hlášení.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="154"/>
+        <location filename="mainwindow.ui" line="204"/>
         <source>New &amp;WNPP Bugreport...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nové &amp;WNPP chybové hlášení...</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="155"/>
+        <location filename="mainwindow.ui" line="207"/>
         <source>Create a new WNPP Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořit nové WNPP chybové hlášení.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="157"/>
+        <location filename="mainwindow.ui" line="219"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčistit</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="158"/>
+        <location filename="mainwindow.ui" line="222"/>
         <source>Clear.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčistit.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="160"/>
+        <location filename="mainwindow.ui" line="234"/>
         <source>Quit Reportbug-NG.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit Reportbug-NG.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="162"/>
+        <location filename="mainwindow.ui" line="242"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="163"/>
+        <location filename="mainwindow.ui" line="245"/>
         <source>Change Reportbug-NG&apos;s settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit nastavení Reportbug-NG.</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="164"/>
+        <location filename="mainwindow.ui" line="250"/>
         <source>About Reportbug NG</source>
-        <translation type="unfinished"></translation>
+        <translation>O Reportbug NG</translation>
     </message>
     <message>
-        <location filename="mainwindow.py" line="165"/>
+        <location filename="mainwindow.ui" line="255"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>O Qt</translation>
     </message>
 </context>
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="255"/>
+        <location filename="rnggui.py" line="260"/>
         <source>About Reportbug-NG</source>
-        <translation type="unfinished"></translation>
+        <translation>O Reportbug-NG</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="269"/>
+        <location filename="rnggui.py" line="274"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="255"/>
+        <location filename="rnggui.py" line="260"/>
         <source>Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
 
 Homepage: http://reportbug-ng.alioth.debian.org
@@ -818,149 +750,196 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
+
+Domovská stránka: http://reportbug-ng.alioth.debian.org
+
+Tento program je svobodný software: můžete jej šířit a upravovat
+podle ustanovení Obecné veřejné licence GNU (GNU General Public 
+Licence), vydávané Free Software Foundation a to buď podle 2. verze 
+této Licence, nebo (podle vašeho uvážení) kterékoli pozdější verze. </translation>
     </message>
 </context>
 <context>
     <name>SubmitDialog</name>
     <message>
-        <location filename="submitdialog.py" line="142"/>
+        <location filename="submitdialog.ui" line="29"/>
         <source>&amp;Package:</source>
-        <translation type="unfinished">&amp;Balík:</translation>
+        <translation>&amp;Balík:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="143"/>
+        <location filename="submitdialog.ui" line="55"/>
         <source>&amp;Version:</source>
-        <translation type="unfinished">&amp;Verze:</translation>
+        <translation>&amp;Verze:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="144"/>
+        <location filename="submitdialog.ui" line="80"/>
         <source>&amp;WNPP Bugreport</source>
-        <translation type="unfinished">&amp;Nové hlášení o chybě</translation>
+        <translation>&amp;WNPP chybové hlášení</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="145"/>
+        <location filename="submitdialog.ui" line="95"/>
         <source>Short Package &amp;Description:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>Stručný &amp;popisek balíčku:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="146"/>
+        <location filename="submitdialog.ui" line="114"/>
         <source>WNPP &amp;Action:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation>WNPP &amp;akce:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="147"/>
+        <location filename="submitdialog.ui" line="133"/>
         <source>Normal Bugreport</source>
-        <translation type="unfinished">&amp;Nové hlášení o chybě</translation>
+        <translation>Normální hlášení o chybě</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="148"/>
+        <location filename="submitdialog.ui" line="139"/>
         <source>&lt;b&gt;Please enter a short summary. Severity and Tags are optional.&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Zadejte prosím krátký souhrn. Závažnost a značky jsou volitelné.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Zadejte prosím krátký souhrn. Závažnost a štítky jsou volitelné.&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="149"/>
+        <location filename="submitdialog.ui" line="149"/>
         <source>&amp;Summary:</source>
-        <translation type="unfinished">&amp;Souhrn:</translation>
+        <translation>&amp;Souhrn:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="150"/>
+        <location filename="submitdialog.ui" line="168"/>
         <source>S&amp;everity:</source>
-        <translation type="unfinished">Závažnos&amp;t:</translation>
+        <translation>Závažnos&amp;t:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="152"/>
+        <location filename="submitdialog.ui" line="197"/>
         <source>&amp;Tags:</source>
-        <translation type="unfinished">Znač&amp;ky:</translation>
+        <translation>Š&amp;títky:</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="153"/>
+        <location filename="submitdialog.ui" line="215"/>
         <source>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there&apos;s a patch, but it doesn&apos;t resolve the bug adequately or causes some other problems, this tag should not be used.</source>
-        <translation type="unfinished">Záplata nebo jiný jednoduchý postup pro opravení chyby je součástí tohoto hlášení. Pokud je záplata přiložena, ovšem neřeší problém úplně, případně pokud způsobuje jiné problémy, neměla by se tato značka používat.</translation>
+        <translation>Záplata nebo jiný jednoduchý postup pro opravení chyby je součástí tohoto hlášení. 
+Pokud je záplata přiložena, ovšem neřeší problém úplně, případně pokud způsobuje 
+jiné problémy, neměl by se tento štítek používat.</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="154"/>
+        <location filename="submitdialog.ui" line="218"/>
         <source>patch</source>
-        <translation type="unfinished">patch</translation>
+        <translation>patch (záplata)</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="155"/>
+        <location filename="submitdialog.ui" line="225"/>
         <source>This bug is relevant to the localisation of the package.</source>
-        <translation type="unfinished">Tato chyba se týká lokalizace balíku.</translation>
+        <translation>Tato chyba se týká lokalizace balíku.</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="156"/>
+        <location filename="submitdialog.ui" line="228"/>
         <source>l10n</source>
-        <translation type="unfinished">l10n</translation>
+        <translation>l10n</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="157"/>
+        <location filename="submitdialog.ui" line="235"/>
         <source>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn&apos;t be accessible; buffer overruns allowing people to control a system in ways they shouldn&apos;t be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</source>
-        <translation type="unfinished">Tato chyba popisuje bezpečnostní problém v balíku (např. chybná oprávnění umožňující přístup k citlivým datům, přetečení zásobníku vedoucí k získání kontroly nad systémem, možnost útoků typu odepření služby, atd.). Většina bezpečnostních chyb by měla mít také závažnost „critical“ nebo „grave“.</translation>
+        <translation>Tato chyba popisuje bezpečnostní problém v balíku (např. chybná oprávnění umožňující přístup k citlivým datům, 
+přetečení zásobníku vedoucí k získání kontroly nad systémem, možnost útoků typu odepření služby, atd.).
+Většina bezpečnostních chyb by měla mít také závažnost „critical“ (kritická) nebo „grave“ (velmi vážná).</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="158"/>
+        <location filename="submitdialog.ui" line="238"/>
         <source>security</source>
-        <translation type="unfinished">security</translation>
+        <translation>security (bezpečnost)</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="140"/>
+        <location filename="submitdialog.ui" line="14"/>
         <source>Bug report details</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrobnosti o chybovém hlášení</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="141"/>
+        <location filename="submitdialog.ui" line="20"/>
         <source>Please add details about the bug report you want to report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte prosím podrobnosti o chybě, kterou chcete nahlásit.</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="151"/>
+        <location filename="submitdialog.ui" line="187"/>
         <source>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum.</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="159"/>
+        <location filename="submitdialog.ui" line="250"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation>Různé</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="160"/>
+        <location filename="submitdialog.ui" line="256"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud jsou dotupné, zaslat dodatečné informace (doporučeno)</translation>
     </message>
     <message>
-        <location filename="submitdialog.py" line="161"/>
+        <location filename="submitdialog.ui" line="263"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Před odesláním chybového hlášení zobrazit informace o balíčku (doporučeno)</translation>
     </message>
 </context>
 <context>
     <name>TableModel</name>
     <message>
-        <location filename="rnggui.py" line="440"/>
+        <location filename="rnggui.py" line="457"/>
+        <source>Bugnumber</source>
+        <translation>Číslo chyby</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="459"/>
+        <source>Summary</source>
+        <translation>Souhrn</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="460"/>
+        <source>Status</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="461"/>
+        <source>Severity</source>
+        <translation>Závažnost</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="463"/>
+        <source>Last Action</source>
+        <translation>Poslední akce</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="458"/>
+        <source>Package</source>
+        <translation>Balík</translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="462"/>
+        <source>Tags</source>
+        <translation>Štítky</translation>
+    </message>
+</context>
+<context>
+    <name>rnggui</name>
+    <message>
+        <location filename="rnggui.py" line="456"/>
         <source>Bugnumber</source>
         <translation type="obsolete">
             </translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="441"/>
+        <location filename="rnggui.py" line="458"/>
         <source>Summary</source>
         <translation type="obsolete">Souhrn</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="442"/>
+        <location filename="rnggui.py" line="459"/>
         <source>Status</source>
         <translation type="obsolete">Stav</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="443"/>
+        <location filename="rnggui.py" line="460"/>
         <source>Severity</source>
         <translation type="obsolete">Závažnost</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="445"/>
+        <location filename="rnggui.py" line="462"/>
         <source>Last Action</source>
         <translation type="obsolete">
             </translation>
@@ -971,95 +950,95 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnghelpers.py" line="57"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="58"/>
         <source>Icedove</source>
-        <translation type="unfinished"></translation>
+        <translation>Icedove</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="59"/>
         <source>Iceape</source>
-        <translation type="unfinished"></translation>
+        <translation>Iceape</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="60"/>
         <source>Evolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Evolution</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="61"/>
         <source>KMail</source>
-        <translation type="unfinished"></translation>
+        <translation>KMail</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="63"/>
         <source>Sylpheed</source>
-        <translation type="unfinished"></translation>
+        <translation>Sylpheed</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="64"/>
         <source>Sylpheed Claws</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Sylpheed Claws</translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="64"/>
+        <source>Claws Mail</source>
+        <translation>Claws Mail</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="65"/>
-        <source>Claws Mail</source>
-        <translation type="unfinished"></translation>
+        <source>Mutt</source>
+        <translation>Mutt</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="66"/>
-        <source>Mutt</source>
-        <translation type="unfinished"></translation>
+        <source>Mutt NG</source>
+        <translation>Mutt NG</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="67"/>
-        <source>Mutt NG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="rnghelpers.py" line="68"/>
         <source>Pine</source>
-        <translation type="unfinished"></translation>
+        <translation>Pine</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="92"/>
         <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
-        <translation type="unfinished"></translation>
+        <translation>Způsobuje rozbití nesouvisejícího software v systému (nebo celého systému), způsobuje závažnou ztrátu dat nebo představuje bezpečnostní riziko na systémech, na nichž je balík nainstalovaný.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="93"/>
         <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
-        <translation type="unfinished"></translation>
+        <translation>Balík je nepoužitelný (nebo téměř nepoužitelný), způsobuje ztrátu dat nebo vnáší bezpečnostní slabinu umožňující získat přístup k účtu uživatele, který balík používá.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="94"/>
         <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
-        <translation type="unfinished"></translation>
+        <translation>Závažně porušuje zásady Debianu (porušuje nezbytné nebo požadované směrnice) nebo dle názoru správce balíku činí balík nevhodný pro vydání.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="95"/>
         <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba, která má závažný dopad na použitelnost balíku bez toho, aniž by ho činila zcela nepoužitelným pro všechny.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="96"/>
         <source>The default value, applicable to most bugs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí hodnota, vhodná pro většinu chyb.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="97"/>
         <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Problém, který neovlivňuje použitelnost balíku a pravděpodobně ho lze jednoduše opravit.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="98"/>
         <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
-        <translation type="unfinished"></translation>
+        <translation>Požadavky na nové vlastnosti a také chyby, které lze velmi obtížně opravit kvůli celkovému návrhu software.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="105"/>
+        <location filename="rnghelpers.py" line="107"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
@@ -1086,7 +1065,36 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 &lt;h3&gt;Step 3: Reporting Bugs&lt;/h3&gt;
 &lt;p&gt;You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the &quot;Additional Info&quot; button or you can create a new bugreport for the current package by clicking the &quot;New Bugreport&quot; button.&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;Používání Reportbug-NG&lt;/h2&gt;
+&lt;h3&gt;Krok 1: Hledání chyb&lt;/h3&gt;
+&lt;p&gt;Pro nalezení chyby zadejte dotaz a stiskněte Enter. Podorovány
+jsou i kombinované dotazy, např.: &quot;severity:grave tag:patch&quot;.&lt;/p&gt;
+
+&lt;p&gt;Seznam podporovaných dotazů:
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;balík&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Vrátí všechny chyby patřící BALÍKU&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;číslochyby&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Vrátí chybu s číslem ČÍSLOCHYBY&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;vývojář@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Vrátí všechny chyby přiřazené VÝVOJÁŘI&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;src:zdrojovýbalík&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Najde všechny chyby patřící ZDROJOVÉMUBALÍKU&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;from:odesílatel@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Vrátí všechny chyby zaslané ODESÍLATELEM&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;severity:důležitost&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Vrátí všechny chyby dané DŮLEŽITOSTI. Varování: tento seznam bude velmi dlouhý. Rozpoznávané hodnoty jsou: critical, grave, serious, important, normal, minor a wishlist&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;tag:štítek&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Najde všechny chyby označené ŠTÍTKEM&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Pro zobrazení celého hlášení o chybě klikněte v seznamu na požadovanou chybu. Odkazy v chybovém hlášení se po kliknutí otevřou v externím prohlížeči.&lt;/p&gt;
+
+&lt;h3&gt;Krok 2: Filtrování chyb&lt;/h3&gt;
+&lt;p&gt;Seznam nalezených chyb můžete filtrovat zadáním několika písmen (bez stisku Enter). Filtr nebere ohled na velikost písmen
+a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt;/p&gt;
+
+&lt;h3&gt;Krok 3: Hlášení chyb&lt;/h3&gt;
+&lt;p&gt;Buď můžete poskytnout dodatečné informace ke stávající chybě kliknutím na chybu v seznamu a stisknutím tlačítka &quot;Dodatečné informace&quot;, nebo můžete vytvořit úplně nové hlášení o chybě v aktuálním balíku kliknutím na tlačítko &quot;Hlášení o nové chybě&quot;.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="rnghelpers.py" line="70"/>
+        <source>Alpine</source>
+        <translation>Alpine</translation>
     </message>
 </context>
 </TS>

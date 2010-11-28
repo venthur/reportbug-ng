@@ -1,3 +1,9 @@
+reportbug-ng (1.24) unstable; urgency=low
+
+  * Updated czech translation. Thanks Petr!  (Closes: #601236)
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 28 Nov 2010 13:11:43 +0100
+
 reportbug-ng (1.23) unstable; urgency=low
 
   * Fix "rtbug-ng: Row size increases after backspacing in the filter
