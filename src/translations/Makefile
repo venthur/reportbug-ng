@@ -1,4 +1,4 @@
-SRCFILES = ../*.py ../ui/*.py
+SRCFILES = ../*.py ../ui/*.py ../ui/*.ui
 
 all:
 	@echo Compiling translations...

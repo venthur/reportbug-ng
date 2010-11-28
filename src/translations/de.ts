@@ -782,27 +782,31 @@ the Free Software Foundation; either version 2 of the License, or
     <name>TableModel</name>
     <message>
         <source>Bugnumber</source>
-        <translation type="obsolete">Fehlernummer</translation>
+        <translation>Fehlernummer</translation>
     </message>
     <message>
         <source>Summary</source>
-        <translation type="obsolete">Zusammenfassung</translation>
+        <translation>Zusammenfassung</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Severity</source>
-        <translation type="obsolete">Dringlichkeit</translation>
+        <translation>Dringlichkeit</translation>
     </message>
     <message>
         <source>Tags</source>
-        <translation type="obsolete">Tags</translation>
+        <translation>Tags</translation>
     </message>
     <message>
         <source>Last Action</source>
-        <translation type="obsolete">Letzte Aktion</translation>
+        <translation>Letzte Aktion</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>Paket</translation>
     </message>
 </context>
 <context>
@@ -833,7 +837,7 @@ the Free Software Foundation; either version 2 of the License, or
     </message>
     <message>
         <source>Sylpheed Claws</source>
-        <translation>Sylpheed Claws</translation>
+        <translation type="obsolete">Sylpheed Claws</translation>
     </message>
     <message>
         <source>Claws Mail</source>
@@ -972,6 +976,10 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 &lt;p&gt;Um die Liste der existierenden Fehlerberichte einzugrenzen geben Sie ein paar Buchstaben (ohne Enter zu drücken) ein. Groß- und Kleinschreibung werden ignoriert. Gefiltert werden Paketname, Fehlernummer, Zusammenfassung, Status und Dringlichkeit der Fehler.
 &lt;h3&gt;Schritt 3: Fehler melden&lt;/h3&gt;
 &lt;p&gt;Sie können entweder zusätzliche Informationen zu einem existierenden Fehler einsenden indem Sie auf &quot;Zusätzliche Informationen&quot; klicken, oder Sie können einen neuen Fehlerbericht erstellen indem Sie auf &quot;Neuer Fehlerbericht&quot; klicken.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Alpine</source>
+        <translation>Alpine</translation>
     </message>
 </context>
 </TS>

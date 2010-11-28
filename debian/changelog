@@ -3,8 +3,9 @@ reportbug-ng (1.24) unstable; urgency=low
   * Updated czech translation. Thanks Petr! (Closes: #601236)
   * Table columns now have localizable captions. Thanks Petr!
     (Closes: #604415)
+  * Completed German translation.
 
- -- Bastian Venthur <venthur@debian.org>  Sun, 28 Nov 2010 13:17:59 +0100
+ -- Bastian Venthur <venthur@debian.org>  Sun, 28 Nov 2010 13:30:43 +0100
 
 reportbug-ng (1.23) unstable; urgency=low
 
