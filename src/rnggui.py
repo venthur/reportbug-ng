@@ -20,6 +20,7 @@ import logging
 import thread
 
 from PyQt4 import QtCore, QtGui
+from PyQt4.QtCore import QCoreApplication
 
 from ui import mainwindow
 from ui import submitdialog
@@ -453,8 +454,13 @@ class TableModel(QtCore.QAbstractTableModel):
         self.parent = parent
         self.logger = logging.getLogger("TableModel")
         self.elements = []
-        self.header = ["Bugnumber", "Package", "Summary", "Status", 
-                        "Severity", "Tags", "Last Action"]
+        self.header = [QCoreApplication.translate('TableModel', "Bugnumber"),
+	               QCoreApplication.translate('TableModel', "Package"),
+                       QCoreApplication.translate('TableModel', "Summary"),
+                       QCoreApplication.translate('TableModel', "Status"),
+                       QCoreApplication.translate('TableModel', "Severity"),
+                       QCoreApplication.translate('TableModel', "Tags"),
+                       QCoreApplication.translate('TableModel', "Last Action")]
  
     def rowCount(self, parent):
         return len(self.elements)
