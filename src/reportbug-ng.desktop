@@ -1,9 +1,8 @@
 [Desktop Entry]
 Type=Application
-Encoding=UTF-8
 Name=Reportbug-NG
 Comment=Report bugs to Debian's BTS
 Comment[cs]=Hlásí chyby vývojářům Debianu
 Exec=reportbug-ng
 Icon=/usr/share/pixmaps/debian-logo.png
-Categories=Application;System
+Categories=System;
