@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
 Build-Depends: debhelper (>= 5), python-support (>= 0.6), pyqt4-dev-tools, libqt4-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.2
 VCS-git: git://github.com/venthur/reportbug-ng.git
 Homepage: http://reportbug-ng.alioth.debian.org/
 

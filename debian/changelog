@@ -1,3 +1,11 @@
+reportbug-ng (1.25) unstable; urgency=low
+
+  * Fix "[reportbug-ng] desktop file not compliant with XDG standard"
+    (Closes: #590203). Thanks Pino Toscano!
+  * Bumped Standards Version (no changes).
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 24 Aug 2011 22:50:18 +0200
+
 reportbug-ng (1.24) unstable; urgency=low
 
   * Updated czech translation. Thanks Petr! (Closes: #601236)
