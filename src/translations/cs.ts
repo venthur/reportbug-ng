@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="cs_CZ">
+<!DOCTYPE TS><TS version="2.0" language="cs_CZ" sourcelanguage="">
 <context>
     <name>../ui/MainWindow.py:1231</name>
     <message>
@@ -793,12 +793,12 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="260"/>
+        <location filename="rnggui.py" line="269"/>
         <source>About Reportbug-NG</source>
         <translation>O Reportbug-NG</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="274"/>
+        <location filename="rnggui.py" line="284"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
@@ -812,7 +812,7 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
-        <translation type="unfinished">Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
+        <translation type="obsolete">Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
 
 Domovská stránka: http://reportbug-ng.alioth.debian.org
 
@@ -820,6 +820,18 @@ Tento program je svobodný software: můžete jej šířit a upravovat
 podle ustanovení Obecné veřejné licence GNU (GNU General Public 
 Licence), vydávané Free Software Foundation a to buď podle 2. verze 
 této Licence, nebo (podle vašeho uvážení) kterékoli pozdější verze. </translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="269"/>
+        <source>Copyright (C) 2007-2011 Bastian Venthur &lt;venthur at debian org&gt;
+
+Homepage: http://reportbug-ng.alioth.debian.org
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -942,37 +954,37 @@ Většina bezpečnostních chyb by měla mít také závažnost „critical“ (
 <context>
     <name>TableModel</name>
     <message>
-        <location filename="rnggui.py" line="457"/>
+        <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
         <translation>Číslo chyby</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="459"/>
+        <location filename="rnggui.py" line="475"/>
         <source>Summary</source>
         <translation>Souhrn</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="460"/>
+        <location filename="rnggui.py" line="476"/>
         <source>Status</source>
         <translation>Stav</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="461"/>
+        <location filename="rnggui.py" line="477"/>
         <source>Severity</source>
         <translation>Závažnost</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="463"/>
+        <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
         <translation>Poslední akce</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="458"/>
+        <location filename="rnggui.py" line="474"/>
         <source>Package</source>
         <translation>Balík</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="462"/>
+        <location filename="rnggui.py" line="478"/>
         <source>Tags</source>
         <translation>Štítky</translation>
     </message>
@@ -1010,32 +1022,32 @@ Většina bezpečnostních chyb by měla mít také závažnost „critical“ (
 <context>
     <name>rnghelpers</name>
     <message>
-        <location filename="rnghelpers.py" line="57"/>
+        <location filename="rnghelpers.py" line="58"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="58"/>
+        <location filename="rnghelpers.py" line="59"/>
         <source>Icedove</source>
         <translation>Icedove</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="59"/>
+        <location filename="rnghelpers.py" line="60"/>
         <source>Iceape</source>
         <translation>Iceape</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="60"/>
+        <location filename="rnghelpers.py" line="61"/>
         <source>Evolution</source>
         <translation>Evolution</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="61"/>
+        <location filename="rnghelpers.py" line="62"/>
         <source>KMail</source>
         <translation>KMail</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="63"/>
+        <location filename="rnghelpers.py" line="64"/>
         <source>Sylpheed</source>
         <translation>Sylpheed</translation>
     </message>
@@ -1045,62 +1057,62 @@ Většina bezpečnostních chyb by měla mít také závažnost „critical“ (
         <translation type="obsolete">Sylpheed Claws</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="64"/>
+        <location filename="rnghelpers.py" line="65"/>
         <source>Claws Mail</source>
         <translation>Claws Mail</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="65"/>
+        <location filename="rnghelpers.py" line="66"/>
         <source>Mutt</source>
         <translation>Mutt</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="66"/>
+        <location filename="rnghelpers.py" line="67"/>
         <source>Mutt NG</source>
         <translation>Mutt NG</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="67"/>
+        <location filename="rnghelpers.py" line="68"/>
         <source>Pine</source>
         <translation>Pine</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="92"/>
+        <location filename="rnghelpers.py" line="93"/>
         <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
         <translation>Způsobuje rozbití nesouvisejícího software v systému (nebo celého systému), způsobuje závažnou ztrátu dat nebo představuje bezpečnostní riziko na systémech, na nichž je balík nainstalovaný.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="93"/>
+        <location filename="rnghelpers.py" line="94"/>
         <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
         <translation>Balík je nepoužitelný (nebo téměř nepoužitelný), způsobuje ztrátu dat nebo vnáší bezpečnostní slabinu umožňující získat přístup k účtu uživatele, který balík používá.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="94"/>
+        <location filename="rnghelpers.py" line="95"/>
         <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
         <translation>Závažně porušuje zásady Debianu (porušuje nezbytné nebo požadované směrnice) nebo dle názoru správce balíku činí balík nevhodný pro vydání.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="95"/>
+        <location filename="rnghelpers.py" line="96"/>
         <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
         <translation>Chyba, která má závažný dopad na použitelnost balíku bez toho, aniž by ho činila zcela nepoužitelným pro všechny.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="96"/>
+        <location filename="rnghelpers.py" line="97"/>
         <source>The default value, applicable to most bugs.</source>
         <translation>Výchozí hodnota, vhodná pro většinu chyb.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="97"/>
+        <location filename="rnghelpers.py" line="98"/>
         <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
         <translation>Problém, který neovlivňuje použitelnost balíku a pravděpodobně ho lze jednoduše opravit.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="98"/>
+        <location filename="rnghelpers.py" line="99"/>
         <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
         <translation>Požadavky na nové vlastnosti a také chyby, které lze velmi obtížně opravit kvůli celkovému návrhu software.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="107"/>
+        <location filename="rnghelpers.py" line="108"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
@@ -1154,7 +1166,7 @@ a filtruje podle balíku, čísla chyby, souhrnu, stavu a závažnosti chyby.&lt
 &lt;p&gt;Buď můžete poskytnout dodatečné informace ke stávající chybě kliknutím na chybu v seznamu a stisknutím tlačítka &quot;Dodatečné informace&quot;, nebo můžete vytvořit úplně nové hlášení o chybě v aktuálním balíku kliknutím na tlačítko &quot;Hlášení o nové chybě&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="70"/>
+        <location filename="rnghelpers.py" line="71"/>
         <source>Alpine</source>
         <translation>Alpine</translation>
     </message>

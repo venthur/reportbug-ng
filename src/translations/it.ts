@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="2.0">
 <context>
     <name>../ui/MainWindow.py:1231</name>
     <message>
@@ -778,12 +778,12 @@ e ha effetto su nome del pacchetto, numero, riassunto, stato e gravità di un bu
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="260"/>
+        <location filename="rnggui.py" line="269"/>
         <source>About Reportbug-NG</source>
         <translation>Informazioni su Reportbug NG</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="274"/>
+        <location filename="rnggui.py" line="284"/>
         <source>About Qt</source>
         <translation>Informazioni su Qt</translation>
     </message>
@@ -797,7 +797,7 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
-        <translation>Copyright (C) 2007-2009 Bastian Venthur &lt;venthur at debian org&gt;
+        <translation type="obsolete">Copyright (C) 2007-2009 Bastian Venthur &lt;venthur at debian org&gt;
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -806,6 +806,18 @@ modificarlo secondo i termini della licenza GNU General Public
 License, come pubblicata dalla Free Software Foundation;
 versione 2 della licenza o (a scelta) una versione più recente.
 </translation>
+    </message>
+    <message>
+        <location filename="rnggui.py" line="269"/>
+        <source>Copyright (C) 2007-2011 Bastian Venthur &lt;venthur at debian org&gt;
+
+Homepage: http://reportbug-ng.alioth.debian.org
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -924,37 +936,37 @@ versione 2 della licenza o (a scelta) una versione più recente.
 <context>
     <name>TableModel</name>
     <message>
-        <location filename="rnggui.py" line="457"/>
+        <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
         <translation type="unfinished">Numero del bug</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="459"/>
+        <location filename="rnggui.py" line="475"/>
         <source>Summary</source>
         <translation type="unfinished">Riassunto</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="460"/>
+        <location filename="rnggui.py" line="476"/>
         <source>Status</source>
         <translation type="unfinished">Stato</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="461"/>
+        <location filename="rnggui.py" line="477"/>
         <source>Severity</source>
         <translation type="unfinished">Gravità</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="463"/>
+        <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
         <translation type="unfinished">Ultima azione</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="458"/>
+        <location filename="rnggui.py" line="474"/>
         <source>Package</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="462"/>
+        <location filename="rnggui.py" line="478"/>
         <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
@@ -962,32 +974,32 @@ versione 2 della licenza o (a scelta) una versione più recente.
 <context>
     <name>rnghelpers</name>
     <message>
-        <location filename="rnghelpers.py" line="57"/>
+        <location filename="rnghelpers.py" line="58"/>
         <source>Default</source>
         <translation>Predefinito</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="58"/>
+        <location filename="rnghelpers.py" line="59"/>
         <source>Icedove</source>
         <translation>Icedove</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="59"/>
+        <location filename="rnghelpers.py" line="60"/>
         <source>Iceape</source>
         <translation>Iceape</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="60"/>
+        <location filename="rnghelpers.py" line="61"/>
         <source>Evolution</source>
         <translation>Evolution</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="61"/>
+        <location filename="rnghelpers.py" line="62"/>
         <source>KMail</source>
         <translation>KMail</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="63"/>
+        <location filename="rnghelpers.py" line="64"/>
         <source>Sylpheed</source>
         <translation>Sylpheed</translation>
     </message>
@@ -997,62 +1009,62 @@ versione 2 della licenza o (a scelta) una versione più recente.
         <translation type="obsolete">Sylpheed Claws</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="64"/>
+        <location filename="rnghelpers.py" line="65"/>
         <source>Claws Mail</source>
         <translation>Claws Mail</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="65"/>
+        <location filename="rnghelpers.py" line="66"/>
         <source>Mutt</source>
         <translation>Mutt</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="66"/>
+        <location filename="rnghelpers.py" line="67"/>
         <source>Mutt NG</source>
         <translation>Mutt NG</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="67"/>
+        <location filename="rnghelpers.py" line="68"/>
         <source>Pine</source>
         <translation>Pine</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="92"/>
+        <location filename="rnghelpers.py" line="93"/>
         <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
         <translation>Rende inutilizzabile altro software non relativo al pacchetto (oppure l&apos;intero sistema) o causa una grave perdita di dati o introduce un buco di sicurezza sui sistemi in cui il pacchetto viene installato.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="93"/>
+        <location filename="rnghelpers.py" line="94"/>
         <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
         <translation>Rende il pacchetto in questione inutilizzabile o quasi o causa perdita di dati o introduce un buco di sicurezza che consente l&apos;accesso agli account degli utenti che utilizzano il pacchetto.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="94"/>
+        <location filename="rnghelpers.py" line="95"/>
         <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
         <translation>È una seria violazione della politica Debian (in pratica, viola una direttiva considerata «obbligatoria» o «richiesta») o, secondo il responsabile del pacchetto, lo rende inadatto al rilascio.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="95"/>
+        <location filename="rnghelpers.py" line="96"/>
         <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
         <translation>Un bug che ha un effetto pesante sull&apos;usabilità del pacchetto, senza renderlo completamente inutilizzabile a tutti.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="96"/>
+        <location filename="rnghelpers.py" line="97"/>
         <source>The default value, applicable to most bugs.</source>
         <translation>Il valore predefinito, applicabile alla maggior parte dei bug.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="97"/>
+        <location filename="rnghelpers.py" line="98"/>
         <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
         <translation>Un problema che non pregiudica l&apos;utilità del pacchetto e la cui correzione si presume che sia banale.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="98"/>
+        <location filename="rnghelpers.py" line="99"/>
         <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
         <translation>Per qualunque richiesta di funzionalità aggiuntive e inoltre per qualunque bug che sia molto arduo da correggere a causa di profonde considerazioni strutturali.</translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="107"/>
+        <location filename="rnghelpers.py" line="108"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
@@ -1108,7 +1120,7 @@ o creare una nuova segnalazione per il pacchetto attuale facendo clic sul pulsan
 </translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="70"/>
+        <location filename="rnghelpers.py" line="71"/>
         <source>Alpine</source>
         <translation type="unfinished"></translation>
     </message>

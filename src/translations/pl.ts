@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="2.0">
 <context>
     <name>../ui/MainWindow.py:1231</name>
     <message>
@@ -778,18 +778,18 @@ oraz działa na pola nazwa_pakietu, numer_błędu, podsumowanie, stan i ważnoś
 <context>
     <name>RngGui</name>
     <message>
-        <location filename="rnggui.py" line="260"/>
+        <location filename="rnggui.py" line="269"/>
         <source>About Reportbug-NG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="274"/>
+        <location filename="rnggui.py" line="284"/>
         <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="260"/>
-        <source>Copyright (C) 2007-2010 Bastian Venthur &lt;venthur at debian org&gt;
+        <location filename="rnggui.py" line="269"/>
+        <source>Copyright (C) 2007-2011 Bastian Venthur &lt;venthur at debian org&gt;
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -916,37 +916,37 @@ the Free Software Foundation; either version 2 of the License, or
 <context>
     <name>TableModel</name>
     <message>
-        <location filename="rnggui.py" line="457"/>
+        <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
         <translation type="unfinished">Numer błędu</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="459"/>
+        <location filename="rnggui.py" line="475"/>
         <source>Summary</source>
         <translation type="unfinished">Podsumowanie</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="460"/>
+        <location filename="rnggui.py" line="476"/>
         <source>Status</source>
         <translation type="unfinished">Stan</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="461"/>
+        <location filename="rnggui.py" line="477"/>
         <source>Severity</source>
         <translation type="unfinished">Ważność</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="463"/>
+        <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
         <translation type="unfinished">Ostatnia aktywność</translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="458"/>
+        <location filename="rnggui.py" line="474"/>
         <source>Package</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnggui.py" line="462"/>
+        <location filename="rnggui.py" line="478"/>
         <source>Tags</source>
         <translation type="unfinished"></translation>
     </message>
@@ -954,92 +954,92 @@ the Free Software Foundation; either version 2 of the License, or
 <context>
     <name>rnghelpers</name>
     <message>
-        <location filename="rnghelpers.py" line="57"/>
+        <location filename="rnghelpers.py" line="58"/>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="58"/>
+        <location filename="rnghelpers.py" line="59"/>
         <source>Icedove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="59"/>
+        <location filename="rnghelpers.py" line="60"/>
         <source>Iceape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="60"/>
+        <location filename="rnghelpers.py" line="61"/>
         <source>Evolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="61"/>
+        <location filename="rnghelpers.py" line="62"/>
         <source>KMail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="63"/>
+        <location filename="rnghelpers.py" line="64"/>
         <source>Sylpheed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="64"/>
+        <location filename="rnghelpers.py" line="65"/>
         <source>Claws Mail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="65"/>
+        <location filename="rnghelpers.py" line="66"/>
         <source>Mutt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="66"/>
+        <location filename="rnghelpers.py" line="67"/>
         <source>Mutt NG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="67"/>
+        <location filename="rnghelpers.py" line="68"/>
         <source>Pine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="92"/>
+        <location filename="rnghelpers.py" line="93"/>
         <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="93"/>
+        <location filename="rnghelpers.py" line="94"/>
         <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="94"/>
+        <location filename="rnghelpers.py" line="95"/>
         <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="95"/>
+        <location filename="rnghelpers.py" line="96"/>
         <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="96"/>
+        <location filename="rnghelpers.py" line="97"/>
         <source>The default value, applicable to most bugs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="97"/>
+        <location filename="rnghelpers.py" line="98"/>
         <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="98"/>
+        <location filename="rnghelpers.py" line="99"/>
         <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="107"/>
+        <location filename="rnghelpers.py" line="108"/>
         <source>&lt;h2&gt;Using Reportbug-NG&lt;/h2&gt;
 &lt;h3&gt;Step 1: Finding Bugs&lt;/h3&gt;
 &lt;p&gt;To find a bug just enter a query and press Enter. Combinations of multiple 
@@ -1069,7 +1069,7 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="rnghelpers.py" line="70"/>
+        <location filename="rnghelpers.py" line="71"/>
         <source>Alpine</source>
         <translation type="unfinished"></translation>
     </message>
