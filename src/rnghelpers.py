@@ -628,8 +628,6 @@ class Settings(object):
     def __init__(self, configfile):
         """Initialize Settings object and load defaults."""
         self.configfile = configfile
-        self.config = ConfigParser.ConfigParser()
-        self.config.read(self.configfile)
         self.load_defaults()
 
         
@@ -673,97 +671,102 @@ class Settings(object):
         
     def load(self):
         """Load settings from configfile."""
-        if self.config.has_option("general", "lastMUA"):
-            self.lastmua = self.config.get("general", "lastMUA")
-        if self.config.has_option("general", "sortByCol"):
-            self.sortByCol = self.config.getint("general", "sortByCol")
-        if self.config.has_option("general", "sortAsc"):
-            self.sortAsc = self.config.getboolean("general", "sortAsc")
+        config = ConfigParser.ConfigParser()
+        config.read(self.configfile)
+        if config.has_option("general", "lastMUA"):
+            self.lastmua = config.get("general", "lastMUA")
+        if config.has_option("general", "sortByCol"):
+            self.sortByCol = config.getint("general", "sortByCol")
+        if config.has_option("general", "sortAsc"):
+            self.sortAsc = config.getboolean("general", "sortAsc")
 
-        if self.config.has_option("general", "script"):
-            self.script = self.config.getboolean("general", "script")
-        if self.config.has_option("general", "presubj"):
-            self.presubj = self.config.getboolean("general", "presubj")
+        if config.has_option("general", "script"):
+            self.script = config.getboolean("general", "script")
+        if config.has_option("general", "presubj"):
+            self.presubj = config.getboolean("general", "presubj")
  
-        if self.config.has_option("general", "wishlist"):
-            self.c_wishlist = self.config.get("general", "wishlist")
-        if self.config.has_option("general", "minor"):
-            self.c_minor = self.config.get("general", "minor")
-        if self.config.has_option("general", "normal"):
-            self.c_normal = self.config.get("general", "normal")
-        if self.config.has_option("general", "important"):
-            self.c_important = self.config.get("general", "important")
-        if self.config.has_option("general", "serious"):
-            self.c_serious = self.config.get("general", "serious")
-        if self.config.has_option("general", "grave"):
-            self.c_grave = self.config.get("general", "grave")
-        if self.config.has_option("general", "critical"):
-            self.c_critical = self.config.get("general", "critical")
-        if self.config.has_option("general", "resolved"):
-            self.c_resolved = self.config.get("general", "resolved")
+        if config.has_option("general", "wishlist"):
+            self.c_wishlist = config.get("general", "wishlist")
+        if config.has_option("general", "minor"):
+            self.c_minor = config.get("general", "minor")
+        if config.has_option("general", "normal"):
+            self.c_normal = config.get("general", "normal")
+        if config.has_option("general", "important"):
+            self.c_important = config.get("general", "important")
+        if config.has_option("general", "serious"):
+            self.c_serious = config.get("general", "serious")
+        if config.has_option("general", "grave"):
+            self.c_grave = config.get("general", "grave")
+        if config.has_option("general", "critical"):
+            self.c_critical = config.get("general", "critical")
+        if config.has_option("general", "resolved"):
+            self.c_resolved = config.get("general", "resolved")
             
-        if self.config.has_option("mainwindow", "x"):
-            self.x = self.config.getint("mainwindow", "x")
-        if self.config.has_option("mainwindow", "y"):
-            self.y = self.config.getint("mainwindow", "y")
-        if self.config.has_option("mainwindow", "width"):
-            self.width = self.config.getint("mainwindow", "width")
-        if self.config.has_option("mainwindow", "height"):
-            self.height = self.config.getint("mainwindow", "height")
-        if self.config.has_option("mainwindow", "menubar"):
-            self.menubar = self.config.getboolean("mainwindow", "menubar")
+        if config.has_option("mainwindow", "x"):
+            self.x = config.getint("mainwindow", "x")
+        if config.has_option("mainwindow", "y"):
+            self.y = config.getint("mainwindow", "y")
+        if config.has_option("mainwindow", "width"):
+            self.width = config.getint("mainwindow", "width")
+        if config.has_option("mainwindow", "height"):
+            self.height = config.getint("mainwindow", "height")
+        if config.has_option("mainwindow", "menubar"):
+            self.menubar = config.getboolean("mainwindow", "menubar")
 
-        if self.config.has_option("listview", "bugnrwidth"):
-            self.bugnrWidth = self.config.getint("listview", "bugnrwidth")
-        if self.config.has_option("listview", "summarywidth"):
-            self.summaryWidth = self.config.getint("listview", "summarywidth")
-        if self.config.has_option("listview", "statuswidth"):
-            self.statusWidth = self.config.getint("listview", "statuswidth")
-        if self.config.has_option("listview", "severitywidth"):
-            self.severityWidth = self.config.getint("listview", "severitywidth")
-        if self.config.has_option("listview", "lastactionwidth"):
-            self.lastactionWidth = self.config.getint("listview", "lastactionwidth")
-        if self.config.has_option("listview", "hideClosedBugs"):
-            self.hideClosedBugs = self.config.getboolean("listview", "hideclosedbugs")
+        if config.has_option("listview", "bugnrwidth"):
+            self.bugnrWidth = config.getint("listview", "bugnrwidth")
+        if config.has_option("listview", "summarywidth"):
+            self.summaryWidth = config.getint("listview", "summarywidth")
+        if config.has_option("listview", "statuswidth"):
+            self.statusWidth = config.getint("listview", "statuswidth")
+        if config.has_option("listview", "severitywidth"):
+            self.severityWidth = config.getint("listview", "severitywidth")
+        if config.has_option("listview", "lastactionwidth"):
+            self.lastactionWidth = config.getint("listview", "lastactionwidth")
+        if config.has_option("listview", "hideClosedBugs"):
+            self.hideClosedBugs = config.getboolean("listview", "hideclosedbugs")
 
     
     def save(self):
         """Save settings to configfile."""
-        if not self.config.has_section("general"):
-            self.config.add_section("general")
-        self.config.set("general", "lastMUA", self.lastmua)
-        self.config.set("general", "sortByCol", self.sortByCol)
-        self.config.set("general", "sortAsc", self.sortAsc)
+        config = ConfigParser.ConfigParser()
+        config.read(self.configfile)
+        if not config.has_section("general"):
+            config.add_section("general")
+        config.set("general", "lastMUA", self.lastmua)
+        config.set("general", "sortByCol", self.sortByCol)
+        config.set("general", "sortAsc", self.sortAsc)
 
-        self.config.set("general", "script", self.script)
-        self.config.set("general", "presubj", self.presubj)
+        config.set("general", "script", self.script)
+        config.set("general", "presubj", self.presubj)
         
-        self.config.set("general", "wishlist", self.c_wishlist)
-        self.config.set("general", "minor", self.c_minor)
-        self.config.set("general", "normal", self.c_normal)
-        self.config.set("general", "important", self.c_important)
-        self.config.set("general", "serious", self.c_serious)
-        self.config.set("general", "grave", self.c_grave)
-        self.config.set("general", "critical", self.c_critical)
-        self.config.set("general", "resolved",self.c_resolved)
+        config.set("general", "wishlist", self.c_wishlist)
+        config.set("general", "minor", self.c_minor)
+        config.set("general", "normal", self.c_normal)
+        config.set("general", "important", self.c_important)
+        config.set("general", "serious", self.c_serious)
+        config.set("general", "grave", self.c_grave)
+        config.set("general", "critical", self.c_critical)
+        config.set("general", "resolved",self.c_resolved)
 
         
-        if not self.config.has_section("mainwindow"):
-            self.config.add_section("mainwindow")
-        self.config.set("mainwindow", "x", self.x)
-        self.config.set("mainwindow", "y", self.y)
-        self.config.set("mainwindow", "width", self.width)
-        self.config.set("mainwindow", "height", self.height)
-        self.config.set("mainwindow", "menubar", self.menubar)
+        if not config.has_section("mainwindow"):
+            config.add_section("mainwindow")
+        config.set("mainwindow", "x", self.x)
+        config.set("mainwindow", "y", self.y)
+        config.set("mainwindow", "width", self.width)
+        config.set("mainwindow", "height", self.height)
+        config.set("mainwindow", "menubar", self.menubar)
 
-        if not self.config.has_section("listview"):
-            self.config.add_section("listview")
-        self.config.set("listview", "bugnrwidth", self.bugnrWidth)
-        self.config.set("listview", "summarywidth", self.summaryWidth)
-        self.config.set("listview", "statuswidth", self.statusWidth)
-        self.config.set("listview", "severitywidth", self.severityWidth)
-        self.config.set("listview", "lastactionwidth", self.lastactionWidth)
-        self.config.set("listview", "hideclosedbugs", self.hideClosedBugs)
+        if not config.has_section("listview"):
+            config.add_section("listview")
+        config.set("listview", "bugnrwidth", self.bugnrWidth)
+        config.set("listview", "summarywidth", self.summaryWidth)
+        config.set("listview", "statuswidth", self.statusWidth)
+        config.set("listview", "severitywidth", self.severityWidth)
+        config.set("listview", "lastactionwidth", self.lastactionWidth)
+        config.set("listview", "hideclosedbugs", self.hideClosedBugs)
 
         # Write everything to configfile
-        self.config.write(open(self.configfile, "w"))
+        config.write(open(self.configfile, "w"))
+

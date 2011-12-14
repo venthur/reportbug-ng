@@ -1,3 +1,9 @@
+reportbug-ng (1.26) unstable; urgency=low
+
+  * Fix "Option setting does not work" (Closes: #644763)
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 14 Dec 2011 19:46:06 +0100
+
 reportbug-ng (1.25) unstable; urgency=low
 
   * Fix "[reportbug-ng] desktop file not compliant with XDG standard"
