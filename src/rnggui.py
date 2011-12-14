@@ -30,7 +30,6 @@ from rngsettingsdialog import RngSettingsDialog
 import bug
 
 
-
 def chunks(l, n):
     for i in range(0, len(l), n):
         yield l[i:i+n]
@@ -54,7 +53,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.progressbar.setFixedWidth(100)
         self.progressbar.hide()
         self.statusbar.addPermanentWidget(self.progressbar)
-        
+
         # connect actions to methods
         QtCore.QObject.connect(self.actionNewBugreport,
                                QtCore.SIGNAL("triggered()"),
@@ -134,6 +133,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.settings.save()
         ce.accept()
 
+
     def activated(self, index):
         """React on click in table."""
         self.logger.info("Row %s activated." % str(index.row()))
@@ -148,25 +148,31 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         url = bts.BTS_URL + str(bugnr)
         self._show_url(url)
 
+
     def new_bugreport(self):
         self.logger.info("New Bugreport.")
         self.__submit_dialog("newbug")
+
 
     def additional_info(self):
         self.logger.info("Additional Info.")
         self.__submit_dialog("moreinfo")
 
+
     def close_bugreport(self):
         self.logger.info("Close Bugreport.")
         self.__submit_dialog("close")
+
 
     def new_wnpp(self):
         self.logger.info("New WNPP.")
         self.__submit_dialog("wnpp")
 
+
     def clear_lineedit(self):
         self.logger.info("Clear Lineedit.")
         self.lineEdit.clear()
+
 
     def lineedit_text_changed(self, text):
         self.logger.info("Text changed: %s" % text)
@@ -177,6 +183,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
                            QtCore.QRegExp.FixedString)
             )
         self.tableView.resizeRowsToContents()
+
 
     def lineedit_return_pressed(self):
         #
@@ -195,7 +202,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         #QtCore.QTimer.singleShot(0,self.lineEdit,QtCore.SLOT("clear()"))
         query = rng.translate_query(text)
         self.logger.debug("Query: %s" % str(query))
-        
+
         # test if there is a submit-as field available and rename the packages
         # if nececesairy
         for i in range(0, len(query), 2):
@@ -247,12 +254,14 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.model.set_elements(self.bugs)
         self.tableView.resizeRowsToContents()
 
+
     def settings_diag(self):
         """Spawn settings dialog and get settings."""
         s = RngSettingsDialog(self.settings)
         if s.exec_() == s.Accepted:
             self.logger.debug("Accepted settings change, applying.")
             self.settings = s.settings
+
 
     def about(self):
         """Shows the about box."""
@@ -261,7 +270,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
             self,
             self.tr("About Reportbug-NG"),
             self.tr(\
-"""Copyright (C) 2007-2010 Bastian Venthur <venthur at debian org>
+"""Copyright (C) 2007-2011 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -270,8 +279,10 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version."""))
 
+
     def about_qt(self):
         QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))
+
 
     def _stateChanged(self, package, bug):
         """Transition for our finite state machine logic"""
@@ -424,22 +435,27 @@ the Free Software Foundation; either version 2 of the License, or
         self.settings.lastactionWidth = self.tableView.columnWidth(5)
         self.settings.hideClosedBugs = self.checkBox.isChecked()
 
+
     def _show_url(self, url):
         url = QtCore.QUrl(url)
         self.webView.setUrl(url)
+
 
     def load_started(self):
         """Webwiew started to load a page."""
         self.progressbar.show()
 
+
     def load_progress(self, progress):
         """Webwiew progress advanced."""
         self.progressbar.setValue(progress)
+
 
     def load_finished(self, ok):
         """Webview finished do load the page."""
         self.progressbar.reset()
         self.progressbar.hide()
+
 
     def checkbox_clicked(self, check):
         """Checkbox to toggle hide/show closed Bugs was changed."""
@@ -455,18 +471,21 @@ class TableModel(QtCore.QAbstractTableModel):
         self.logger = logging.getLogger("TableModel")
         self.elements = []
         self.header = [QCoreApplication.translate('TableModel', "Bugnumber"),
-	               QCoreApplication.translate('TableModel', "Package"),
+                       QCoreApplication.translate('TableModel', "Package"),
                        QCoreApplication.translate('TableModel', "Summary"),
                        QCoreApplication.translate('TableModel', "Status"),
                        QCoreApplication.translate('TableModel', "Severity"),
                        QCoreApplication.translate('TableModel', "Tags"),
                        QCoreApplication.translate('TableModel', "Last Action")]
- 
+
+
     def rowCount(self, parent):
         return len(self.elements)
 
+
     def columnCount(self, parent):
         return len(self.header)
+
 
     #
     # DAMMIT DONT IGNORE THE DISPLAY ROLE!!
@@ -511,6 +530,7 @@ class TableModel(QtCore.QAbstractTableModel):
                 6 : QtCore.QDate(bug.log_modified)}[index.column()]
         return QtCore.QVariant(data)
 
+
     #
     # DAMMIT DONT IGNORE THE DISPLAY ROLE!!
     #
@@ -522,6 +542,7 @@ class TableModel(QtCore.QAbstractTableModel):
         else:
             return QtCore.QVariant()
 
+
     def set_elements(self, entries):
         self.logger.info("Setting Elements.")
         self.beginRemoveRows(QtCore.QModelIndex(), 0, len(self.elements)-1)
@@ -531,12 +552,14 @@ class TableModel(QtCore.QAbstractTableModel):
         self.elements = entries
         self.endInsertRows()
 
+
 class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
 
     def __init__(self, parent=None):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
         self.logger = logging.getLogger("MySortFilterProxyModel")
         self.parent = parent
+
 
     def lessThan(self, left, right):
         if left.column() != 4:
@@ -545,10 +568,12 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
         r = self.sourceModel().elements[right.row()]
         return l < r
 
+
     def filterAcceptsRow(self, sourceRow, sourceParent):
         if self.sourceModel().elements[sourceRow].done and self.parent.settings.hideClosedBugs:
             return False
         return QtGui.QSortFilterProxyModel.filterAcceptsRow(self, sourceRow, sourceParent)
+
 
 class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
 
@@ -564,7 +589,8 @@ class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
         QtCore.QObject.connect(self.comboBoxSeverity,
                                QtCore.SIGNAL("currentIndexChanged(int)"),
                                self.severity_changed)
-        
+
+
     def severity_changed(self, index):
         self.label_severity.setText(rng.getSeverityExplanation(index))
 

@@ -29,8 +29,8 @@ import tempfile
 
 from PyQt4.QtCore import QCoreApplication
 
-
 import bug
+
 
 logger = logging.getLogger("ReportbugNG")
 
@@ -51,6 +51,7 @@ MUA_SYNTAX = {
 #    "googlemail" : 'https://gmail.google.com/gmail?view=cm&cmid=0&fs=1&tearoff=1&to=%(to)s&su=%(subject)s&body=%(body)s'
     'alpine' : 'alpine -url ' + RFC_MAILTO,
               }
+
 
 def getMUAString(mua):
     """ Return the translated string for the specified MUA."""
@@ -73,7 +74,7 @@ def getMUAString(mua):
 MUA_STRINGS = {
               }
 # Don't urllib.quote() their strings
-MUA_NO_URLQUOTE = ["default", "kmail"]            
+MUA_NO_URLQUOTE = ["default", "kmail"]
 # Who needs a terminal?
 MUA_NEEDS_TERMINAL = ["mutt", "mutt-ng", "pine", 'alpine']
 # Who needs a browser?
