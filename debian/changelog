@@ -1,3 +1,10 @@
+reportbug-ng (1.27) unstable; urgency=low
+
+  * Fixed splitting of name, value in bug control file (Closes: #679252)
+    Thanks Ben Hutchings for the prompt patch and sorry for the inconvenience.
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 27 Jun 2012 18:11:24 +0200
+
 reportbug-ng (1.26) unstable; urgency=low
 
   * Fix "Option setting does not work" (Closes: #644763)

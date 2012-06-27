@@ -20,7 +20,7 @@ def get_control(package):
         return control
     f = file(path)
     for line in f.readlines():
-        tokens = line.split(":")
+        tokens = line.split(":", 1)
         if len(tokens) < 2:
             continue
         cmd = str(tokens[0].strip().lower())
