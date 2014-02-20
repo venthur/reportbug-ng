@@ -575,22 +575,22 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="settings.ui" line="13"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
         <location filename="settings.ui" line="19"/>
         <source>External Applications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Externa program</translation>
     </message>
     <message>
         <location filename="settings.ui" line="25"/>
         <source>Mail Client:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">E-postklient</translation>
     </message>
     <message>
         <location filename="settings.ui" line="38"/>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Användargränssnitt</translation>
     </message>
     <message>
         <location filename="settings.ui" line="44"/>
@@ -635,17 +635,17 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="settings.ui" line="159"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Diverse</translation>
     </message>
     <message>
         <location filename="settings.ui" line="165"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skicka extra information från felskript om tillgängligt (rekommenderas)</translation>
     </message>
     <message>
         <location filename="settings.ui" line="172"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa paketspecifik information om tillgängligt innan felrapporten skickas (rekommenderas)</translation>
     </message>
 </context>
 <context>
@@ -658,7 +658,7 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="159"/>
         <source>&amp;New Bugreport...</source>
-        <translation type="unfinished">&amp;Ny felrapport</translation>
+        <translation type="unfinished">&amp;Ny felrapport...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="165"/>
@@ -675,7 +675,7 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="189"/>
         <source>&amp;Close Bugreport...</source>
-        <translation type="unfinished">&amp;Ny felrapport</translation>
+        <translation type="unfinished">&amp;Stäng felrapport...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="195"/>
@@ -692,8 +692,7 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="231"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">&amp;Avsluta</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="237"/>
@@ -704,7 +703,7 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="28"/>
         <source>Q&amp;uery or Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Sökning eller filter:</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="48"/>
@@ -714,27 +713,27 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="55"/>
         <source>Hide Closed Bugreports</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dölj stängda felrapporter</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="102"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Arkiv</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="108"/>
         <source>&amp;Bugs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Fel</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="118"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Redigera</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="124"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Hjälp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="137"/>
@@ -744,67 +743,67 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="162"/>
         <source>Create a new Bugreport for the current package.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skapa en ny felrapport för aktuellt paket.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="174"/>
         <source>&amp;Additional Information...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Ytterligare information...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="177"/>
         <source>Provide additional information for this Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tillhandahåll ytterligare information för aktuell felrapport.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="192"/>
         <source>Close the current Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stäng aktuell felrapport.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="204"/>
         <source>New &amp;WNPP Bugreport...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ny &amp;WNPP-felrapport...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="207"/>
         <source>Create a new WNPP Bugreport.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skapa en ny WNPP-felrapport.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="219"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rensa</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="222"/>
         <source>Clear.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rensa.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="234"/>
         <source>Quit Reportbug-NG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avsluta Reportbug-NG.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="242"/>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Inställningar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="245"/>
         <source>Change Reportbug-NG&apos;s settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ändra inställningar för Reportbug-NG.</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="250"/>
         <source>About Reportbug NG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Om Reportbug NG</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="255"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Om Qt</translation>
     </message>
 </context>
 <context>
@@ -812,12 +811,12 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="rnggui.py" line="269"/>
         <source>About Reportbug-NG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Om Reportbug-NG</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="284"/>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Om Qt</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="269"/>
@@ -829,7 +828,11 @@ This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copyright (C) 2007-2011 Bastian Venthur &lt;venthur at debian org&gt;
+
+Webbplats: http://reportbug-ng.alioth.debian.org
+
+Detta program är fri programvara; du kan distribuera det och/eller modifiera det i enlighet med villkoren som finns i GNU General Public License som publicerats av Free Software Foundation; antingen version 2 av licensen, eller (om du önskar) någon senare version.</translation>
     </message>
 </context>
 <context>
@@ -847,13 +850,12 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="80"/>
         <source>&amp;WNPP Bugreport</source>
-        <translation type="unfinished">&amp;Ny felrapport</translation>
+        <translation type="unfinished">&amp;WNPP-felrapport</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="95"/>
         <source>Short Package &amp;Description:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Kort &amp;beskrivning av paket:</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="114"/>
@@ -864,7 +866,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="133"/>
         <source>Normal Bugreport</source>
-        <translation type="unfinished">&amp;Ny felrapport</translation>
+        <translation type="unfinished">Normal felrapport</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="139"/>
@@ -919,12 +921,12 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="14"/>
         <source>Bug report details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Felrapportsdetaljer</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="20"/>
         <source>Please add details about the bug report you want to report.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lägg till detaljer om felet du vill rapportera.</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="187"/>
@@ -934,17 +936,17 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="250"/>
         <source>Miscellaneous</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Diverse</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="256"/>
         <source>Send additional bugscript information if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skicka extra information från felskript om tillgängligt (rekommenderas)</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="263"/>
         <source>Show package specific information before sending bugreport if available (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa paketspecifik information om tillgängligt innan felrapporten skickas (rekommenderas)</translation>
     </message>
 </context>
 <context>
@@ -952,7 +954,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
-        <translation type="unfinished">med felnumret</translation>
+        <translation type="unfinished">Felnummer</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="475"/>
@@ -978,12 +980,12 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="474"/>
         <source>Package</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paket</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="478"/>
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Taggar</translation>
     </message>
 </context>
 <context>
@@ -991,7 +993,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnghelpers.py" line="58"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="59"/>
@@ -1041,37 +1043,37 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnghelpers.py" line="93"/>
         <source>Makes unrelated software on the system (or the whole system) break, or causes serious data loss, or introduces a security hole on systems where you install the package.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gör orelaterad programvara på systemet trasig (eller hela systemet), orsakar allvarlig dataförlust eller introducerar ett säkerhetshål på system där du installerar paketet.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="94"/>
         <source>Makes the package in question unusable or mostly so, or causes data loss, or introduces a security hole allowing access to the accounts of users who use the package.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gör aktuellt paket helt eller till större del oanvändbart, orsakar dataförlust eller introducerar ett säkerhetshål genom att tillåta åtkomst till användarkonton som använder paketet.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="95"/>
         <source>Is a severe violation of Debian policy (roughly, it violates a &quot;must&quot; or &quot;required&quot; directive), or, in the package maintainer&apos;s opinion, makes the package unsuitable for release.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">En allvarlig överträdelse av Debians policy (i korta drag, den betyder mot direktivet &quot;must&quot; eller &quot;required&quot;), eller som enligt paketansvariges åsikt gör paketet olämpligt för utgivning.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="96"/>
         <source>A bug which has a major effect on the usability of a package, without rendering it completely unusable to everyone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ett fel som har en stor inverkan på användbarheten för ett paket, utan att göra det helt oanvändbart för alla.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="97"/>
         <source>The default value, applicable to most bugs.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Standardvärdet, lämpligt för de flesta felrapporter.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="98"/>
         <source>A problem which doesn&apos;t affect the package&apos;s usefulness, and is presumably trivial to fix.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ett problem som inte påverkar paketets användbarhet och antagligen är mycket enkelt att rätta till.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="99"/>
         <source>For any feature request, and also for any bugs that are very difficult to fix due to major design considerations.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">För alla önskemål om funktioner och även för felrapporter som är mycket svåra att rätta till på grund av större designfaktorer.</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="108"/>
@@ -1101,7 +1103,26 @@ affects the packagename, bugnumber, summary, status and severity of a bug.&lt;/p
 &lt;h3&gt;Step 3: Reporting Bugs&lt;/h3&gt;
 &lt;p&gt;You can either provide additional information for an existing bug by clicking on the bug in the list and pressing the &quot;Additional Info&quot; button or you can create a new bugreport for the current package by clicking the &quot;New Bugreport&quot; button.&lt;/p&gt;
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h2&gt;Användning av Reportbug-NG&lt;/h2&gt;
+&lt;h3&gt;Steg 1: Hitta felrapporter&lt;/h3&gt;
+&lt;p&gt;För att hitta en felrapport kan du ange söktext och trycka på Enter. Kombinationer av flera sökningar stöds, t.ex.: "severity:grave tag:patch".&lt;/p&gt;
+&lt;p&gt;Följande frågetyper stöds:
+&lt;dl&gt;
+&lt;dt&gt;&lt;code&gt;package&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter som tillhör PAKETET&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;bugnumber&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar felrapporten med FELNUMMER&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;maintainer@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter tilldelade till PAKETANSVARIG&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;src:package&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter som tillhör till KÄLLKODSPAKETET&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;from:submitter@foo.bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter insända av INSÄNDARE&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;severity:foo&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter med ALLVARLIGHETSGRAD. Varning, den här listan är antagligen mycket lång. Värden som är giltiga: critical, grave, serious, important, normal, minor och wishlist&lt;/dd&gt;
+&lt;dt&gt;&lt;code&gt;tag:bar&lt;/code&gt;&lt;/dt&gt;&lt;dd&gt;Returnerar alla felrapporter markerade med TAGG&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/p&gt;
+&lt;p&gt;För att se hela felrapporten kan du klicka på felrapporten i listan. Länkar i felrapporten kommer att öppnas i en extern webbläsare när du klickar på dem.&lt;/p&gt;
+&lt;h3&gt;Steg 2: Filtrering av felrapporter&lt;/h3&gt;
+&lt;p&gt;För att filtrera listan över befintliga felrapporter kan du ange några bokstäver (utan att trycka på Enter). Filtret är inte skiftlägeskänsligt och
+påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden för en felrapport.&lt;/p&gt;
+&lt;h3&gt;Steg 3: Rapportering av fel&lt;/h3&gt;
+&lt;p&gt;Du kan antingen tillhandahålla ytterligare information för en befintlig felrapport genom att klicka på felrapporten i listan och trycka på &quot;Ytterligare information&quot;eller så kan du skapa en ny felrapport för det aktuella paketet genom att klicka på &quot;Ny felrapport&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="rnghelpers.py" line="71"/>
