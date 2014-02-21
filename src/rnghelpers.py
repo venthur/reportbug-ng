@@ -107,7 +107,7 @@ def getRngInstructions():
     return """<div style="background: #fff; color: #000;" >""" + \
         QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
-<p>To find a bug just enter a query and press Enter. Combinations of multiple \
+<p>To find a bug just enter a query and press Enter. Combinations of multiple 
 queries are supported, e.g.: "severity:grave tag:patch".</p>
 
 <p>The following queries are supported:
