@@ -1,3 +1,13 @@
+reportbug-ng (1.28) unstable; urgency=medium
+
+  * Fix "usage guide localization doesn't work". Applied patch by Anders
+    Jonsson. (Closes: #739713)
+  * Fix "[reportbug-ng] Swedish translation doesn't show the File->Quit
+    menuitem text". Applied patch by Anders Jonsson, thank you very much
+    Anders! (Closes: #586430)
+
+ -- Bastian Venthur <venthur@debian.org>  Sat, 22 Feb 2014 12:03:31 +0100
+
 reportbug-ng (1.27) unstable; urgency=low
 
   * Fixed splitting of name, value in bug control file (Closes: #679252)
