@@ -663,14 +663,12 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="165"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Ctrl+A</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="189"/>
@@ -680,14 +678,12 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="195"/>
         <source>Ctrl+L</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Ctrl+L</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="210"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="231"/>
@@ -697,8 +693,7 @@ påverkar paketnamnet, felnumret, sammandrag, status och allvarlighetsgraden fö
     <message>
         <location filename="mainwindow.ui" line="237"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="28"/>
@@ -860,8 +855,7 @@ Detta program är fri programvara; du kan distribuera det och/eller modifiera de
     <message>
         <location filename="submitdialog.ui" line="114"/>
         <source>WNPP &amp;Action:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">WNPP-&amp;handling:</translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="133"/>
@@ -974,8 +968,7 @@ Detta program är fri programvara; du kan distribuera det och/eller modifiera de
     <message>
         <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished">Sista handling</translation>
     </message>
     <message>
         <location filename="rnggui.py" line="474"/>
