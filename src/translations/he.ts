@@ -841,8 +841,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="215"/>
         <source>A patch or some other easy procedure for fixing the bug is included in the bug logs. If there&apos;s a patch, but it doesn&apos;t resolve the bug adequately or causes some other problems, this tag should not be used.</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="218"/>
@@ -862,8 +861,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="235"/>
         <source>This bug describes a security problem in a package (e.g., bad permissions allowing access to data that shouldn&apos;t be accessible; buffer overruns allowing people to control a system in ways they shouldn&apos;t be able to; denial of service attacks that should be fixed, etc). Most security bugs should also be set at critical or grave severity.</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="238"/>
@@ -906,8 +904,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="rnggui.py" line="475"/>
@@ -927,8 +924,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="rnggui.py" line="474"/>

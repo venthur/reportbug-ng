@@ -652,14 +652,12 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
     <message>
         <location filename="mainwindow.ui" line="165"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="180"/>
         <source>Ctrl+A</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="189"/>
@@ -669,26 +667,22 @@ store bokstaver og påvirker pakkenavnet, feilnummeret, sammendrag, status og al
     <message>
         <location filename="mainwindow.ui" line="195"/>
         <source>Ctrl+L</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="210"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="231"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="237"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="28"/>
@@ -841,14 +835,12 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="submitdialog.ui" line="95"/>
         <source>Short Package &amp;Description:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="114"/>
         <source>WNPP &amp;Action:</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="submitdialog.ui" line="133"/>
@@ -941,8 +933,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="473"/>
         <source>Bugnumber</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="rnggui.py" line="475"/>
@@ -962,8 +953,7 @@ the Free Software Foundation; either version 2 of the License, or
     <message>
         <location filename="rnggui.py" line="479"/>
         <source>Last Action</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="rnggui.py" line="474"/>
