@@ -24,6 +24,9 @@ install:
 	mkdir -p $(DESTDIR)/usr/share/applications
 	cp *.desktop $(DESTDIR)/usr/share/applications/
 
+	mkdir -p $(DESTDIR)/usr/share/pixmaps
+	cp ui/rng.xpm $(DESTDIR)/usr/share/pixmaps/
+
 clean:
 	for i in $(DIRS); do \
 	    $(MAKE) clean -C $$i; \
