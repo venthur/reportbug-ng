@@ -268,7 +268,11 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         # TODO: copyright string below should be a constant
         QtGui.QMessageBox.about(\
             self,
-            self.tr("About Reportbug-NG"),
+            self.tr("About Reportbug-NG"),"""Reportbug-NG """ +
+                rng.getInstalledPackageVersion("reportbug-ng") + """\n""" +
+            self.tr(\
+"""Reportbug-NG is a graphical interface for searching, filtering, reporting
+or manipulating bugs in Debian's Bug Tracking System.""") + """\n""" +
             self.tr(\
 """Copyright (C) 2007-2011 Bastian Venthur <venthur at debian org>
 
