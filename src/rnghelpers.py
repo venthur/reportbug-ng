@@ -1,6 +1,6 @@
 # encoding: utf8
 # rnghelpers.py - Various helpers for Reportbug-NG.
-# Copyright (C) 2007-2010  Bastian Venthur
+# Copyright (C) 2007-2014  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -107,7 +107,7 @@ def getRngInstructions():
     return """<div style="background: #fff; color: #000;" >""" + \
         QCoreApplication.translate("rnghelpers", """<h2>Using Reportbug-NG</h2>
 <h3>Step 1: Finding Bugs</h3>
-<p>To find a bug just enter a query and press Enter. Combinations of multiple 
+<p>To find a bug just enter a query and press Enter. Combinations of multiple
 queries are supported, e.g.: "severity:grave tag:patch".</p>
 
 <p>The following queries are supported:
@@ -156,9 +156,9 @@ SUPPORTED_MUA.sort()
 
 def prepareMail(mua, to, subject, body, firstcall=True):
     """Tries to call MUA with given parameters."""
-    
+
     mua = mua.lower()
-    
+
     if mua not in MUA_NO_URLQUOTE:
         subject = urllib.quote(subject.encode("ascii", "replace"))
         body = urllib.quote(body.encode("ascii", "replace"))
@@ -172,9 +172,9 @@ def prepareMail(mua, to, subject, body, firstcall=True):
         to = to.replace('"', '\\"')
         subject = subject.replace('"', '\\"')
         body = body.replace('"', '\\"')
-    
+
     command = MUA_SYNTAX[mua] % {"to":to, "subject":subject, "body":body}
-    
+
     if mua in MUA_NEEDS_TERMINAL:
         command = "x-terminal-emulator -e "+command
 
@@ -192,21 +192,21 @@ def prepareMail(mua, to, subject, body, firstcall=True):
         logger.warning("Grr! Calling the MUA failed. Status and output was: %s, %s. Length of the command is: %s" % (str(status), str(output), str(len(command))))
         body = body[:MAX_BODY_LEN] + "\n\n[ MAILBODY EXCEEDED REASONABLE LENGTH, OUTPUT TRUNCATED ]"
         prepareMail(mua, to, subject, body, False)
-            
-   
-    
+
+
+
 def prepareBody(package, version=None, severity=None, tags=[], cc=[], script=True):
     """Prepares the empty bugreport including body and system information."""
-    
+
     s = prepare_minimal_body(package, version, severity, tags, cc)
 
     s += getSystemInfo() + "\n"
     s += getDebianReleaseInfo() + "\n"
     s += getPackageInfo(package) + "\n"
-    
+
     if not script:
         return s
-    
+
     s2 = getPackageScriptOutput(package) + "\n"
     if len(s+s2) > MAX_BODY_LEN:
         logger.warning("Mailbody to long for os.pipe")
@@ -216,8 +216,8 @@ def prepareBody(package, version=None, severity=None, tags=[], cc=[], script=Tru
         f.close()
         s2 = """
 -8<---8<---8<---8<---8<---8<---8<---8<---8<--
-Please attach the file: 
-  %s 
+Please attach the file:
+  %s
 to the mail. I'd do it myself if the output wasn't too long to handle.
 
   Thank you!
@@ -229,11 +229,11 @@ to the mail. I'd do it myself if the output wasn't too long to handle.
 
 def prepare_minimal_body(package, version=None, severity=None, tags=[], cc=[]):
     """Prepares the body of the empty bugreport."""
-    
+
     s = ""
     s += "Package: %s\n" % package
     if version:
-        s += "Version: %s\n" % version 
+        s += "Version: %s\n" % version
     if severity:
         s += "Severity: %s\n" % severity
     if tags:
@@ -251,7 +251,7 @@ def prepare_minimal_body(package, version=None, severity=None, tags=[], cc=[]):
 
 def prepare_wnpp_body(action, package, version=""):
     """Prepares a WNPP bugreport."""
-    
+
     s = ""
     s += "Package: wnpp\n"
     if action in ("ITP", "RFP"):
@@ -276,7 +276,7 @@ Upstream Author: [NAME <name@example.com>]
 
 
 def prepare_wnpp_subject(action, package, descr):
-    if not package: 
+    if not package:
         package = "[PACKAGE]"
     if not descr:
         descr = "[SHORT DESCRIPTION]"
@@ -285,26 +285,26 @@ def prepare_wnpp_subject(action, package, descr):
 
 def getSystemInfo():
     """Returns some hopefully useful sysinfo"""
-    
+
     s = "--- System information. ---\n"
     s += "Architecture: %s\n" % commands.getoutput("dpkg --print-installation-architecture 2>/dev/null")
     s += "Kernel:       %s\n" % commands.getoutput("uname -sr 2>/dev/null")
-    
+
     return s
 
 
 def getPackageInfo(package):
     """Returns some Info about the package."""
-    
+
     pwidth = len("Depends ")
     vwidth = len("(Version) ")
 
     s = "--- Package information. ---\n"
-    
+
     plist = bug.report_with(package)
     if len(plist) > 1:
         logger.debug("Reporting with additional packages as requested by maintainers: %s" % str(plist[1:]))
-    
+
     depends = getDepends(plist)
     s += pretty_print_depends(depends, "Depends")
     s += "\n\n"
@@ -327,13 +327,13 @@ def getPackageInfo(package):
 
 def pretty_print_depends(depends, depstring):
     """Pretty prints dependencies in a table.
-    
+
     The in the depstring goes: Depends, Suggests or Recommends.
     """
 
     if not depends:
         return "Package's %s field is empty." % depstring
-    
+
     pwidth = len(depstring)
     vwidth = len("(Version) ")
     s = ""
@@ -346,26 +346,26 @@ def pretty_print_depends(depends, depstring):
         else:
             depname = split[0]
             depversion = ""
-        
+
         if depname.startswith("|"):
             alternative = True
             depname = depname.lstrip("|")
-        
+
         if pwidth < len(depname):
             pwidth = len(depname)
         if vwidth < len(depversion):
             vwidth = len(depversion)
-            
+
         plist.append(depname)
-    
+
     instversions = getInstalledPackageVersions(plist)
-    
+
     pwidth += len(" OR ")
     vwidth += 1
 
     s += depstring.ljust(pwidth) + "(Version)".rjust(vwidth) +" | " + "Installed\n"
     s += "".zfill(pwidth).replace("0", "=")+"".zfill(vwidth).replace("0", "=")+"-+-"+"".zfill(vwidth).replace("0", "=") +"\n"
-    
+
     alternative = False
     for packagestring in depends:
         split = packagestring.split(" ", 1)
@@ -374,27 +374,27 @@ def pretty_print_depends(depends, depstring):
         else:
             depname = split[0]
             depversion = ""
-        
+
         if depname.startswith("|"):
             alternative = True
             depname = depname.lstrip("|")
-            
+
         if alternative:
             alternative = False
             s += (" OR "+depname).ljust(pwidth) +depversion.rjust(vwidth)+" | "+ instversions[depname] + "\n"
         else:
             s += depname.ljust(pwidth) +depversion.rjust(vwidth)+" | "+ instversions[depname] + "\n"
-    
+
     return s
 
 
 def getPackageScriptOutput(package):
-    """Runs the package's script in /usr/share/bug/packagename/script or 
+    """Runs the package's script in /usr/share/bug/packagename/script or
     /usr/share/bug/packagename and returns the output."""
     output = ''
     # In the first case the script is called "script", in the second one the
     # script is just the packagename under /usr/share/bug
-    path = ["/usr/share/bug/" + str(package) + "/script", 
+    path = ["/usr/share/bug/" + str(package) + "/script",
              "/usr/share/bug/" +str(package)]
     xterm_path = "/usr/bin/xterm"
     # pop up a terminal if we can because scripts can be interactive
@@ -416,10 +416,10 @@ def getPackageScriptOutput(package):
 
 def getInstalledPackageVersion(package):
     """Returns the version of package, if installed or empty string if not installed"""
-    
+
     out = commands.getoutput("dpkg --status %s 2>/dev/null" % package)
     version = re.findall("^Version:\s(.*)$", out, re.MULTILINE)
-    
+
     if version:
         return version[0]
     else:
@@ -428,36 +428,36 @@ def getInstalledPackageVersion(package):
 
 def getInstalledPackageVersions(packages):
     """Returns a dictionary package:version."""
-    
+
     result = {}
-    
+
     packagestring = ""
     for i in packages:
         packagestring += " "+i
         result[i] = ""
-    
+
     out = commands.getoutput("dpkg --status %s 2>/dev/null" % packagestring)
-    
+
     packagere = re.compile("^Package:\s(.*)$", re.MULTILINE)
     versionre = re.compile("^Version:\s(.*)$", re.MULTILINE)
-    
+
     for line in out.splitlines():
         pmatch = re.match(packagere, line)
         vmatch = re.match(versionre, line)
-        
+
         if pmatch:
             package = pmatch.group(1)
         if vmatch:
             version = vmatch.group(1)
             result[package] = version
-    
+
     return result
 
 
 def getDepends(packagelist):
     """Returns strings of all the packages the given package depends on. The format is like:
        ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
-    
+
     list = []
     for package in packagelist:
         out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
@@ -466,15 +466,15 @@ def getDepends(packagelist):
             depends = depends[0]
         else:
             continue
-    
+
         depends = depends.replace("| ", ", |")
-    
+
         list.extend(depends.split(", "))
     return list
 
 
 def getSuggests(packagelist):
-    """Returns strings of all the packages the given package suggests. 
+    """Returns strings of all the packages the given package suggests.
     The format is like:
     ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
@@ -486,15 +486,15 @@ def getSuggests(packagelist):
             suggests = suggests[0]
         else:
             continue
-    
+
         suggests = suggests.replace("| ", ", |")
-    
+
         list.extend(suggests.split(", "))
     return list
 
 
 def getRecommends(packagelist):
-    """Returns strings of all the packages the given package recommends. 
+    """Returns strings of all the packages the given package recommends.
     The format is like:
     ['libapt-pkg-libc6.3-6-3.11', 'libc6 (>= 2.3.6-6)', 'libstdc++6 (>= 4.1.1-12)']"""
 
@@ -506,19 +506,19 @@ def getRecommends(packagelist):
             recommends = recommends[0]
         else:
             continue
-    
+
         recommends = recommends.replace("| ", ", |")
-    
+
         list.extend(recommends.split(", "))
     return list
 
 
 def getSourceName(package):
     """Returns source package name for given package."""
-    
+
     out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
     source = re.findall("^Source:\s(.*)$", out, re.MULTILINE)
-    
+
     if source:
         return source[0]
     else:
@@ -527,7 +527,7 @@ def getSourceName(package):
 
 def getDebianReleaseInfo():
     """Returns a string with Debian relevant info."""
-    
+
     debinfo = ''
     mylist = []
     output = commands.getoutput('apt-cache policy 2>/dev/null')
@@ -538,7 +538,7 @@ def getDebianReleaseInfo():
                 mylist.index(match.groups())
             except:
                 mylist.append(match.groups())
-    
+
     mylist.sort(reverse=True)
 
     if os.path.exists('/etc/debian_version'):
@@ -588,8 +588,8 @@ def callMailClient(command):
 
 def translate_query(query):
     """Translate query to a query the SOAP interface accepts.
-    
-    Complex queries are seperated by one or more spaces: 
+
+    Complex queries are seperated by one or more spaces:
     "somepackage severity:normal tag:patch"
     """
 
@@ -616,30 +616,30 @@ def translate_query(query):
     logger.debug("Translated query to %s" % ans)
     return ans
 
-    
+
 class Settings(object):
     """A Settings object contains all the settings for reportbug-ng.
-    
+
     This object supports, loading default values, as well as loading and saving
     the settings to a configfile.
     """
-    
+
     CONFIGFILE = os.path.expanduser("~/.reportbug-ng")
-    
+
     def __init__(self, configfile):
         """Initialize Settings object and load defaults."""
         self.configfile = configfile
         self.load_defaults()
 
-        
+
     def load_defaults(self):
         """Load default settings."""
         # Users preferred mailclient
         self.lastmua = "default"
-        
+
         self.script = True
         self.presubj = True
-        
+
         self.c_wishlist = "#808000"
         self.c_minor = "#008000"
         self.c_normal = "#000000"
@@ -648,18 +648,18 @@ class Settings(object):
         self.c_grave = "#800080"
         self.c_critical = "#800080"
         self.c_resolved = "#a0a0a4"
-        
+
         # Sorting option
         self.sortByCol = 2
         self.sortAsc = False
-        
+
         # Mainwindow
         self.x = 0
         self.y = 0
         self.width = 800
         self.height = 600
         self.menubar = True
-        
+
         # ListView
         self.bugnrWidth = 100
         self.packageWidth = 150
@@ -668,8 +668,8 @@ class Settings(object):
         self.severityWidth = 100
         self.lastactionWidth = 100
         self.hideClosedBugs = True
-        
-        
+
+
     def load(self):
         """Load settings from configfile."""
         config = ConfigParser.ConfigParser()
@@ -685,7 +685,7 @@ class Settings(object):
             self.script = config.getboolean("general", "script")
         if config.has_option("general", "presubj"):
             self.presubj = config.getboolean("general", "presubj")
- 
+
         if config.has_option("general", "wishlist"):
             self.c_wishlist = config.get("general", "wishlist")
         if config.has_option("general", "minor"):
@@ -702,7 +702,7 @@ class Settings(object):
             self.c_critical = config.get("general", "critical")
         if config.has_option("general", "resolved"):
             self.c_resolved = config.get("general", "resolved")
-            
+
         if config.has_option("mainwindow", "x"):
             self.x = config.getint("mainwindow", "x")
         if config.has_option("mainwindow", "y"):
@@ -727,7 +727,7 @@ class Settings(object):
         if config.has_option("listview", "hideClosedBugs"):
             self.hideClosedBugs = config.getboolean("listview", "hideclosedbugs")
 
-    
+
     def save(self):
         """Save settings to configfile."""
         config = ConfigParser.ConfigParser()
@@ -740,7 +740,7 @@ class Settings(object):
 
         config.set("general", "script", self.script)
         config.set("general", "presubj", self.presubj)
-        
+
         config.set("general", "wishlist", self.c_wishlist)
         config.set("general", "minor", self.c_minor)
         config.set("general", "normal", self.c_normal)
@@ -750,7 +750,7 @@ class Settings(object):
         config.set("general", "critical", self.c_critical)
         config.set("general", "resolved",self.c_resolved)
 
-        
+
         if not config.has_section("mainwindow"):
             config.add_section("mainwindow")
         config.set("mainwindow", "x", self.x)

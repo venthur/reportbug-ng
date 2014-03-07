@@ -1,5 +1,5 @@
 # rngsettings.py - SettingsDialog of Reportbug-NG.
-# Copyright (C) 2007-2008  Bastian Venthur
+# Copyright (C) 2007-2014  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,14 +25,14 @@ import rnghelpers as rng
 from rnghelpers import Settings, getMUAString
 
 class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
-    
+
     def __init__(self, settings):
         QtGui.QDialog.__init__(self)
         self.setupUi(self)
-        
+
         self.logger = logging.getLogger("Settings")
         self.logger.info("Logger initialized.")
-        
+
         self.settings = copy.deepcopy(settings)
 
         QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.RestoreDefaults), QtCore.SIGNAL("clicked()"), self.load_default)
@@ -51,27 +51,27 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
         QtCore.QObject.connect(self.comboBox_mua, QtCore.SIGNAL("activated(int)"), self._mua_changed)
 
         self.load_settings()
-        
-    
+
+
     def load_settings(self):
-        
+
         # mua
         for mua in rng.SUPPORTED_MUA:
             self.comboBox_mua.addItem(rng.getMUAString(mua))
         if self.settings.lastmua in rng.SUPPORTED_MUA:
             self.comboBox_mua.setCurrentIndex(rng.SUPPORTED_MUA.index(self.settings.lastmua))
-        
+
         # colors
-        buttoncolor = [(self.pushButton_wishlist, self.settings.c_wishlist), 
-                       (self.pushButton_minor, self.settings.c_minor), 
+        buttoncolor = [(self.pushButton_wishlist, self.settings.c_wishlist),
+                       (self.pushButton_minor, self.settings.c_minor),
                        (self.pushButton_normal, self.settings.c_normal),
-                       (self.pushButton_important, self.settings.c_important), 
-                       (self.pushButton_serious, self.settings.c_serious), 
+                       (self.pushButton_important, self.settings.c_important),
+                       (self.pushButton_serious, self.settings.c_serious),
                        (self.pushButton_grave, self.settings.c_grave),
-                       (self.pushButton_critical, self.settings.c_critical), 
+                       (self.pushButton_critical, self.settings.c_critical),
                        (self.pushButton_resolved, self.settings.c_resolved)]
         for button, color in buttoncolor:
-            self._change_button_color(button, color) 
+            self._change_button_color(button, color)
 
         # the rest
         self.checkBox_script.setChecked(self.settings.script)
@@ -81,7 +81,7 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
     def load_default(self):
         self.settings.load_defaults()
         self.load_settings()
-        
+
     def _change_button_color(self, button, color):
         button.setStyleSheet("background-color: %s; color: %s" % (color, color))
 
@@ -117,22 +117,22 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
     def _change_resolved_color(self):
         self.settings.c_resolved = self._get_color(self.settings.c_resolved)
         self._change_button_color(self.pushButton_resolved, self.settings.c_resolved)
-        
+
     def _get_color(self, color):
         return str(QtGui.QColorDialog.getColor(QtGui.QColor(color)).name())
-        
+
     def _presubj_changed(self, state):
         if state == QtCore.Qt.Checked:
             self.settings.presubj = True
         else:
             self.settings.presubj = False
-        
+
     def _script_changed(self, state):
         if state == QtCore.Qt.Checked:
             self.settings.script = True
         else:
             self.settings.script = False
-    
+
     def _mua_changed(self, index):
         mua = unicode(self.comboBox_mua.currentText())
         # translate back
@@ -144,5 +144,5 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
                 self.logger.debug("Found match for MUA: %s %s" % (mua, mua_orig))
                 break
         if not found:
-            self.logger.error("Mua not found: %s" % mua) 
+            self.logger.error("Mua not found: %s" % mua)
 

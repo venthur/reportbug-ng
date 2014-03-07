@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # reportbug-ng - Report a bug in Debian's BTS.
-# Copyright (C) 2007-2011  Bastian Venthur
+# Copyright (C) 2007-2014  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ Report a bug in Debian's BTS. The optional paremter QUERY behaves exactly like t
 Supported queries are: packagename, bugnumber, maintainer@foo.bar, src:package, from:submitter@foo.bar, severity:foo and tag:bar."""
     usage = "%prog [Options] [Query]"
     version = """Reportbug-NG """ + getInstalledPackageVersion("reportbug-ng") + """
-Copyright (C) 2007-2011 Bastian Venthur <venthur at debian org>
+Copyright (C) 2007-2014 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
@@ -47,7 +47,7 @@ the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.
 """
     parser = OptionParser(usage=usage, version=version, description=description)
-    parser.add_option('-l', '--loglevel', type='choice', choices=['critical', 
+    parser.add_option('-l', '--loglevel', type='choice', choices=['critical',
         'error', 'warning', 'info', 'debug', 'notset'], dest='loglevel',
         help='Which loglevel to use [default: warning]. Valid loglevels are: critical, error, warning, info, debug, notset',
         metavar='LEVEL')

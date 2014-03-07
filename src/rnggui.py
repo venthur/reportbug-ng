@@ -1,5 +1,5 @@
 # rnggui.py - MainWindow of Reportbug-NG.
-# Copyright (C) 2007-2010  Bastian Venthur
+# Copyright (C) 2007-2014  Bastian Venthur
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -274,7 +274,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
 """Reportbug-NG is a graphical interface for searching, filtering, reporting
 or manipulating bugs in Debian's Bug Tracking System.""") + """\n""" +
             self.tr(\
-"""Copyright (C) 2007-2011 Bastian Venthur <venthur at debian org>
+"""Copyright (C) 2007-2014 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org
 
