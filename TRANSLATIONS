@@ -47,9 +47,9 @@ needed by translators:
 
 Call
 
-  make upgrade
+  make update
 
-this will look in the source files for modifikations and modifies the existing
+this will look in the source files for modifications and modifies the existing
 .ts files. If strings where added in the source, the entries are added in the
 .ts file, if strings where removed, they are marked as obsolete in the .ts.
 

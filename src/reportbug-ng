@@ -27,6 +27,8 @@ from PyQt4 import QtCore, QtGui
 
 from rnggui import RngGui
 
+from rnghelpers import getInstalledPackageVersion
+
 
 if __name__ == "__main__":
     # Get Options
@@ -34,7 +36,7 @@ if __name__ == "__main__":
 Report a bug in Debian's BTS. The optional paremter QUERY behaves exactly like the query inside the program. \
 Supported queries are: packagename, bugnumber, maintainer@foo.bar, src:package, from:submitter@foo.bar, severity:foo and tag:bar."""
     usage = "%prog [Options] [Query]"
-    version = """
+    version = """Reportbug-NG """ + getInstalledPackageVersion("reportbug-ng") + """
 Copyright (C) 2007-2011 Bastian Venthur <venthur at debian org>
 
 Homepage: http://reportbug-ng.alioth.debian.org

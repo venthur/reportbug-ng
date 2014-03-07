@@ -4,5 +4,5 @@ Name=Reportbug-NG
 Comment=Report bugs to Debian's BTS
 Comment[cs]=Hlásí chyby vývojářům Debianu
 Exec=reportbug-ng
-Icon=/usr/share/pixmaps/debian-logo.png
+Icon=/usr/share/pixmaps/rng.xpm
 Categories=System;
