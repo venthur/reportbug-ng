@@ -1,3 +1,16 @@
+reportbug-ng (1.30) unstable; urgency=medium
+
+  * Another round of patches by Anders Jonsson -- thank you very much! I think
+    I owe you a beer or two!
+  * Fix "please don't simply use Debian logo as icon" replaced the old Debian
+    logo with a new one in .xpm (Closes: #432791)
+  * `reportbug-ng --version` now shows correctly the version of rng
+    (Closes: #505839)
+  * Added some more text to the "About rng" dialog (Closes: #501975)
+  * Fixed instructions for translators
+
+ -- Bastian Venthur <venthur@debian.org>  Fri, 07 Mar 2014 18:00:31 +0100
+
 reportbug-ng (1.29) unstable; urgency=medium
 
   * More l10n fixes: additional Swedish translations and fixes to Dutch,
