@@ -4,7 +4,7 @@ on Sat, 10 Mar 2007 15:38:24 +0100.
 The original source can always be found at:
 	ftp://ftp.debian.org/dists/unstable/main/source/
 
-Copyright Holder:  Bastian Venthur
+Copyright 2007-2014 Bastian Venthur <venthur@debian.org>
 
 License:
 
@@ -23,4 +23,4 @@ License:
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
 On Debian systems, the complete text of the GNU General
-Public License can be found in `/usr/share/common-licenses/GPL'.
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
