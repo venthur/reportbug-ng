@@ -2,7 +2,7 @@ Source: reportbug-ng
 Section: utils
 Priority: optional
 Maintainer: Bastian Venthur <venthur@debian.org>
-Build-Depends: debhelper (>= 5), dh-python, python, pyqt4-dev-tools, libqt4-dev
+Build-Depends: debhelper (>= 7), dh-python, python, pyqt4-dev-tools, libqt4-dev
 Standards-Version: 3.9.2
 VCS-git: git://github.com/venthur/reportbug-ng.git
 Homepage: http://reportbug-ng.alioth.debian.org/
