@@ -9,7 +9,7 @@ Homepage: http://reportbug-ng.alioth.debian.org/
 
 Package: reportbug-ng
 Architecture: all
-Depends: ${python:Depends}, python-debianbts (>= 1.0), python-qt4, xdg-utils, xterm, python-apt (>= 0.7.93)
+Depends: ${misc:Depends}, ${python:Depends}, python-debianbts (>= 1.0), python-qt4, xdg-utils, xterm, python-apt (>= 0.7.93)
 Description: Easy to use alternative to Debian's classic reportbug
  Reportbug-NG is a graphical interface using Qt for searching, filtering,
  reporting or manipulating bugs in Debian's Bug Tracking System.
