@@ -3,6 +3,7 @@ Type=Application
 Name=Reportbug-NG
 Comment=Report bugs to Debian's BTS
 Comment[cs]=Hlásí chyby vývojářům Debianu
+Keywords=bts;bug;report;
 Exec=reportbug-ng
 Icon=/usr/share/pixmaps/rng.xpm
 Categories=System;
