@@ -1,3 +1,9 @@
+reportbug-ng (1.31) unstable; urgency=medium
+
+  * Various lintian fixes and build-time warnings by Anders. Thanks again!
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 18 Mar 2014 15:07:27 +0100
+
 reportbug-ng (1.30) unstable; urgency=medium
 
   * Another round of patches by Anders Jonsson -- thank you very much! I think
