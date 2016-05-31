@@ -1,6 +1,6 @@
-PYUIC = pyuic4
+PYUIC = pyuic5
 RCC = rcc
-PYRCC = pyrcc4
+PYRCC = pyrcc5
 
 GUI_CLASSES = mainwindow.py \
 	submitdialog.py \

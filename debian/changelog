@@ -1,3 +1,11 @@
+reportbug-ng (2.0) unstable; urgency=medium
+
+  * Ported to Qt5
+  * Bumped standards version
+  * Removed menu file
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 31 May 2016 09:46:59 +0200
+
 reportbug-ng (1.31) unstable; urgency=medium
 
   * Various lintian fixes and build-time warnings by Anders. Thanks again!

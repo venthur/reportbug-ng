@@ -19,8 +19,8 @@
 import logging
 import thread
 
-from PyQt4 import QtCore, QtGui
-from PyQt4.QtCore import QCoreApplication
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtCore import QCoreApplication
 
 from ui import mainwindow
 from ui import submitdialog
@@ -35,10 +35,10 @@ def chunks(l, n):
         yield l[i:i+n]
 
 
-class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
+class RngGui(QtWidgets.QMainWindow, mainwindow.Ui_MainWindow):
 
     def __init__(self, args):
-        QtGui.QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         self.setupUi(self)
 
         self.logger = logging.getLogger("RngGui")
@@ -48,59 +48,27 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.toolButton.setDefaultAction(self.actionClearLineEdit)
 
         #
-        self.progressbar = QtGui.QProgressBar(self.statusbar)
+        self.progressbar = QtWidgets.QProgressBar(self.statusbar)
         self.progressbar.setFixedHeight(20)
         self.progressbar.setFixedWidth(100)
         self.progressbar.hide()
         self.statusbar.addPermanentWidget(self.progressbar)
 
-        # connect actions to methods
-        QtCore.QObject.connect(self.actionNewBugreport,
-                               QtCore.SIGNAL("triggered()"),
-                               self.new_bugreport)
-        QtCore.QObject.connect(self.actionAdditionalInfo,
-                               QtCore.SIGNAL("triggered()"),
-                               self.additional_info)
-        QtCore.QObject.connect(self.actionCloseBugreport,
-                               QtCore.SIGNAL("triggered()"),
-                               self.close_bugreport)
-        QtCore.QObject.connect(self.actionNewWnpp,
-                               QtCore.SIGNAL("triggered()"),
-                               self.new_wnpp)
-        QtCore.QObject.connect(self.actionClearLineEdit,
-                               QtCore.SIGNAL("triggered()"),
-                               self.clear_lineedit)
-        QtCore.QObject.connect(self.actionSettings,
-                               QtCore.SIGNAL("triggered()"),
-                               self.settings_diag)
-        QtCore.QObject.connect(self.actionAbout,
-                               QtCore.SIGNAL("triggered()"),
-                               self.about)
-        QtCore.QObject.connect(self.actionAboutQt,
-                               QtCore.SIGNAL("triggered()"),
-                               self.about_qt)
-        QtCore.QObject.connect(self.lineEdit,
-                               QtCore.SIGNAL("textChanged(const QString&)"),
-                               self.lineedit_text_changed)
-        QtCore.QObject.connect(self.lineEdit,
-                               QtCore.SIGNAL("returnPressed()"),
-                               self.lineedit_return_pressed)
-        QtCore.QObject.connect(self.tableView,
-                               QtCore.SIGNAL("activated(const QModelIndex&)"),
-                               self.activated)
-        QtCore.QObject.connect(self.webView,
-                               QtCore.SIGNAL("loadProgress(int)"),
-                               self.load_progress)
-        QtCore.QObject.connect(self.webView,
-                               QtCore.SIGNAL("loadStarted()"),
-                               self.load_started)
-        QtCore.QObject.connect(self.webView,
-                               QtCore.SIGNAL("loadFinished(bool)"),
-                               self.load_finished)
-        QtCore.QObject.connect(self.checkBox,
-                               QtCore.SIGNAL("clicked(bool)"),
-                               self.checkbox_clicked)
-
+        self.actionNewBugreport.triggered.connect(self.new_bugreport)
+        self.actionAdditionalInfo.triggered.connect(self.additional_info)
+        self.actionCloseBugreport.triggered.connect(self.close_bugreport)
+        self.actionNewWnpp.triggered.connect(self.new_wnpp)
+        self.actionClearLineEdit.triggered.connect(self.clear_lineedit)
+        self.actionSettings.triggered.connect(self.settings_diag)
+        self.actionAbout.triggered.connect(self.about)
+        self.actionAboutQt.triggered.connect(self.about_qt)
+        self.lineEdit.textChanged.connect(self.lineedit_text_changed)
+        self.lineEdit.returnPressed.connect(self.lineedit_return_pressed)
+        self.tableView.activated.connect(self.activated)
+        self.webView.loadProgress.connect(self.load_progress)
+        self.webView.loadStarted.connect(self.load_started)
+        self.webView.loadFinished.connect(self.load_finished)
+        self.checkBox.clicked.connect(self.checkbox_clicked)
 
         # setup the table
         self.model = TableModel(self)
@@ -109,7 +77,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
         self.proxymodel.setDynamicSortFilter(True)
         self.proxymodel.setSourceModel(self.model)
         self.tableView.setModel(self.proxymodel)
-        self.tableView.horizontalHeader().setResizeMode(2, QtGui.QHeaderView.Stretch)
+        self.tableView.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.Stretch)
         self.tableView.verticalHeader().setVisible(False)
 
         # setup the settings
@@ -266,7 +234,7 @@ class RngGui(QtGui.QMainWindow, mainwindow.Ui_MainWindow):
     def about(self):
         """Shows the about box."""
         # TODO: copyright string below should be a constant
-        QtGui.QMessageBox.about(\
+        QtWidgets.QMessageBox.about(\
             self,
             self.tr("About Reportbug-NG"),"""Reportbug-NG """ +
                 rng.getInstalledPackageVersion("reportbug-ng") + """\n""" +
@@ -285,7 +253,7 @@ the Free Software Foundation; either version 2 of the License, or
 
 
     def about_qt(self):
-        QtGui.QMessageBox.aboutQt(self, self.tr("About Qt"))
+        QtWidgets.QMessageBox.aboutQt(self, self.tr("About Qt"))
 
 
     def _stateChanged(self, package, bug):
@@ -398,7 +366,7 @@ the Free Software Foundation; either version 2 of the License, or
             if presubj:
                 txt = rng.get_presubj(package)
                 if txt:
-                    QtGui.QMessageBox.information(self, "Information", txt)
+                    QtWidgets.QMessageBox.information(self, "Information", txt)
             thread.start_new_thread(rng.prepareMail, (mua, to, subject, body))
 
 
@@ -557,17 +525,17 @@ class TableModel(QtCore.QAbstractTableModel):
         self.endInsertRows()
 
 
-class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
+class MySortFilterProxyModel(QtCore.QSortFilterProxyModel):
 
     def __init__(self, parent=None):
-        QtGui.QSortFilterProxyModel.__init__(self, parent)
+        QtCore.QSortFilterProxyModel.__init__(self, parent)
         self.logger = logging.getLogger("MySortFilterProxyModel")
         self.parent = parent
 
 
     def lessThan(self, left, right):
         if left.column() != 4:
-            return QtGui.QSortFilterProxyModel.lessThan(self, left, right)
+            return QtCore.QSortFilterProxyModel.lessThan(self, left, right)
         l = self.sourceModel().elements[left.row()]
         r = self.sourceModel().elements[right.row()]
         return l < r
@@ -576,24 +544,17 @@ class MySortFilterProxyModel(QtGui.QSortFilterProxyModel):
     def filterAcceptsRow(self, sourceRow, sourceParent):
         if self.sourceModel().elements[sourceRow].done and self.parent.settings.hideClosedBugs:
             return False
-        return QtGui.QSortFilterProxyModel.filterAcceptsRow(self, sourceRow, sourceParent)
+        return QtCore.QSortFilterProxyModel.filterAcceptsRow(self, sourceRow, sourceParent)
 
 
-class SubmitDialog(QtGui.QDialog, submitdialog.Ui_SubmitDialog):
+class SubmitDialog(QtWidgets.QDialog, submitdialog.Ui_SubmitDialog):
 
     def __init__(self):
-        QtGui.QDialog.__init__(self)
+        QtWidgets.QDialog.__init__(self)
         self.setupUi(self)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok),
-                               QtCore.SIGNAL("clicked()"),
-                               self.accept)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel),
-                               QtCore.SIGNAL("clicked()"),
-                               self.reject)
-        QtCore.QObject.connect(self.comboBoxSeverity,
-                               QtCore.SIGNAL("currentIndexChanged(int)"),
-                               self.severity_changed)
-
+        self.buttonBox.button(QtWidgets.QDialogButtonBox.Ok).clicked.connect(self.accept)
+        self.buttonBox.button(QtWidgets.QDialogButtonBox.Cancel).clicked.connect(self.reject)
+        self.comboBoxSeverity.currentIndexChanged.connect(self.severity_changed)
 
     def severity_changed(self, index):
         self.label_severity.setText(rng.getSeverityExplanation(index))

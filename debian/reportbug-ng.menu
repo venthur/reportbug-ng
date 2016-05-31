@@ -1,2 +1,0 @@
-?package(reportbug-ng):needs="X11" section="Applications/System/Security"\
-  title="Reportbug-NG" command="/usr/bin/reportbug-ng" icon="/usr/share/pixmaps/rng.xpm"

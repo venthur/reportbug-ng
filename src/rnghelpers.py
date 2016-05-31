@@ -27,7 +27,7 @@ import logging
 import ConfigParser
 import tempfile
 
-from PyQt4.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication
 
 import bug
 

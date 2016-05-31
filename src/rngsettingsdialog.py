@@ -18,16 +18,16 @@
 import logging
 import copy
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui
 
 from ui import settings
 import rnghelpers as rng
 from rnghelpers import Settings, getMUAString
 
-class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
+class RngSettingsDialog(QtWidgets.QDialog, settings.Ui_Dialog):
 
     def __init__(self, settings):
-        QtGui.QDialog.__init__(self)
+        QtWidgets.QDialog.__init__(self)
         self.setupUi(self)
 
         self.logger = logging.getLogger("Settings")
@@ -35,20 +35,20 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
 
         self.settings = copy.deepcopy(settings)
 
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.RestoreDefaults), QtCore.SIGNAL("clicked()"), self.load_default)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Ok), QtCore.SIGNAL("clicked()"), self.accept)
-        QtCore.QObject.connect(self.buttonBox.button(QtGui.QDialogButtonBox.Cancel), QtCore.SIGNAL("clicked()"), self.reject)
-        QtCore.QObject.connect(self.pushButton_wishlist, QtCore.SIGNAL("clicked()"), self._change_wishlist_color)
-        QtCore.QObject.connect(self.pushButton_minor, QtCore.SIGNAL("clicked()"), self._change_minor_color)
-        QtCore.QObject.connect(self.pushButton_normal, QtCore.SIGNAL("clicked()"), self._change_normal_color)
-        QtCore.QObject.connect(self.pushButton_important, QtCore.SIGNAL("clicked()"), self._change_important_color)
-        QtCore.QObject.connect(self.pushButton_serious, QtCore.SIGNAL("clicked()"), self._change_serious_color)
-        QtCore.QObject.connect(self.pushButton_grave, QtCore.SIGNAL("clicked()"), self._change_grave_color)
-        QtCore.QObject.connect(self.pushButton_critical, QtCore.SIGNAL("clicked()"), self._change_critical_color)
-        QtCore.QObject.connect(self.pushButton_resolved, QtCore.SIGNAL("clicked()"), self._change_resolved_color)
-        QtCore.QObject.connect(self.checkBox_presubj, QtCore.SIGNAL("stateChanged(int)"), self._presubj_changed)
-        QtCore.QObject.connect(self.checkBox_script, QtCore.SIGNAL("stateChanged(int)"), self._script_changed)
-        QtCore.QObject.connect(self.comboBox_mua, QtCore.SIGNAL("activated(int)"), self._mua_changed)
+        self.buttonBox.button(QtWidgets.QDialogButtonBox.RestoreDefaults).clicked.connect(self.load_default)
+        self.buttonBox.button(QtWidgets.QDialogButtonBox.Ok).clicked.connect(self.accept)
+        self.buttonBox.button(QtWidgets.QDialogButtonBox.Cancel).clicked.connect(self.reject)
+        self.pushButton_wishlist.clicked.connect(self._change_wishlist_color)
+        self.pushButton_minor.clicked.connect(self._change_minor_color)
+        self.pushButton_normal.clicked.connect(self._change_normal_color)
+        self.pushButton_important.clicked.connect(self._change_important_color)
+        self.pushButton_serious.clicked.connect(self._change_serious_color)
+        self.pushButton_grave.clicked.connect(self._change_grave_color)
+        self.pushButton_critical.clicked.connect(self._change_critical_color)
+        self.pushButton_resolved.clicked.connect(self._change_resolved_color)
+        self.checkBox_presubj.stateChanged.connect(self._presubj_changed)
+        self.checkBox_script.stateChanged.connect(self._script_changed)
+        self.comboBox_mua.activated.connect(self._mua_changed)
 
         self.load_settings()
 
@@ -119,7 +119,7 @@ class RngSettingsDialog(QtGui.QDialog, settings.Ui_Dialog):
         self._change_button_color(self.pushButton_resolved, self.settings.c_resolved)
 
     def _get_color(self, color):
-        return str(QtGui.QColorDialog.getColor(QtGui.QColor(color)).name())
+        return str(QtWidgets.QColorDialog.getColor(QtGui.QColor(color)).name())
 
     def _presubj_changed(self, state):
         if state == QtCore.Qt.Checked:

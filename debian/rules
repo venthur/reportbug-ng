@@ -14,6 +14,8 @@
 
 CFLAGS = -Wall -g
 
+export QT_SELECT=5
+
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
 	CFLAGS += -O0
 else

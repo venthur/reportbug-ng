@@ -1,6 +1,6 @@
 import logging
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from apt.cache import Cache, FilteredCache, Filter
 
 class InstalledFilter(Filter):
@@ -8,17 +8,17 @@ class InstalledFilter(Filter):
     def apply(self, pkg):
         return pkg.is_installed
 
-class PackageLineEdit(QtGui.QLineEdit):
+class PackageLineEdit(QtWidgets.QLineEdit):
     def __init__(self, parent):
-        QtGui.QLineEdit.__init__(self, parent)
-        self.logger = logging.getLogger("PackageLineEdit") 
+        QtWidgets.QLineEdit.__init__(self, parent)
+        self.logger = logging.getLogger("PackageLineEdit")
         cache = FilteredCache(Cache())
         cache.set_filter(InstalledFilter())
-        self._completer = QtGui.QCompleter(sorted(cache.keys()))
-        self._completer.setModelSorting(QtGui.QCompleter.CaseSensitivelySortedModel)
+        self._completer = QtWidgets.QCompleter(sorted(cache.keys()))
+        self._completer.setModelSorting(QtWidgets.QCompleter.CaseSensitivelySortedModel)
         self.setCompleter(self._completer)
         #QtCore.QObject.connect(self, QtCore.SIGNAL("returnPressed()"), self.__disable_completion)
-    
+
     def __enable_completion(self):
         self.logger.debug("Enabled completion.")
         self.setCompleter(self._completer)
@@ -33,4 +33,4 @@ class PackageLineEdit(QtGui.QLineEdit):
         if event.key() == QtCore.Qt.Key_Down:
             QtCore.QTimer.singleShot(0, self.__enable_completion)
         else:
-            QtGui.QLineEdit.keyPressEvent(self, event)
+            QtWidgets.QLineEdit.keyPressEvent(self, event)
