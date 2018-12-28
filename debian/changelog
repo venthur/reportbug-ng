@@ -1,3 +1,11 @@
+reportbug-ng (2.1) unstable; urgency=medium
+
+  * Fix "[reportbug-ng] incorrect information on packages not installed
+    ("Package's Depends/Recommends/Suggest field is empty.")"
+    Replaced dpkg --print-avail with dpkg-query --status (Closes: #535275)
+
+ -- Bastian Venthur <venthur@debian.org>  Tue, 31 May 2016 14:24:35 +0200
+
 reportbug-ng (2.0) unstable; urgency=medium
 
   * Ported to Qt5

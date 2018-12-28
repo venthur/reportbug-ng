@@ -417,7 +417,7 @@ def getPackageScriptOutput(package):
 def getInstalledPackageVersion(package):
     """Returns the version of package, if installed or empty string if not installed"""
 
-    out = commands.getoutput("dpkg --status %s 2>/dev/null" % package)
+    out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % package)
     version = re.findall("^Version:\s(.*)$", out, re.MULTILINE)
 
     if version:
@@ -436,7 +436,7 @@ def getInstalledPackageVersions(packages):
         packagestring += " "+i
         result[i] = ""
 
-    out = commands.getoutput("dpkg --status %s 2>/dev/null" % packagestring)
+    out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % packagestring)
 
     packagere = re.compile("^Package:\s(.*)$", re.MULTILINE)
     versionre = re.compile("^Version:\s(.*)$", re.MULTILINE)
@@ -460,7 +460,7 @@ def getDepends(packagelist):
 
     list = []
     for package in packagelist:
-        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % package)
         depends = re.findall("^Depends:\s(.*)$", out, re.MULTILINE)
         if depends:
             depends = depends[0]
@@ -480,7 +480,7 @@ def getSuggests(packagelist):
 
     list = []
     for package in packagelist:
-        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % package)
         suggests = re.findall("^Suggests:\s(.*)$", out, re.MULTILINE)
         if suggests:
             suggests = suggests[0]
@@ -500,7 +500,7 @@ def getRecommends(packagelist):
 
     list = []
     for package in packagelist:
-        out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+        out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % package)
         recommends = re.findall("^Recommends:\s(.*)$", out, re.MULTILINE)
         if recommends:
             recommends = recommends[0]
@@ -516,7 +516,7 @@ def getRecommends(packagelist):
 def getSourceName(package):
     """Returns source package name for given package."""
 
-    out = commands.getoutput("dpkg --print-avail %s 2>/dev/null" % package)
+    out = commands.getoutput("dpkg-query --status %s 2>/dev/null" % package)
     source = re.findall("^Source:\s(.*)$", out, re.MULTILINE)
 
     if source:
